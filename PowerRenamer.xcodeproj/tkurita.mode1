@@ -204,10 +204,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C5428240B7C0A9D00820867</string>
+						<string>2C9CF4A90B7DF8DB005CFB4C</string>
 						<key>history</key>
 						<array>
-							<string>2C85CCD50B7B3D8600C89869</string>
+							<string>2C5428240B7C0A9D00820867</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -367,7 +367,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C5428220B7C0A9D00820867</string>
+										<string>2C9CF4A50B7DF8DB005CFB4C</string>
 										<key>history</key>
 										<array>
 											<string>2C85C81F0B7B1E9100C89869</string>
@@ -377,7 +377,7 @@
 											<string>2C85CC430B7B3B1400C89869</string>
 											<string>2C85CC450B7B3B1400C89869</string>
 											<string>2C85CC960B7B3CD500C89869</string>
-											<string>2C85CCD10B7B3D8600C89869</string>
+											<string>2C5428220B7C0A9D00820867</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -427,7 +427,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C5428230B7C0A9D00820867</string>
+										<string>2C9CF4A60B7DF8DB005CFB4C</string>
 										<key>history</key>
 										<array>
 											<string>2C85C81F0B7B1E9100C89869</string>
@@ -437,7 +437,7 @@
 											<string>2C85CCB40B7B3D3600C89869</string>
 											<string>2C85CCB50B7B3D3600C89869</string>
 											<string>2C5428090B7C073B00820867</string>
-											<string>2C54280A0B7C073B00820867</string>
+											<string>2C5428230B7C0A9D00820867</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -507,9 +507,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2C5427850B7C05D300820867</string>
+				<string>2C9CF4A70B7DF8DB005CFB4C</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2C5427860B7C05D300820867</string>
+				<string>2C9CF4A80B7DF8DB005CFB4C</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
@@ -644,10 +644,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>2C85C6CF0B7B114000C89869</string>
 		<string>2C85CC520B7B3B1400C89869</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
-		<string>/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/PowerRenamer.xcodeproj</string>
+		<string>/Users/tkurita/Dev/Projects/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>140 217 1135 675 0 0 1440 938 </string>
@@ -1097,9 +1096,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>2C5428190B7C080100820867</string>
+				<string>2C9CF4AA0B7DF8DB005CFB4C</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>2C54281A0B7C080100820867</string>
+				<string>2C9CF4AB0B7DF8DB005CFB4C</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>

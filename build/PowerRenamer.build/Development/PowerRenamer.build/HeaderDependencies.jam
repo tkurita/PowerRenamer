@@ -1,7 +1,0 @@
-rule DefineHeaderDependencies
-{
-	INCLUDES "$(PROJECT_DIR)/main.m" : "/usr/include/mach-o/dyld.h" ;
-}
-
-DefineHeaderDependencies "<PowerRenamer>PowerRenamer.app" ;
-
