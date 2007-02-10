@@ -1,0 +1,53 @@
+
+.firstlevel {
+	font-family: Osaka, "Lucida Grande", Arial, sans-serif;
+	text-indent: -20px;
+	margin: 5px 0 2px 25px  }
+.secondlevel {
+	font-size: 90%;
+	font-family: Osaka, "Lucida Grande", Arial, sans-serif;
+	text-indent: -12px;
+	list-style-position: outside;
+	margin-top: 5px;
+	margin-bottom: 2px;
+	margin-left: 22px  }
+.expandedPane {
+	background-color: #f0f0f0  }
+.thirdlevel {
+	font-size: 90%;
+	font-family: Osaka, "Lucida Grande", Arial, sans-serif;
+	margin: 0 0 0 14px;
+	padding: 1px 0 2px 10px;
+	border-left: 2px solid gray  }
+a:link {
+	color: #6666ff  }
+a:visited {
+	color: #999966  }
+a:active {
+	color: #66ff66  }
+body {
+	color: black;
+	font-size: 14px;
+	background-color: white  }
+td {
+	font-size: 14px  }
+.spreadhead  {	font-weight: bold;
+	font-size: 120%;
+	font-family: sans-serif;
+	background: #f5f5f5 url(assets/topicTitleBackgound.png) repeat-x left bottom;
+	text-align: center;
+	margin: 0;
+	padding-top: 6px;
+	padding-bottom: 10px;
+	text-shadow: 0em 0.4em 0.3em rgba(0,0,0,0.5) }
+
+.doctitle  {	font-weight: bold;
+	font-size: 120%;
+	font-family: sans-serif;
+	background: url(assets/topicTitleBackgound.png) repeat-x left bottom;
+	text-align: center;
+	margin: 0 0 1ex;
+	padding-top: 1ex;
+	padding-bottom: 1ex;
+	text-shadow: 0em 0.4em 0.3em rgba(0,0,0,0.5) }
+
