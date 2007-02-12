@@ -185,48 +185,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>2C85CC520B7B3B1400C89869</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>PowerRenamer.applescript</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>2C85CC530B7B3B1400C89869</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>PowerRenamer.applescript</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>2C9CF4A90B7DF8DB005CFB4C</string>
-						<key>history</key>
-						<array>
-							<string>2C5428240B7C0A9D00820867</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {750, 461}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>399 364 750 502 0 0 1440 938 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -367,7 +326,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C9CF4A50B7DF8DB005CFB4C</string>
+										<string>2C9CF4C10B80AE59005CFB4C</string>
 										<key>history</key>
 										<array>
 											<string>2C85C81F0B7B1E9100C89869</string>
@@ -377,7 +336,7 @@
 											<string>2C85CC430B7B3B1400C89869</string>
 											<string>2C85CC450B7B3B1400C89869</string>
 											<string>2C85CC960B7B3CD500C89869</string>
-											<string>2C5428220B7C0A9D00820867</string>
+											<string>2C9CF4B60B7DFD61005CFB4C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -427,7 +386,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C9CF4A60B7DF8DB005CFB4C</string>
+										<string>2C9CF4C20B80AE59005CFB4C</string>
 										<key>history</key>
 										<array>
 											<string>2C85C81F0B7B1E9100C89869</string>
@@ -437,7 +396,7 @@
 											<string>2C85CCB40B7B3D3600C89869</string>
 											<string>2C85CCB50B7B3D3600C89869</string>
 											<string>2C5428090B7C073B00820867</string>
-											<string>2C5428230B7C0A9D00820867</string>
+											<string>2C9CF4B70B7DFD61005CFB4C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -507,9 +466,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2C9CF4A70B7DF8DB005CFB4C</string>
+				<string>2C9CF4C30B80AE59005CFB4C</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2C9CF4A80B7DF8DB005CFB4C</string>
+				<string>2C9CF4C40B80AE59005CFB4C</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
@@ -644,7 +603,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>2C85CC520B7B3B1400C89869</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
 	</array>
@@ -726,7 +684,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>2C85C6CF0B7B114000C89869</string>
-				<string>2C5427950B7C064100820867</string>
+				<string>2C9CF4B80B7DFD61005CFB4C</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -1096,9 +1054,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>2C9CF4AA0B7DF8DB005CFB4C</string>
+				<string>2C9CF4C50B80AE59005CFB4C</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>2C9CF4AB0B7DF8DB005CFB4C</string>
+				<string>2C9CF4C60B80AE59005CFB4C</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
