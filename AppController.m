@@ -1,5 +1,5 @@
 #import "AppController.h"
-#import <DonationReminder/DonationReminder.h>
+#import "DonationReminder/DonationReminder.h"
 
 #define useLog 0
 

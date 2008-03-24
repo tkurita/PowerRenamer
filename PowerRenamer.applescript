@@ -1,13 +1,13 @@
 property FinderSelection : missing value
 property PathAnalyzer : missing value
-property StringEngine : missing value
+property XText : missing value
 property UniqueNamer : missing value
 
 on __load__(loader)
 	tell loader
 		set FinderSelection to load("FinderSelection")
 		set PathAnalyzer to load("PathAnalyzer")
-		set StringEngine to PathAnalyzer's StringEngine
+		set XText to PathAnalyzer's XText
 		set UniqueNamer to load("UniqueNamer")
 	end tell
 end __load__
@@ -164,13 +164,11 @@ on open theObject
 end open
 
 on getTargetItems()
-	script ChooserScript
-		return {}
-	end script
-	FinderSelection's set_prompt_message("Choose items to rename.")
-	FinderSelection's set_chooser_script(ChooserScript)
+	set a_picker to FinderSelection's make_for_item()
+	a_picker's set_prompt_message("Choose items to rename.")
+	a_picker's set_use_chooser(false)
 	try
-		set a_list to FinderSelection's get_selection()
+		set a_list to a_picker's get_selection()
 	on error msg number errno
 		if errno is -128 then
 			quit

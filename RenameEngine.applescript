@@ -1,4 +1,4 @@
-global StringEngine
+global XText
 global UniqueNamer
 global PathAnalyzer
 
@@ -56,7 +56,7 @@ end replaceBeginning
 on replaceContaine for theList
 	set oldLength to length of oldString
 	
-	store_delimiters() of StringEngine
+	store_delimiters() of XText
 	repeat with ith from 1 to length of theList
 		set theItem to item ith of theList
 		tell application "Finder"
@@ -65,19 +65,19 @@ on replaceContaine for theList
 		--set oldName to NormalizeUnicode oldName normalizationForm "NFKC"
 		set oldName to call method "normalizedString:" of oldName with parameter 3
 		if oldName contains oldString then
-			set newName to replace of StringEngine for oldName from oldString by newString
+			set newName to replace of XText for oldName from oldString by newString
 			if newName is not oldName then
 				setName for theItem by newName
 			end if
 		end if
 	end repeat
-	restore_delimiters() of StringEngine
+	restore_delimiters() of XText
 end replaceContaine
 
 on replaceRegularExp for theList
 	repeat with ith from 1 to length of theList
 		set theItem to item ith of theList
-		set oldName to name of (do(theItem) of PathAnalyzer)
+		set oldName to PathAnalyzer's name_of(theItem)
 		set newName to call method "replaceForPattern:withString:" of oldName with parameters {oldString, newString}
 		if newName is not oldName then
 			setName for theItem by newName
@@ -93,7 +93,7 @@ on setName for theItem by theName
 		--renameFile theitem to theName
 	on error errMsg number errn
 		if errn is in {-37, -48} then -- -48 : same name  -37: invalid name
-			set theLocation to folderReference of (do(theItem) of PathAnalyzer)
+			set theLocation to PathAnalyzer's folder_of(theItem)
 			set theName to do of UniqueNamer about theName at theLocation
 			tell application "Finder"
 				set name of theItem to theName
