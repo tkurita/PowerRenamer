@@ -21,8 +21,8 @@ property oldTextHistoryObj : missing value
 property newTextHistoryObj : missing value
 
 property modeIndexObj : missing value
-property oldTextObj : missing value
-property newTextObj : missing value
+property _oldTextObj : missing value
+property _newTextObj : missing value
 property windowPosition : missing value
 
 script ControlValueManager
@@ -102,12 +102,12 @@ on will open theObject
 	set oldTextHistoryObj to makeObj("OldTextHistory", {}) of ComboBoxHistory
 	setComboBox(combo box "OldText" of box "SearchTextBox" of theObject) of oldTextHistoryObj
 	
-	set oldTextObj to registControl(a reference to contents of combo box "OldText" of box "SearchTextBox" of theObject, "LastOldText", "") of ControlValueManager
+	set _oldTextObj to registControl(a reference to contents of combo box "OldText" of box "SearchTextBox" of theObject, "LastOldText", "") of ControlValueManager
 	
 	set newTextHistoryObj to makeObj("NewTextHistory", {}) of ComboBoxHistory
 	setComboBox(combo box "NewText" of box "ReplaceTextbox" of theObject) of newTextHistoryObj
 	
-	set newTextObj to registControl(a reference to contents of combo box "NewText" of box "ReplaceTextBox" of theObject, "LastNewText", "") of ControlValueManager
+	set _newTextObj to registControl(a reference to contents of combo box "NewText" of box "ReplaceTextBox" of theObject, "LastNewText", "") of ControlValueManager
 	
 	set windowPosition to registControl(a reference to position of theObject, "WindowPosition", {0, 0}) of ControlValueManager
 	if currentValue of windowPosition is {0, 0} then
@@ -128,27 +128,29 @@ on clicked theObject
 		end if
 		
 		writeAllDefaults() of ControlValueManager
-		set oldString of RenameEngine to currentValue of oldTextObj
-		set newString of RenameEngine to currentValue of newTextObj
-		
-		addValueFromComboBox() of oldTextHistoryObj
-		writeDefaults() of oldTextHistoryObj
-		
-		addValueFromComboBox() of newTextHistoryObj
-		writeDefaults() of newTextHistoryObj
-		
-		hide theWindow
+		set _oldstring of RenameEngine to currentValue of _oldTextObj
+		set _newstring of RenameEngine to currentValue of _newTextObj
 		
 		if currentValue of modeIndexObj is 0 then
-			replaceContaine of RenameEngine for targetItems
+			set a_result to replaceContain of RenameEngine for targetItems
 		else if currentValue of modeIndexObj is 1 then
-			replaceBeginning of RenameEngine for targetItems
+			set a_result to replaceBeginning of RenameEngine for targetItems
 		else if currentValue of modeIndexObj is 2 then
-			replaceEnd of RenameEngine for targetItems
+			set a_result to replaceEnd of RenameEngine for targetItems
 		else if currentValue of modeIndexObj is 3 then
-			replaceRegularExp of RenameEngine for targetItems
+			set a_result to replaceRegularExp of RenameEngine for targetItems
 		end if
-		quit
+		
+		if a_result then
+			addValueFromComboBox() of oldTextHistoryObj
+			writeDefaults() of oldTextHistoryObj
+			
+			addValueFromComboBox() of newTextHistoryObj
+			writeDefaults() of newTextHistoryObj
+			
+			hide theWindow
+			quit
+		end if
 	else
 		close theWindow
 	end if

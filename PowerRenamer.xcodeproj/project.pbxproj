@@ -68,7 +68,7 @@
 		2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = RenameEngine.applescript; sourceTree = "<group>"; };
 		2C85C9810B7B266F00C89869 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
 		2C85C9820B7B266F00C89869 /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
-		2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; path = "Info-PowerRenamer.plist"; sourceTree = "<group>"; };
+		2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-PowerRenamer.plist"; sourceTree = "<group>"; };
 		2C85CB7D0B7B342900C89869 /* PowerRenamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerRenamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C85CBF40B7B37F700C89869 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = ../OgreKit.framework; sourceTree = SOURCE_ROOT; };
 		2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
@@ -352,6 +352,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -382,6 +383,7 @@
 					"$(SRCROOT)/..",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
@@ -410,6 +412,7 @@
 					"$(SRCROOT)/..",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer_____________.plist";
@@ -437,6 +440,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/..",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer_____________.plist";
