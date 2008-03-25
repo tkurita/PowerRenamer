@@ -20,38 +20,42 @@ property RenameEngine : missing value
 property oldTextHistoryObj : missing value
 property newTextHistoryObj : missing value
 
-property modeIndexObj : missing value
+property _mode_popup : missing value
 property _oldTextObj : missing value
 property _newTextObj : missing value
-property windowPosition : missing value
+property _window_position : missing value
 
 script ControlValueManager
-	property controlList : {}
+	property _controls : {}
 	
-	on registControl(theControl, theDefaultKey, theDefaultValue)
-		set theValue to readDefaultValue(theDefaultKey, theDefaultValue)
+	on register_control(theControl, a_default_key, theDefaultValue)
+		set theValue to readDefaultValue(a_default_key, theDefaultValue)
 		
 		set contents of theControl to theValue
 		
-		script ControlValueObj
-			property targetControlValue : theControl
-			property defaultKey : theDefaultKey
-			property currentValue : theValue
+		script ControlValue
+			property _control_val_ref : theControl
+			property _default_key : a_default_key
+			property _current_value : theValue
+			
+			on current_value()
+				return contents of _control_val_ref
+			end current_value
 			
 			on writeDefaults()
-				set currentValue to contents of targetControlValue
-				--set currentValue to contents of targetControl
-				set contents of default entry defaultKey of user defaults to currentValue
+				set _current_value to contents of _control_val_ref
+				--set _current_value to contents of targetControl
+				set contents of default entry _default_key of user defaults to _current_value
 			end writeDefaults
 		end script
 		
-		set end of controlList to ControlValueObj
-		return ControlValueObj
-	end registControl
+		set end of _controls to ControlValue
+		return ControlValue
+	end register_control
 	
 	on writeAllDefaults()
-		repeat with theItem in controlList
-			writeDefaults() of theItem
+		repeat with an_item in _controls
+			writeDefaults() of an_item
 		end repeat
 	end writeAllDefaults
 	
@@ -76,9 +80,9 @@ end importScript
 
 on launched theObject
 	(*
-	set theItem to alias ("Macintosh HD:Users:tkurita:Factories:Script factory:ProjectsX:PowerRenamer:test scripts:‚¾:" as Unicode text)
+	set an_item to alias ("Macintosh HD:Users:tkurita:Factories:Script factory:ProjectsX:PowerRenamer:test scripts:‚¾:" as Unicode text)
 	tell application "Finder"
-		set theName to name of theItem
+		set theName to name of an_item
 	end tell
 	set a_text to "‚¾" as Unicode text
 	--set theName to call method "normalizedString:" of theName with parameter 3
@@ -89,7 +93,6 @@ on launched theObject
 	quit
 	*)
 	--log "launched"
-	--log "sucsess OSAXChecker"
 	call method "remindDonation" of class "DonationReminder"
 	set ComboBoxHistory to importScript("ComboBoxHistory")
 	set RenameEngine to importScript("RenameEngine")
@@ -98,19 +101,19 @@ end launched
 
 on will open theObject
 	
-	set modeIndexObj to registControl(a reference to contents of popup button "modePopup" of box "SearchTextBox" of theObject, "ModeIndex", 0) of ControlValueManager
+	set _mode_popup to register_control(a reference to contents of popup button "modePopup" of box "SearchTextBox" of theObject, "ModeIndex", 0) of ControlValueManager
 	set oldTextHistoryObj to makeObj("OldTextHistory", {}) of ComboBoxHistory
 	setComboBox(combo box "OldText" of box "SearchTextBox" of theObject) of oldTextHistoryObj
 	
-	set _oldTextObj to registControl(a reference to contents of combo box "OldText" of box "SearchTextBox" of theObject, "LastOldText", "") of ControlValueManager
+	set _oldTextObj to register_control(a reference to contents of combo box "OldText" of box "SearchTextBox" of theObject, "LastOldText", "") of ControlValueManager
 	
 	set newTextHistoryObj to makeObj("NewTextHistory", {}) of ComboBoxHistory
 	setComboBox(combo box "NewText" of box "ReplaceTextbox" of theObject) of newTextHistoryObj
 	
-	set _newTextObj to registControl(a reference to contents of combo box "NewText" of box "ReplaceTextBox" of theObject, "LastNewText", "") of ControlValueManager
+	set _newTextObj to register_control(a reference to contents of combo box "NewText" of box "ReplaceTextBox" of theObject, "LastNewText", "") of ControlValueManager
 	
-	set windowPosition to registControl(a reference to position of theObject, "WindowPosition", {0, 0}) of ControlValueManager
-	if currentValue of windowPosition is {0, 0} then
+	set _window_position to register_control(a reference to position of theObject, "WindowPosition", {0, 0}) of ControlValueManager
+	if _window_position's current_value() is {0, 0} then
 		center theObject
 	end if
 end will open
@@ -127,21 +130,31 @@ on clicked theObject
 			return
 		end if
 		
+		(*
 		writeAllDefaults() of ControlValueManager
-		set _oldstring of RenameEngine to currentValue of _oldTextObj
-		set _newstring of RenameEngine to currentValue of _newTextObj
-		
-		if currentValue of modeIndexObj is 0 then
+		set _oldstring of RenameEngine to _current_value of _oldTextObj
+		set _newstring of RenameEngine to _current_value of _newTextObj
+		*)
+		(*
+		set _oldstring of RenameEngine to _oldTextObj's current_value()
+		set _newstring of RenameEngine to _newTextObj's current_value()
+		*)
+		RenameEngine's set_old_text(_oldTextObj's current_value())
+		RenameEngine's set_new_text(_newTextObj's current_value())
+		set a_mode to _mode_popup's current_value()
+		if a_mode is 0 then
 			set a_result to replaceContain of RenameEngine for targetItems
-		else if currentValue of modeIndexObj is 1 then
+		else if a_mode is 1 then
 			set a_result to replaceBeginning of RenameEngine for targetItems
-		else if currentValue of modeIndexObj is 2 then
+		else if a_mode is 2 then
 			set a_result to replaceEnd of RenameEngine for targetItems
-		else if currentValue of modeIndexObj is 3 then
+		else if a_mode is 3 then
 			set a_result to replaceRegularExp of RenameEngine for targetItems
 		end if
 		
 		if a_result then
+			writeAllDefaults() of ControlValueManager
+			
 			addValueFromComboBox() of oldTextHistoryObj
 			writeDefaults() of oldTextHistoryObj
 			
@@ -157,7 +170,7 @@ on clicked theObject
 end clicked
 
 on should close theObject
-	writeDefaults() of windowPosition
+	writeDefaults() of _window_position
 	quit
 end should close
 

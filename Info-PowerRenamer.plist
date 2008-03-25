@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>Japanese</string>
+	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>PowerRenamer</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.1 copyright 1999-2007, Tetsuro KURITA</string>
+	<string>2.1.1b copyright 1999-2008, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>PowerRenamer Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -23,11 +23,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1</string>
+	<string>2.1.1b</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.1</string>
+	<string>2.1.1b</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>

@@ -41,8 +41,8 @@ on makeObj(theDefaultEntryName, theList)
 		
 		on setComboBox(theComboBox)
 			set targetComboBox to theComboBox
-			repeat with theItem in valueList
-				make new combo box item at the end of combo box items of targetComboBox with data theItem
+			repeat with an_item in valueList
+				make new combo box item at the end of combo box items of targetComboBox with data an_item
 			end repeat
 		end setComboBox
 		
