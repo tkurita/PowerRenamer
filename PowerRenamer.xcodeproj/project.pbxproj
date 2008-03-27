@@ -29,7 +29,6 @@
 		2C85CB680B7B342900C89869 /* RenameEngine.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C85CB6A0B7B342900C89869 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		2C85CB6B0B7B342900C89869 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		2C85CB6C0B7B342900C89869 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD38AF0069E240200EB55D3 /* Localizable.strings */; };
 		2C85CB6E0B7B342900C89869 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		2C85CB6F0B7B342900C89869 /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85C9810B7B266F00C89869 /* StringExtra.m */; };
 		2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -41,6 +40,7 @@
 		2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C85CC210B7B398100C89869 /* FactorySettings.plist */; };
 		2C85CC300B7B3A1100C89869 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C85CC2E0B7B3A1100C89869 /* AppController.h */; };
 		2C85CC310B7B3A1100C89869 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */; };
+		2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6806D0D9B5ACC002301F5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,14 +70,14 @@
 		2C85C9810B7B266F00C89869 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
 		2C85C9820B7B266F00C89869 /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
 		2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-PowerRenamer.plist"; sourceTree = "<group>"; };
-		2C85CB7D0B7B342900C89869 /* PowerRenamer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PowerRenamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C85CB7D0B7B342900C89869 /* PowerRenamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerRenamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C85CBF40B7B37F700C89869 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = ../OgreKit.framework; sourceTree = SOURCE_ROOT; };
 		2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
 		2C85CC210B7B398100C89869 /* FactorySettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FactorySettings.plist; sourceTree = "<group>"; };
 		2C85CC2E0B7B3A1100C89869 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C85CC2F0B7B3A1100C89869 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C89DC1206620860003D40F6 /* ComboBoxHistory.applescript */ = {isa = PBXFileReference; explicitFileType = sourcecode.applescript; fileEncoding = "-2147483647"; path = ComboBoxHistory.applescript; sourceTree = SOURCE_ROOT; };
-		2CD38AF1069E240200EB55D3 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/localizable.strings; sourceTree = "<group>"; };
+		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = PowerRenamer.applescript; sourceTree = "<group>"; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -164,12 +164,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CC6806D0D9B5ACC002301F5 /* Localizable.strings */,
 				2C54277B0B7C05B900820867 /* HelpSetup.plist */,
 				2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
-				2CD38AF0069E240200EB55D3 /* Localizable.strings */,
 				2C85CC210B7B398100C89869 /* FactorySettings.plist */,
 			);
 			name = Resources;
@@ -243,9 +243,9 @@
 			files = (
 				2C85CB6A0B7B342900C89869 /* MainMenu.nib in Resources */,
 				2C85CB6B0B7B342900C89869 /* InfoPlist.strings in Resources */,
-				2C85CB6C0B7B342900C89869 /* Localizable.strings in Resources */,
 				2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */,
 				2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */,
+				2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,10 +297,10 @@
 			name = MainMenu.nib;
 			sourceTree = "<group>";
 		};
-		2CD38AF0069E240200EB55D3 /* Localizable.strings */ = {
+		2CC6806D0D9B5ACC002301F5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2CD38AF1069E240200EB55D3 /* English */,
+				2CC6806E0D9B5ACC002301F5 /* English */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
