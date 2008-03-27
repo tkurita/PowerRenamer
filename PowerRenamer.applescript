@@ -121,12 +121,13 @@ on will open theObject
 end will open
 
 on clicked theObject
+	--log "start clicked"
 	set theName to name of theObject
 	set theWindow to window of theObject
 	
 	if theName is "RenameButton" then
 		set targetItems to getTargetItems()
-		if targetItems is {} then
+		if targetItems is in {{}, missing value} then
 			set theMessage to localized string "NoSelection"
 			display dialog theMessage buttons {"OK"} default button "OK" attached to theWindow
 			return
@@ -172,7 +173,7 @@ on open theObject
 end open
 
 on getTargetItems()
-	set a_picker to FinderSelection's make_for_item()
+	set a_picker to FinderSelection's make_for_item()'s set_use_insertion_location(false)
 	a_picker's set_prompt_message("Choose items to rename.")
 	a_picker's set_use_chooser(false)
 	try
