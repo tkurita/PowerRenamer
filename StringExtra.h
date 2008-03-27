@@ -6,6 +6,7 @@
 
 -(NSMutableArray *) splitWithCharacterSet:(NSCharacterSet *)delimiters;
 
+- (NSString *)replaceForPattern:(NSString *)aPattern withString:(NSString *)aString;
 // get file type from POSX path
 // mainly called from AppleScript
 -(NSString *)hfsFileType;

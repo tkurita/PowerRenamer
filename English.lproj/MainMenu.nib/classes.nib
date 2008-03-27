@@ -4,6 +4,7 @@
             ACTIONS = {makeDonation = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
+            OUTLETS = {mainWindow = id; }; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }

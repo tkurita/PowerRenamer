@@ -1,4 +1,5 @@
 #import "AppController.h"
+#import "StringExtra.h"
 #import "DonationReminder/DonationReminder.h"
 
 #define useLog 0
@@ -19,5 +20,24 @@
 	
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults registerDefaults:factory_defaults];
+}
+
+- (NSString *)regexReplace:(NSString *)sourceString withPattern:(NSString *)aPattern withString:(NSString *)aString
+{
+	NSString *result = nil;
+	@try {
+		result = [sourceString replaceForPattern:(NSString *)aPattern
+										withString:(NSString *)aString];
+	}
+	@catch (NSException *exception) {
+		//NSLog(@"main: Caught %@: %@", [exception name], [exception reason]);
+		NSAlert *alert = [NSAlert alertWithMessageText:@"Reqular Expression Error" 
+							defaultButton:@"OK" alternateButton:nil otherButton:nil 
+							informativeTextWithFormat:[exception reason]];
+		[alert beginSheetModalForWindow:mainWindow modalDelegate:nil
+									didEndSelector:nil contextInfo:nil];
+	}
+	
+	return result;
 }
 @end

@@ -6,17 +6,17 @@
 - (NSString *)replaceForPattern:(NSString *)aPattern withString:(NSString *)aString
 {
 	OGRegularExpression  *regex;
-	@try {
+//	@try {
 		regex = [OGRegularExpression regularExpressionWithString:aPattern];
-	}
-	@catch (NSException *exception) {
-		//NSLog(@"main: Caught %@: %@", [exception name], [exception reason]);
-		NSAlert *alert = [NSAlert alertWithMessageText:@"Reqular Expression Error" 
-							defaultButton:@"OK" alternateButton:nil otherButton:nil 
-							informativeTextWithFormat:[exception reason]];
-		[alert runModal];
-		return nil;
-	}
+//	}
+//	@catch (NSException *exception) {
+//		//NSLog(@"main: Caught %@: %@", [exception name], [exception reason]);
+//		NSAlert *alert = [NSAlert alertWithMessageText:@"Reqular Expression Error" 
+//							defaultButton:@"OK" alternateButton:nil otherButton:nil 
+//							informativeTextWithFormat:[exception reason]];
+//		[alert runModal];
+//		return nil;
+//	}
 	return [regex replaceAllMatchesInString:self withString:aString];
 }
 

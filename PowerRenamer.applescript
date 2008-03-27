@@ -2,6 +2,7 @@ property FinderSelection : missing value
 property PathAnalyzer : missing value
 property XText : missing value
 property UniqueNamer : missing value
+property _app_controller : missing value
 
 on __load__(loader)
 	tell loader
@@ -96,6 +97,7 @@ on launched theObject
 	call method "remindDonation" of class "DonationReminder"
 	set ComboBoxHistory to importScript("ComboBoxHistory")
 	set RenameEngine to importScript("RenameEngine")
+	set _app_controller to call method "delegate"
 	show window "Main"
 end launched
 

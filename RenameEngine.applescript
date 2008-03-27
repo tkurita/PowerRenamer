@@ -1,6 +1,7 @@
 global XText
 global UniqueNamer
 global PathAnalyzer
+global _app_controller
 
 property _oldstring : ""
 property _newstring : ""
@@ -89,14 +90,16 @@ on replaceRegularExp for theList
 	repeat with ith from 1 to length of theList
 		set an_item to item ith of theList
 		set oldName to PathAnalyzer's name_of(an_item)
-		set newName to call method "replaceForPattern:withString:" of oldName with parameters {_oldstring, _newstring}
+		set newName to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {oldName, _oldstring, _newstring}
+		--set newName to call method "replaceForPattern:withString:" of oldName with parameters {_oldstring, _newstring}
 		try
-			if newName is not oldName then
-				setName for an_item by newName
-			end if
+			get newName
 		on error
 			return false
 		end try
+		if newName is not oldName then
+			setName for an_item by newName
+		end if
 	end repeat
 	return true
 end replaceRegularExp
