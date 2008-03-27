@@ -614,6 +614,9 @@
 			2C32635B0D9B385300631FC8 /* PBXTextBookmark */ = 2C32635B0D9B385300631FC8 /* PBXTextBookmark */;
 			2C32635E0D9B385300631FC8 /* PBXTextBookmark */ = 2C32635E0D9B385300631FC8 /* PBXTextBookmark */;
 			2C32635F0D9B385300631FC8 /* PBXTextBookmark */ = 2C32635F0D9B385300631FC8 /* PBXTextBookmark */;
+			2C3263660D9B389700631FC8 /* PBXTextBookmark */ = 2C3263660D9B389700631FC8 /* PBXTextBookmark */;
+			2C3263670D9B389700631FC8 /* PBXTextBookmark */ = 2C3263670D9B389700631FC8 /* PBXTextBookmark */;
+			2C3263770D9B38C500631FC8 /* PBXTextBookmark */ = 2C3263770D9B38C500631FC8 /* PBXTextBookmark */;
 			2C4A6D380C3CE57F00DBBCD4 = 2C4A6D380C3CE57F00DBBCD4 /* PBXTextBookmark */;
 			2C5427920B7C064100820867 = 2C5427920B7C064100820867 /* PBXTextBookmark */;
 			2C54280B0B7C073B00820867 = 2C54280B0B7C073B00820867 /* PBXTextBookmark */;
@@ -644,6 +647,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {648, 192}}";
 			sepNavSelRange = "{217, 0}";
 			sepNavVisRect = "{{0, 0}, {648, 153}}";
+			sepNavWindowFrame = "{{61, 352}, {722, 539}}";
 		};
 	};
 	2C0AD6200C3B455D00E2B397 /* PBXTextBookmark */ = {
@@ -722,7 +726,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */;
 		name = "PowerRenamer.applescript: 199";
 		rLen = 0;
-		rLoc = 6255;
+		rLoc = 5927;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -755,6 +759,36 @@
 		rLoc = 93;
 		rType = 0;
 		vrLen = 1010;
+		vrLoc = 0;
+	};
+	2C3263660D9B389700631FC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */;
+		name = "RenameEngine.applescript: 133";
+		rLen = 0;
+		rLoc = 3726;
+		rType = 0;
+		vrLen = 666;
+		vrLoc = 2463;
+	};
+	2C3263670D9B389700631FC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */;
+		name = "RenameEngine.applescript: 133";
+		rLen = 0;
+		rLoc = 3726;
+		rType = 0;
+		vrLen = 101;
+		vrLoc = 0;
+	};
+	2C3263770D9B38C500631FC8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */;
+		name = "PowerRenamer.applescript: 190";
+		rLen = 0;
+		rLoc = 5927;
+		rType = 0;
+		vrLen = 0;
 		vrLoc = 0;
 	};
 	2C45FA5606619CBB001AE79E /* Source Control */ = {
@@ -813,7 +847,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */;
 		name = "PowerRenamer.applescript: 197";
 		rLen = 0;
-		rLoc = 6255;
+		rLoc = 5927;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -842,7 +876,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {874, 2261}}";
 			sepNavSelRange = "{3726, 0}";
-			sepNavVisRect = "{{0, 0}, {752, 91}}";
+			sepNavVisRect = "{{0, 1543}, {752, 349}}";
 			sepNavWindowFrame = "{{15, 154}, {731, 779}}";
 		};
 	};
@@ -861,7 +895,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {683, 1040}}";
 			sepNavSelRange = "{93, 83}";
 			sepNavVisRect = "{{0, 0}, {683, 466}}";
-			sepNavWindowFrame = "{{153, 133}, {1201, 765}}";
+			sepNavWindowFrame = "{{153, 359}, {722, 539}}";
 		};
 	};
 	2C85C9820B7B266F00C89869 /* StringExtra.h */ = {
@@ -950,7 +984,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {825, 704}}";
 			sepNavSelRange = "{981, 0}";
 			sepNavVisRect = "{{0, 0}, {694, 558}}";
-			sepNavWindowFrame = "{{15, 200}, {753, 733}}";
+			sepNavWindowFrame = "{{568, 265}, {733, 631}}";
 		};
 	};
 	2C85CC850B7B3CBB00C89869 /* AppController.m:18 */ = {
@@ -983,7 +1017,7 @@
 		fRef = 2C85C9810B7B266F00C89869 /* StringExtra.m */;
 		name = normalizedString;
 		rLen = 16;
-		rLoc = 742;
+		rLoc = 369;
 		rType = 0;
 		vrLen = 160;
 		vrLoc = 179;
@@ -1021,7 +1055,7 @@
 		fRef = DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */;
 		name = "PowerRenamer.applescript: 197";
 		rLen = 0;
-		rLoc = 6255;
+		rLoc = 5927;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1071,7 +1105,7 @@
 		fRef = 2C85C9810B7B266F00C89869 /* StringExtra.m */;
 		name = "return [regex replaceAllMatchesInString:self withString:aString];";
 		rLen = 67;
-		rLoc = 651;
+		rLoc = 278;
 		rType = 0;
 		vrLen = 270;
 		vrLoc = 287;
@@ -1106,8 +1140,8 @@
 	};
 	DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1037, 3383}}";
-			sepNavSelRange = "{6255, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1037, 3230}}";
+			sepNavSelRange = "{5927, 0}";
 			sepNavVisRect = "{{0, 0}, {0, 0}}";
 			sepNavWindowFrame = "{{396, 155}, {753, 733}}";
 		};

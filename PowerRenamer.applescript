@@ -132,15 +132,6 @@ on clicked theObject
 			return
 		end if
 		
-		(*
-		writeAllDefaults() of ControlValueManager
-		set _oldstring of RenameEngine to _current_value of _oldTextObj
-		set _newstring of RenameEngine to _current_value of _newTextObj
-		*)
-		(*
-		set _oldstring of RenameEngine to _oldTextObj's current_value()
-		set _newstring of RenameEngine to _newTextObj's current_value()
-		*)
 		RenameEngine's set_old_text(_oldTextObj's current_value())
 		RenameEngine's set_new_text(_newTextObj's current_value())
 		set a_mode to _mode_popup's current_value()
