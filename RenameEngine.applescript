@@ -23,12 +23,11 @@ on replace_endding for a_list
 			set oldName to name of an_item
 		end tell
 		set oldName to call method "normalizedString:" of oldName with parameter 3
-		--set oldName to NormalizeUnicode oldName normalizationForm "NFKC"
 		if oldName ends with _oldstring then
-			if oldLength > 1 then
+			if oldLength > 0 then
 				set newName to (text 1 thru (-1 - oldLength) of oldName) & _newstring
 			else
-				set newName to _newstring
+				set newName to oldName & _newstring
 			end if
 			
 			if newName is not oldName then
@@ -41,20 +40,19 @@ end replace_endding
 
 on replace_beginning for a_list
 	set oldLength to length of _oldstring
-	
+	log _oldstring
+	log oldLength
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
 		set oldName to PathAnalyzer's name_of(an_item)
 		set oldName to call method "normalizedString:" of oldName with parameter 3
-		--set oldName to NormalizeUnicode oldName normalizationForm "NFKC"
 		if oldName starts with _oldstring then
-			if oldLength > 1 then
+			if oldLength > 0 then
 				set newName to _newstring & (text (oldLength + 1) thru -1 of oldName)
 			else
-				set newName to _newstring
+				set newName to _newstring & oldName
 			end if
 			if newName is not oldName then
-				--if not is_same_unicode(newName, oldName) then
 				change_name for an_item by newName
 			end if
 		end if
@@ -64,12 +62,13 @@ end replace_beginning
 
 on replace_containing for a_list
 	set oldLength to length of _oldstring
-	
+	if oldLength < 1 then
+		return false
+	end if
 	store_delimiters() of XText
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
 		set oldName to PathAnalyzer's name_of(an_item)
-		--set oldName to NormalizeUnicode oldName normalizationForm "NFKC"
 		set oldName to call method "normalizedString:" of oldName with parameter 3
 		if oldName contains _oldstring then
 			set newName to replace of XText for oldName from _oldstring by _newstring

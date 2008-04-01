@@ -32,7 +32,7 @@ on setComboBox(theComboBox)
 end setComboBox
 
 on writeDefaults()
-	set contents of default entry (my _default_entry_name of user defaults) to my _values
+	set contents of default entry (my _default_entry_name) of user defaults to my _values
 end writeDefaults
 
 on make_with(a_default_entry_name, a_list)
