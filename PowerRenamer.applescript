@@ -83,13 +83,13 @@ on launched theObject
 	(*
 	set an_item to alias ("Macintosh HD:Users:tkurita:Factories:Script factory:ProjectsX:PowerRenamer:test scripts:‚¾:" as Unicode text)
 	tell application "Finder"
-		set theName to name of an_item
+		set a_name to name of an_item
 	end tell
 	set a_text to "‚¾" as Unicode text
-	--set theName to call method "normalizedString:" of theName with parameter 3
-	log theName contains a_text
-	--set a_result to call method "isEqualToNormalizedString:" of theName with parameter ("‚¾" as Unicode text)
-	--log (theName as Unicode text) starts with ("‚¾" as Unicode text)
+	--set a_name to call method "normalizedString:" of a_name with parameter 3
+	log a_name contains a_text
+	--set a_result to call method "isEqualToNormalizedString:" of a_name with parameter ("‚¾" as Unicode text)
+	--log (a_name as Unicode text) starts with ("‚¾" as Unicode text)
 	--log a_result
 	quit
 	*)
@@ -122,14 +122,14 @@ end will open
 
 on clicked theObject
 	--log "start clicked"
-	set theName to name of theObject
-	set theWindow to window of theObject
+	set a_name to name of theObject
+	set a_window to window of theObject
 	
-	if theName is "RenameButton" then
-		set targetItems to getTargetItems()
-		if targetItems is in {{}, missing value} then
-			set theMessage to localized string "NoSelection"
-			display dialog theMessage buttons {"OK"} default button "OK" attached to theWindow
+	if a_name is "RenameButton" then
+		set pathes to target_items()
+		if pathes is in {{}, missing value} then
+			set msg to localized string "NoSelection"
+			display dialog msg buttons {"OK"} default button "OK" attached to a_window
 			return
 		end if
 		
@@ -137,13 +137,13 @@ on clicked theObject
 		RenameEngine's set_new_text(_newTextObj's current_value())
 		set a_mode to _mode_popup's current_value()
 		if a_mode is 0 then
-			set a_result to replaceContain of RenameEngine for targetItems
+			set a_result to replace_containing of RenameEngine for pathes
 		else if a_mode is 1 then
-			set a_result to replaceBeginning of RenameEngine for targetItems
+			set a_result to replace_beginning of RenameEngine for pathes
 		else if a_mode is 2 then
-			set a_result to replaceEnd of RenameEngine for targetItems
+			set a_result to replace_endding of RenameEngine for pathes
 		else if a_mode is 3 then
-			set a_result to replaceRegularExp of RenameEngine for targetItems
+			set a_result to replace_regexp of RenameEngine for pathes
 		end if
 		
 		if a_result then
@@ -155,11 +155,11 @@ on clicked theObject
 			addValueFromComboBox() of newTextHistoryObj
 			writeDefaults() of newTextHistoryObj
 			
-			hide theWindow
+			hide a_window
 			quit
 		end if
 	else
-		close theWindow
+		close a_window
 	end if
 end clicked
 
@@ -172,10 +172,14 @@ on open theObject
 	(*Add your script here.*)
 end open
 
-on getTargetItems()
-	set a_picker to FinderSelection's make_for_item()'s set_use_insertion_location(false)
-	a_picker's set_prompt_message("Choose items to rename.")
-	a_picker's set_use_chooser(false)
+on target_items()
+	set a_picker to FinderSelection's make_for_item()
+	tell a_picker
+		set_use_insertion_location(false)
+		set_resolve_alias(false)
+		set_prompt_message("Choose items to rename.")
+		set_use_chooser(false)
+	end tell
 	try
 		set a_list to a_picker's get_selection()
 	on error msg number errno
@@ -188,4 +192,4 @@ on getTargetItems()
 	end try
 	
 	return a_list
-end getTargetItems
+end target_items

@@ -1,12 +1,12 @@
-on makeObj(theDefaultEntryName, theList)
+on makeObj(theDefaultEntryName, a_list)
 	if exists default entry theDefaultEntryName of user defaults then
-		set theList to contents of default entry theDefaultEntryName of user defaults
+		set a_list to contents of default entry theDefaultEntryName of user defaults
 	else
-		make new default entry at end of default entries of user defaults with properties {name:theDefaultEntryName, contents:theList}
+		make new default entry at end of default entries of user defaults with properties {name:theDefaultEntryName, contents:a_list}
 	end if
 	
 	script ComboBoxHisotry
-		property valueList : theList
+		property valueList : a_list
 		property maxNum : 10
 		property isChanged : false
 		property targetComboBox : missing value

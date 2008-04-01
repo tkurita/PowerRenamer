@@ -14,11 +14,11 @@ on set_old_text(a_text)
 	set my _oldstring to a_text
 end set_old_text
 
-on replaceEnd for theList
+on replace_endding for a_list
 	set oldLength to length of _oldstring
 	
-	repeat with ith from 1 to length of theList
-		set an_item to item ith of theList
+	repeat with ith from 1 to length of a_list
+		set an_item to item ith of a_list
 		tell application "Finder"
 			set oldName to name of an_item
 		end tell
@@ -32,21 +32,19 @@ on replaceEnd for theList
 			end if
 			
 			if newName is not oldName then
-				setName for an_item by newName
+				change_name for an_item by newName
 			end if
 		end if
 	end repeat
 	return true
-end replaceEnd
+end replace_endding
 
-on replaceBeginning for theList
+on replace_beginning for a_list
 	set oldLength to length of _oldstring
 	
-	repeat with ith from 1 to length of theList
-		set an_item to item ith of theList
-		tell application "Finder"
-			set oldName to name of an_item
-		end tell
+	repeat with ith from 1 to length of a_list
+		set an_item to item ith of a_list
+		set oldName to PathAnalyzer's name_of(an_item)
 		set oldName to call method "normalizedString:" of oldName with parameter 3
 		--set oldName to NormalizeUnicode oldName normalizationForm "NFKC"
 		if oldName starts with _oldstring then
@@ -57,77 +55,74 @@ on replaceBeginning for theList
 			end if
 			if newName is not oldName then
 				--if not is_same_unicode(newName, oldName) then
-				setName for an_item by newName
+				change_name for an_item by newName
 			end if
 		end if
 	end repeat
 	return true
-end replaceBeginning
+end replace_beginning
 
-on replaceContain for theList
+on replace_containing for a_list
 	set oldLength to length of _oldstring
 	
 	store_delimiters() of XText
-	repeat with ith from 1 to length of theList
-		set an_item to item ith of theList
-		tell application "Finder"
-			set oldName to name of an_item
-		end tell
+	repeat with ith from 1 to length of a_list
+		set an_item to item ith of a_list
+		set oldName to PathAnalyzer's name_of(an_item)
 		--set oldName to NormalizeUnicode oldName normalizationForm "NFKC"
 		set oldName to call method "normalizedString:" of oldName with parameter 3
 		if oldName contains _oldstring then
 			set newName to replace of XText for oldName from _oldstring by _newstring
 			if newName is not oldName then
-				setName for an_item by newName
+				change_name for an_item by newName
 			end if
 		end if
 	end repeat
 	restore_delimiters() of XText
 	return true
-end replaceContain
+end replace_containing
 
-on replaceRegularExp for theList
-	repeat with ith from 1 to length of theList
-		set an_item to item ith of theList
+on replace_regexp for a_list
+	repeat with ith from 1 to length of a_list
+		set an_item to item ith of a_list
 		set oldName to PathAnalyzer's name_of(an_item)
 		set newName to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {oldName, _oldstring, _newstring}
-		--set newName to call method "replaceForPattern:withString:" of oldName with parameters {_oldstring, _newstring}
 		try
 			get newName
 		on error
 			return false
 		end try
 		if newName is not oldName then
-			setName for an_item by newName
+			change_name for an_item by newName
 		end if
 	end repeat
 	return true
-end replaceRegularExp
+end replace_regexp
 
-on setName for an_item by theName
+on change_name for an_item by a_name
 	try
 		tell application "Finder"
-			set name of an_item to theName
+			set name of file an_item to a_name
 		end tell
-		--renameFile an_item to theName
+		--renameFile an_item to a_name
 	on error errMsg number errn
 		if errn is in {-37, -48} then -- -48 : same name  -37: invalid name
 			set theLocation to PathAnalyzer's folder_of(an_item)
-			set theName to do of UniqueNamer about theName at theLocation
+			set a_name to do of UniqueNamer about a_name at theLocation
 			tell application "Finder"
-				set name of an_item to theName
+				set name of file an_item to a_name
 			end tell
 		else
 			display dialog (errn as string) & return & errMsg
 		end if
 	end try
-end setName
+end change_name
 
-on forceQuit about theMessage
+on forceQuit about msg
 	beep
 	activate
-	if (theMessage is not "Skip") then
-		display dialog theMessage buttons {"OK"} default button "OK" with icon 0 -- stop icon
+	if (msg is not "Skip") then
+		display dialog msg buttons {"OK"} default button "OK" with icon 0 -- stop icon
 	end if
 	error number -128
 end forceQuit
