@@ -1,55 +1,54 @@
-on makeObj(theDefaultEntryName, a_list)
-	if exists default entry theDefaultEntryName of user defaults then
-		set a_list to contents of default entry theDefaultEntryName of user defaults
+on addValueFromComboBox()
+	set a_value to contents of contents of my _target_control
+	addValue(a_value)
+end addValueFromComboBox
+
+on addValue(a_value)
+	if a_value is not my _ignoring_value then
+		if a_value is not in my _values then
+			set beginning of my _values to a_value
+			if length of my _values > my _maxNum then
+				set my _values to items 1 thru (my _maxNum) of my _values
+			end if
+		else
+			set tmpList to {}
+			repeat with ith from 1 to (length of my _values)
+				set tmpValue to item ith of my _values
+				if tmpValue is not a_value then
+					set beginning of tmpList to tmpValue
+				end if
+			end repeat
+			set beginning of tmpList to a_value
+			set my _values to tmpList
+		end if
+	end if
+end addValue
+
+on setComboBox(theComboBox)
+	set my _target_control to theComboBox
+	repeat with an_item in my _values
+		make new combo box item at the end of combo box items of my _target_control with data an_item
+	end repeat
+end setComboBox
+
+on writeDefaults()
+	set contents of default entry (my _default_entry_name of user defaults) to my _values
+end writeDefaults
+
+on make_with(a_default_entry_name, a_list)
+	if exists default entry a_default_entry_name of user defaults then
+		set a_list to contents of default entry a_default_entry_name of user defaults
 	else
-		make new default entry at end of default entries of user defaults with properties {name:theDefaultEntryName, contents:a_list}
+		make new default entry at end of default entries of user defaults with properties {name:a_default_entry_name, contents:a_list}
 	end if
 	
 	script ComboBoxHisotry
-		property valueList : a_list
-		property maxNum : 10
-		property isChanged : false
-		property targetComboBox : missing value
-		property defaultEntryName : theDefaultEntryName
-		property ignoringValue : ""
-		
-		on addValueFromComboBox()
-			set theValue to contents of contents of targetComboBox
-			addValue(theValue)
-		end addValueFromComboBox
-		
-		on addValue(theValue)
-			if theValue is not ignoringValue then
-				if theValue is not in valueList then
-					set beginning of valueList to theValue
-					if length of valueList > maxNum then
-						set valueList to items 1 thru maxNum of valueList
-					end if
-				else
-					set tmpList to {}
-					repeat with ith from 1 to (length of valueList)
-						set tmpValue to item ith of valueList
-						if tmpValue is not theValue then
-							set beginning of tmpList to tmpValue
-						end if
-					end repeat
-					set beginning of tmpList to theValue
-					set valueList to tmpList
-				end if
-			end if
-		end addValue
-		
-		on setComboBox(theComboBox)
-			set targetComboBox to theComboBox
-			repeat with an_item in valueList
-				make new combo box item at the end of combo box items of targetComboBox with data an_item
-			end repeat
-		end setComboBox
-		
-		on writeDefaults()
-			set contents of default entry defaultEntryName of user defaults to valueList
-		end writeDefaults
+		property _values : a_list
+		property _maxNum : 10
+		property _target_control : missing value
+		property _default_entry_name : a_default_entry_name
+		property _ignoring_value : ""
 	end script
 	
 	return ComboBoxHisotry
-end makeObj
+end make_with

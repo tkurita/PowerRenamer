@@ -30,14 +30,14 @@ script ControlValueManager
 	property _controls : {}
 	
 	on register_control(theControl, a_default_key, theDefaultValue)
-		set theValue to readDefaultValue(a_default_key, theDefaultValue)
+		set a_value to readDefaultValue(a_default_key, theDefaultValue)
 		
-		set contents of theControl to theValue
+		set contents of theControl to a_value
 		
 		script ControlValue
 			property _control_val_ref : theControl
 			property _default_key : a_default_key
-			property _current_value : theValue
+			property _current_value : a_value
 			
 			on current_value()
 				return contents of _control_val_ref
@@ -104,12 +104,12 @@ end launched
 on will open theObject
 	
 	set _mode_popup to register_control(a reference to contents of popup button "modePopup" of box "SearchTextBox" of theObject, "ModeIndex", 0) of ControlValueManager
-	set oldTextHistoryObj to makeObj("OldTextHistory", {}) of ComboBoxHistory
+	set oldTextHistoryObj to make_with("OldTextHistory", {}) of ComboBoxHistory
 	setComboBox(combo box "OldText" of box "SearchTextBox" of theObject) of oldTextHistoryObj
 	
 	set _oldTextObj to register_control(a reference to contents of combo box "OldText" of box "SearchTextBox" of theObject, "LastOldText", "") of ControlValueManager
 	
-	set newTextHistoryObj to makeObj("NewTextHistory", {}) of ComboBoxHistory
+	set newTextHistoryObj to make_with("NewTextHistory", {}) of ComboBoxHistory
 	setComboBox(combo box "NewText" of box "ReplaceTextbox" of theObject) of newTextHistoryObj
 	
 	set _newTextObj to register_control(a reference to contents of combo box "NewText" of box "ReplaceTextBox" of theObject, "LastNewText", "") of ControlValueManager
