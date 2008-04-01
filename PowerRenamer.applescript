@@ -43,22 +43,22 @@ script ControlValueManager
 				return contents of _control_val_ref
 			end current_value
 			
-			on writeDefaults()
+			on write_defaults()
 				set _current_value to contents of _control_val_ref
 				--set _current_value to contents of targetControl
 				set contents of default entry _default_key of user defaults to _current_value
-			end writeDefaults
+			end write_defaults
 		end script
 		
 		set end of _controls to ControlValue
 		return ControlValue
 	end register_control
 	
-	on writeAllDefaults()
+	on write_all_defaults()
 		repeat with an_item in _controls
-			writeDefaults() of an_item
+			write_defaults() of an_item
 		end repeat
-	end writeAllDefaults
+	end write_all_defaults
 	
 	on readDefaultValue(entryName, defaultValue)
 		tell user defaults
@@ -138,6 +138,9 @@ on clicked theObject
 		set a_mode to _mode_popup's current_value()
 		if a_mode is 0 then
 			set a_result to replace_containing of RenameEngine for pathes
+			if (not a_result) and (_oldTextObj's current_value() is "") then
+				display alert (localized string "EnterSearchText") attached to a_window
+			end if
 		else if a_mode is 1 then
 			set a_result to replace_beginning of RenameEngine for pathes
 		else if a_mode is 2 then
@@ -147,13 +150,13 @@ on clicked theObject
 		end if
 		
 		if a_result then
-			writeAllDefaults() of ControlValueManager
+			write_all_defaults() of ControlValueManager
 			
 			addValueFromComboBox() of oldTextHistoryObj
-			writeDefaults() of oldTextHistoryObj
+			write_defaults() of oldTextHistoryObj
 			
 			addValueFromComboBox() of newTextHistoryObj
-			writeDefaults() of newTextHistoryObj
+			write_defaults() of newTextHistoryObj
 			
 			hide a_window
 			quit
@@ -164,7 +167,7 @@ on clicked theObject
 end clicked
 
 on should close theObject
-	writeDefaults() of _window_position
+	write_defaults() of _window_position
 	quit
 end should close
 

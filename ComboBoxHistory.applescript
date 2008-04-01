@@ -31,9 +31,9 @@ on setComboBox(theComboBox)
 	end repeat
 end setComboBox
 
-on writeDefaults()
+on write_defaults()
 	set contents of default entry (my _default_entry_name) of user defaults to my _values
-end writeDefaults
+end write_defaults
 
 on make_with(a_default_entry_name, a_list)
 	if exists default entry a_default_entry_name of user defaults then

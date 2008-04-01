@@ -185,7 +185,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>2C95F2CE0DA299F700781873</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>PowerRenamer.applescript</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>2C95F2CF0DA299F700781873</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>PowerRenamer.applescript</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>2C95F2E80DA29AC200781873</string>
+						<key>history</key>
+						<array>
+							<string>2C95F2C90DA2992900781873</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {753, 692}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>396 155 753 733 0 0 1440 938 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -196,6 +237,8 @@
 		<dict>
 			<key>ChosenToolbarItems</key>
 			<array>
+				<string>XCToolbarPerspectiveControl</string>
+				<string>NSToolbarSeparatorItem</string>
 				<string>active-target-popup</string>
 				<string>active-buildstyle-popup</string>
 				<string>action</string>
@@ -220,8 +263,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -272,8 +313,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
-									<integer>2</integer>
+									<integer>9</integer>
+									<integer>8</integer>
+									<integer>6</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -325,7 +367,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C95F25B0DA2929000781873</string>
+										<string>2C95F2E70DA29AC200781873</string>
 										<key>history</key>
 										<array>
 											<string>2C85C81F0B7B1E9100C89869</string>
@@ -372,6 +414,8 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -548,6 +592,7 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>2C85C6CF0B7B114000C89869</string>
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
+		<string>2C95F2CE0DA299F700781873</string>
 	</array>
 	<key>WindowString</key>
 	<string>71 547 889 371 0 0 1440 938 </string>
@@ -795,6 +840,8 @@
 							<string>300pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -966,7 +1013,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {907, 299}}</string>
 								<key>RubberWindowFrame</key>
-								<string>96 533 907 340 0 0 1440 938 </string>
+								<string>495 534 907 340 0 0 1440 938 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXRunSessionModule</string>
@@ -996,7 +1043,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
 			<key>WindowString</key>
-			<string>96 533 907 340 0 0 1440 938 </string>
+			<string>495 534 907 340 0 0 1440 938 </string>
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
