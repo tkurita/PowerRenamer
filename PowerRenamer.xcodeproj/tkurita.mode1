@@ -196,8 +196,6 @@
 		<dict>
 			<key>ChosenToolbarItems</key>
 			<array>
-				<string>XCToolbarPerspectiveControl</string>
-				<string>NSToolbarSeparatorItem</string>
 				<string>active-target-popup</string>
 				<string>active-buildstyle-popup</string>
 				<string>action</string>
@@ -222,8 +220,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -326,7 +322,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CF52D010DA26D58004844AD</string>
+										<string>2C95F2230DA28BF700781873</string>
 										<key>history</key>
 										<array>
 											<string>2C85C81F0B7B1E9100C89869</string>
@@ -338,7 +334,7 @@
 											<string>2CAD6FC50D97C3B1004262A1</string>
 											<string>2CAD6FC60D97C3B1004262A1</string>
 											<string>2CAD6FF20D97CA39004262A1</string>
-											<string>2CC6808C0D9B5BC5002301F5</string>
+											<string>2CF52D1B0DA26E37004844AD</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -373,6 +369,8 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -409,9 +407,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2CF52BF80DA26620004844AD</string>
+				<string>2C95F2240DA28BF700781873</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2CF52BF90DA26620004844AD</string>
+				<string>2C95F2250DA28BF700781873</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -545,10 +543,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>2C85C6CF0B7B114000C89869</string>
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>71 547 889 371 0 0 1440 938 </string>
@@ -1005,7 +1000,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
