@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IsLocalized</key>
-	<false/>
+	<true/>
 	<key>ManualFolder</key>
 	<string>/Users/tkurita/Factories/Websites/scriptfactory/web-content/Softwares/FinderHelpers/PowerRenamer/manual</string>
 	<key>ManualPage</key>
