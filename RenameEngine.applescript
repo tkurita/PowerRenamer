@@ -40,8 +40,6 @@ end replace_endding
 
 on replace_beginning for a_list
 	set oldLength to length of _oldstring
-	log _oldstring
-	log oldLength
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
 		set oldName to PathAnalyzer's name_of(an_item)
@@ -101,15 +99,14 @@ end replace_regexp
 on change_name for an_item by a_name
 	try
 		tell application "Finder"
-			set name of file an_item to a_name
+			set name of item an_item to a_name
 		end tell
-		--renameFile an_item to a_name
 	on error errMsg number errn
 		if errn is in {-37, -48} then -- -48 : same name  -37: invalid name
-			set theLocation to PathAnalyzer's folder_of(an_item)
-			set a_name to do of UniqueNamer about a_name at theLocation
+			set a_location to PathAnalyzer's folder_of(an_item)
+			set a_name to do of UniqueNamer about a_name at a_location
 			tell application "Finder"
-				set name of file an_item to a_name
+				set name of item an_item to a_name
 			end tell
 		else
 			display dialog (errn as string) & return & errMsg
