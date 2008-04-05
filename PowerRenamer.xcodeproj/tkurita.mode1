@@ -185,7 +185,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>2CFECB470DA7289500B71224</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>RenameEngine.applescript</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>2CFECB480DA7289500B71224</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>RenameEngine.applescript</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>2CFECB600DA7290B00B71224</string>
+						<key>history</key>
+						<array>
+							<string>2CFECB430DA7287200B71224</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {611, 723}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 169 611 764 0 0 1440 938 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -220,6 +261,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -323,7 +366,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CFECB380DA7276B00B71224</string>
+										<string>2CFECB5F0DA7290B00B71224</string>
 										<key>history</key>
 										<array>
 											<string>2C85C81F0B7B1E9100C89869</string>
@@ -370,8 +413,6 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -544,9 +585,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>2C85C6CF0B7B114000C89869</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
+		<string>2CFECB470DA7289500B71224</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>71 548 889 371 0 0 1440 938 </string>
@@ -773,7 +816,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PowerRenamer.applescript</string>
+										<string>RenameEngine.applescript</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -831,8 +874,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>2C95F2540DA2928A00781873</string>
-				<string>2C95F2550DA2928A00781873</string>
+				<string>2CFECB510DA728CB00B71224</string>
+				<string>2CFECB520DA728CB00B71224</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

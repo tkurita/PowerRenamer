@@ -15,23 +15,21 @@ on set_old_text(a_text)
 end set_old_text
 
 on replace_endding for a_list
-	set oldLength to length of _oldstring
+	set old_length to length of _oldstring
 	
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
-		tell application "Finder"
-			set oldName to name of an_item
-		end tell
-		set oldName to call method "normalizedString:" of oldName with parameter 3
-		if oldName ends with _oldstring then
-			if oldLength > 0 then
-				set newName to (text 1 thru (-1 - oldLength) of oldName) & _newstring
+		set old_name to PathAnalyzer's name_of(an_item)
+		set old_name to call method "normalizedString:" of old_name with parameter 3
+		if old_name ends with _oldstring then
+			if old_length > 0 then
+				set new_name to (text 1 thru (-1 - old_length) of old_name) & _newstring
 			else
-				set newName to oldName & _newstring
+				set new_name to old_name & _newstring
 			end if
 			
-			if newName is not oldName then
-				change_name for an_item by newName
+			if new_name is not old_name then
+				change_name for an_item by new_name
 			end if
 		end if
 	end repeat
@@ -39,19 +37,19 @@ on replace_endding for a_list
 end replace_endding
 
 on replace_beginning for a_list
-	set oldLength to length of _oldstring
+	set old_length to length of _oldstring
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
-		set oldName to PathAnalyzer's name_of(an_item)
-		set oldName to call method "normalizedString:" of oldName with parameter 3
-		if oldName starts with _oldstring then
-			if oldLength > 0 then
-				set newName to _newstring & (text (oldLength + 1) thru -1 of oldName)
+		set old_name to PathAnalyzer's name_of(an_item)
+		set old_name to call method "normalizedString:" of old_name with parameter 3
+		if old_name starts with _oldstring then
+			if old_length > 0 then
+				set new_name to _newstring & (text (old_length + 1) thru -1 of old_name)
 			else
-				set newName to _newstring & oldName
+				set new_name to _newstring & old_name
 			end if
-			if newName is not oldName then
-				change_name for an_item by newName
+			if new_name is not old_name then
+				change_name for an_item by new_name
 			end if
 		end if
 	end repeat
@@ -59,19 +57,19 @@ on replace_beginning for a_list
 end replace_beginning
 
 on replace_containing for a_list
-	set oldLength to length of _oldstring
-	if oldLength < 1 then
+	set old_length to length of _oldstring
+	if old_length < 1 then
 		return false
 	end if
 	store_delimiters() of XText
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
-		set oldName to PathAnalyzer's name_of(an_item)
-		set oldName to call method "normalizedString:" of oldName with parameter 3
-		if oldName contains _oldstring then
-			set newName to replace of XText for oldName from _oldstring by _newstring
-			if newName is not oldName then
-				change_name for an_item by newName
+		set old_name to PathAnalyzer's name_of(an_item)
+		set old_name to call method "normalizedString:" of old_name with parameter 3
+		if old_name contains _oldstring then
+			set new_name to replace of XText for old_name from _oldstring by _newstring
+			if new_name is not old_name then
+				change_name for an_item by new_name
 			end if
 		end if
 	end repeat
@@ -82,15 +80,15 @@ end replace_containing
 on replace_regexp for a_list
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
-		set oldName to PathAnalyzer's name_of(an_item)
-		set newName to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {oldName, _oldstring, _newstring}
+		set old_name to PathAnalyzer's name_of(an_item)
+		set new_name to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {old_name, _oldstring, _newstring}
 		try
-			get newName
+			get new_name
 		on error
 			return false
 		end try
-		if newName is not oldName then
-			change_name for an_item by newName
+		if new_name is not old_name then
+			change_name for an_item by new_name
 		end if
 	end repeat
 	return true
