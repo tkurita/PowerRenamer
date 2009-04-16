@@ -33,8 +33,6 @@
 		2C85CB6F0B7B342900C89869 /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85C9810B7B266F00C89869 /* StringExtra.m */; };
 		2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		2C85CB720B7B342900C89869 /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */; };
-		2C85CBF50B7B37F700C89869 /* OgreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C85CBF40B7B37F700C89869 /* OgreKit.framework */; };
-		2C85CBF90B7B380300C89869 /* OgreKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C85CBF40B7B37F700C89869 /* OgreKit.framework */; };
 		2C85CC1D0B7B38D400C89869 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */; };
 		2C85CC1E0B7B38D800C89869 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */; };
 		2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C85CC210B7B398100C89869 /* FactorySettings.plist */; };
@@ -52,7 +50,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2C85CC1E0B7B38D800C89869 /* DonationReminder.framework in CopyFiles */,
-				2C85CBF90B7B380300C89869 /* OgreKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,23 +62,22 @@
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2C3263780D9B390A00631FC8 /* History.rd */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; name = History.rd; path = ../History.rd; sourceTree = SOURCE_ROOT; };
-		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = "-2147483647"; path = HelpSetup.plist; sourceTree = "<group>"; };
+		2C3263780D9B390A00631FC8 /* History.rd */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; name = History.rd; path = ../../History.rd; sourceTree = SOURCE_ROOT; };
+		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 0; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = RenameEngine.applescript; sourceTree = "<group>"; };
-		2C85C9810B7B266F00C89869 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
-		2C85C9820B7B266F00C89869 /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
+		2C85C9810B7B266F00C89869 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
+		2C85C9820B7B266F00C89869 /* StringExtra.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = StringExtra.h; sourceTree = "<group>"; };
 		2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-PowerRenamer.plist"; sourceTree = "<group>"; };
 		2C85CB7D0B7B342900C89869 /* PowerRenamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerRenamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C85CBF40B7B37F700C89869 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = ../OgreKit.framework; sourceTree = SOURCE_ROOT; };
 		2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
-		2C85CC210B7B398100C89869 /* FactorySettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FactorySettings.plist; sourceTree = "<group>"; };
+		2C85CC210B7B398100C89869 /* FactorySettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FactorySettings.plist; sourceTree = "<group>"; };
 		2C85CC2E0B7B3A1100C89869 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C85CC2F0B7B3A1100C89869 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		2C89DC1206620860003D40F6 /* ComboBoxHistory.applescript */ = {isa = PBXFileReference; explicitFileType = sourcecode.applescript; fileEncoding = "-2147483647"; path = ComboBoxHistory.applescript; sourceTree = SOURCE_ROOT; };
+		2C89DC1206620860003D40F6 /* ComboBoxHistory.applescript */ = {isa = PBXFileReference; explicitFileType = sourcecode.applescript; fileEncoding = 0; path = ComboBoxHistory.applescript; sourceTree = SOURCE_ROOT; };
 		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CF52CE70DA26C55004844AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
-		DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.applescript; path = PowerRenamer.applescript; sourceTree = "<group>"; };
+		DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.applescript; path = PowerRenamer.applescript; sourceTree = "<group>"; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +88,6 @@
 			files = (
 				2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */,
 				2C85CB720B7B342900C89869 /* AppleScriptKit.framework in Frameworks */,
-				2C85CBF50B7B37F700C89869 /* OgreKit.framework in Frameworks */,
 				2C85CC1D0B7B38D400C89869 /* DonationReminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */,
-				2C85CBF40B7B37F700C89869 /* OgreKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */,
 			);
@@ -230,9 +224,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 2C85C6D90B7B114200C89869 /* Build configuration list for PBXProject "PowerRenamer" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				2C85CB620B7B342900C89869 /* PowerRenamer */,
 			);
