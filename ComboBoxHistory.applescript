@@ -1,6 +1,8 @@
 on add_value_from_combobox()
-	set a_value to contents of contents of my _target_control
-	add_value(a_value)
+	if exists contents of contents of my _target_control then
+		set a_value to contents of contents of my _target_control
+		add_value(a_value)
+	end if
 end add_value_from_combobox
 
 on add_value(a_value)

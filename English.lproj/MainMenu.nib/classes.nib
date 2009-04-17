@@ -13,9 +13,48 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>checkForUpdates</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>SUUpdater</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>delegate</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>PaletteWindowController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>contentViewBuffer</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSWindowController</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>makeDonation</key>
+				<string>id</string>
+				<key>showPreferencesWindow</key>
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
@@ -25,6 +64,10 @@
 			<key>OUTLETS</key>
 			<dict>
 				<key>mainWindow</key>
+				<string>id</string>
+				<key>prefernecesWindow</key>
+				<string>id</string>
+				<key>windowController</key>
 				<string>id</string>
 			</dict>
 			<key>SUPERCLASS</key>

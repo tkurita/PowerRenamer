@@ -82,8 +82,8 @@ on replace_regexp for a_list
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
 		set old_name to PathAnalyzer's name_of(an_item)
-		set new_name to call method "stringByReplacingOccurrencesOfRegex:withString:" of old_name with parameters {_oldstring, _newstring}
-		--set new_name to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {old_name, _oldstring, _newstring}
+		--set new_name to call method "stringByReplacingOccurrencesOfRegex:withString:" of old_name with parameters {_oldstring, _newstring}
+		set new_name to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {old_name, _oldstring, _newstring}
 		try
 			get new_name
 		on error

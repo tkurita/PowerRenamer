@@ -15,7 +15,6 @@
 				2C85CB660B7B342900C89869 /* PowerRenamer.applescript in AppleScript */,
 				2C85CB670B7B342900C89869 /* ComboBoxHistory.applescript in AppleScript */,
 				2C85CB680B7B342900C89869 /* RenameEngine.applescript in AppleScript */,
-				2CE800450F98144B00AD454A /* ControlValueManager.applescript in AppleScript */,
 				2CE800750F9819E200AD454A /* DefaultsManager.applescript in AppleScript */,
 			);
 			isSharedContext = 0;
@@ -41,8 +40,16 @@
 		2C86A60F0F97900E0092242D /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C86A60D0F97900E0092242D /* RegexKitLite.h */; };
 		2C86A6100F97900E0092242D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86A60E0F97900E0092242D /* RegexKitLite.m */; };
 		2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6806D0D9B5ACC002301F5 /* Localizable.strings */; };
-		2CE800450F98144B00AD454A /* ControlValueManager.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CE800440F98144B00AD454A /* ControlValueManager.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2CE800750F9819E200AD454A /* DefaultsManager.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CE8006F0F9819E200AD454A /* DefaultsManager.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		2CE800A90F981EA300AD454A /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008E0F9819FB00AD454A /* StringExtra.m */; };
+		2CE800FB0F98296000AD454A /* WindowVisibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE800900F9819FB00AD454A /* WindowVisibilityController.m */; };
+		2CE800FC0F98296300AD454A /* PaletteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008A0F9819FB00AD454A /* PaletteWindowController.m */; };
+		2CE801240F982A4100AD454A /* SmartActivate.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CE801210F982A4100AD454A /* SmartActivate.c */; };
+		2CE801260F982A4100AD454A /* SmartActivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE801230F982A4100AD454A /* SmartActivate.m */; };
+		2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE801690F982B1900AD454A /* Carbon.framework */; };
+		2CED519F0F986B0F007CD3B4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CED519E0F986B0F007CD3B4 /* Sparkle.framework */; };
+		2CED51A60F986B1B007CD3B4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CED519E0F986B0F007CD3B4 /* Sparkle.framework */; };
+		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
 		2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CF52CE70DA26C55004844AD /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2CED51A60F986B1B007CD3B4 /* Sparkle.framework in CopyFiles */,
 				2C85CC1E0B7B38D800C89869 /* DonationReminder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +74,7 @@
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2C3263780D9B390A00631FC8 /* History.rd */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; name = History.rd; path = ../../History.rd; sourceTree = SOURCE_ROOT; };
+		2C3263780D9B390A00631FC8 /* History.rd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; name = History.rd; path = ../../History.rd; sourceTree = SOURCE_ROOT; };
 		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 0; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = RenameEngine.applescript; sourceTree = "<group>"; };
 		2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-PowerRenamer.plist"; sourceTree = "<group>"; };
@@ -79,7 +87,6 @@
 		2C86A60E0F97900E0092242D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		2C89DC1206620860003D40F6 /* ComboBoxHistory.applescript */ = {isa = PBXFileReference; explicitFileType = sourcecode.applescript; fileEncoding = 0; path = ComboBoxHistory.applescript; sourceTree = SOURCE_ROOT; };
 		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2CE800440F98144B00AD454A /* ControlValueManager.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = ControlValueManager.applescript; sourceTree = "<group>"; };
 		2CE8006E0F9819E200AD454A /* CommandBuilder.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = CommandBuilder.applescript; sourceTree = "<group>"; };
 		2CE8006F0F9819E200AD454A /* DefaultsManager.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = DefaultsManager.applescript; sourceTree = "<group>"; };
 		2CE800700F9819E200AD454A /* MessageUtility.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MessageUtility.applescript; sourceTree = "<group>"; };
@@ -100,6 +107,12 @@
 		2CE8008E0F9819FB00AD454A /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
 		2CE8008F0F9819FB00AD454A /* WindowVisibilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowVisibilityController.h; sourceTree = "<group>"; };
 		2CE800900F9819FB00AD454A /* WindowVisibilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowVisibilityController.m; sourceTree = "<group>"; };
+		2CE801210F982A4100AD454A /* SmartActivate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SmartActivate.c; sourceTree = "<group>"; };
+		2CE801220F982A4100AD454A /* SmartActivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartActivate.h; sourceTree = "<group>"; };
+		2CE801230F982A4100AD454A /* SmartActivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartActivate.m; sourceTree = "<group>"; };
+		2CE801690F982B1900AD454A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		2CED519E0F986B0F007CD3B4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle.framework; sourceTree = SOURCE_ROOT; };
+		2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CF52CE70DA26C55004844AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; lineEnding = 0; path = PowerRenamer.applescript; sourceTree = "<group>"; };
@@ -114,6 +127,8 @@
 				2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */,
 				2C85CB720B7B342900C89869 /* AppleScriptKit.framework in Frameworks */,
 				2C85CC1D0B7B38D400C89869 /* DonationReminder.framework in Frameworks */,
+				2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */,
+				2CED519F0F986B0F007CD3B4 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +141,6 @@
 				DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */,
 				2C89DC1206620860003D40F6 /* ComboBoxHistory.applescript */,
 				2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */,
-				2CE800440F98144B00AD454A /* ControlValueManager.applescript */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -134,6 +148,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CED519E0F986B0F007CD3B4 /* Sparkle.framework */,
+				2CE801690F982B1900AD454A /* Carbon.framework */,
 				2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */,
@@ -163,6 +179,7 @@
 			children = (
 				2C3263780D9B390A00631FC8 /* History.rd */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
+				2CE801200F982A4100AD454A /* SmartActivateLib */,
 				2CE800820F9819FB00AD454A /* CocoaLib */,
 				2CE8006D0F9819E200AD454A /* ASStudioScriptLib */,
 				2C86A60C0F97900E0092242D /* RegexpKitLite */,
@@ -187,6 +204,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */,
 				2CF52CE70DA26C55004844AD /* Credits.html */,
 				2CC6806D0D9B5ACC002301F5 /* Localizable.strings */,
 				2C54277B0B7C05B900820867 /* HelpSetup.plist */,
@@ -249,6 +267,16 @@
 				2CE800900F9819FB00AD454A /* WindowVisibilityController.m */,
 			);
 			path = CocoaLib;
+			sourceTree = "<group>";
+		};
+		2CE801200F982A4100AD454A /* SmartActivateLib */ = {
+			isa = PBXGroup;
+			children = (
+				2CE801210F982A4100AD454A /* SmartActivate.c */,
+				2CE801220F982A4100AD454A /* SmartActivate.h */,
+				2CE801230F982A4100AD454A /* SmartActivate.m */,
+			);
+			path = SmartActivateLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +344,7 @@
 				2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */,
 				2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */,
 				2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */,
+				2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +374,11 @@
 				2C85CB6E0B7B342900C89869 /* main.m in Sources */,
 				2C85CC310B7B3A1100C89869 /* AppController.m in Sources */,
 				2C86A6100F97900E0092242D /* RegexKitLite.m in Sources */,
+				2CE800A90F981EA300AD454A /* StringExtra.m in Sources */,
+				2CE800FB0F98296000AD454A /* WindowVisibilityController.m in Sources */,
+				2CE800FC0F98296300AD454A /* PaletteWindowController.m in Sources */,
+				2CE801240F982A4100AD454A /* SmartActivate.c in Sources */,
+				2CE801260F982A4100AD454A /* SmartActivate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +415,7 @@
 		2C85C6DA0B7B114200C89869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Debug;
@@ -392,6 +427,7 @@
 					ppc,
 					i386,
 				);
+				GCC_C_LANGUAGE_STANDARD = c99;
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
@@ -400,6 +436,7 @@
 		2C85C6DC0B7B114200C89869 /* SDDebug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = SDDebug;
@@ -407,6 +444,7 @@
 		2C85C6DD0B7B114200C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Default;
@@ -420,8 +458,10 @@
 					"$(SRCROOT)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/..\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/..\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
