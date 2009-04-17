@@ -1,14 +1,15 @@
 #import "StringExtra.h"
-#import <OgreKit/OgreKit.h>
+//#import <OgreKit/OgreKit.h>
 
 @implementation NSString (StringExtra)
-
+/*
 - (NSString *)replaceForPattern:(NSString *)aPattern withString:(NSString *)aString
 {
 	OGRegularExpression  *regex;
 	regex = [OGRegularExpression regularExpressionWithString:aPattern];
 	return [regex replaceAllMatchesInString:self withString:aString];
 }
+*/
 
 - (NSMutableString *)normalizedString:(CFStringNormalizationForm) theForm
 {
