@@ -1,9 +1,9 @@
-on addValueFromComboBox()
+on add_value_from_combobox()
 	set a_value to contents of contents of my _target_control
-	addValue(a_value)
-end addValueFromComboBox
+	add_value(a_value)
+end add_value_from_combobox
 
-on addValue(a_value)
+on add_value(a_value)
 	if a_value is not my _ignoring_value then
 		if a_value is not in my _values then
 			set beginning of my _values to a_value
@@ -22,14 +22,14 @@ on addValue(a_value)
 			set my _values to tmpList
 		end if
 	end if
-end addValue
+end add_value
 
-on setComboBox(theComboBox)
+on set_combobox(theComboBox)
 	set my _target_control to theComboBox
 	repeat with an_item in my _values
 		make new combo box item at the end of combo box items of my _target_control with data an_item
 	end repeat
-end setComboBox
+end set_combobox
 
 on write_defaults()
 	set contents of default entry (my _default_entry_name) of user defaults to my _values

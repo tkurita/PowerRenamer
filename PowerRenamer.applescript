@@ -1,15 +1,17 @@
-property FinderSelection : missing value
+Ôªøproperty FinderSelection : missing value
+property XFile : missing value
 property PathAnalyzer : missing value
 property XText : missing value
-property UniqueNamer : missing value
+--property UniqueNamer : missing value
 property _app_controller : missing value
 
 on __load__(loader)
 	tell loader
 		set FinderSelection to load("FinderSelection")
+		set XFile to load("XFile")
 		set PathAnalyzer to load("PathAnalyzer")
 		set XText to PathAnalyzer's XText
-		set UniqueNamer to load("UniqueNamer")
+		--set UniqueNamer to load("UniqueNamer")
 	end tell
 end __load__
 
@@ -26,52 +28,6 @@ property _oldTextObj : missing value
 property _newTextObj : missing value
 property _window_position : missing value
 
-script ControlValueManager
-	property _controls : {}
-	
-	on register_control(theControl, a_default_key, theDefaultValue)
-		set a_value to readDefaultValue(a_default_key, theDefaultValue)
-		
-		set contents of theControl to a_value
-		
-		script ControlValue
-			property _control_val_ref : theControl
-			property _default_key : a_default_key
-			property _current_value : a_value
-			
-			on current_value()
-				return contents of _control_val_ref
-			end current_value
-			
-			on write_defaults()
-				set _current_value to contents of _control_val_ref
-				--set _current_value to contents of targetControl
-				set contents of default entry _default_key of user defaults to _current_value
-			end write_defaults
-		end script
-		
-		set end of _controls to ControlValue
-		return ControlValue
-	end register_control
-	
-	on write_all_defaults()
-		repeat with an_item in _controls
-			write_defaults() of an_item
-		end repeat
-	end write_all_defaults
-	
-	on readDefaultValue(entryName, defaultValue)
-		tell user defaults
-			if exists default entry entryName then
-				return contents of default entry entryName
-			else
-				make new default entry at end of default entries with properties {name:entryName, contents:defaultValue}
-				return defaultValue
-			end if
-		end tell
-	end readDefaultValue
-end script
-
 on importScript(scriptName)
 	tell main bundle
 		set scriptPath to path for script scriptName extension "scpt"
@@ -81,15 +37,15 @@ end importScript
 
 on launched theObject
 	(*
-	set an_item to alias ("Macintosh HD:Users:tkurita:Factories:Script factory:ProjectsX:PowerRenamer:test scripts:Çæ:" as Unicode text)
+	set an_item to alias ("Macintosh HD:Users:tkurita:Factories:Script factory:ProjectsX:PowerRenamer:test scripts:„Å†:" as Unicode text)
 	tell application "Finder"
 		set a_name to name of an_item
 	end tell
-	set a_text to "Çæ" as Unicode text
+	set a_text to "„Å†" as Unicode text
 	--set a_name to call method "normalizedString:" of a_name with parameter 3
 	log a_name contains a_text
-	--set a_result to call method "isEqualToNormalizedString:" of a_name with parameter ("Çæ" as Unicode text)
-	--log (a_name as Unicode text) starts with ("Çæ" as Unicode text)
+	--set a_result to call method "isEqualToNormalizedString:" of a_name with parameter ("„Å†" as Unicode text)
+	--log (a_name as Unicode text) starts with ("„Å†" as Unicode text)
 	--log a_result
 	quit
 	*)
@@ -97,27 +53,30 @@ on launched theObject
 	call method "remindDonation" of class "DonationReminder"
 	set ComboBoxHistory to importScript("ComboBoxHistory")
 	set RenameEngine to importScript("RenameEngine")
+	--set ControlValueManager to importScript("ControlValueManager")
 	set _app_controller to call method "delegate"
 	show window "Main"
 end launched
 
 on will open theObject
 	
-	set _mode_popup to register_control(a reference to contents of popup button "modePopup" of box "SearchTextBox" of theObject, "ModeIndex", 0) of ControlValueManager
+	--set _mode_popup to register_control(a reference to contents of popup button "modePopup" of box "SearchTextBox" of theObject, "ModeIndex", 0) of ControlValueManager
 	set oldTextHistoryObj to make_with("OldTextHistory", {}) of ComboBoxHistory
-	setComboBox(combo box "OldText" of box "SearchTextBox" of theObject) of oldTextHistoryObj
+	set_combobox(combo box "OldText" of box "SearchTextBox" of theObject) of oldTextHistoryObj
 	
-	set _oldTextObj to register_control(a reference to contents of combo box "OldText" of box "SearchTextBox" of theObject, "LastOldText", "") of ControlValueManager
+	--set _oldTextObj to register_control(a reference to contents of combo box "OldText" of box "SearchTextBox" of theObject, "LastOldText", "") of ControlValueManager
 	
 	set newTextHistoryObj to make_with("NewTextHistory", {}) of ComboBoxHistory
-	setComboBox(combo box "NewText" of box "ReplaceTextbox" of theObject) of newTextHistoryObj
+	set_combobox(combo box "NewText" of box "ReplaceTextbox" of theObject) of newTextHistoryObj
 	
-	set _newTextObj to register_control(a reference to contents of combo box "NewText" of box "ReplaceTextBox" of theObject, "LastNewText", "") of ControlValueManager
+	--set _newTextObj to register_control(a reference to contents of combo box "NewText" of box "ReplaceTextBox" of theObject, "LastNewText", "") of ControlValueManager
 	
-	set _window_position to register_control(a reference to position of theObject, "WindowPosition", {0, 0}) of ControlValueManager
+	--set _window_position to register_control(a reference to position of theObject, "WindowPosition", {0, 0}) of ControlValueManager
+	(*
 	if _window_position's current_value() is {0, 0} then
 		center theObject
 	end if
+	*)
 end will open
 
 on clicked theObject
@@ -150,12 +109,12 @@ on clicked theObject
 		end if
 		
 		if a_result then
-			write_all_defaults() of ControlValueManager
+			--write_all_defaults() of ControlValueManager
 			
-			addValueFromComboBox() of oldTextHistoryObj
+			add_value_from_combobox() of oldTextHistoryObj
 			write_defaults() of oldTextHistoryObj
 			
-			addValueFromComboBox() of newTextHistoryObj
+			add_value_from_combobox() of newTextHistoryObj
 			write_defaults() of newTextHistoryObj
 			
 			hide a_window

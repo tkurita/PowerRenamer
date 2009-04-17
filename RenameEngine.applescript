@@ -1,6 +1,7 @@
 global XText
-global UniqueNamer
+--global UniqueNamer
 global PathAnalyzer
+global XFile
 global _app_controller
 
 property _oldstring : ""
@@ -81,7 +82,8 @@ on replace_regexp for a_list
 	repeat with ith from 1 to length of a_list
 		set an_item to item ith of a_list
 		set old_name to PathAnalyzer's name_of(an_item)
-		set new_name to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {old_name, _oldstring, _newstring}
+		set new_name to call method "stringByReplacingOccurrencesOfRegex:withString:" of old_name with parameters {_oldstring, _newstring}
+		--set new_name to call method "regexReplace:withPattern:withString:" of _app_controller with parameters {old_name, _oldstring, _newstring}
 		try
 			get new_name
 		on error
@@ -102,9 +104,10 @@ on change_name for an_item by a_name
 	on error errMsg number errn
 		if errn is in {-37, -48} then -- -48 : same name  -37: invalid name
 			set a_location to PathAnalyzer's folder_of(an_item)
-			set a_name to do of UniqueNamer about a_name at a_location
+			set new_xfile to XFile's make_with(a_location)'s unique_child(a_name)
+			--set a_name to do of UniqueNamer about a_name at a_location
 			tell application "Finder"
-				set name of item an_item to a_name
+				set name of item an_item to new_xfile's item_name()
 			end tell
 		else
 			display dialog (errn as string) & return & errMsg
