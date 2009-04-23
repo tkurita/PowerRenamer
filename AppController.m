@@ -60,7 +60,7 @@
 	NSLog(@"applicationDidFinishLaunching");
 #endif
 	[windowController windowDidLoad];
-	//[windowController showWindow:self];
+	[windowController showWindow:self];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
