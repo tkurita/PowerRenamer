@@ -7,11 +7,10 @@
 	<key>IBLastKnownRelativeProjectPath</key>
 	<string>../PowerRenamer.xcodeproj</string>
 	<key>IBOldestOS</key>
-	<integer>5</integer>
+	<integer>4</integer>
 	<key>IBOpenObjects</key>
 	<array>
 		<integer>246</integer>
-		<integer>345</integer>
 	</array>
 	<key>IBSystem Version</key>
 	<string>9G55</string>
