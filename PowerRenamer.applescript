@@ -56,8 +56,6 @@ on launched theObject
 	quit
 	*)
 	--log "launched"
-	call method "remindDonation" of class "DonationReminder"
-	--show window "Main"
 end launched
 
 on will open theObject

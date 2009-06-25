@@ -4,6 +4,7 @@
 #import "PaletteWindowController.h"
 #import "WindowVisibilityController.h"
 #import "RegexKitLite.h"
+#import "RenameEngine.h"
 
 #define useLog 0
 
@@ -47,6 +48,8 @@
 #if useLog
 	NSLog(@"start applicationWillFinishLaunching");
 #endif
+	//[[RenameEngine new] resolveTargetItems];
+	
 	NSString *defaults_plist = [[NSBundle mainBundle] pathForResource:@"FactorySettings" ofType:@"plist"];
 	NSDictionary *factory_defaults = [NSDictionary dictionaryWithContentsOfFile:defaults_plist];
 	
@@ -59,6 +62,7 @@
 #if useLog
 	NSLog(@"applicationDidFinishLaunching");
 #endif
+	[DonationReminder remindDonation];
 	[windowController windowDidLoad];
 	[windowController showWindow:self];
 }
