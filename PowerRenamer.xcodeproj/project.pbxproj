@@ -24,6 +24,7 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
+		2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008C0F9819FB00AD454A /* PathExtra.m */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
 		2C5B7E010FF098F700D5ED31 /* MainWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5B7DFF0FF098F700D5ED31 /* MainWindowController.h */; };
 		2C5B7E020FF098F700D5ED31 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* MainWindowController.m */; };
@@ -407,6 +408,7 @@
 				2CE801260F982A4100AD454A /* SmartActivate.m in Sources */,
 				2C5B7E020FF098F700D5ED31 /* MainWindowController.m in Sources */,
 				2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */,
+				2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

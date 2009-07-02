@@ -52,6 +52,10 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>cancelAction</key>
+				<string>id</string>
+				<key>okAction</key>
+				<string>id</string>
 				<key>preview</key>
 				<string>id</string>
 			</dict>
@@ -62,6 +66,8 @@
 			<key>OUTLETS</key>
 			<dict>
 				<key>previewDrawer</key>
+				<string>id</string>
+				<key>renameListController</key>
 				<string>id</string>
 			</dict>
 			<key>SUPERCLASS</key>

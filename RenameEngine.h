@@ -2,23 +2,15 @@
 
 
 @interface RenameEngine : NSObject {
-	NSArray *targetItems;
-	NSArray *newNames;
-	NSArray *oldNames; 
-	NSMutableArray *icons;
+	NSArray *targetDicts;
 }
 
 - (BOOL)resolveTargetItemsAndReturnError:(NSError **)error;
 - (BOOL)resolveNewNames;
+- (BOOL)resolveIcons;
 - (BOOL)processRename;
 
-- (NSArray *)targetItems;
-- (void)setTargetItems:(NSArray *)array;
-- (NSArray *)newNames;
-- (void)setNewNames:(NSArray *)array;
-- (NSArray *)oldNames;
-- (void)setOldNames:(NSArray *)array;
-- (NSArray *)icons;
-- (void)setIcons:(NSArray *)array;
+- (NSArray *)targetDicts;
+- (void)setTargetDicts:(NSArray *)array;
 
 @end
