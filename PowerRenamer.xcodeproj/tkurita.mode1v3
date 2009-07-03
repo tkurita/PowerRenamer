@@ -236,7 +236,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C447BC90FFE3594009DA83E</string>
+						<string>2C447BD80FFE368E009DA83E</string>
 						<key>history</key>
 						<array>
 							<string>2C447B9D0FFE3308009DA83E</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C447BCA0FFE3594009DA83E</string>
+						<string>2C447BD90FFE368E009DA83E</string>
 						<key>history</key>
 						<array>
 							<string>2C447BA20FFE3308009DA83E</string>
@@ -271,7 +271,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C447BCB0FFE3594009DA83E</string>
+						<string>2C447BDA0FFE368E009DA83E</string>
 						<key>history</key>
 						<array>
 							<string>2C447BA50FFE3308009DA83E</string>
@@ -381,7 +381,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>9</integer>
+									<integer>5</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -425,7 +426,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>History.rd</string>
+								<string>RenameWindowController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -433,11 +434,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>History.rd</string>
+										<string>RenameWindowController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C447BC70FFE3594009DA83E</string>
+										<string>2C447BD60FFE368E009DA83E</string>
 										<key>history</key>
 										<array>
 											<string>2C5804B40FFC76D500DBA275</string>
@@ -449,10 +450,11 @@
 											<string>2C447A8F0FFDA0AA009DA83E</string>
 											<string>2C447AC50FFDCBB4009DA83E</string>
 											<string>2C447B1F0FFDD223009DA83E</string>
-											<string>2C447BC00FFE3594009DA83E</string>
 											<string>2C447BC10FFE3594009DA83E</string>
 											<string>2C447BC20FFE3594009DA83E</string>
-											<string>2C447BC30FFE3594009DA83E</string>
+											<string>2C447BD10FFE368E009DA83E</string>
+											<string>2C447BD20FFE368E009DA83E</string>
+											<string>2C447BD30FFE368E009DA83E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -481,6 +483,8 @@
 											<string>2C447BC40FFE3594009DA83E</string>
 											<string>2C447BC50FFE3594009DA83E</string>
 											<string>2C447BC60FFE3594009DA83E</string>
+											<string>2C447BD40FFE368E009DA83E</string>
+											<string>2C447BD50FFE368E009DA83E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -519,7 +523,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C447BC80FFE3594009DA83E</string>
+										<string>2C447BD70FFE368E009DA83E</string>
 										<key>history</key>
 										<array>
 											<string>2C5804B40FFC76D500DBA275</string>

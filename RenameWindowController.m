@@ -31,6 +31,21 @@
 	[self setModeIndex:[user_defaults integerForKey:@"ModeIndex"]];	
 }
 
+#pragma mark private
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if ([keyPath isEqualToString:@"values.UseFloatingWindow"]) {
+		NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
+		[self setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
+	}
+}
+
+- (void)discardPreview
+{
+	[previewDrawer close];
+	[self setRenameEngine:nil];
+}
 #pragma mark Actions
 
 - (IBAction)preview:(id)sender
@@ -115,6 +130,9 @@
 
 - (void)setOldText:(NSString *)aText
 {
+	if (![oldText isEqualToString:aText]) {
+		[self discardPreview];
+	}
 	[aText retain];
 	[oldText autorelease];
 	oldText = aText;
@@ -127,6 +145,9 @@
 
 - (void)setNewText:(NSString *)aText
 {
+	if (![newText isEqualToString:aText]) {
+		[self discardPreview];
+	}
 	[aText retain];
 	[newText autorelease];
 	newText = aText;
@@ -139,22 +160,15 @@
 
 - (void)setModeIndex:(unsigned int)index
 {
+	if (modeIndex != index) {
+		[self discardPreview];
+	}	
 	modeIndex = index;
 }
 
 - (unsigned int)modeIndex
 {
 	return modeIndex;
-}
-
-#pragma mark private
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	if ([keyPath isEqualToString:@"values.UseFloatingWindow"]) {
-		NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
-		[self setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
-	}
 }
 
 
