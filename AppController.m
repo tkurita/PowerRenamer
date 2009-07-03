@@ -4,14 +4,18 @@
 #import "PaletteWindowController.h"
 #import "WindowVisibilityController.h"
 #import "RegexKitLite.h"
-#import "RenameEngine.h"
+#import "RenameWindowController.h"
 
-#define useLog 0
+#define useLog 1
 
 @implementation AppController
 
 - (int)judgeVisibilityForApp:(NSDictionary *)appDict
 {
+#if useLog
+	NSLog(@"start judgeVisibilityForApp");
+	NSLog([appDict description]);
+#endif
 	if ([[[NSUserDefaultsController sharedUserDefaultsController] valueForKeyPath:@"values.UseFloatingWindow"] boolValue]) {
 		return kShouldPostController;
 	} 
@@ -38,9 +42,15 @@
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
 #if useLog
-	NSLog(@"applicationDidBecomeActive");
+	NSLog(@"start applicationDidBecomeActive");
 #endif
-	[windowController showWindow:self];
+	if ([[NSApp windows] count] <= 1) {
+		RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
+		[a_window showWindow:self];
+	}
+#if useLog
+	NSLog(@"end applicationDidBecomeActive");
+#endif	
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -48,7 +58,6 @@
 #if useLog
 	NSLog(@"start applicationWillFinishLaunching");
 #endif
-	//[[RenameEngine new] resolveTargetItems];
 	
 	NSString *defaults_plist = [[NSBundle mainBundle] pathForResource:@"FactorySettings" ofType:@"plist"];
 	NSDictionary *factory_defaults = [NSDictionary dictionaryWithContentsOfFile:defaults_plist];
@@ -63,10 +72,13 @@
 	NSLog(@"applicationDidFinishLaunching");
 #endif
 	[DonationReminder remindDonation];
+	/*
 	[windowController windowDidLoad];
 	[windowController showWindow:self];
+	 */
 }
 
+/*
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 	if ([keyPath isEqualToString:@"values.UseFloatingWindow"]) {
@@ -74,22 +86,26 @@
 		[windowController setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
 	}
 }
+*/
 
 - (void)awakeFromNib
 {
 #if useLog
 	NSLog(@"awakeFromNib");
 #endif	
+	/*
 	[windowController setFrameName:@"MainWindow"];
 	
 	NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
 	[windowController setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
 	[defaults_controller addObserver:self forKeyPath:@"values.UseFloatingWindow" 
 							 options:NSKeyValueObservingOptionNew context:nil];
-	WindowVisibilityController *wv = [[[WindowVisibilityController alloc] init] autorelease];
+	*/
+	 WindowVisibilityController *wv = [[[WindowVisibilityController alloc] init] autorelease];
 	[wv setDelegate:self];
+	[wv setVisibilityForCurrentApplication:kShouldShow];
 	[PaletteWindowController setVisibilityController:wv];
-	[windowController bindApplicationsFloatingOnForKey:@"applicationsFloatingOn"];
+	//[windowController bindApplicationsFloatingOnForKey:@"applicationsFloatingOn"];
 }
 
 

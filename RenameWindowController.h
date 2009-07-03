@@ -2,9 +2,8 @@
 #import "PaletteWindowController.h"
 #import "RenameEngine.h"
 
-@interface MainWindowController : PaletteWindowController {
+@interface RenameWindowController : PaletteWindowController {
 	IBOutlet id previewDrawer;
-	IBOutlet id renameListController;
 	RenameEngine *renameEngine;
 }
 

@@ -24,10 +24,11 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
+		2C4479610FFCF10A009DA83E /* RenameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C44795F0FFCF10A009DA83E /* RenameWindow.nib */; };
 		2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008C0F9819FB00AD454A /* PathExtra.m */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
-		2C5B7E010FF098F700D5ED31 /* MainWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5B7DFF0FF098F700D5ED31 /* MainWindowController.h */; };
-		2C5B7E020FF098F700D5ED31 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* MainWindowController.m */; };
+		2C5B7E010FF098F700D5ED31 /* RenameWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */; };
+		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
 		2C5B7E120FF0A39C00D5ED31 /* GetFinderSelection.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* GetFinderSelection.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5B7E150FF0A44A00D5ED31 /* RenameEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */; };
 		2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */; };
@@ -82,9 +83,10 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C3263780D9B390A00631FC8 /* History.rd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; name = History.rd; path = ../../History.rd; sourceTree = SOURCE_ROOT; };
+		2C4479600FFCF10A009DA83E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RenameWindow.nib; sourceTree = "<group>"; };
 		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 0; path = HelpSetup.plist; sourceTree = "<group>"; };
-		2C5B7DFF0FF098F700D5ED31 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
-		2C5B7E000FF098F700D5ED31 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameWindowController.h; sourceTree = "<group>"; };
+		2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameWindowController.m; sourceTree = "<group>"; };
 		2C5B7E110FF0A39C00D5ED31 /* GetFinderSelection.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = GetFinderSelection.applescript; sourceTree = "<group>"; };
 		2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameEngine.h; sourceTree = "<group>"; };
 		2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameEngine.m; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				2CC6806D0D9B5ACC002301F5 /* Localizable.strings */,
 				2C54277B0B7C05B900820867 /* HelpSetup.plist */,
 				2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */,
+				2C44795F0FFCF10A009DA83E /* RenameWindow.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
@@ -243,8 +246,8 @@
 			children = (
 				2C85CC2E0B7B3A1100C89869 /* AppController.h */,
 				2C85CC2F0B7B3A1100C89869 /* AppController.m */,
-				2C5B7DFF0FF098F700D5ED31 /* MainWindowController.h */,
-				2C5B7E000FF098F700D5ED31 /* MainWindowController.m */,
+				2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */,
+				2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */,
 				2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */,
 				2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */,
 			);
@@ -313,7 +316,7 @@
 			files = (
 				2C85CC300B7B3A1100C89869 /* AppController.h in Headers */,
 				2C86A60F0F97900E0092242D /* RegexKitLite.h in Headers */,
-				2C5B7E010FF098F700D5ED31 /* MainWindowController.h in Headers */,
+				2C5B7E010FF098F700D5ED31 /* RenameWindowController.h in Headers */,
 				2C5B7E150FF0A44A00D5ED31 /* RenameEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +375,7 @@
 				2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */,
 				2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */,
 				2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */,
+				2C4479610FFCF10A009DA83E /* RenameWindow.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +410,7 @@
 				2CE800FC0F98296300AD454A /* PaletteWindowController.m in Sources */,
 				2CE801240F982A4100AD454A /* SmartActivate.c in Sources */,
 				2CE801260F982A4100AD454A /* SmartActivate.m in Sources */,
-				2C5B7E020FF098F700D5ED31 /* MainWindowController.m in Sources */,
+				2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */,
 				2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */,
 				2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */,
 			);
@@ -429,6 +433,14 @@
 				29B97319FDCFA39411CA2CEA /* English */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		2C44795F0FFCF10A009DA83E /* RenameWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C4479600FFCF10A009DA83E /* English */,
+			);
+			name = RenameWindow.nib;
 			sourceTree = "<group>";
 		};
 		2CC6806D0D9B5ACC002301F5 /* Localizable.strings */ = {
