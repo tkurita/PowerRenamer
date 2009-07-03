@@ -84,6 +84,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C3263780D9B390A00631FC8 /* History.rd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; name = History.rd; path = ../../History.rd; sourceTree = SOURCE_ROOT; };
 		2C4479600FFCF10A009DA83E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RenameWindow.nib; sourceTree = "<group>"; };
+		2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameOptionsProtocol.h; sourceTree = "<group>"; };
 		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 0; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameWindowController.h; sourceTree = "<group>"; };
 		2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameWindowController.m; sourceTree = "<group>"; };
@@ -250,6 +251,7 @@
 				2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */,
 				2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */,
 				2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */,
+				2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

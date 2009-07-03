@@ -26,11 +26,11 @@ static NSAppleScript *getFinderSelection;
 	[super dealloc];
 }
 
-- (void)replaceSubstringWithMode:(int)mode
+- (void)replaceSubstringWithMode:(id<RenameOptionsProtocol>)optionProvider
 {
-	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-	NSString *old_text = [userdefaults stringForKey:@"LastOldText"];
-	NSString *new_text = [userdefaults stringForKey:@"LastNewText"];
+	NSString *old_text = [optionProvider oldText];
+	NSString *new_text = [optionProvider newText];
+	unsigned int mode = [optionProvider modeIndex];
 	NSRange range = NSMakeRange(0, [old_text length]); // beginning mode
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
@@ -57,11 +57,10 @@ static NSAppleScript *getFinderSelection;
 	}
 }
 
-- (void)replaceWithRegex
+- (void)replaceWithRegex:(id<RenameOptionsProtocol>)optionProvider
 {
-	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-	NSString *old_text = [userdefaults stringForKey:@"LastOldText"];
-	NSString *new_text = [userdefaults stringForKey:@"LastNewText"];
+	NSString *old_text = [optionProvider oldText];
+	NSString *new_text = [optionProvider newText];
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	NSMutableDictionary *dict = nil;
@@ -77,17 +76,17 @@ static NSAppleScript *getFinderSelection;
 	}
 }
 
-- (BOOL)resolveNewNames
+- (BOOL)resolveNewNames:(id<RenameOptionsProtocol>)optionProvider
 {
-	int mode = [[NSUserDefaults standardUserDefaults] integerForKey:@"ModeIndex"];
+	unsigned int mode = [optionProvider modeIndex];
 	switch (mode) {
 		case ANYSUBSTRING_MODE:
 		case BEGINNING_MODE:
 		case ENDDING_MODE:
-			[self replaceSubstringWithMode:mode];
+			[self replaceSubstringWithMode:optionProvider];
 			break;
 		case REGEX_MODE:
-			[self replaceWithRegex];
+			[self replaceWithRegex:optionProvider];
 		default:
 			break;
 	}

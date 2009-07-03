@@ -6,7 +6,7 @@
 #import "RegexKitLite.h"
 #import "RenameWindowController.h"
 
-#define useLog 1
+#define useLog 0
 
 @implementation AppController
 
@@ -72,10 +72,6 @@
 	NSLog(@"applicationDidFinishLaunching");
 #endif
 	[DonationReminder remindDonation];
-	/*
-	[windowController windowDidLoad];
-	[windowController showWindow:self];
-	 */
 }
 
 /*
