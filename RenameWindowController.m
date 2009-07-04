@@ -46,6 +46,37 @@
 	[previewDrawer close];
 	[self setRenameEngine:nil];
 }
+
+- (void)saveHistory
+{
+	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
+	NSMutableArray *oldtext_history = [user_defaults objectForKey:@"OldTextHistory"];
+	NSMutableArray *newtext_history = [user_defaults objectForKey:@"NewTextHistory"];
+	
+	unsigned int hist_max = [user_defaults integerForKey:@"HistoryMax"];
+	if ((oldText != nil) && (![oldText isEqualToString:@""])) {
+		if (![oldtext_history containsObject:oldText]) {
+			oldtext_history = [oldtext_history mutableCopy];
+			[oldtext_history insertObject:oldText atIndex:0];
+			if ([oldtext_history count] > hist_max) {
+				[oldtext_history removeLastObject];
+			}
+			[user_defaults setObject:oldtext_history forKey:@"OldTextHistory"];
+		}
+	}
+	
+	if ((newText != nil)  && (![newText isEqualToString:@""])) {
+		if (![newtext_history containsObject:newText]) {
+			newtext_history = [newtext_history mutableCopy];
+			[newtext_history insertObject:newText atIndex:0];
+			if ([newtext_history count] > hist_max) {
+				[newtext_history removeLastObject];
+			}				
+			[user_defaults setObject:newtext_history forKey:@"NewTextHistory"];
+		}
+	}
+}
+
 #pragma mark Actions
 
 - (IBAction)preview:(id)sender
@@ -57,6 +88,7 @@
 	[rename_engine resolveNewNames:self];
 	[rename_engine resolveIcons];
 	[previewDrawer open:self];
+	[self saveHistory];
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -79,6 +111,8 @@
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
 	if ([userdefaults boolForKey:@"AutoQuit"]) {
 		[self close];
+	} else {
+		[self saveHistory];
 	}
 }
 
@@ -89,6 +123,7 @@
 	[user_defaults setObject:oldText forKey:@"LastOldText"];
 	[user_defaults setObject:newText forKey:@"LastNewText"];
 	[user_defaults setInteger:modeIndex	forKey:@"ModeIndex"];
+	[self saveHistory];
 	[user_defaults synchronize];
 	[self autorelease];
 }

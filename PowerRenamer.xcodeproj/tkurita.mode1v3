@@ -236,7 +236,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C447BD80FFE368E009DA83E</string>
+						<string>2C447BFD0FFF5986009DA83E</string>
 						<key>history</key>
 						<array>
 							<string>2C447B9D0FFE3308009DA83E</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C447BD90FFE368E009DA83E</string>
+						<string>2C447BFE0FFF5986009DA83E</string>
 						<key>history</key>
 						<array>
 							<string>2C447BA20FFE3308009DA83E</string>
@@ -271,7 +271,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C447BDA0FFE368E009DA83E</string>
+						<string>2C447BFF0FFF5986009DA83E</string>
 						<key>history</key>
 						<array>
 							<string>2C447BA50FFE3308009DA83E</string>
@@ -367,7 +367,6 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>2C5B7DE80FF0985F00D5ED31</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>2CE800820F9819FB00AD454A</string>
 								<string>2C86A60C0F97900E0092242D</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>2CC6806D0D9B5ACC002301F5</string>
@@ -381,13 +380,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>1</integer>
+									<integer>9</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {242, 672}}</string>
+							<string>{{0, 1}, {242, 672}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -426,7 +424,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RenameWindowController.m</string>
+								<string>History.rd</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -434,11 +432,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RenameWindowController.m</string>
+										<string>History.rd</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C447BD60FFE368E009DA83E</string>
+										<string>2C447BF80FFF5986009DA83E</string>
 										<key>history</key>
 										<array>
 											<string>2C5804B40FFC76D500DBA275</string>
@@ -452,9 +450,11 @@
 											<string>2C447B1F0FFDD223009DA83E</string>
 											<string>2C447BC10FFE3594009DA83E</string>
 											<string>2C447BC20FFE3594009DA83E</string>
-											<string>2C447BD10FFE368E009DA83E</string>
 											<string>2C447BD20FFE368E009DA83E</string>
-											<string>2C447BD30FFE368E009DA83E</string>
+											<string>2C447BEC0FFF5986009DA83E</string>
+											<string>2C447BED0FFF5986009DA83E</string>
+											<string>2C447BEE0FFF5986009DA83E</string>
+											<string>2C447BEF0FFF5986009DA83E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -485,6 +485,14 @@
 											<string>2C447BC60FFE3594009DA83E</string>
 											<string>2C447BD40FFE368E009DA83E</string>
 											<string>2C447BD50FFE368E009DA83E</string>
+											<string>2C447BF00FFF5986009DA83E</string>
+											<string>2C447BF10FFF5986009DA83E</string>
+											<string>2C447BF20FFF5986009DA83E</string>
+											<string>2C447BF30FFF5986009DA83E</string>
+											<string>2C447BF40FFF5986009DA83E</string>
+											<string>2C447BF50FFF5986009DA83E</string>
+											<string>2C447BF60FFF5986009DA83E</string>
+											<string>2C447BF70FFF5986009DA83E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -511,7 +519,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RenameEngine.h</string>
+								<string>FactorySettings.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -519,15 +527,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RenameEngine.h</string>
+										<string>FactorySettings.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C447BD70FFE368E009DA83E</string>
+										<string>2C447BFC0FFF5986009DA83E</string>
 										<key>history</key>
 										<array>
 											<string>2C5804B40FFC76D500DBA275</string>
-											<string>2C5804C40FFC7C1700DBA275</string>
 											<string>2C4479800FFCFFFA009DA83E</string>
 											<string>2C4479810FFCFFFA009DA83E</string>
 											<string>2C4479920FFD086A009DA83E</string>
@@ -539,7 +546,8 @@
 											<string>2C447B910FFE3308009DA83E</string>
 											<string>2C447B920FFE3308009DA83E</string>
 											<string>2C447B930FFE3308009DA83E</string>
-											<string>2C447B940FFE3308009DA83E</string>
+											<string>2C447BF90FFF5986009DA83E</string>
+											<string>2C447BFA0FFF5986009DA83E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -559,6 +567,7 @@
 											<string>2C447B970FFE3308009DA83E</string>
 											<string>2C447B980FFE3308009DA83E</string>
 											<string>2C447B990FFE3308009DA83E</string>
+											<string>2C447BFB0FFF5986009DA83E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -788,7 +797,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RenameEngine.m</string>
+								<string>RenameWindowController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

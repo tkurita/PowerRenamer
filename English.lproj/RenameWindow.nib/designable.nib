@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="14"/>
+			<integer value="11"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -704,6 +704,14 @@
 				<nil key="NSParentWindow"/>
 				<nil key="NSDelegate"/>
 			</object>
+			<object class="NSUserDefaultsController" id="1070969862">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>NewTextHistory</string>
+					<string>OldTextHistory</string>
+				</object>
+				<bool key="NSSharedInstance">YES</bool>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -902,26 +910,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: oldText</string>
-						<reference key="source" ref="361558504"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="361558504"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: oldText</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">oldText</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0" id="5"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">75</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: newText</string>
 						<reference key="source" ref="157498449"/>
 						<reference key="destination" ref="1001"/>
@@ -933,12 +921,65 @@
 							<string key="NSKeyPath">newText</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<reference key="NS.object.0" ref="5"/>
+								<boolean value="YES" key="NS.object.0" id="5"/>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
 					<int key="connectionID">77</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentValues: values.NewTextHistory</string>
+						<reference key="source" ref="611912730"/>
+						<reference key="destination" ref="1070969862"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="611912730"/>
+							<reference key="NSDestination" ref="1070969862"/>
+							<string key="NSLabel">contentValues: values.NewTextHistory</string>
+							<string key="NSBinding">contentValues</string>
+							<string key="NSKeyPath">values.NewTextHistory</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">83</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentValues: values.OldTextHistory</string>
+						<reference key="source" ref="361558504"/>
+						<reference key="destination" ref="1070969862"/>
+						<object class="NSNibBindingConnector" key="connector" id="748923673">
+							<reference key="NSSource" ref="361558504"/>
+							<reference key="NSDestination" ref="1070969862"/>
+							<string key="NSLabel">contentValues: values.OldTextHistory</string>
+							<string key="NSBinding">contentValues</string>
+							<string key="NSKeyPath">values.OldTextHistory</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">86</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: oldText</string>
+						<reference key="source" ref="361558504"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="361558504"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: oldText</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">oldText</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<reference key="NS.object.0" ref="5"/>
+							</object>
+							<reference key="NSPreviousConnector" ref="748923673"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">87</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1233,6 +1274,11 @@
 						<int key="objectID">39</int>
 						<reference key="object" ref="617208904"/>
 						<reference key="parent" ref="622880353"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">80</int>
+						<reference key="object" ref="1070969862"/>
+						<reference key="parent" ref="1002"/>
 					</object>
 				</object>
 			</object>
@@ -1531,7 +1577,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">77</int>
+			<int key="maxID">87</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
