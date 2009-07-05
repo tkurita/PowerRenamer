@@ -33,11 +33,19 @@
 	[super dealloc];
 }
 
-- (BOOL)replaceSubstringWithMode:(id<RenameOptionsProtocol>)optionProvider
+- (BOOL)replaceSubstringWithMode:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
 {
 	NSString *old_text = [optionProvider oldText];
 	NSString *new_text = [optionProvider newText];
 	unsigned int mode = [optionProvider modeIndex];
+	if ((mode == ANYSUBSTRING_MODE) && ([old_text isEqualToString:@""])) {
+		NSString *msg = NSLocalizedString(@"EnterSearchText", @"");
+		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
+												  forKey:NSLocalizedDescriptionKey];
+		*error = [NSError errorWithDomain:@"PowerRenamerError" code:3 userInfo:udict];
+		return NO;
+	}
+	
 	NSRange range = NSMakeRange(0, [old_text length]); // beginning mode
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
@@ -107,7 +115,7 @@
 		case ANYSUBSTRING_MODE:
 		case BEGINNING_MODE:
 		case ENDDING_MODE:
-			result = [self replaceSubstringWithMode:optionProvider];
+			result = [self replaceSubstringWithMode:optionProvider error:error];
 			break;
 		case REGEX_MODE:
 			result = [self replaceWithRegex:optionProvider error:error];
@@ -145,7 +153,7 @@
 										 [err_info objectForKey:OSAScriptErrorNumber]];
 		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
 										  forKey:NSLocalizedDescriptionKey];
-		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];		
+		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];
 
 		goto bail;
 	}

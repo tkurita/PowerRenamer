@@ -189,7 +189,10 @@
 
 - (NSString *)oldText
 {
-	return oldText;
+	if (oldText)
+		return oldText;
+	else
+		return @"";
 }
 
 - (void)setNewText:(NSString *)aText
@@ -204,7 +207,10 @@
 
 - (NSString *)newText
 {
-	return newText;
+	if (newText)
+		return newText;
+	else
+		return @"";
 }
 
 - (void)setModeIndex:(unsigned int)index
