@@ -9,18 +9,6 @@
 #define REGEX_MODE 3
 
 @implementation RenameEngine
-/*
-static OSAScript *finderSelectionController;
-
-+ (void)initialize
-{
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"FinderSelectionController"
-											ofType:@"scpt" inDirectory:@"Scripts"];
-	NSDictionary *errInfo;
-	finderSelectionController = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
-																error:&errInfo];
-}
-*/
 
 - (id)init {
     if (self = [super init]) {
@@ -45,7 +33,7 @@ static OSAScript *finderSelectionController;
 	[super dealloc];
 }
 
-- (void)replaceSubstringWithMode:(id<RenameOptionsProtocol>)optionProvider
+- (BOOL)replaceSubstringWithMode:(id<RenameOptionsProtocol>)optionProvider
 {
 	NSString *old_text = [optionProvider oldText];
 	NSString *new_text = [optionProvider newText];
@@ -74,43 +62,60 @@ static OSAScript *finderSelectionController;
 		}		
 		[dict setObject:newname forKey:@"newName"];
 	}
+	
+	return YES;
 }
 
-- (void)replaceWithRegex:(id<RenameOptionsProtocol>)optionProvider
+- (BOOL)replaceWithRegex:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
 {
 	NSString *old_text = [optionProvider oldText];
 	NSString *new_text = [optionProvider newText];
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	NSMutableDictionary *dict = nil;
-	while (dict = [enumerator nextObject]) {					
+	
+	while (dict = [enumerator nextObject]) {
 		NSString *oldname = [dict objectForKey:@"oldName"];
-		NSString *newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
-										withString:new_text];
-		if (![newname isEqualToString:oldname]) {
-			newname = [newname uniqueNameAtLocation:[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
-										  excepting:[targetDicts valueForKey:@"newName"]];
+		NSString *newname = nil;
+		newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
+													withString:new_text
+													   options:RKLNoOptions
+														 range:NSMakeRange(0, [oldname length])
+														 error:error];
+		if (*error) {
+			return NO;
 		}
-		[dict setObject:newname forKey:@"newName"];
+		
+		if (newname) {
+			if (![newname isEqualToString:oldname]) {
+				newname = [newname uniqueNameAtLocation:[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
+											  excepting:[targetDicts valueForKey:@"newName"]];
+			}
+			[dict setObject:newname forKey:@"newName"];
+		} else {
+			[dict setObject:oldname forKey:@"newName"];
+		}
 	}
+	return YES;
 }
 
-- (BOOL)resolveNewNames:(id<RenameOptionsProtocol>)optionProvider
+- (BOOL)resolveNewNames:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
 {
 	unsigned int mode = [optionProvider modeIndex];
+	BOOL result = NO;
 	switch (mode) {
 		case ANYSUBSTRING_MODE:
 		case BEGINNING_MODE:
 		case ENDDING_MODE:
-			[self replaceSubstringWithMode:optionProvider];
+			result = [self replaceSubstringWithMode:optionProvider];
 			break;
 		case REGEX_MODE:
-			[self replaceWithRegex:optionProvider];
+			result = [self replaceWithRegex:optionProvider error:error];
 		default:
 			break;
 	}
 	
-	return YES;
+	return result;
 }
 
 - (BOOL)resolveIcons
@@ -128,7 +133,6 @@ static OSAScript *finderSelectionController;
 - (BOOL)resolveTargetItemsAndReturnError:(NSError **)error
 {
 	NSDictionary *err_info = nil;
-	//NSAppleEventDescriptor *script_result = [finderSelectionController executeAndReturnError:&err_info];
 	NSAppleEventDescriptor *script_result = [finderSelectionController executeHandlerWithName:@"get_finderselection"
 																			arguments:nil error:&err_info];
 	BOOL result = NO;

@@ -88,7 +88,10 @@
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 		return;
 	}
-	[rename_engine resolveNewNames:self];
+	if (![rename_engine resolveNewNames:self error:&error]) {
+		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
+		return;
+	}
 	[rename_engine resolveIcons];
 	[previewDrawer open:self];
 	[self saveHistory];
@@ -105,8 +108,13 @@
 	if (!renameEngine) {
 		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
 		[self setRenameEngine:rename_engine];
-		[rename_engine resolveTargetItemsAndReturnError:&error];
-		[rename_engine resolveNewNames:self];
+		if ([rename_engine resolveTargetItemsAndReturnError:&error]) {
+			[rename_engine resolveNewNames:self error:&error];
+		}
+		if (error) {
+			[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
+			return;
+		}
 	}
 	if (![renameEngine processRenameAndReturnError:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];

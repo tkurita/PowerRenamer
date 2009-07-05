@@ -8,7 +8,7 @@
 }
 
 - (BOOL)resolveTargetItemsAndReturnError:(NSError **)error;
-- (BOOL)resolveNewNames:(id<RenameOptionsProtocol>)optionProvider;
+- (BOOL)resolveNewNames:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error;
 - (BOOL)resolveIcons;
 - (BOOL)processRenameAndReturnError:(NSError **)error;
 
