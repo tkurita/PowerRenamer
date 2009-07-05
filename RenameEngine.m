@@ -2,7 +2,6 @@
 #import "RegexKitLite.h"
 #import "PathExtra.h"
 
-static NSAppleScript *getFinderSelection;
 
 #define ANYSUBSTRING_MODE 0
 #define BEGINNING_MODE 1
@@ -10,18 +9,38 @@ static NSAppleScript *getFinderSelection;
 #define REGEX_MODE 3
 
 @implementation RenameEngine
+/*
+static OSAScript *finderSelectionController;
 
 + (void)initialize
 {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"GetFinderSelection"
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"FinderSelectionController"
 											ofType:@"scpt" inDirectory:@"Scripts"];
 	NSDictionary *errInfo;
-	getFinderSelection = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
+	finderSelectionController = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
 																error:&errInfo];
+}
+*/
+
+- (id)init {
+    if (self = [super init]) {
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"FinderSelectionController"
+														 ofType:@"scpt" inDirectory:@"Scripts"];
+		NSDictionary *err_info = nil;
+		finderSelectionController = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
+																	   error:&err_info];
+		if (err_info) {
+			NSLog([err_info description]);
+			[self autorelease];
+			return nil;
+		}
+    }
+    return self;
 }
 
 - (void)dealloc
 {
+	[finderSelectionController release];
 	[targetDicts release];
 	[super dealloc];
 }
@@ -109,15 +128,17 @@ static NSAppleScript *getFinderSelection;
 - (BOOL)resolveTargetItemsAndReturnError:(NSError **)error
 {
 	NSDictionary *err_info = nil;
-	NSAppleEventDescriptor *script_result = [getFinderSelection executeAndReturnError:&err_info];
+	//NSAppleEventDescriptor *script_result = [finderSelectionController executeAndReturnError:&err_info];
+	NSAppleEventDescriptor *script_result = [finderSelectionController executeHandlerWithName:@"get_finderselection"
+																			arguments:nil error:&err_info];
 	BOOL result = NO;
-	if (err_info != nil) {
+	if (err_info) {
 #if useLog
 		NSLog([err_info description]);
 #endif
 		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
-										[err_info objectForKey:NSAppleScriptErrorMessage],
-										 [err_info objectForKey:NSAppleScriptErrorNumber]];
+										[err_info objectForKey:OSAScriptErrorMessage],
+										 [err_info objectForKey:OSAScriptErrorNumber]];
 		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
 										  forKey:NSLocalizedDescriptionKey];
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];		
@@ -146,9 +167,31 @@ bail:
 	return result;
 }
 
-- (BOOL)processRename
+- (BOOL)processRenameAndReturnError:(NSError **)error
 {
+	NSArray *oldnames = [targetDicts valueForKey:@"oldName"];
+	NSArray *newnames = [targetDicts valueForKey:@"newName"];
+	NSDictionary *err_info = nil;
+	[finderSelectionController executeHandlerWithName:@"process_rename" 
+			arguments:[NSArray arrayWithObjects:oldnames, newnames, nil]
+												error:&err_info];
+	NSLog([err_info description]);
+	if (err_info) {
+#if useLog
+		NSLog([err_info description]);
+#endif
+		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
+						 [err_info objectForKey:OSAScriptErrorMessage],
+						 [err_info objectForKey:OSAScriptErrorNumber]];
+		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
+														  forKey:NSLocalizedDescriptionKey];
+		*error = [NSError errorWithDomain:@"PowerRenamerError" code:2 userInfo:udict];		
+		
+		return NO;
+	}
+	/*
 	NSFileManager *filemanager = [NSFileManager defaultManager];
+	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	NSMutableDictionary *dict = nil;
 	while (dict = [enumerator nextObject]) {
@@ -158,8 +201,10 @@ bail:
 			NSString *path = [dict objectForKey:@"path"];
 			NSString *newpath = [[path stringByDeletingLastPathComponent] stringByAppendingPathComponent:newname];
 			[filemanager movePath:path toPath:newpath handler:nil];
+			[workspace selectFile:newpath inFileViewerRootedAtPath:@""];
 		}
 	}
+	 */
 	return YES;
 }
 

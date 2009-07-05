@@ -82,9 +82,12 @@
 - (IBAction)preview:(id)sender
 {
 	RenameEngine *rename_engine = [[RenameEngine new] autorelease];
-	NSError *error;
+	NSError *error = nil;
 	[self setRenameEngine:rename_engine];
-	[rename_engine resolveTargetItemsAndReturnError:&error];
+	if (![rename_engine resolveTargetItemsAndReturnError:&error]) {
+		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
+		return;
+	}
 	[rename_engine resolveNewNames:self];
 	[rename_engine resolveIcons];
 	[previewDrawer open:self];
@@ -98,14 +101,17 @@
 
 - (IBAction)okAction:(id)sender
 {
+	NSError *error = nil;
 	if (!renameEngine) {
 		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
-		NSError *error;
 		[self setRenameEngine:rename_engine];
 		[rename_engine resolveTargetItemsAndReturnError:&error];
 		[rename_engine resolveNewNames:self];
 	}
-	[renameEngine processRename];
+	if (![renameEngine processRenameAndReturnError:&error]) {
+		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
+		return;
+	}
 	[previewDrawer close:self];
 	[self setRenameEngine:nil];
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];

@@ -7,8 +7,9 @@ on __load__(loader)
 end __load__
 
 property _ : __load__(proxy() of application (get "PowerRenamerLib"))
+property _selected_items : {}
 
-on run
+on get_finderselection()
 	set a_picker to FinderSelection's make_for_item()
 	tell a_picker
 		set_use_insertion_location(false)
@@ -24,8 +25,22 @@ on run
 			error msg number errno
 		end if
 	end try
+	set my _selected_items to a_list
+	set path_list to {}
 	repeat with an_item in a_list
-		set contents of an_item to POSIX path of an_item
+		set end of path_list to POSIX path of an_item
 	end repeat
-	return a_list
-end run
+	return path_list
+end get_finderselection
+
+on process_rename(oldnames, newnames)
+	repeat with n from 1 to length of my _selected_items
+		set newname to item n of newnames
+		set oldname to item n of oldnames
+		if newname is not oldname then
+			tell application "Finder"
+				set name of item (item n of my _selected_items) to item n of newnames
+			end tell
+		end if
+	end repeat
+end process_rename
