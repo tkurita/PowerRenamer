@@ -26,6 +26,7 @@
 /* Begin PBXBuildFile section */
 		2C4479610FFCF10A009DA83E /* RenameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C44795F0FFCF10A009DA83E /* RenameWindow.nib */; };
 		2C447C400FFFABE1009DA83E /* OSAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C447C3F0FFFABE1009DA83E /* OSAKit.framework */; };
+		2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C447DBC1000EE36009DA83E /* AltActionButton.m */; };
 		2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008C0F9819FB00AD454A /* PathExtra.m */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
 		2C5B7E010FF098F700D5ED31 /* RenameWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */; };
@@ -87,6 +88,8 @@
 		2C4479600FFCF10A009DA83E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RenameWindow.nib; sourceTree = "<group>"; };
 		2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameOptionsProtocol.h; sourceTree = "<group>"; };
 		2C447C3F0FFFABE1009DA83E /* OSAKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSAKit.framework; path = /System/Library/Frameworks/OSAKit.framework; sourceTree = "<absolute>"; };
+		2C447DBB1000EE36009DA83E /* AltActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltActionButton.h; sourceTree = "<group>"; };
+		2C447DBC1000EE36009DA83E /* AltActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltActionButton.m; sourceTree = "<group>"; };
 		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 0; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameWindowController.h; sourceTree = "<group>"; };
 		2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameWindowController.m; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 		2C5B7DE80FF0985F00D5ED31 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2C447DBB1000EE36009DA83E /* AltActionButton.h */,
+				2C447DBC1000EE36009DA83E /* AltActionButton.m */,
 				2C85CC2E0B7B3A1100C89869 /* AppController.h */,
 				2C85CC2F0B7B3A1100C89869 /* AppController.m */,
 				2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */,
@@ -419,6 +424,7 @@
 				2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */,
 				2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */,
 				2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */,
+				2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

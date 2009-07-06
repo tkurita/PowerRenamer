@@ -1,4 +1,5 @@
 #import "RenameWindowController.h"
+#import "AltActionButton.h"
 
 #define useLog 1
 @implementation RenameWindowController
@@ -28,7 +29,8 @@
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[self setOldText:[user_defaults stringForKey:@"LastOldText"]];
 	[self setNewText:[user_defaults stringForKey:@"LastNewText"]];
-	[self setModeIndex:[user_defaults integerForKey:@"ModeIndex"]];	
+	[self setModeIndex:[user_defaults integerForKey:@"ModeIndex"]];
+	[previewButton setAltButton:YES];
 }
 
 #pragma mark private

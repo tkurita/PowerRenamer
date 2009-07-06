@@ -6,6 +6,7 @@
 @interface RenameWindowController : PaletteWindowController<RenameOptionsProtocol> {
 	IBOutlet id previewDrawer;
 	IBOutlet id previewTable;
+	IBOutlet id previewButton;
 	RenameEngine *renameEngine;
 	unsigned int modeIndex;
 	NSString *oldText;
