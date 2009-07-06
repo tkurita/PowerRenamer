@@ -74,67 +74,15 @@
 	[DonationReminder remindDonation];
 }
 
-/*
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	if ([keyPath isEqualToString:@"values.UseFloatingWindow"]) {
-		NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
-		[windowController setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
-	}
-}
-*/
-
 - (void)awakeFromNib
 {
 #if useLog
 	NSLog(@"awakeFromNib");
 #endif	
-	/*
-	[windowController setFrameName:@"MainWindow"];
-	
-	NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
-	[windowController setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
-	[defaults_controller addObserver:self forKeyPath:@"values.UseFloatingWindow" 
-							 options:NSKeyValueObservingOptionNew context:nil];
-	*/
 	 WindowVisibilityController *wv = [[[WindowVisibilityController alloc] init] autorelease];
 	[wv setDelegate:self];
 	[wv setVisibilityForCurrentApplication:kShouldShow];
 	[PaletteWindowController setVisibilityController:wv];
-	//[windowController bindApplicationsFloatingOnForKey:@"applicationsFloatingOn"];
-}
-
-
-- (NSString *)regexReplace:(NSString *)sourceString withPattern:(NSString *)aPattern withString:(NSString *)aString
-{
-	NSString *result = nil;
-	NSError *error = nil;
-	sourceString = [sourceString normalizedString:kCFStringNormalizationFormKC];
-	aPattern = [aPattern normalizedString:kCFStringNormalizationFormKC];
-	aString = [aString normalizedString:kCFStringNormalizationFormKC];
-	@try {
-		result = [sourceString stringByReplacingOccurrencesOfRegex:(NSString *)aPattern 
-														withString:(NSString *)aString
-														   options:RKLNoOptions
-															range:NSMakeRange(0, [sourceString length])
-															 error:&error];
-	}
-	@catch (NSException *exception) {
-		//NSLog(@"main: Caught %@: %@", [exception name], [exception reason]);
-		NSAlert *alert = [NSAlert alertWithMessageText:@"Reqular Expression Error" 
-							defaultButton:@"OK" alternateButton:nil otherButton:nil 
-							informativeTextWithFormat:[exception reason]];
-		[alert beginSheetModalForWindow:mainWindow modalDelegate:nil
-									didEndSelector:nil contextInfo:nil];
-	}
-	
-	if (error) {
-		NSAlert *alert = [NSAlert alertWithError:error];
-		[alert beginSheetModalForWindow:mainWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
-		result = nil;
-	}
-	
-	return result;
 }
 
 @end

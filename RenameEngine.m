@@ -1,7 +1,7 @@
 #import "RenameEngine.h"
 #import "RegexKitLite.h"
 #import "PathExtra.h"
-
+#import "StringExtra.h"
 
 #define ANYSUBSTRING_MODE 0
 #define BEGINNING_MODE 1
@@ -166,7 +166,7 @@
 	}
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:nfile];
 	for (unsigned int i=1; i <= nfile; i++) {
-		NSString *path = [[script_result descriptorAtIndex:i] stringValue];
+		NSString *path = [[[script_result descriptorAtIndex:i] stringValue] normalizedString:kCFStringNormalizationFormKC];
 		NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 											  path, @"path",
 											  [path lastPathComponent], @"oldName", nil];
