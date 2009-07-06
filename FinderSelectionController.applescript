@@ -33,6 +33,10 @@ on get_finderselection()
 	return path_list
 end get_finderselection
 
+on selected_items()
+	return my _selected_items
+end selected_items
+
 on process_rename(oldnames, newnames)
 	repeat with n from 1 to length of my _selected_items
 		set newname to item n of newnames

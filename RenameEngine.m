@@ -8,20 +8,25 @@
 #define ENDDING_MODE 2
 #define REGEX_MODE 3
 
+static OSAScript *FINDERS_ELECTION_CONTROLLER;
+
 @implementation RenameEngine
+
++ (void)initialize
+{
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"FinderSelectionController"
+													 ofType:@"scpt" inDirectory:@"Scripts"];
+	NSDictionary *err_info = nil;
+	FINDERS_ELECTION_CONTROLLER = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
+																   error:&err_info];
+	if (err_info) {
+		NSLog([err_info description]);
+	}
+}
 
 - (id)init {
     if (self = [super init]) {
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"FinderSelectionController"
-														 ofType:@"scpt" inDirectory:@"Scripts"];
-		NSDictionary *err_info = nil;
-		finderSelectionController = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
-																	   error:&err_info];
-		if (err_info) {
-			NSLog([err_info description]);
-			[self autorelease];
-			return nil;
-		}
+		finderSelectionController = [FINDERS_ELECTION_CONTROLLER copy];
     }
     return self;
 }
@@ -63,11 +68,15 @@
 		}
 		[newname replaceOccurrencesOfString:old_text withString:new_text 
 									options:NSCaseInsensitiveSearch range:range];
+		
 		if (![newname isEqualToString:oldname]) {
 			newname = [[newname uniqueNameAtLocation:
 										[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
 								   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
-		}		
+			[dict setObject:[NSColor blackColor] forKey:@"textColor"];			
+		} else {
+			[dict setObject:[NSColor grayColor] forKey:@"textColor"];
+		}
 		[dict setObject:newname forKey:@"newName"];
 	}
 	
@@ -98,10 +107,14 @@
 			if (![newname isEqualToString:oldname]) {
 				newname = [newname uniqueNameAtLocation:[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
 											  excepting:[targetDicts valueForKey:@"newName"]];
+				[dict setObject:[NSColor blackColor] forKey:@"textColor"];
+			} else {
+				[dict setObject:[NSColor grayColor] forKey:@"textColor"];
 			}
 			[dict setObject:newname forKey:@"newName"];
 		} else {
 			[dict setObject:oldname forKey:@"newName"];
+			[dict setObject:[NSColor grayColor] forKey:@"textColor"];
 		}
 	}
 	return YES;

@@ -674,6 +674,7 @@
 					<string>icon</string>
 					<string>oldName</string>
 					<string>newName</string>
+					<string>textColor</string>
 				</object>
 				<bool key="NSEditable">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
@@ -982,6 +983,38 @@
 						<reference key="destination" ref="922592592"/>
 					</object>
 					<int key="connectionID">96</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">textColor: arrangedObjects.textColor</string>
+						<reference key="source" ref="685536069"/>
+						<reference key="destination" ref="465382904"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="685536069"/>
+							<reference key="NSDestination" ref="465382904"/>
+							<string key="NSLabel">textColor: arrangedObjects.textColor</string>
+							<string key="NSBinding">textColor</string>
+							<string key="NSKeyPath">arrangedObjects.textColor</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">98</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">textColor: arrangedObjects.textColor</string>
+						<reference key="source" ref="622880353"/>
+						<reference key="destination" ref="465382904"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="622880353"/>
+							<reference key="NSDestination" ref="465382904"/>
+							<string key="NSLabel">textColor: arrangedObjects.textColor</string>
+							<string key="NSBinding">textColor</string>
+							<string key="NSKeyPath">arrangedObjects.textColor</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">100</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1583,7 +1616,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">96</int>
+			<int key="maxID">100</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

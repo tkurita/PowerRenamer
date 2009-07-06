@@ -2,6 +2,7 @@
 #import "AltActionButton.h"
 
 #define useLog 1
+
 @implementation RenameWindowController
 
 - (void)dealloc
@@ -144,6 +145,11 @@
 	[self autorelease];
 }
 
+- (void)drawerDidClose:(NSNotification *)notification
+{
+	[self setRenameEngine:nil];
+}
+
 - (void)drawerDidOpen:(NSNotification *)notification
 {
 	//unsigned int nrows = [previewTable numberOfRows];
@@ -182,7 +188,7 @@
 - (void)setOldText:(NSString *)aText
 {
 	if (![oldText isEqualToString:aText]) {
-		[self discardPreview];
+		[previewDrawer close];
 	}
 	[aText retain];
 	[oldText autorelease];
@@ -200,7 +206,7 @@
 - (void)setNewText:(NSString *)aText
 {
 	if (![newText isEqualToString:aText]) {
-		[self discardPreview];
+		[previewDrawer close];
 	}
 	[aText retain];
 	[newText autorelease];
@@ -218,7 +224,7 @@
 - (void)setModeIndex:(unsigned int)index
 {
 	if (modeIndex != index) {
-		[self discardPreview];
+		[previewDrawer close];
 	}	
 	modeIndex = index;
 }
@@ -227,30 +233,5 @@
 {
 	return modeIndex;
 }
-
-
-//- (void)windowDidLoad
-//{
-//#if useLog
-//	NSLog(@"start windowDidLoad");
-//#endif	
-//	NSWindow *a_window = [self window];
-//	[a_window center];
-//	[a_window setFrameUsingName:@"MainWindow"];
-//	
-//	NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
-//	[self setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
-//	[defaults_controller addObserver:self forKeyPath:@"values.UseFloatingWindow" 
-//							 options:NSKeyValueObservingOptionNew context:nil];
-//	/*
-//	WindowVisibilityController *wv = [[[WindowVisibilityController alloc] init] autorelease];
-//	[wv setDelegate:self];
-//	[PaletteWindowController setVisibilityController:wv];
-//	 */
-//	[self bindApplicationsFloatingOnForKey:@"applicationsFloatingOn"];
-//#if useLog
-//	NSLog(@"end windowDidLoad");
-//#endif	
-//}
 
 @end
