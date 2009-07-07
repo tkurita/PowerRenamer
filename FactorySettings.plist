@@ -12,6 +12,8 @@
 	<true/>
 	<key>UseFloatingWindow</key>
 	<false/>
+	<key>HistoryMax</key>
+	<integer>10</integer>
 	<key>applicationsFloatingOn</key>
 	<array>
 		<dict>

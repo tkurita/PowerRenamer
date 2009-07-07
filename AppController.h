@@ -1,9 +1,8 @@
 #import <Cocoa/Cocoa.h>
 
-
 @interface AppController : NSObject {
 	IBOutlet id mainWindow;
-	IBOutlet id windowController;
+	//IBOutlet id windowController;
 	IBOutlet id prefernecesWindow;
 }
 

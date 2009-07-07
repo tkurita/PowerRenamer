@@ -4,6 +4,7 @@
 #import "PaletteWindowController.h"
 #import "WindowVisibilityController.h"
 #import "RegexKitLite.h"
+#import "RenameWindowController.h"
 
 #define useLog 0
 
@@ -11,6 +12,10 @@
 
 - (int)judgeVisibilityForApp:(NSDictionary *)appDict
 {
+#if useLog
+	NSLog(@"start judgeVisibilityForApp");
+	NSLog([appDict description]);
+#endif
 	if ([[[NSUserDefaultsController sharedUserDefaultsController] valueForKeyPath:@"values.UseFloatingWindow"] boolValue]) {
 		return kShouldPostController;
 	} 
@@ -37,9 +42,15 @@
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
 #if useLog
-	NSLog(@"applicationDidBecomeActive");
+	NSLog(@"start applicationDidBecomeActive");
 #endif
-	[windowController showWindow:self];
+	if ([[NSApp windows] count] <= 1) {
+		RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
+		[a_window showWindow:self];
+	}
+#if useLog
+	NSLog(@"end applicationDidBecomeActive");
+#endif	
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -47,6 +58,7 @@
 #if useLog
 	NSLog(@"start applicationWillFinishLaunching");
 #endif
+	
 	NSString *defaults_plist = [[NSBundle mainBundle] pathForResource:@"FactorySettings" ofType:@"plist"];
 	NSDictionary *factory_defaults = [NSDictionary dictionaryWithContentsOfFile:defaults_plist];
 	
@@ -59,16 +71,9 @@
 #if useLog
 	NSLog(@"applicationDidFinishLaunching");
 #endif
-	[windowController windowDidLoad];
-	[windowController showWindow:self];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	if ([keyPath isEqualToString:@"values.UseFloatingWindow"]) {
-		NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
-		[windowController setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
-	}
+	[DonationReminder remindDonation];
+	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
+	[a_window showWindow:self];
 }
 
 - (void)awakeFromNib
@@ -76,49 +81,10 @@
 #if useLog
 	NSLog(@"awakeFromNib");
 #endif	
-	[windowController setFrameName:@"MainWindow"];
-	
-	NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
-	[windowController setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
-	[defaults_controller addObserver:self forKeyPath:@"values.UseFloatingWindow" 
-							 options:NSKeyValueObservingOptionNew context:nil];
-	WindowVisibilityController *wv = [[[WindowVisibilityController alloc] init] autorelease];
+	 WindowVisibilityController *wv = [[[WindowVisibilityController alloc] init] autorelease];
 	[wv setDelegate:self];
+	[wv setVisibilityForCurrentApplication:kShouldShow];
 	[PaletteWindowController setVisibilityController:wv];
-	[windowController bindApplicationsFloatingOnForKey:@"applicationsFloatingOn"];
-}
-
-
-- (NSString *)regexReplace:(NSString *)sourceString withPattern:(NSString *)aPattern withString:(NSString *)aString
-{
-	NSString *result = nil;
-	NSError *error = nil;
-	sourceString = [sourceString normalizedString:kCFStringNormalizationFormKC];
-	aPattern = [aPattern normalizedString:kCFStringNormalizationFormKC];
-	aString = [aString normalizedString:kCFStringNormalizationFormKC];
-	@try {
-		result = [sourceString stringByReplacingOccurrencesOfRegex:(NSString *)aPattern 
-														withString:(NSString *)aString
-														   options:RKLNoOptions
-															range:NSMakeRange(0, [sourceString length])
-															 error:&error];
-	}
-	@catch (NSException *exception) {
-		//NSLog(@"main: Caught %@: %@", [exception name], [exception reason]);
-		NSAlert *alert = [NSAlert alertWithMessageText:@"Reqular Expression Error" 
-							defaultButton:@"OK" alternateButton:nil otherButton:nil 
-							informativeTextWithFormat:[exception reason]];
-		[alert beginSheetModalForWindow:mainWindow modalDelegate:nil
-									didEndSelector:nil contextInfo:nil];
-	}
-	
-	if (error) {
-		NSAlert *alert = [NSAlert alertWithError:error];
-		[alert beginSheetModalForWindow:mainWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
-		result = nil;
-	}
-	
-	return result;
 }
 
 @end
