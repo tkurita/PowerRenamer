@@ -1,5 +1,6 @@
 #import "RenameWindowController.h"
 #import "AltActionButton.h"
+#import "FrontAppMonitor.h"
 
 #define useLog 1
 
@@ -32,9 +33,15 @@
 	[self setNewText:[user_defaults stringForKey:@"LastNewText"]];
 	[self setModeIndex:[user_defaults integerForKey:@"ModeIndex"]];
 	[previewButton setAltButton:YES];
+	[[FrontAppMonitor notificationCenter] addObserver:self selector:@selector(frontAppChanged:) 
+												 name:@"FrontAppChangedNotification" object:nil];
 }
 
 #pragma mark private
+- (void)frontAppChanged:(NSNotification *)notification
+{
+	[previewDrawer close];
+}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {

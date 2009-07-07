@@ -8,7 +8,9 @@
 #define ENDDING_MODE 2
 #define REGEX_MODE 3
 
-static OSAScript *FINDERS_ELECTION_CONTROLLER;
+#define useLog 1
+
+static OSAScript *FINDER_SELECTION_CONTROLLER;
 
 @implementation RenameEngine
 
@@ -17,7 +19,7 @@ static OSAScript *FINDERS_ELECTION_CONTROLLER;
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"FinderSelectionController"
 													 ofType:@"scpt" inDirectory:@"Scripts"];
 	NSDictionary *err_info = nil;
-	FINDERS_ELECTION_CONTROLLER = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
+	FINDER_SELECTION_CONTROLLER = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
 																   error:&err_info];
 	if (err_info) {
 		NSLog([err_info description]);
@@ -26,7 +28,15 @@ static OSAScript *FINDERS_ELECTION_CONTROLLER;
 
 - (id)init {
     if (self = [super init]) {
-		finderSelectionController = [FINDERS_ELECTION_CONTROLLER copy];
+		NSDictionary *error = nil;
+		NSData *data = [FINDER_SELECTION_CONTROLLER compiledDataForType:@"scpt" usingStorageOptions:OSANull error:&error];
+		finderSelectionController = [[OSAScript alloc] initWithCompiledData:data error:&error];
+		/* confirm no shared script instance between finderSelectionController and FINDER_SELECTION_CONTROLLER
+		NSAppleEventDescriptor *script_result = [FINDER_SELECTION_CONTROLLER executeHandlerWithName:@"get_finderselection" arguments:nil error:&error];
+		NSLog([script_result description]);
+		script_result = [finderSelectionController executeHandlerWithName:@"selected_items" arguments:nil error:&error];
+		NSLog([script_result description]);
+		*/
     }
     return self;
 }
