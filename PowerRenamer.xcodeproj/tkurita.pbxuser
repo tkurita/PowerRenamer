@@ -10,7 +10,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 2C85CB7E0B7B342900C89869 /* PowerRenamer */;
 		activeTarget = 2C85CB620B7B342900C89869 /* PowerRenamer */;
 		addToTargets = (
@@ -697,6 +697,17 @@
 			2C2101191003247F00850A76 /* PBXTextBookmark */ = 2C2101191003247F00850A76 /* PBXTextBookmark */;
 			2C21011A1003247F00850A76 /* PBXTextBookmark */ = 2C21011A1003247F00850A76 /* PBXTextBookmark */;
 			2C21011D1003247F00850A76 /* PBXTextBookmark */ = 2C21011D1003247F00850A76 /* PBXTextBookmark */;
+			2C21012D1003264800850A76 /* PBXTextBookmark */ = 2C21012D1003264800850A76 /* PBXTextBookmark */;
+			2C21012E1003264800850A76 /* PBXTextBookmark */ = 2C21012E1003264800850A76 /* PBXTextBookmark */;
+			2C210139100326CA00850A76 /* PBXTextBookmark */ = 2C210139100326CA00850A76 /* PBXTextBookmark */;
+			2C21013A100326CA00850A76 /* PBXTextBookmark */ = 2C21013A100326CA00850A76 /* PBXTextBookmark */;
+			2C21013B100326CA00850A76 /* PBXTextBookmark */ = 2C21013B100326CA00850A76 /* PBXTextBookmark */;
+			2C21013C100326CA00850A76 /* PBXTextBookmark */ = 2C21013C100326CA00850A76 /* PBXTextBookmark */;
+			2C21013D100326CA00850A76 /* PlistBookmark */ = 2C21013D100326CA00850A76 /* PlistBookmark */;
+			2C21013E100326CA00850A76 /* PBXTextBookmark */ = 2C21013E100326CA00850A76 /* PBXTextBookmark */;
+			2C21013F100326CA00850A76 /* PBXTextBookmark */ = 2C21013F100326CA00850A76 /* PBXTextBookmark */;
+			2C210140100326CA00850A76 /* PlistBookmark */ = 2C210140100326CA00850A76 /* PlistBookmark */;
+			2C210141100326CA00850A76 /* PBXTextBookmark */ = 2C210141100326CA00850A76 /* PBXTextBookmark */;
 			2C3263780D9B390A00631FC8 = 2C3263780D9B390A00631FC8 /* History.rd */;
 			2C4479850FFCFFFA009DA83E = 2C4479850FFCFFFA009DA83E /* PBXTextBookmark */;
 			2C4479880FFCFFFA009DA83E = 2C4479880FFCFFFA009DA83E /* PBXTextBookmark */;
@@ -767,7 +778,7 @@
 		fRef = 2C447E48100181F8009DA83E /* History.rd */;
 		name = "History.rd: 7";
 		rLen = 0;
-		rLoc = 182;
+		rLoc = 188;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -787,7 +798,7 @@
 		fRef = 2C447E48100181F8009DA83E /* History.rd */;
 		name = "History.rd: 7";
 		rLen = 0;
-		rLoc = 182;
+		rLoc = 188;
 		rType = 0;
 		vrLen = 703;
 		vrLoc = 0;
@@ -1274,6 +1285,116 @@
 		vrLen = 703;
 		vrLoc = 0;
 	};
+	2C21012D1003264800850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
+		rLen = 14;
+		rLoc = 92;
+		rType = 0;
+	};
+	2C21012E1003264800850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
+		name = "RenameWindowController.m: 5";
+		rLen = 0;
+		rLoc = 108;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 0;
+	};
+	2C210139100326CA00850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */;
+		name = "RenameEngine.m: 11";
+		rLen = 14;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 1246;
+		vrLoc = 0;
+	};
+	2C21013A100326CA00850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */;
+		name = "RenameEngine.m: 11";
+		rLen = 14;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 1246;
+		vrLoc = 0;
+	};
+	2C21013B100326CA00850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C2100261002D65100850A76 /* FrontAppMonitor.m */;
+		name = "FrontAppMonitor.m: 4";
+		rLen = 0;
+		rLoc = 66;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	2C21013C100326CA00850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C447E48100181F8009DA83E /* History.rd */;
+		name = "History.rd: 7";
+		rLen = 0;
+		rLoc = 188;
+		rType = 0;
+		vrLen = 610;
+		vrLoc = 0;
+	};
+	2C21013D100326CA00850A76 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/Info-PowerRenamer.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2C21013E100326CA00850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C2100261002D65100850A76 /* FrontAppMonitor.m */;
+		name = "FrontAppMonitor.m: 4";
+		rLen = 0;
+		rLoc = 66;
+		rType = 0;
+		vrLen = 436;
+		vrLoc = 0;
+	};
+	2C21013F100326CA00850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C447E48100181F8009DA83E /* History.rd */;
+		name = "History.rd: 7";
+		rLen = 0;
+		rLoc = 188;
+		rType = 0;
+		vrLen = 610;
+		vrLoc = 0;
+	};
+	2C210140100326CA00850A76 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundlePackageType,
+		);
+		name = "/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/Info-PowerRenamer.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2C210141100326CA00850A76 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */;
+		name = "RenameWindowController.h: 25";
+		rLen = 0;
+		rLoc = 697;
+		rType = 0;
+		vrLen = 703;
+		vrLoc = 0;
+	};
 	2C3263780D9B390A00631FC8 /* History.rd */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {663, 3112}}";
@@ -1288,7 +1409,7 @@
 		fRef = 2C3263780D9B390A00631FC8 /* History.rd */;
 		name = "History.rd: 11";
 		rLen = 0;
-		rLoc = 981;
+		rLoc = 985;
 		rType = 0;
 		vrLen = 794;
 		vrLoc = 0;
@@ -1555,6 +1676,11 @@
 		name = History.rd;
 		path = /Users/tkurita/Dev/Projects/PowerRenamer/History.rd;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {806, 3128}}";
+			sepNavSelRange = "{188, 0}";
+			sepNavVisRange = "{0, 610}";
+		};
 	};
 	2C447E4B100181F8009DA83E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1645,9 +1771,9 @@
 	};
 	2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {806, 3416}}";
-			sepNavSelRange = "{281, 0}";
-			sepNavVisRange = "{109, 477}";
+			sepNavIntBoundsRect = "{{0, 0}, {970, 3346}}";
+			sepNavSelRange = "{108, 0}";
+			sepNavVisRange = "{0, 1032}";
 		};
 	};
 	2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */ = {
@@ -1668,15 +1794,21 @@
 	2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {918, 3612}}";
-			sepNavSelRange = "{5226, 0}";
-			sepNavVisRange = "{3512, 688}";
+			sepNavSelRange = "{195, 14}";
+			sepNavVisRange = "{0, 1246}";
 		};
 	};
 	2C85C83B0B7B226A00C89869 /* RenameEngine.applescript */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.applescript;
+		name = RenameEngine.applescript;
+		path = /Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/RenameEngine.applescript;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {885, 1953}}";
+			sepNavIntBoundsRect = "{{0, 0}, {806, 1985}}";
 			sepNavSelRange = "{1545, 0}";
-			sepNavVisRange = "{1389, 511}";
+			sepNavVisRange = "{0, 772}";
 			sepNavVisRect = "{{0, 1383}, {572, 691}}";
 			sepNavWindowFrame = "{{15, 169}, {611, 764}}";
 		};
@@ -1794,15 +1926,6 @@
 		lineNumber = 4;
 		modificationTime = 268641273.006686;
 		state = 1;
-	};
-	2C89DC1206620860003D40F6 /* ComboBoxHistory.applescript */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {885, 934}}";
-			sepNavSelRange = "{798, 9}";
-			sepNavVisRange = "{0, 780}";
-			sepNavVisRect = "{{0, 0}, {533, 553}}";
-			sepNavWindowFrame = "{{84, 138}, {572, 626}}";
-		};
 	};
 	2CC6806E0D9B5ACC002301F5 /* English */ = {
 		uiCtxt = {
@@ -1967,10 +2090,17 @@
 		};
 	};
 	DA206CF3015C4E8B03C91932 /* PowerRenamer.applescript */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.applescript;
+		lineEnding = 0;
+		name = PowerRenamer.applescript;
+		path = /Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/PowerRenamer.applescript;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {885, 2064}}";
+			sepNavIntBoundsRect = "{{0, 0}, {806, 2413}}";
 			sepNavSelRange = "{3193, 0}";
-			sepNavVisRange = "{2527, 826}";
+			sepNavVisRange = "{3695, 559}";
 			sepNavVisRect = "{{0, 0}, {0, 0}}";
 			sepNavWindowFrame = "{{219, 145}, {753, 733}}";
 		};

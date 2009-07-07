@@ -8,7 +8,7 @@
 #define ENDDING_MODE 2
 #define REGEX_MODE 3
 
-#define useLog 1
+#define useLog 0
 
 static OSAScript *FINDER_SELECTION_CONTROLLER;
 

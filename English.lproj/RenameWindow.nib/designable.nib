@@ -422,7 +422,7 @@
 						<object class="NSButton" id="926789455">
 							<reference key="NSNextResponder" ref="444797023"/>
 							<int key="NSvFlags">289</int>
-							<string key="NSFrame">{{144, 9}, {100, 32}}</string>
+							<string key="NSFrame">{{7, 9}, {100, 32}}</string>
 							<reference key="NSSuperview" ref="444797023"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="718481843">
@@ -1085,9 +1085,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="922592592"/>
 							<reference ref="495637965"/>
-							<reference ref="926789455"/>
 							<reference ref="543825505"/>
 							<reference ref="986127866"/>
+							<reference ref="926789455"/>
 						</object>
 						<reference key="parent" ref="479027621"/>
 					</object>

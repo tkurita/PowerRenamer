@@ -2,7 +2,7 @@
 #import "AltActionButton.h"
 #import "FrontAppMonitor.h"
 
-#define useLog 1
+#define useLog 0
 
 @implementation RenameWindowController
 
