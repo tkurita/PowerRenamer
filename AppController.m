@@ -1,14 +1,24 @@
 #import "AppController.h"
-#import "StringExtra.h"
 #import "DonationReminder/DonationReminder.h"
-#import "PaletteWindowController.h"
 #import "WindowVisibilityController.h"
-#import "RegexKitLite.h"
 #import "RenameWindowController.h"
-
+#import "AddDummyAtFirstTransformer.h"
+#import "PreferencesWindowController.h"
+#import "ModeIndexTransformer.h"
+#import "ModeIsNotNumberingTransfomer.h"
 #define useLog 0
 
 @implementation AppController
+
++ (void)initialize
+{	
+	NSValueTransformer *transformer = [[AddDummyAtFirstTransformer new] autorelease];
+	[NSValueTransformer setValueTransformer:transformer forName:@"AddDummyAtFirst"];
+	transformer = [[ModeIndexTransformer new] autorelease];
+	[NSValueTransformer setValueTransformer:transformer forName:@"ModeIndexToName"];
+	transformer = [[ModeIsNotNumberingTransfomer new] autorelease];
+	[NSValueTransformer setValueTransformer:transformer forName:@"ModeIsNotNumbering"];
+}
 
 - (int)judgeVisibilityForApp:(NSDictionary *)appDict
 {
@@ -29,9 +39,8 @@
 
 - (IBAction)showPreferencesWindow:(id)sender
 {
-	[prefernecesWindow orderFront:self];
-	[prefernecesWindow makeMainWindow];
-	[prefernecesWindow makeKeyWindow];
+	PreferencesWindowController *prefwin = [PreferencesWindowController sharedPreferencesWindow];
+	[prefwin showWindow:self];
 }
 
 - (IBAction)makeDonation:(id)sender
@@ -74,6 +83,7 @@
 	[DonationReminder remindDonation];
 	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
 	[a_window showWindow:self];
+	//[self showPreferencesWindow:self];
 }
 
 - (void)awakeFromNib

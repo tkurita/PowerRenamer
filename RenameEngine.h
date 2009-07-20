@@ -7,8 +7,9 @@
 	OSAScript *finderSelectionController;
 }
 
-- (BOOL)resolveTargetItemsAndReturnError:(NSError **)error;
+- (BOOL)resolveTargetItemsWithSorting:(BOOL)sortFlag error:(NSError **)error;
 - (BOOL)resolveNewNames:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error;
+- (BOOL)narrowDownTargetItems:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error;
 - (BOOL)resolveIcons;
 - (BOOL)processRenameAndReturnError:(NSError **)error;
 

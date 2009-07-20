@@ -3,10 +3,7 @@
 #import "PathExtra.h"
 #import "StringExtra.h"
 
-#define ANYSUBSTRING_MODE 0
-#define BEGINNING_MODE 1
-#define ENDDING_MODE 2
-#define REGEX_MODE 3
+typedef enum RenameMode RenameMode;
 
 #define useLog 0
 
@@ -48,12 +45,131 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	[super dealloc];
 }
 
+#pragma mark narrow down
+
+- (BOOL)selectInFinder:(NSArray *)array error:(NSError **)error
+{
+	NSDictionary *err_info = nil;
+	[finderSelectionController executeHandlerWithName:@"select_items"
+									arguments:[NSArray arrayWithObject:array] error:&err_info];
+	
+	if (err_info) {
+		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
+						 [err_info objectForKey:OSAScriptErrorMessage],
+						 [err_info objectForKey:OSAScriptErrorNumber]];
+		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
+														  forKey:NSLocalizedDescriptionKey];
+		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];
+		return NO;
+	}
+	return YES;
+}
+
+- (BOOL)narrowDownWithRegex:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
+{
+	NSString *old_text = [optionProvider oldText];
+	if ([old_text isEqualToString:@""]) {
+		NSString *msg = NSLocalizedString(@"EnterSearchText", @"");
+		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
+														  forKey:NSLocalizedDescriptionKey];
+		*error = [NSError errorWithDomain:@"PowerRenamerError" code:3 userInfo:udict];
+		return NO;
+	}
+	
+	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
+	NSEnumerator *enumerator = [targetDicts objectEnumerator];
+	NSMutableDictionary *dict = nil;
+	while (dict = [enumerator nextObject]) {
+		NSString *oldname = [dict objectForKey:@"oldName"];
+		if( [oldname isMatchedByRegex:old_text options:RKLNoOptions
+								inRange:NSMakeRange(0, [oldname length]) error:error]) {
+			[matchitems addObject:[dict objectForKey:@"path"]];
+		}
+		if (*error) {
+			return NO;
+		}
+	}
+	
+	if (![self selectInFinder:matchitems error:error]) {
+		NSLog([*error description]);
+		return NO;
+	}
+	
+	return YES;
+}
+
+- (BOOL)narrowDownWithMode:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
+{
+	NSString *old_text = [optionProvider oldText];
+	if ([old_text isEqualToString:@""]) {
+		NSString *msg = NSLocalizedString(@"EnterSearchText", @"");
+		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
+														  forKey:NSLocalizedDescriptionKey];
+		*error = [NSError errorWithDomain:@"PowerRenamerError" code:3 userInfo:udict];
+		return NO;
+	}
+	
+	int compopt = NSCaseInsensitiveSearch;
+	unsigned int mode = [optionProvider modeIndex];
+	switch (mode) {
+		case kStartsWithMode:
+			compopt = compopt|NSAnchoredSearch;
+			break;
+		case kEndsWithMode:
+			compopt = compopt|NSBackwardsSearch;
+			break;
+		default:
+			break;
+	}	
+	
+	NSDictionary *dict = nil;
+	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
+	NSEnumerator *enumerator = [targetDicts objectEnumerator];	
+	while (dict = [enumerator nextObject]) {
+		NSString *oldname = [dict objectForKey:@"oldName"];
+		NSRange range = [oldname rangeOfString:old_text options:compopt];
+		if (range.length) {
+			[matchitems addObject:[dict objectForKey:@"path"]];
+		}
+	}
+	
+	if (![self selectInFinder:matchitems error:error]) {
+		NSLog([*error description]);
+		return NO;
+	}
+		
+	return YES;
+}
+
+- (BOOL)narrowDownTargetItems:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
+{
+	unsigned int mode = [optionProvider modeIndex];
+	BOOL result = NO;
+	switch (mode) {
+		case kContainMode:
+		case kStartsWithMode:
+		case kEndsWithMode:
+			result = [self narrowDownWithMode:optionProvider error:error];
+			break;
+		case kRegexMode:
+		case kNumberingMode:
+			result = [self narrowDownWithRegex:optionProvider error:error];
+			break;
+		default:
+			break;
+	}
+	
+	return result;	
+}
+
+#pragma mark rename
+
 - (BOOL)replaceSubstringWithMode:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
 {
 	NSString *old_text = [optionProvider oldText];
 	NSString *new_text = [optionProvider newText];
 	unsigned int mode = [optionProvider modeIndex];
-	if ((mode == ANYSUBSTRING_MODE) && ([old_text isEqualToString:@""])) {
+	if ((mode == kContainMode) && ([old_text isEqualToString:@""])) {
 		NSString *msg = NSLocalizedString(@"EnterSearchText", @"");
 		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
 												  forKey:NSLocalizedDescriptionKey];
@@ -69,10 +185,10 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		NSString *oldname = [dict objectForKey:@"oldName"];
 		NSMutableString *newname = [oldname mutableCopy];
 		switch (mode) {
-			case ENDDING_MODE:
+			case kEndsWithMode:
 				range = NSMakeRange([newname length] - [old_text length], [old_text length]);
 				break;
-			case ANYSUBSTRING_MODE:
+			case kContainMode:
 				range = NSMakeRange(0, [newname length]);
 				break;
 		}
@@ -96,14 +212,38 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 - (BOOL)replaceWithRegex:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
 {
 	NSString *old_text = [optionProvider oldText];
-	NSString *new_text = [optionProvider newText];
+	NSString *new_text_orig = [optionProvider newText];
+	unsigned int mode = [optionProvider modeIndex];
+	NSString *numbering_format = nil;
+	if (mode == kNumberingMode) {
+		if ([optionProvider leadingZeros]) {
+			int len = [targetDicts count];
+			int totalfigure = 0;
+			while(len > 1) {
+				totalfigure++;
+				len = len/10;
+			}
+			numbering_format = [NSString stringWithFormat:@"%%0%dd", totalfigure];
+		} else {
+			numbering_format = @"%d";
+		}
+	}
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	NSMutableDictionary *dict = nil;
-	
+	int n = [[optionProvider startingNumber] intValue];
+	NSMutableString *new_text = [new_text_orig mutableCopy];
 	while (dict = [enumerator nextObject]) {
 		NSString *oldname = [dict objectForKey:@"oldName"];
 		NSString *newname = nil;
+		if (mode == kNumberingMode) {
+			new_text = [new_text_orig mutableCopy];
+			[new_text replaceOccurrencesOfString:@"$#" 
+								   withString:[NSString stringWithFormat:numbering_format, n]
+											  options:0 range:NSMakeRange(0, [new_text length])];
+					
+		}
+		
 		newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
 													withString:new_text
 													   options:RKLNoOptions
@@ -126,6 +266,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 			[dict setObject:oldname forKey:@"newName"];
 			[dict setObject:[NSColor grayColor] forKey:@"textColor"];
 		}
+		n++;
 	}
 	return YES;
 }
@@ -135,13 +276,15 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	unsigned int mode = [optionProvider modeIndex];
 	BOOL result = NO;
 	switch (mode) {
-		case ANYSUBSTRING_MODE:
-		case BEGINNING_MODE:
-		case ENDDING_MODE:
+		case kContainMode:
+		case kStartsWithMode:
+		case kEndsWithMode:
 			result = [self replaceSubstringWithMode:optionProvider error:error];
 			break;
-		case REGEX_MODE:
+		case kRegexMode:
+		case kNumberingMode:
 			result = [self replaceWithRegex:optionProvider error:error];
+			break;
 		default:
 			break;
 	}
@@ -161,11 +304,17 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	return YES;
 }
 
-- (BOOL)resolveTargetItemsAndReturnError:(NSError **)error
+- (BOOL)resolveTargetItemsWithSorting:(BOOL)sortFlag error:(NSError **)error
 {
 	NSDictionary *err_info = nil;
-	NSAppleEventDescriptor *script_result = [finderSelectionController executeHandlerWithName:@"get_finderselection"
-																			arguments:nil error:&err_info];
+	NSAppleEventDescriptor *script_result = nil;
+	if (sortFlag) {
+		script_result = [finderSelectionController executeHandlerWithName:@"sorted_finderselection"
+																arguments:nil error:&err_info];
+	} else {
+		script_result = [finderSelectionController executeHandlerWithName:@"get_finderselection"
+																arguments:nil error:&err_info];
+	}
 	BOOL result = NO;
 	if (err_info) {
 #if useLog

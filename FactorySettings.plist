@@ -6,6 +6,8 @@
 	<string></string>
 	<key>OldNewText</key>
 	<string></string>
+	<key>StartingNumber</key>
+	<integer>1</integer>
 	<key>ModeIndex</key>
 	<integer>0</integer>
 	<key>AutoQuit</key>
@@ -14,6 +16,41 @@
 	<false/>
 	<key>HistoryMax</key>
 	<integer>10</integer>
+	<key>Presets</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>name1</string>
+			<key>mode</key>
+			<integer>0</integer>
+			<key>startingNumber</key>
+			<integer>1</integer>
+			<key>search</key>
+			<string>aaa</string>
+			<key>replace</key>
+			<string>bbb</string>
+			<key>leadingZeros</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>name1</string>
+			<key>mode</key>
+			<integer>1</integer>
+			<key>startingNumber</key>
+			<integer>1</integer>
+			<key>search</key>
+			<string>ccc</string>
+			<key>replace</key>
+			<string>ddd</string>
+			<key>leadingZeros</key>
+			<true/>
+		</dict>
+	</array>
+	<key>SelectedTabIndex</key>
+	<integer>0</integer>
+	<key>LeadingZeros</key>
+	<true/>
 	<key>applicationsFloatingOn</key>
 	<array>
 		<dict>

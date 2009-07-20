@@ -23,6 +23,9 @@
 /* Begin PBXBuildFile section */
 		2C2100271002D65100850A76 /* FrontAppMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2100251002D65100850A76 /* FrontAppMonitor.h */; };
 		2C2100281002D65100850A76 /* FrontAppMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2100261002D65100850A76 /* FrontAppMonitor.m */; };
+		2C278C8B100ECD230092CFDE /* plus24.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C278C8A100ECD230092CFDE /* plus24.png */; };
+		2C278CD0100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */; };
+		2C278DC0100FF5A60092CFDE /* PreferencesWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C278DBE100FF5A60092CFDE /* PreferencesWindow.nib */; };
 		2C4479610FFCF10A009DA83E /* RenameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C44795F0FFCF10A009DA83E /* RenameWindow.nib */; };
 		2C447C400FFFABE1009DA83E /* OSAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C447C3F0FFFABE1009DA83E /* OSAKit.framework */; };
 		2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C447DBC1000EE36009DA83E /* AltActionButton.m */; };
@@ -45,6 +48,15 @@
 		2C85CC310B7B3A1100C89869 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */; };
 		2C86A60F0F97900E0092242D /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C86A60D0F97900E0092242D /* RegexKitLite.h */; };
 		2C86A6100F97900E0092242D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86A60E0F97900E0092242D /* RegexKitLite.m */; };
+		2CA9A133101054380060A187 /* PreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CA9A131101054380060A187 /* PreferencesWindowController.h */; };
+		2CA9A134101054380060A187 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A132101054380060A187 /* PreferencesWindowController.m */; };
+		2CA9A19A101061300060A187 /* ModeIndexTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CA9A198101061300060A187 /* ModeIndexTransformer.h */; };
+		2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A199101061300060A187 /* ModeIndexTransformer.m */; };
+		2CA9A1CB10107BEE0060A187 /* ModeIsNotNumberingTransfomer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CA9A1C910107BEE0060A187 /* ModeIsNotNumberingTransfomer.h */; };
+		2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */; };
+		2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A5E81013154B0060A187 /* DNDArrayController.m */; };
+		2CB0F31A100D65A60006899A /* wizard32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F319100D65A60006899A /* wizard32.png */; };
+		2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */; };
 		2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6806D0D9B5ACC002301F5 /* Localizable.strings */; };
 		2CE800750F9819E200AD454A /* DefaultsManager.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CE8006F0F9819E200AD454A /* DefaultsManager.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2CE800A90F981EA300AD454A /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008E0F9819FB00AD454A /* StringExtra.m */; };
@@ -82,6 +94,10 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C2100251002D65100850A76 /* FrontAppMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrontAppMonitor.h; sourceTree = "<group>"; };
 		2C2100261002D65100850A76 /* FrontAppMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontAppMonitor.m; sourceTree = "<group>"; };
+		2C278C8A100ECD230092CFDE /* plus24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus24.png; sourceTree = "<group>"; };
+		2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDummyAtFirstTransformer.m; sourceTree = "<group>"; };
+		2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDummyAtFirstTransformer.h; sourceTree = "<group>"; };
+		2C278DBF100FF5A60092CFDE /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PreferencesWindow.nib; sourceTree = "<group>"; };
 		2C3263780D9B390A00631FC8 /* History.rd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; name = History.rd; path = ../../History.rd; sourceTree = SOURCE_ROOT; };
 		2C4479600FFCF10A009DA83E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RenameWindow.nib; sourceTree = "<group>"; };
 		2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameOptionsProtocol.h; sourceTree = "<group>"; };
@@ -102,6 +118,16 @@
 		2C85CC2F0B7B3A1100C89869 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		2C86A60D0F97900E0092242D /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		2C86A60E0F97900E0092242D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		2CA9A131101054380060A187 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		2CA9A132101054380060A187 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		2CA9A198101061300060A187 /* ModeIndexTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeIndexTransformer.h; sourceTree = "<group>"; };
+		2CA9A199101061300060A187 /* ModeIndexTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeIndexTransformer.m; sourceTree = "<group>"; };
+		2CA9A1C910107BEE0060A187 /* ModeIsNotNumberingTransfomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeIsNotNumberingTransfomer.h; sourceTree = "<group>"; };
+		2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeIsNotNumberingTransfomer.m; sourceTree = "<group>"; };
+		2CA9A5E81013154B0060A187 /* DNDArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNDArrayController.m; sourceTree = "<group>"; };
+		2CA9A5E91013154B0060A187 /* DNDArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDArrayController.h; sourceTree = "<group>"; };
+		2CB0F319100D65A60006899A /* wizard32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard32.png; sourceTree = "<group>"; };
+		2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = pulldown_arrow_small.tiff; sourceTree = "<group>"; };
 		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CE8006E0F9819E200AD454A /* CommandBuilder.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = CommandBuilder.applescript; sourceTree = "<group>"; };
 		2CE8006F0F9819E200AD454A /* DefaultsManager.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = DefaultsManager.applescript; sourceTree = "<group>"; };
@@ -218,11 +244,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C278C8A100ECD230092CFDE /* plus24.png */,
+				2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */,
+				2CB0F319100D65A60006899A /* wizard32.png */,
 				2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */,
 				2CF52CE70DA26C55004844AD /* Credits.html */,
 				2CC6806D0D9B5ACC002301F5 /* Localizable.strings */,
 				2C54277B0B7C05B900820867 /* HelpSetup.plist */,
 				2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */,
+				2C278DBE100FF5A60092CFDE /* PreferencesWindow.nib */,
 				2C44795F0FFCF10A009DA83E /* RenameWindow.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -244,6 +274,10 @@
 		2C5B7DE80FF0985F00D5ED31 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2CA9A5E81013154B0060A187 /* DNDArrayController.m */,
+				2CA9A5E91013154B0060A187 /* DNDArrayController.h */,
+				2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */,
+				2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */,
 				2C447DBB1000EE36009DA83E /* AltActionButton.h */,
 				2C447DBC1000EE36009DA83E /* AltActionButton.m */,
 				2C85CC2E0B7B3A1100C89869 /* AppController.h */,
@@ -253,6 +287,12 @@
 				2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */,
 				2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */,
 				2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */,
+				2CA9A131101054380060A187 /* PreferencesWindowController.h */,
+				2CA9A132101054380060A187 /* PreferencesWindowController.m */,
+				2CA9A198101061300060A187 /* ModeIndexTransformer.h */,
+				2CA9A199101061300060A187 /* ModeIndexTransformer.m */,
+				2CA9A1C910107BEE0060A187 /* ModeIsNotNumberingTransfomer.h */,
+				2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -324,6 +364,9 @@
 				2C5B7E010FF098F700D5ED31 /* RenameWindowController.h in Headers */,
 				2C5B7E150FF0A44A00D5ED31 /* RenameEngine.h in Headers */,
 				2C2100271002D65100850A76 /* FrontAppMonitor.h in Headers */,
+				2CA9A133101054380060A187 /* PreferencesWindowController.h in Headers */,
+				2CA9A19A101061300060A187 /* ModeIndexTransformer.h in Headers */,
+				2CA9A1CB10107BEE0060A187 /* ModeIsNotNumberingTransfomer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +425,10 @@
 				2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */,
 				2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */,
 				2C4479610FFCF10A009DA83E /* RenameWindow.nib in Resources */,
+				2CB0F31A100D65A60006899A /* wizard32.png in Resources */,
+				2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */,
+				2C278C8B100ECD230092CFDE /* plus24.png in Resources */,
+				2C278DC0100FF5A60092CFDE /* PreferencesWindow.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +468,11 @@
 				2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */,
 				2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */,
 				2C2100281002D65100850A76 /* FrontAppMonitor.m in Sources */,
+				2C278CD0100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m in Sources */,
+				2CA9A134101054380060A187 /* PreferencesWindowController.m in Sources */,
+				2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */,
+				2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */,
+				2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +493,14 @@
 				29B97319FDCFA39411CA2CEA /* English */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		2C278DBE100FF5A60092CFDE /* PreferencesWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C278DBF100FF5A60092CFDE /* English */,
+			);
+			name = PreferencesWindow.nib;
 			sourceTree = "<group>";
 		};
 		2C44795F0FFCF10A009DA83E /* RenameWindow.nib */ = {
