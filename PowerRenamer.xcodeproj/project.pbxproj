@@ -21,7 +21,6 @@
 /* End PBXAppleScriptBuildPhase section */
 
 /* Begin PBXBuildFile section */
-		2C2100271002D65100850A76 /* FrontAppMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2100251002D65100850A76 /* FrontAppMonitor.h */; };
 		2C2100281002D65100850A76 /* FrontAppMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2100261002D65100850A76 /* FrontAppMonitor.m */; };
 		2C278C8B100ECD230092CFDE /* plus24.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C278C8A100ECD230092CFDE /* plus24.png */; };
 		2C278CD0100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */; };
@@ -31,10 +30,8 @@
 		2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C447DBC1000EE36009DA83E /* AltActionButton.m */; };
 		2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008C0F9819FB00AD454A /* PathExtra.m */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
-		2C5B7E010FF098F700D5ED31 /* RenameWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */; };
 		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
 		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
-		2C5B7E150FF0A44A00D5ED31 /* RenameEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */; };
 		2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */; };
 		2C85CB6A0B7B342900C89869 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		2C85CB6B0B7B342900C89869 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -44,17 +41,14 @@
 		2C85CC1D0B7B38D400C89869 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */; };
 		2C85CC1E0B7B38D800C89869 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */; };
 		2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C85CC210B7B398100C89869 /* FactorySettings.plist */; };
-		2C85CC300B7B3A1100C89869 /* AppController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C85CC2E0B7B3A1100C89869 /* AppController.h */; };
 		2C85CC310B7B3A1100C89869 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */; };
-		2C86A60F0F97900E0092242D /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C86A60D0F97900E0092242D /* RegexKitLite.h */; };
 		2C86A6100F97900E0092242D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86A60E0F97900E0092242D /* RegexKitLite.m */; };
-		2CA9A133101054380060A187 /* PreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CA9A131101054380060A187 /* PreferencesWindowController.h */; };
 		2CA9A134101054380060A187 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A132101054380060A187 /* PreferencesWindowController.m */; };
-		2CA9A19A101061300060A187 /* ModeIndexTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CA9A198101061300060A187 /* ModeIndexTransformer.h */; };
 		2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A199101061300060A187 /* ModeIndexTransformer.m */; };
-		2CA9A1CB10107BEE0060A187 /* ModeIsNotNumberingTransfomer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CA9A1C910107BEE0060A187 /* ModeIsNotNumberingTransfomer.h */; };
 		2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */; };
 		2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A5E81013154B0060A187 /* DNDArrayController.m */; };
+		2CA9A71510153DA70060A187 /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9A71310153DA70060A187 /* plus.tiff */; };
+		2CA9A71610153DA70060A187 /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9A71410153DA70060A187 /* minus.tiff */; };
 		2CB0F31A100D65A60006899A /* wizard32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F319100D65A60006899A /* wizard32.png */; };
 		2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */; };
 		2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6806D0D9B5ACC002301F5 /* Localizable.strings */; };
@@ -126,6 +120,8 @@
 		2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeIsNotNumberingTransfomer.m; sourceTree = "<group>"; };
 		2CA9A5E81013154B0060A187 /* DNDArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNDArrayController.m; sourceTree = "<group>"; };
 		2CA9A5E91013154B0060A187 /* DNDArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDArrayController.h; sourceTree = "<group>"; };
+		2CA9A71310153DA70060A187 /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
+		2CA9A71410153DA70060A187 /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2CB0F319100D65A60006899A /* wizard32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard32.png; sourceTree = "<group>"; };
 		2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = pulldown_arrow_small.tiff; sourceTree = "<group>"; };
 		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -244,6 +240,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CA9A71310153DA70060A187 /* plus.tiff */,
+				2CA9A71410153DA70060A187 /* minus.tiff */,
 				2C278C8A100ECD230092CFDE /* plus24.png */,
 				2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */,
 				2CB0F319100D65A60006899A /* wizard32.png */,
@@ -359,14 +357,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C85CC300B7B3A1100C89869 /* AppController.h in Headers */,
-				2C86A60F0F97900E0092242D /* RegexKitLite.h in Headers */,
-				2C5B7E010FF098F700D5ED31 /* RenameWindowController.h in Headers */,
-				2C5B7E150FF0A44A00D5ED31 /* RenameEngine.h in Headers */,
-				2C2100271002D65100850A76 /* FrontAppMonitor.h in Headers */,
-				2CA9A133101054380060A187 /* PreferencesWindowController.h in Headers */,
-				2CA9A19A101061300060A187 /* ModeIndexTransformer.h in Headers */,
-				2CA9A1CB10107BEE0060A187 /* ModeIsNotNumberingTransfomer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +419,8 @@
 				2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */,
 				2C278C8B100ECD230092CFDE /* plus24.png in Resources */,
 				2C278DC0100FF5A60092CFDE /* PreferencesWindow.nib in Resources */,
+				2CA9A71510153DA70060A187 /* plus.tiff in Resources */,
+				2CA9A71610153DA70060A187 /* minus.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

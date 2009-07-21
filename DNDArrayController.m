@@ -257,7 +257,8 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 {
 	unsigned int start, end, count;
 	
-	if ((start == 0) && (range.length == 0))
+	//if ((start == 0) && (range.length == 0))
+	if (range.length == 0)
 	{
 		return 0;	
 	}

@@ -18,7 +18,7 @@
 - (id)transformedValue:(id)value
 {
 	int mode = [value intValue];
-	NSString *mode_text;
+	NSString *mode_text = @"contain";
 	switch (mode) {
 		case 0:
 			mode_text = @"contain";
