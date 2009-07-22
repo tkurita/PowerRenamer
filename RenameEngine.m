@@ -111,24 +111,37 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	
 	int compopt = NSCaseInsensitiveSearch;
 	unsigned int mode = [optionProvider modeIndex];
+	SEL selector = nil;
 	switch (mode) {
 		case kStartsWithMode:
-			compopt = compopt|NSAnchoredSearch;
+			selector = @selector(hasPrefix:options:);
 			break;
 		case kEndsWithMode:
-			compopt = compopt|NSBackwardsSearch;
+			selector = @selector(hasSuffix:options:);
+			break;
+		case kContainMode:
+			selector = @selector(contain:options:);
 			break;
 		default:
 			break;
-	}	
+	}
+	
+	NSMethodSignature *signature = [NSString instanceMethodSignatureForSelector:selector];
+	NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+	[invocation setSelector:selector];
+	[invocation setArgument:&old_text atIndex:2];
+	[invocation setArgument:&compopt atIndex:3];
 	
 	NSDictionary *dict = nil;
 	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];	
 	while (dict = [enumerator nextObject]) {
 		NSString *oldname = [dict objectForKey:@"oldName"];
-		NSRange range = [oldname rangeOfString:old_text options:compopt];
-		if (range.length) {
+		[invocation setTarget:oldname];
+		[invocation invoke];
+		BOOL result = NO;
+		[invocation getReturnValue:&result];
+		if (result) {
 			[matchitems addObject:[dict objectForKey:@"path"]];
 		}
 	}
@@ -177,25 +190,38 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		return NO;
 	}
 	
-	NSRange range = NSMakeRange(0, [old_text length]); // beginning mode
-	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	NSMutableDictionary *dict = nil;
+	NSUInteger opt = NSCaseInsensitiveSearch;
+	SEL selector = nil;
+	switch (mode) {
+		case kStartsWithMode:
+			selector = @selector(replacePrefixOfString:withString:options:);
+			break;			
+		case kEndsWithMode:
+			selector = @selector(replaceSuffixOfString:withString:options:);
+			break;
+		case kContainMode:
+			selector = @selector(replaceSubtextOfString:withString:options:);
+			break;
+		default:
+			break;
+	}
+	NSMethodSignature *signature = [NSMutableString instanceMethodSignatureForSelector:selector];
+	NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+	[invocation setSelector:selector];
+	[invocation setArgument:&old_text atIndex:2];
+	[invocation setArgument:&new_text atIndex:3];
+	[invocation setArgument:&opt atIndex:4];
+	
 	while (dict = [enumerator nextObject]) {
 		NSString *oldname = [dict objectForKey:@"oldName"];
 		NSMutableString *newname = [oldname mutableCopy];
-		switch (mode) {
-			case kEndsWithMode:
-				range = NSMakeRange([newname length] - [old_text length], [old_text length]);
-				break;
-			case kContainMode:
-				range = NSMakeRange(0, [newname length]);
-				break;
-		}
-		[newname replaceOccurrencesOfString:old_text withString:new_text 
-									options:NSCaseInsensitiveSearch range:range];
-		
-		if (![newname isEqualToString:oldname]) {
+		[invocation setTarget:newname];
+		[invocation invoke];
+		unsigned int result = 0;
+		[invocation getReturnValue:&result];
+		if (result) {
 			newname = [[newname uniqueNameAtLocation:
 										[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
 								   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
