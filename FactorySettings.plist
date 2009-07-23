@@ -16,39 +16,53 @@
 	<false/>
 	<key>HistoryMax</key>
 	<integer>10</integer>
+	<key>SelectedTabIndex</key>
+	<integer>0</integer>
 	<key>Presets</key>
 	<array>
 		<dict>
-			<key>name</key>
-			<string>name1</string>
-			<key>mode</key>
-			<integer>0</integer>
-			<key>startingNumber</key>
-			<integer>1</integer>
-			<key>search</key>
-			<string>aaa</string>
-			<key>replace</key>
-			<string>bbb</string>
 			<key>leadingZeros</key>
 			<true/>
+			<key>mode</key>
+			<integer>4</integer>
+			<key>name</key>
+			<string>01)name1, 02)name2, ...</string>
+			<key>replace</key>
+			<string>$#</string>
+			<key>search</key>
+			<string>^(\d+\))?</string>
+			<key>startingNumber</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
-			<key>name</key>
-			<string>name1</string>
-			<key>mode</key>
-			<integer>1</integer>
-			<key>startingNumber</key>
-			<integer>1</integer>
-			<key>search</key>
-			<string>ccc</string>
-			<key>replace</key>
-			<string>ddd</string>
 			<key>leadingZeros</key>
 			<true/>
+			<key>mode</key>
+			<integer>4</integer>
+			<key>name</key>
+			<string>name01.xxx, name02.xxx, ...</string>
+			<key>replace</key>
+			<string>$1$#$3</string>
+			<key>search</key>
+			<string>^(\D+)(\d+)?(\.\S+)</string>
+			<key>startingNumber</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>leadingZeros</key>
+			<true/>
+			<key>mode</key>
+			<integer>2</integer>
+			<key>name</key>
+			<string>.htm-&gt;.html</string>
+			<key>replace</key>
+			<string>.html</string>
+			<key>search</key>
+			<string>.htm</string>
+			<key>startingNumber</key>
+			<integer>1</integer>
 		</dict>
 	</array>
-	<key>SelectedTabIndex</key>
-	<integer>0</integer>
 	<key>LeadingZeros</key>
 	<true/>
 	<key>applicationsFloatingOn</key>

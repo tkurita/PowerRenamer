@@ -893,16 +893,16 @@
 	};
 	2C2100251002D65100850A76 /* FrontAppMonitor.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {723, 398}}";
-			sepNavSelRange = "{238, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
+			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 244}";
 		};
 	};
 	2C2100261002D65100850A76 /* FrontAppMonitor.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {624, 1176}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 1120}}";
 			sepNavSelRange = "{614, 27}";
-			sepNavVisRange = "{0, 479}";
+			sepNavVisRange = "{0, 674}";
 			sepNavWindowFrame = "{{61, 355}, {551, 476}}";
 		};
 	};
@@ -986,6 +986,11 @@
 		name = NDScript.h;
 		path = /Users/tkurita/Dev/Examples/NDScriptTest/Classes/NDScript.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {3024, 882}}";
+			sepNavSelRange = "{3218, 2}";
+			sepNavVisRange = "{831, 2212}";
+		};
 	};
 	2C2100CC100322BC00850A76 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1003,6 +1008,12 @@
 		name = NDScriptData.h;
 		path = /Users/tkurita/Dev/Examples/NDScriptTest/Classes/NDScriptData.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = Abstract;\n            r = \"{41426, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{41452, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{41568, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{41594, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{41628, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{41837, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{41863, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{42099, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{42125, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{42550, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{42576, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{42603, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{42970, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{42996, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{43023, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{43211, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{43237, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{43496, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{43522, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{43953, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{43979, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{44009, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{44360, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{44386, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{44416, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{44588, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{44614, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{44857, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{44883, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{44910, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{45091, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{45117, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{45358, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{45384, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{45414, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{45772, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{45798, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{45828, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{46002, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{46028, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{46052, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{46121, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{46147, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{46396, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{46422, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstact;\n            r = \"{46702, 11}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{46730, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{46834, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{46860, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{47119, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{47145, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{47559, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{47585, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{47845, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{47871, 14}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{48343, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{48367, 10}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{48514, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{48538, 10}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{48647, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{48671, 10}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{48788, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{48812, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{48917, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{48943, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{49037, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{49063, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{49221, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{49247, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{49275, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{49454, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{49480, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{49773, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{49799, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{49895, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{50133, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{50159, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{50455, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{50481, 14}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{50842, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{50868, 14}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{51227, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{51312, 8}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{51340, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{51612, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{51638, 14}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{52037, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{52061, 10}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{52179, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{52209, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{52400, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{52426, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{52460, 8}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{52478, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{52599, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{52625, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{52688, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{52947, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{52973, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{53042, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{53309, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{53335, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{53398, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{53657, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{53683, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{53747, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{53891, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{53917, 14}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{53981, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{54106, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{54132, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{54206, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{54482, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{54508, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{54582, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{54854, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{54880, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{54950, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{55192, 12}\";\n            s = 1;\n        },\n                {\n            l = Discussion;\n            r = \"{55218, 14}\";\n            s = 1;\n        },\n                {\n            l = disc;\n            r = \"{55288, 8}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{55534, 12}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{55903, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{56020, 12}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{56517, 12}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{56867, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{56980, 12}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{57458, 12}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{57827, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{57946, 12}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{58446, 12}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{58817, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{58936, 12}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{59439, 12}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{59795, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{59904, 12}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{60374, 12}\";\n            s = 1;\n        },\n                {\n            l = result;\n            r = \"{60960, 10}\";\n            s = 1;\n        },\n                {\n            l = Abstract;\n            r = \"{61063, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 61719}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {3102, 17374}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{19296, 1812}";
+		};
 	};
 	2C2100CE100322BC00850A76 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1056,7 +1067,7 @@
 	};
 	2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {555, 448}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
 			sepNavSelRange = "{0, 442}";
 			sepNavVisRange = "{0, 442}";
 			sepNavWindowFrame = "{{38, 219}, {816, 633}}";
@@ -1064,7 +1075,7 @@
 	};
 	2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {589, 289}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
 			sepNavSelRange = "{0, 105}";
 			sepNavVisRange = "{0, 105}";
 		};
@@ -1223,6 +1234,11 @@
 		name = OSAScript.h;
 		path = /System/Library/Frameworks/OSAKit.framework/Versions/A/Headers/OSAScript.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {723, 1498}}";
+			sepNavSelRange = "{850, 7}";
+			sepNavVisRange = "{146, 911}";
+		};
 	};
 	2C447CE910007B8A009DA83E /* RenameEngine.m:360 */ = {
 		isa = PBXFileBreakpoint;
@@ -1278,6 +1294,11 @@
 		name = History.rd;
 		path = /Users/tkurita/Dev/Projects/PowerRenamer/History.rd;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1176, 3368}}";
+			sepNavSelRange = "{1748, 0}";
+			sepNavVisRange = "{0, 1042}";
+		};
 		wrapsLines = 1;
 	};
 	2C45FA5606619CBB001AE79E /* Source Control */ = {
@@ -1342,24 +1363,24 @@
 	2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {723, 644}}";
-			sepNavSelRange = "{664, 0}";
-			sepNavVisRange = "{429, 833}";
+			sepNavSelRange = "{464, 0}";
+			sepNavVisRange = "{0, 1058}";
 			sepNavWindowFrame = "{{371, 115}, {845, 763}}";
 		};
 	};
 	2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {966, 6272}}";
-			sepNavSelRange = "{9009, 0}";
-			sepNavVisRange = "{8289, 1403}";
+			sepNavIntBoundsRect = "{{0, 0}, {756, 7014}}";
+			sepNavSelRange = "{13672, 16}";
+			sepNavVisRange = "{13355, 717}";
 			sepNavWindowFrame = "{{15, 110}, {845, 763}}";
 		};
 	};
 	2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {713, 1418}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 1418}}";
 			sepNavSelRange = "{2201, 0}";
-			sepNavVisRange = "{1338, 565}";
+			sepNavVisRange = "{707, 757}";
 			sepNavWindowFrame = "{{542, 104}, {767, 774}}";
 		};
 	};
@@ -1461,7 +1482,7 @@
 	};
 	2C85CC2E0B7B3A1100C89869 /* AppController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {900, 355}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
 			sepNavSelRange = "{72, 0}";
 			sepNavVisRange = "{0, 245}";
 			sepNavVisRect = "{{0, 0}, {946, 292}}";
@@ -1470,25 +1491,25 @@
 	};
 	2C85CC2F0B7B3A1100C89869 /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {756, 1428}}";
-			sepNavSelRange = "{2718, 0}";
-			sepNavVisRange = "{535, 1165}";
+			sepNavIntBoundsRect = "{{0, 0}, {756, 1414}}";
+			sepNavSelRange = "{315, 0}";
+			sepNavVisRange = "{0, 1280}";
 			sepNavVisRect = "{{0, 0}, {694, 558}}";
 			sepNavWindowFrame = "{{377, 137}, {733, 631}}";
 		};
 	};
 	2C86A60D0F97900E0092242D /* RegexKitLite.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {723, 3010}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 2996}}";
 			sepNavSelRange = "{3178, 237}";
-			sepNavVisRange = "{2801, 735}";
+			sepNavVisRange = "{2686, 929}";
 		};
 	};
 	2C86A60E0F97900E0092242D /* RegexKitLite.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {903, 14336}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 14378}}";
 			sepNavSelRange = "{194, 0}";
-			sepNavVisRange = "{0, 1086}";
+			sepNavVisRange = "{0, 1649}";
 		};
 	};
 	2C86A61B0F9796640092242D /* RenameEngine.applescript:4 */ = {
@@ -1509,17 +1530,17 @@
 	};
 	2CA9A131101054380060A187 /* PreferencesWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {723, 483}}";
-			sepNavSelRange = "{118, 22}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
+			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 285}";
 			sepNavWindowFrame = "{{254, 153}, {858, 668}}";
 		};
 	};
 	2CA9A132101054380060A187 /* PreferencesWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {970, 784}}";
-			sepNavSelRange = "{922, 0}";
-			sepNavVisRange = "{393, 879}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 784}}";
+			sepNavSelRange = "{197, 56}";
+			sepNavVisRange = "{0, 1274}";
 			sepNavWindowFrame = "{{254, 153}, {858, 668}}";
 		};
 	};
@@ -1585,16 +1606,16 @@
 	};
 	2CA9A198101061300060A187 /* ModeIndexTransformer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {713, 432}}";
-			sepNavSelRange = "{70, 18}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
+			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 99}";
 		};
 	};
 	2CA9A199101061300060A187 /* ModeIndexTransformer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {970, 644}}";
-			sepNavSelRange = "{288, 0}";
-			sepNavVisRange = "{105, 339}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 630}}";
+			sepNavSelRange = "{18, 0}";
+			sepNavVisRange = "{0, 561}";
 			sepNavWindowFrame = "{{107, 201}, {755, 588}}";
 		};
 	};
@@ -1615,7 +1636,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 226;
+		vrLen = 99;
 		vrLoc = 0;
 	};
 	2CA9A1A8101063A40060A187 /* PBXTextBookmark */ = {
@@ -1650,15 +1671,15 @@
 	};
 	2CA9A1C910107BEE0060A187 /* ModeIsNotNumberingTransfomer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {723, 398}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 98}";
 		};
 	};
 	2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {713, 432}}";
-			sepNavSelRange = "{59, 28}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
+			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 324}";
 		};
 	};
@@ -1709,7 +1730,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 466;
+		vrLen = 324;
 		vrLoc = 0;
 	};
 	2CA9A26D10109B7C0060A187 /* PlistBookmark */ = {
@@ -1936,9 +1957,9 @@
 	};
 	2CA9A5E91013154B0060A187 /* DNDArrayController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 980}}";
-			sepNavSelRange = "{2475, 0}";
-			sepNavVisRange = "{1865, 740}";
+			sepNavIntBoundsRect = "{{0, 0}, {954, 1022}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2151}";
 		};
 	};
 	2CA9A5ED101315730060A187 /* PlistBookmark */ = {
@@ -2370,7 +2391,7 @@
 	};
 	2CC6806E0D9B5ACC002301F5 /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {782, 276}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
 			sepNavSelRange = "{85, 0}";
 			sepNavVisRange = "{0, 85}";
 			sepNavWindowFrame = "{{15, 298}, {995, 635}}";
@@ -2399,7 +2420,7 @@
 	};
 	2CE800830F9819FB00AD454A /* DropBox.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {723, 578}}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 368}";
 		};
@@ -2408,7 +2429,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {723, 1946}}";
 			sepNavSelRange = "{3740, 0}";
-			sepNavVisRange = "{85, 1150}";
+			sepNavVisRange = "{146, 1089}";
 		};
 	};
 	2CE800870F9819FB00AD454A /* NSURL+NDCarbonUtilities.h */ = {
@@ -2434,9 +2455,9 @@
 	};
 	2CE8008A0F9819FB00AD454A /* PaletteWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {792, 3934}}";
-			sepNavSelRange = "{6340, 150}";
-			sepNavVisRange = "{6362, 748}";
+			sepNavIntBoundsRect = "{{0, 0}, {792, 4158}}";
+			sepNavSelRange = "{387, 0}";
+			sepNavVisRange = "{54, 806}";
 			sepNavWindowFrame = "{{84, 222}, {755, 588}}";
 		};
 	};
@@ -2456,7 +2477,7 @@
 	};
 	2CE8008D0F9819FB00AD454A /* StringExtra.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 492}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 515}}";
 			sepNavSelRange = "{83, 103}";
 			sepNavVisRange = "{0, 975}";
 			sepNavWindowFrame = "{{15, 125}, {736, 748}}";
@@ -2464,23 +2485,23 @@
 	};
 	2CE8008E0F9819FB00AD454A /* StringExtra.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 1582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 1666}}";
 			sepNavSelRange = "{686, 0}";
 			sepNavVisRange = "{0, 1135}";
 		};
 	};
 	2CE8008F0F9819FB00AD454A /* WindowVisibilityController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {970, 700}}";
-			sepNavSelRange = "{151, 4}";
-			sepNavVisRange = "{0, 525}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 700}}";
+			sepNavSelRange = "{242, 0}";
+			sepNavVisRange = "{0, 1046}";
 		};
 	};
 	2CE800900F9819FB00AD454A /* WindowVisibilityController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {684, 3542}}";
-			sepNavSelRange = "{1349, 0}";
-			sepNavVisRange = "{2186, 938}";
+			sepNavIntBoundsRect = "{{0, 0}, {723, 3570}}";
+			sepNavSelRange = "{3546, 19}";
+			sepNavVisRange = "{3577, 887}";
 			sepNavWindowFrame = "{{38, 376}, {551, 476}}";
 		};
 	};
