@@ -10,7 +10,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 2C85CB7E0B7B342900C89869 /* PowerRenamer */;
 		activeTarget = 2C85CB620B7B342900C89869 /* PowerRenamer */;
 		addToTargets = (
@@ -876,6 +876,7 @@
 			2CEFC38510170A56003C67DB /* PBXTextBookmark */ = 2CEFC38510170A56003C67DB /* PBXTextBookmark */;
 			2CEFC38810170A9C003C67DB /* PBXTextBookmark */ = 2CEFC38810170A9C003C67DB /* PBXTextBookmark */;
 			2CEFC38A10170ACA003C67DB /* PBXTextBookmark */ = 2CEFC38A10170ACA003C67DB /* PBXTextBookmark */;
+			2CEFC38F10182624003C67DB /* PBXTextBookmark */ = 2CEFC38F10182624003C67DB /* PBXTextBookmark */;
 		};
 		sourceControlManager = 2C45FA5606619CBB001AE79E /* Source Control */;
 		userBuildSettings = {
@@ -2465,7 +2466,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {726, 1582}}";
 			sepNavSelRange = "{686, 0}";
-			sepNavVisRange = "{192, 1149}";
+			sepNavVisRange = "{0, 1135}";
 		};
 	};
 	2CE8008F0F9819FB00AD454A /* WindowVisibilityController.h */ = {
@@ -3758,6 +3759,16 @@
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 192;
+	};
+	2CEFC38F10182624003C67DB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CE8008E0F9819FB00AD454A /* StringExtra.m */;
+		name = "StringExtra.m: 17";
+		rLen = 0;
+		rLoc = 686;
+		rType = 0;
+		vrLen = 1135;
+		vrLoc = 0;
 	};
 	2CF52CE70DA26C55004844AD /* Credits.html */ = {
 		uiCtxt = {

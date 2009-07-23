@@ -307,7 +307,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 154}, {287, 623}}</string>
+							<string>{{0, 0}, {287, 623}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -328,7 +328,7 @@
 							<real>265</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>-13 171 1093 703 0 0 1440 878 </string>
+						<string>192 167 1093 703 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -358,7 +358,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CEFC38A10170ACA003C67DB</string>
+										<string>2CEFC38F10182624003C67DB</string>
 										<key>history</key>
 										<array>
 											<string>2C5804B40FFC76D500DBA275</string>
@@ -453,7 +453,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {784, 547}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-13 171 1093 703 0 0 1440 878 </string>
+								<string>192 167 1093 703 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -473,7 +473,7 @@
 								<key>Frame</key>
 								<string>{{0, 552}, {784, 90}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-13 171 1093 703 0 0 1440 878 </string>
+								<string>192 167 1093 703 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -642,7 +642,7 @@
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>-13 171 1093 703 0 0 1440 878 </string>
+	<string>192 167 1093 703 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
