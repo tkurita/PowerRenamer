@@ -18,22 +18,22 @@
 - (id)transformedValue:(id)value
 {
 	int mode = [value intValue];
-	NSString *mode_text = @"contain";
+	NSString *mode_text = nil;
 	switch (mode) {
 		case 0:
-			mode_text = @"contain";
+			mode_text = @"Contain";
 			break;
 		case 1:
-			mode_text = @"starts with";
+			mode_text = @"Starts with";
 			break;
 		case 2:
-			mode_text = @"ends with";
+			mode_text = @"Ends with";
 			break;
 		case 3:
-			mode_text = @"regular expression";
+			mode_text = @"Regular Expression";
 			break;
 		case 4:
-			mode_text = @"numbering";
+			mode_text = @"Numbering";
 			break;
 		default:
 			break;

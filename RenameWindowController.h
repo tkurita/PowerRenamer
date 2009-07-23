@@ -28,7 +28,7 @@
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)okAction:(id)sender;
 - (IBAction)applyPreset:(id)sender;
-- (IBAction)saveAsPreset:(id)sender;
+- (IBAction)addToPreset:(id)sender;
 - (IBAction)okNewPresetName:(id)sender;
 - (IBAction)cancelNewPresetName:(id)sender;
 - (IBAction)narrowDown:(id)sender;

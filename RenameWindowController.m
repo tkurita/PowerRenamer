@@ -90,8 +90,8 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 	NSString *label;
 	NSString *tool_tip;
 	
-	label = NSLocalizedString(@"Settings", @"Toolbar's label for Settings");
-	tool_tip = NSLocalizedString(@"Load predefined settings.", @"Toolbar's tool tip for Settings");
+	label = NSLocalizedString(@"Presets", @"Toolbar's label for presets");
+	tool_tip = NSLocalizedString(@"Load a preset.", @"Toolbar's tool tip for presets");
 	[[settingsPullDownButton cell] setUsesItemFromMenu:NO];
 	NSMenuItem *item = [[NSMenuItem allocWithZone:[self zone]] initWithTitle:@"" action:NULL keyEquivalent:@""];
 	NSImage *icon_image = [NSImage imageNamed:@"wizard32"];
@@ -114,13 +114,13 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
     [item setOnStateImage:nil];
     [item setMixedStateImage:nil];
     [[settingsPullDownButton cell] setMenuItem:[item autorelease]];
-	addToolbarItem(toolbarItems, @"Settings", label, label, tool_tip,
+	addToolbarItem(toolbarItems, @"Presets", label, label, tool_tip,
 	self,@selector(setView:), presetPullDownView, NULL,NULL);
 	
-	label = NSLocalizedString(@"SaveSettings", @"Toolbar's label for AddSettings");
-	tool_tip = NSLocalizedString(@"Save Current Settings.", @"Toolbar's tool tip for AddSettings");
-	addToolbarItem(toolbarItems, @"SaveSettings", label, label, tool_tip,
-				   self,@selector(setImage:),[NSImage imageNamed:@"plus24.png"],@selector(saveAsPreset:),NULL);
+	label = NSLocalizedString(@"Add to Presets", @"Toolbar's label for AddToPresets");
+	tool_tip = NSLocalizedString(@"Save current settings as a preset.", @"Toolbar's tool tip for AddToPresets");
+	addToolbarItem(toolbarItems, @"AddToPresets", label, label, tool_tip,
+				   self,@selector(setImage:),[NSImage imageNamed:@"plus24.png"],@selector(addToPreset:),NULL);
 	
 	label = NSLocalizedString(@"Help", @"Toolbar's label for Help");
 	tool_tip = NSLocalizedString(@"Show PowerRenamer Help.", @"Toolbar's tool tip for Help");			
@@ -169,14 +169,14 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 // set of toolbar items.  It can also be called by the customization palette to display the default toolbar.    
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
 {
-	return [NSArray arrayWithObjects:@"Settings",@"SaveSettings", @"Help",nil];
+	return [NSArray arrayWithObjects:@"Presets",@"AddToPresets", NSToolbarFlexibleSpaceItemIdentifier, @"Help",nil];
 }
 
 // This method is required of NSToolbar delegates.  It returns an array holding identifiers for all allowed
 // toolbar items in this toolbar.  Any not listed here will not be available in the customization palette.
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
 {
-	return [NSArray arrayWithObjects:@"Settings", @"SaveSettings", @"Help",
+	return [NSArray arrayWithObjects:@"Presets", @"AddToPresets", @"Help",
 			NSToolbarSeparatorItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier,NSToolbarCustomizeToolbarItemIdentifier, nil];
 }
 
@@ -220,7 +220,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 }
 
 
-- (IBAction)saveAsPreset:(id)sender
+- (IBAction)addToPreset:(id)sender
 {
 	[NSApp beginSheet:newPresetNameWindow
 			   modalForWindow:[self window] 
