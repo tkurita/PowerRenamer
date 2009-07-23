@@ -62,6 +62,7 @@
 		2CED519F0F986B0F007CD3B4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CED519E0F986B0F007CD3B4 /* Sparkle.framework */; };
 		2CED51A60F986B1B007CD3B4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CED519E0F986B0F007CD3B4 /* Sparkle.framework */; };
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
+		2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */; };
 		2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CF52CE70DA26C55004844AD /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		2CE801690F982B1900AD454A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		2CED519E0F986B0F007CD3B4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle.framework; sourceTree = SOURCE_ROOT; };
 		2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		2CEFC3AE10186201003C67DB /* PowerRenamer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PowerRenamer.icns; sourceTree = "<group>"; };
 		2CF52CE70DA26C55004844AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -240,6 +242,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CEFC3AE10186201003C67DB /* PowerRenamer.icns */,
 				2CA9A71310153DA70060A187 /* plus.tiff */,
 				2CA9A71410153DA70060A187 /* minus.tiff */,
 				2C278C8A100ECD230092CFDE /* plus24.png */,
@@ -421,6 +424,7 @@
 				2C278DC0100FF5A60092CFDE /* PreferencesWindow.nib in Resources */,
 				2CA9A71510153DA70060A187 /* plus.tiff in Resources */,
 				2CA9A71610153DA70060A187 /* minus.tiff in Resources */,
+				2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

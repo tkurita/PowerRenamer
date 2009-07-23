@@ -11,7 +11,7 @@
 	<key>CFBundleHelpBookFolder</key>
 	<string>PowerRenamerHelp</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>PowerRenamer.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>PowerRenamer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
