@@ -28,7 +28,7 @@
 			<key>name</key>
 			<string>01)name1, 02)name2, ...</string>
 			<key>replace</key>
-			<string>$#</string>
+			<string>$#)</string>
 			<key>search</key>
 			<string>^(\d+\))?</string>
 			<key>startingNumber</key>
