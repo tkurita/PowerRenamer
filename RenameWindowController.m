@@ -294,6 +294,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 #pragma mark delegate methods
 -(void) windowWillClose:(NSNotification *)notification
 {
+	[[FrontAppMonitor notificationCenter] removeObserver:self];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults setObject:oldText forKey:@"LastOldText"];
 	[user_defaults setObject:newText forKey:@"LastNewText"];
