@@ -241,11 +241,13 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSString *new_text_orig = [optionProvider newText];
 	unsigned int mode = [optionProvider modeIndex];
 	NSString *numbering_format = nil;
+	int n = [[optionProvider startingNumber] intValue];
+	
 	if (mode == kNumberingMode) {
 		if ([optionProvider leadingZeros]) {
-			int len = [targetDicts count];
-			int totalfigure = 0;
-			while(len > 1) {
+			int len = [targetDicts count] + (n-1);
+			int totalfigure = 1;
+			while(len >= 10) {
 				totalfigure++;
 				len = len/10;
 			}
@@ -257,7 +259,6 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	NSMutableDictionary *dict = nil;
-	int n = [[optionProvider startingNumber] intValue];
 	NSMutableString *new_text = [new_text_orig mutableCopy];
 	while (dict = [enumerator nextObject]) {
 		NSString *oldname = [dict objectForKey:@"oldName"];
