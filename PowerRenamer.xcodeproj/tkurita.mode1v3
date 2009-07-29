@@ -290,6 +290,7 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>2C5B7DE80FF0985F00D5ED31</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>2CE800820F9819FB00AD454A</string>
 								<string>2C86A60C0F97900E0092242D</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>2CC6806D0D9B5ACC002301F5</string>
@@ -305,12 +306,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>27</integer>
+									<integer>62</integer>
+									<integer>61</integer>
+									<integer>46</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {287, 581}}</string>
+							<string>{{0, 644}, {287, 581}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -347,7 +350,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RegexKitLite.m</string>
+								<string>RenameEngine.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -355,11 +358,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RegexKitLite.m</string>
+										<string>RenameEngine.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CEFC58110207FDE003C67DB</string>
+										<string>2CEFC5A5102086B4003C67DB</string>
 										<key>history</key>
 										<array>
 											<string>2CEFC3B910186C2B003C67DB</string>
@@ -373,15 +376,11 @@
 											<string>2CEFC49B101EE5FA003C67DB</string>
 											<string>2CEFC4DD1020275C003C67DB</string>
 											<string>2CEFC4E910202771003C67DB</string>
-											<string>2CEFC5531020743E003C67DB</string>
-											<string>2CEFC57010207E0C003C67DB</string>
 											<string>2CEFC57110207E0C003C67DB</string>
 											<string>2CEFC57C10207FDE003C67DB</string>
-											<string>2CEFC57E10207FDE003C67DB</string>
-										</array>
-										<key>nextStack</key>
-										<array>
-											<string>2CEFC57F10207FDE003C67DB</string>
+											<string>2CEFC58610208089003C67DB</string>
+											<string>2CEFC58710208089003C67DB</string>
+											<string>2CEFC58D10208363003C67DB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -394,12 +393,11 @@
 											<string>2CEFC41E101DBC16003C67DB</string>
 											<string>2CEFC43B101E81E6003C67DB</string>
 											<string>2CEFC49D101EE5FA003C67DB</string>
-											<string>2CEFC4C91020265D003C67DB</string>
 											<string>2CEFC4E21020275C003C67DB</string>
-											<string>2CEFC4E51020275C003C67DB</string>
-											<string>2CEFC4EB10202771003C67DB</string>
 											<string>2CEFC57310207E0C003C67DB</string>
 											<string>2CEFC57410207E0C003C67DB</string>
+											<string>2CEFC58810208089003C67DB</string>
+											<string>2CEFC58910208089003C67DB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -457,9 +455,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2CEFC4CB1020265D003C67DB</string>
+				<string>2CEFC5A6102086B4003C67DB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2CEFC4CC1020265D003C67DB</string>
+				<string>2CEFC5A7102086B4003C67DB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -593,12 +591,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>2CEFC4D61020265D003C67DB</string>
-		<string>2CEFC4D71020265D003C67DB</string>
-		<string>2CE800540F98152900AD454A</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -818,7 +810,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -973,7 +965,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
