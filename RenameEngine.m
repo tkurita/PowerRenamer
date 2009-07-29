@@ -264,20 +264,25 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		NSString *oldname = [dict objectForKey:@"oldName"];
 		NSString *newname = nil;
 		if (mode == kNumberingMode) {
-			new_text = [new_text_orig mutableCopy];
 			[new_text replaceOccurrencesOfString:@"$#" 
 								   withString:[NSString stringWithFormat:numbering_format, n]
 											  options:0 range:NSMakeRange(0, [new_text length])];
 					
 		}
-		
 		newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
 													withString:new_text
 													   options:RKLNoOptions
 														 range:NSMakeRange(0, [oldname length])
 														 error:error];
+		
 		if (*error) {
 			return NO;
+		}
+		
+		if (newname) {
+			if (![newname length]) {
+				newname = nil;
+			}
 		}
 		
 		if (newname) {
