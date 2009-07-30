@@ -63,6 +63,7 @@
 		2CED51A60F986B1B007CD3B4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CED519E0F986B0F007CD3B4 /* Sparkle.framework */; };
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
 		2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */; };
+		2CEFC69910215E55003C67DB /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC69810215E55003C67DB /* ServicesMenu.strings */; };
 		2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CF52CE70DA26C55004844AD /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +154,7 @@
 		2CED519E0F986B0F007CD3B4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle.framework; sourceTree = SOURCE_ROOT; };
 		2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CEFC3AE10186201003C67DB /* PowerRenamer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PowerRenamer.icns; sourceTree = "<group>"; };
+		2CEFC69610215E4B003C67DB /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CF52CE70DA26C55004844AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -259,6 +261,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
 				2C85CC210B7B398100C89869 /* FactorySettings.plist */,
+				2CEFC69810215E55003C67DB /* ServicesMenu.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				2CA9A71510153DA70060A187 /* plus.tiff in Resources */,
 				2CA9A71610153DA70060A187 /* minus.tiff in Resources */,
 				2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */,
+				2CEFC69910215E55003C67DB /* ServicesMenu.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +517,14 @@
 				2CC6806E0D9B5ACC002301F5 /* English */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2CEFC69810215E55003C67DB /* ServicesMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CEFC69610215E4B003C67DB /* English */,
+			);
+			name = ServicesMenu.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

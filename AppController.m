@@ -6,6 +6,7 @@
 #import "PreferencesWindowController.h"
 #import "ModeIndexTransformer.h"
 #import "ModeIsNotNumberingTransfomer.h"
+
 #define useLog 0
 
 @implementation AppController
@@ -46,6 +47,26 @@
 }
 
 #pragma mark delegate methods
+- (void)renamerFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
+{
+#if useLog
+	NSLog(@"start renamerFromPasteboard");
+#endif
+	NSArray *types = [pboard types];
+	NSArray *filenames;
+	if (![types containsObject:NSFilenamesPboardType] 
+		|| !(filenames = [pboard propertyListForType:NSFilenamesPboardType])) {
+        *error = NSLocalizedString(@"Error: Pasteboard doesn't contain file paths.",
+								   @"Pasteboard couldn't give string.");
+        return;
+    }
+	
+	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
+	[a_window showWindow:self];
+	[a_window setUpForFiles:filenames];
+	[NSApp activateIgnoringOtherApps:YES];
+}
+
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
 	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
@@ -83,6 +104,7 @@
 	
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults registerDefaults:factory_defaults];
+	[NSApp setServicesProvider:self];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
