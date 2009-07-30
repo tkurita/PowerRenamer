@@ -21,6 +21,7 @@
 	NSNumber *startingNumber;
 	BOOL leadingZeros;
 	NSString *newPresetName;
+	BOOL isStaticMode;
 }
 
 #pragma mark Actions
@@ -42,4 +43,6 @@
 - (void)setNewPresetName:(NSString *)name;
 - (void)setLeadingZeros:(BOOL)flag;
 
+#pragma mark public
+- (void)setUpForFiles:(NSArray *)filenames;
 @end

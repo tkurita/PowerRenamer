@@ -10,7 +10,7 @@
 #pragma mark private
 - (void)frontAppChanged:(NSNotification *)notification
 {
-	[previewDrawer close];
+	if (!isStaticMode) [previewDrawer close];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -134,6 +134,25 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 	[[self window] setToolbar:toolbar];
 }
 
+- (void)didChangedSettings
+{
+	if (isStaticMode && renameEngine) {
+		[renameEngine clearNewNames];
+	} else {
+		[previewDrawer close];
+	}
+}
+
+#pragma mark public
+- (void)setUpForFiles:(NSArray *)filenames
+{
+	[self setRenameEngine:[[RenameEngine new] autorelease]];
+	[renameEngine setTargetFiles:filenames];
+	[renameEngine resolveIcons];
+	isStaticMode = YES;
+	[previewDrawer open:self];
+}
+
 #pragma mark toolbar
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag
@@ -197,16 +216,24 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 #pragma mark Actions
 - (IBAction)narrowDown:(id)sender
 {
-	RenameEngine *rename_engine = [[RenameEngine new] autorelease];
+	RenameEngine *rename_engine;
 	NSError *error = nil;
-	if (![rename_engine resolveTargetItemsWithSorting:NO error:&error]) {
-		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-		return;
+	if (isStaticMode) {
+		rename_engine = renameEngine;
+	} else {
+		rename_engine = [[RenameEngine new] autorelease];
+		if (![rename_engine resolveTargetItemsWithSorting:NO error:&error]) {
+			goto bail;
+		}
 	}
 	if (![rename_engine narrowDownTargetItems:self error:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-		return;
-	}	
+		if (!isStaticMode) [rename_engine selectInFinderReturningError:&error];
+	}
+
+bail:
+	if (error)
+		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 }
 
 - (IBAction)okNewPresetName:(id)sender
@@ -242,18 +269,20 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 
 - (IBAction)preview:(id)sender
 {
-	RenameEngine *rename_engine = [[RenameEngine new] autorelease];
+	if (!isStaticMode) {
+		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
+		[self setRenameEngine:rename_engine];
+	}
 	NSError *error = nil;
-	[self setRenameEngine:rename_engine];
-	if (![rename_engine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
+	if (![renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 		return;
 	}
-	if (![rename_engine resolveNewNames:self error:&error]) {
+	if (![renameEngine resolveNewNames:self error:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 		return;
 	}
-	[rename_engine resolveIcons];
+	[renameEngine resolveIcons];
 	[previewDrawer open:self];
 	[self saveHistory];
 }
@@ -269,14 +298,18 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 	if (!renameEngine) {
 		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
 		[self setRenameEngine:rename_engine];
-		if ([rename_engine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
-			[rename_engine resolveNewNames:self error:&error];
+	}
+	
+	if (![renameEngine hasNewNames]) {
+		if ([renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
+			[renameEngine resolveNewNames:self error:&error];
 		}
 		if (error) {
 			[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 			return;
 		}
 	}
+	
 	if (![renameEngine processRenameAndReturnError:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 		return;
@@ -356,7 +389,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 - (void)setOldText:(NSString *)aText
 {
 	if (![oldText isEqualToString:aText]) {
-		[previewDrawer close];
+		[self didChangedSettings];
 	}
 	[aText retain];
 	[oldText autorelease];
@@ -374,7 +407,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 - (void)setNewText:(NSString *)aText
 {
 	if (![newText isEqualToString:aText]) {
-		[previewDrawer close];
+		[self didChangedSettings];
 	}
 	[aText retain];
 	[newText autorelease];
@@ -392,7 +425,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 - (void)setModeIndex:(unsigned int)index
 {
 	if (modeIndex != index) {
-		[previewDrawer close];
+		[self didChangedSettings];
 	}	
 	modeIndex = index;
 }
@@ -405,7 +438,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 - (void)setStartingNumber:(NSNumber *)num
 {
 	if (![startingNumber isEqual:num]) {
-		[previewDrawer close];
+		[self didChangedSettings];
 	}
 	[num retain];
 	[startingNumber autorelease];
@@ -420,7 +453,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 - (void)setLeadingZeros:(BOOL)flag
 {
 	if (leadingZeros != flag) {
-		[previewDrawer close];
+		[self didChangedSettings];
 	}
 	leadingZeros = flag;
 }

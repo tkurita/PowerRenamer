@@ -28,6 +28,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		NSDictionary *error = nil;
 		NSData *data = [FINDER_SELECTION_CONTROLLER compiledDataForType:@"scpt" usingStorageOptions:OSANull error:&error];
 		finderSelectionController = [[OSAScript alloc] initWithCompiledData:data error:&error];
+		hasNewNames = NO;
 		/* confirm no shared script instance between finderSelectionController and FINDER_SELECTION_CONTROLLER
 		NSAppleEventDescriptor *script_result = [FINDER_SELECTION_CONTROLLER executeHandlerWithName:@"get_finderselection" arguments:nil error:&error];
 		NSLog([script_result description]);
@@ -45,6 +46,39 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	[super dealloc];
 }
 
+NSMutableDictionary *dictForFile(NSString *path) {
+	path = [path normalizedString:kCFStringNormalizationFormKC];
+	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+								 path, @"path",
+								 [path lastPathComponent], @"oldName", nil];
+	return dict;
+}
+
+#pragma mark method for static mode
+- (void)clearNewNames
+{
+	if (!targetDicts) return;
+	NSEnumerator *enumerator = [targetDicts objectEnumerator];
+	NSMutableDictionary *dict;
+	while (dict = [enumerator nextObject]) {
+		[dict setObject:@"" forKey:@"newName"];
+		[dict setObject:[NSColor blackColor] forKey:@"textColor"];
+	}
+	hasNewNames = NO;
+}
+
+- (void)setTargetFiles:(NSArray *)filenames
+{
+	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:[filenames count]];
+	NSEnumerator *enumerator = [filenames objectEnumerator];
+	NSString *path;
+	while (path = [enumerator nextObject]) {
+		NSMutableDictionary *dict = dictForFile(path);
+		[target_dicts addObject:dict];
+	}
+	[self setTargetDicts:target_dicts];
+}
+
 #pragma mark narrow down
 
 - (BOOL)selectInFinder:(NSArray *)array error:(NSError **)error
@@ -52,6 +86,25 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSDictionary *err_info = nil;
 	[finderSelectionController executeHandlerWithName:@"select_items"
 									arguments:[NSArray arrayWithObject:array] error:&err_info];
+	
+	if (err_info) {
+		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
+						 [err_info objectForKey:OSAScriptErrorMessage],
+						 [err_info objectForKey:OSAScriptErrorNumber]];
+		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
+														  forKey:NSLocalizedDescriptionKey];
+		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];
+		return NO;
+	}
+	return YES;
+}
+
+- (BOOL)selectInFinderReturningError:(NSError **)error
+{
+	NSArray *array = [targetDicts valueForKey:@"path"];
+	NSDictionary *err_info = nil;
+	[finderSelectionController executeHandlerWithName:@"select_items"
+											arguments:[NSArray arrayWithObject:array] error:&err_info];
 	
 	if (err_info) {
 		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
@@ -83,17 +136,14 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		NSString *oldname = [dict objectForKey:@"oldName"];
 		if( [oldname isMatchedByRegex:old_text options:RKLNoOptions
 								inRange:NSMakeRange(0, [oldname length]) error:error]) {
-			[matchitems addObject:[dict objectForKey:@"path"]];
+			[matchitems addObject:dict];
 		}
 		if (*error) {
 			return NO;
 		}
 	}
 	
-	if (![self selectInFinder:matchitems error:error]) {
-		NSLog([*error description]);
-		return NO;
-	}
+	[self setTargetDicts:matchitems];
 	
 	return YES;
 }
@@ -142,17 +192,15 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		BOOL result = NO;
 		[invocation getReturnValue:&result];
 		if (result) {
-			[matchitems addObject:[dict objectForKey:@"path"]];
+			//[matchitems addObject:[dict objectForKey:@"path"]];
+			[matchitems addObject:dict];
 		}
 	}
-	
-	if (![self selectInFinder:matchitems error:error]) {
-		NSLog([*error description]);
-		return NO;
-	}
+	[self setTargetDicts:matchitems];
 		
 	return YES;
 }
+
 
 - (BOOL)narrowDownTargetItems:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
 {
@@ -171,7 +219,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		default:
 			break;
 	}
-	
+
 	return result;	
 }
 
@@ -320,7 +368,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		default:
 			break;
 	}
-	
+	hasNewNames = result;
 	return result;
 }
 
@@ -370,11 +418,8 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	}
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:nfile];
 	for (unsigned int i=1; i <= nfile; i++) {
-		NSString *path = [[[script_result descriptorAtIndex:i] stringValue] normalizedString:kCFStringNormalizationFormKC];
-		NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-											  path, @"path",
-											  [path lastPathComponent], @"oldName", nil];
-		
+		NSString *path = [[script_result descriptorAtIndex:i] stringValue];
+		NSMutableDictionary *dict = dictForFile(path);
 		[target_dicts addObject:dict];
 	}
 	result = YES;
@@ -436,6 +481,11 @@ bail:
 	[array retain];
 	[targetDicts autorelease];
 	targetDicts = array;
+}
+
+- (BOOL)hasNewNames
+{
+	return hasNewNames;
 }
 
 @end

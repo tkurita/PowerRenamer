@@ -5,6 +5,7 @@
 @interface RenameEngine : NSObject {
 	NSArray *targetDicts;
 	OSAScript *finderSelectionController;
+	BOOL hasNewNames;
 }
 
 - (BOOL)resolveTargetItemsWithSorting:(BOOL)sortFlag error:(NSError **)error;
@@ -15,5 +16,10 @@
 
 - (NSArray *)targetDicts;
 - (void)setTargetDicts:(NSArray *)array;
+
+- (void)setTargetFiles:(NSArray *)filenames;
+- (BOOL)hasNewNames;
+- (void)clearNewNames;
+- (BOOL)selectInFinderReturningError:(NSError **)error;
 
 @end

@@ -32,10 +32,7 @@
 	return kShouldShow;
 }
 
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
-{
-	return ([theApplication isActive]);
-}
+
 
 - (IBAction)showPreferencesWindow:(id)sender
 {
@@ -46,6 +43,19 @@
 - (IBAction)makeDonation:(id)sender
 {
 	[DonationReminder goToDonation];
+}
+
+#pragma mark delegate methods
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
+{
+	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
+	[a_window showWindow:self];
+	[a_window setUpForFiles:filenames];
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+{
+	return ([theApplication isActive]);
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
