@@ -61,17 +61,28 @@
         return;
     }
 	
-	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
-	[a_window showWindow:self];
-	[a_window setUpForFiles:filenames];
+	[self application:NSApp openFiles:filenames];
 	[NSApp activateIgnoringOtherApps:YES];
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
-	[a_window showWindow:self];
-	[a_window setUpForFiles:filenames];
+	NSArray *windows = [NSApp orderedWindows];
+	NSEnumerator *enumerator = [windows objectEnumerator];
+	id a_window;
+	RenameWindowController *wincotroller = nil;
+	while (a_window = [enumerator nextObject]) {
+		id wc = [a_window windowController];
+		if ([wc isKindOfClass:[RenameWindowController class]]) {
+			if (![wc isStaticMode]) wincotroller = wc;
+			break;
+		}
+	}
+	if (!wincotroller) {
+		wincotroller = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
+	}
+	[wincotroller showWindow:self];
+	[wincotroller setUpForFiles:filenames];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication

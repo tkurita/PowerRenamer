@@ -45,4 +45,5 @@
 
 #pragma mark public
 - (void)setUpForFiles:(NSArray *)filenames;
+- (BOOL)isStaticMode;
 @end

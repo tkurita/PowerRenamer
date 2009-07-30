@@ -321,6 +321,7 @@ bail:
 		[self close];
 	} else {
 		[self saveHistory];
+		isStaticMode = NO;
 	}
 }
 
@@ -463,6 +464,10 @@ bail:
 	return leadingZeros;
 }
 
+- (BOOL)isStaticMode
+{
+	return isStaticMode;
+}
 
 #pragma mark init
 

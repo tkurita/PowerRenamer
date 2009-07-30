@@ -307,13 +307,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>68</integer>
+									<integer>62</integer>
+									<integer>61</integer>
 									<integer>46</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 644}, {287, 581}}</string>
+							<string>{{0, 880}, {287, 581}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -350,7 +351,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ServicesMenu.strings</string>
+								<string>History.rd</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -358,11 +359,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ServicesMenu.strings</string>
+										<string>History.rd</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CEFC71F102161E0003C67DB</string>
+										<string>2CEFC75E10216864003C67DB</string>
 										<key>history</key>
 										<array>
 											<string>2CEFC3BA10186C2B003C67DB</string>
@@ -376,11 +377,12 @@
 											<string>2CEFC57C10207FDE003C67DB</string>
 											<string>2CEFC58610208089003C67DB</string>
 											<string>2CEFC58710208089003C67DB</string>
-											<string>2CEFC606102140F2003C67DB</string>
-											<string>2CEFC69C10215EB3003C67DB</string>
 											<string>2CEFC6EC102160A7003C67DB</string>
-											<string>2CEFC71C102161E0003C67DB</string>
-											<string>2CEFC71D102161E0003C67DB</string>
+											<string>2CEFC748102166E0003C67DB</string>
+											<string>2CEFC7521021675E003C67DB</string>
+											<string>2CEFC7531021675E003C67DB</string>
+											<string>2CEFC75B10216864003C67DB</string>
+											<string>2CEFC75C10216864003C67DB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -401,6 +403,11 @@
 											<string>2CEFC609102140F2003C67DB</string>
 											<string>2CEFC69E10215EB3003C67DB</string>
 											<string>2CEFC71E102161E0003C67DB</string>
+											<string>2CEFC74B102166E0003C67DB</string>
+											<string>2CEFC7551021675E003C67DB</string>
+											<string>2CEFC7561021675E003C67DB</string>
+											<string>2CEFC7571021675E003C67DB</string>
+											<string>2CEFC75D10216864003C67DB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -412,14 +419,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {876, 317}}</string>
+								<string>{{0, 0}, {876, 495}}</string>
 								<key>RubberWindowFrame</key>
 								<string>127 167 1185 661 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>317pt</string>
+							<string>495pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -439,7 +446,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2CEFC720102161E0003C67DB</string>
+										<string>2CEFC75F10216864003C67DB</string>
 										<key>history</key>
 										<array>
 											<string>2CEFC3BA10186C2B003C67DB</string>
@@ -456,7 +463,6 @@
 											<string>2CEFC5C91021216E003C67DB</string>
 											<string>2CEFC60C102140F2003C67DB</string>
 											<string>2CEFC6A010215EB3003C67DB</string>
-											<string>2CEFC6A110215EB3003C67DB</string>
 											<string>2CEFC6A210215EB3003C67DB</string>
 										</array>
 										<key>prevStack</key>
@@ -478,7 +484,6 @@
 											<string>2CEFC611102140F2003C67DB</string>
 											<string>2CEFC612102140F2003C67DB</string>
 											<string>2CEFC6A310215EB3003C67DB</string>
-											<string>2CEFC6A410215EB3003C67DB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -490,14 +495,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 322}, {876, 273}}</string>
+								<string>{{0, 500}, {876, 95}}</string>
 								<key>RubberWindowFrame</key>
 								<string>127 167 1185 661 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>273pt</string>
+							<string>95pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
