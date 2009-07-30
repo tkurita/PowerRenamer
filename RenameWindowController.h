@@ -22,6 +22,7 @@
 	BOOL leadingZeros;
 	NSString *newPresetName;
 	BOOL isStaticMode;
+	NSNumber *idNumber;
 }
 
 #pragma mark Actions

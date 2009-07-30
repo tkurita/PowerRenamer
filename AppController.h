@@ -8,5 +8,6 @@
 
 - (IBAction)makeDonation:(id)sender;
 - (IBAction)showPreferencesWindow:(id)sender;
+- (IBAction)openRenamerWindow:(id)sender;
 
 @end

@@ -4,8 +4,14 @@
 
 #define useLog 0
 
+static NSMutableArray *reservedNumbers = nil;
+
 @implementation RenameWindowController
 
++(void)initialize
+{
+	reservedNumbers = [NSMutableArray new];
+}
 
 #pragma mark private
 - (void)frontAppChanged:(NSNotification *)notification
@@ -337,6 +343,7 @@ bail:
 	[user_defaults setBool:leadingZeros	forKey:@"LeadingZeros"];
 	[self saveHistory];
 	[user_defaults synchronize];
+	[reservedNumbers removeObject:idNumber];
 	[self autorelease];
 }
 
@@ -478,6 +485,7 @@ bail:
 #endif
 	[toolbarItems release];
 	[renameEngine release];
+	[idNumber release];
 	[super dealloc];
 #if useLog
 	NSLog(@"end dealloc of RenameWindowController");
@@ -506,6 +514,18 @@ bail:
 	[[FrontAppMonitor notificationCenter] addObserver:self selector:@selector(frontAppChanged:) 
 												 name:@"FrontAppChangedNotification" object:nil];
 	[self setupToolbar];
+	
+	unsigned int n = 0;
+	while (1) {
+		NSNumber *num = [NSNumber numberWithInt:n];
+		if (![reservedNumbers containsObject:num]) {
+			[reservedNumbers addObject:num];
+			idNumber = num;
+			break;
+		}
+		n++;
+	}
+	if (n) [[self window] setTitle:[NSString stringWithFormat:@"%@ : %d", [[self window] title],n]];
 }
 
 @end

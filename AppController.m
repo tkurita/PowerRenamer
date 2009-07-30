@@ -33,6 +33,12 @@
 	return kShouldShow;
 }
 
+#pragma mark actions
+- (IBAction)openRenamerWindow:(id)sender
+{
+	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
+	[a_window showWindow:self];
+}
 
 
 - (IBAction)showPreferencesWindow:(id)sender
