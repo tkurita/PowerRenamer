@@ -1,7 +1,7 @@
 #import "RenameItem.h"
 #import "StringExtra.h"
 
-#define useLog 1
+#define useLog 0
 
 @implementation RenameItem
 
@@ -43,12 +43,16 @@ static NSMutableDictionary *renameItemsPool = nil;
 #pragma mark public
 + (id)renameItemWithPath:(NSString *)path
 {
+#if useLog
 	NSLog([renameItemsPool description]);
+#endif
 	path = [path normalizedString:kCFStringNormalizationFormKC];
 	id instance = nil;
 	instance = [renameItemsPool objectForKey:path];
 	if (!instance) {
-		NSLog(@"No pooled instance.");
+#if useLog
+		NSLog(@"can't find instance in the pool.");
+#endif		
 		instance = [[self new] autorelease];
 		[instance setFilePath:path];
 		[renameItemsPool setObject:instance forKey:path];

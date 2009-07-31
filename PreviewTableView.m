@@ -1,6 +1,6 @@
 #import "PreviewTableView.h"
 
-#if useLog 0
+#define useLog 0
 
 @implementation PreviewTableView
 

@@ -6,7 +6,7 @@
 
 typedef enum RenameMode RenameMode;
 
-#define useLog 1
+#define useLog 0
 
 static OSAScript *FINDER_SELECTION_CONTROLLER;
 
@@ -46,7 +46,9 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSLog(@"start dealloc in RenameEngine");
 #endif	
 	[finderSelectionController release];
+#if useLog
 	NSLog(@"targetDicts retainCount:%u", [targetDicts retainCount]);
+#endif
 	[targetDicts release];
 	[super dealloc];
 }
@@ -62,11 +64,8 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 {
 	if (!targetDicts) return;
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	//NSMutableDictionary *dict;
 	RenameItem *item;
 	while (item = [enumerator nextObject]) {
-		//[dict setObject:@"" forKey:@"newName"];
-		//[dict setObject:[NSColor blackColor] forKey:@"textColor"];
 		[item setNewName:nil];
 	}
 	hasNewNames = NO;
@@ -78,7 +77,6 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSString *path;
 	while (path = [enumerator nextObject]) {
-		//NSMutableDictionary *dict = dictForFile(path);
 		RenameItem *rename_item = [RenameItem renameItemWithPath:path];
 		[target_dicts addObject:rename_item];
 	}
@@ -192,17 +190,14 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	
 	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];	
-	//NSDictionary *dict = nil;
 	RenameItem *item = nil;
 	while (item = [enumerator nextObject]) {
-		//NSString *oldname = [dict objectForKey:@"oldName"];
 		NSString *oldname = [item oldName];
 		[invocation setTarget:oldname];
 		[invocation invoke];
 		BOOL result = NO;
 		[invocation getReturnValue:&result];
 		if (result) {
-			//[matchitems addObject:[dict objectForKey:@"path"]];
 			[matchitems addObject:item];
 		}
 	}
@@ -271,11 +266,9 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	[invocation setArgument:&opt atIndex:4];
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	//NSMutableDictionary *item = nil;
 	RenameItem *item = nil;
 	
 	while (item = [enumerator nextObject]) {
-		//NSString *oldname = [dict objectForKey:@"oldName"];
 		NSString *oldname = [item oldName];
 		NSMutableString *newname = [oldname mutableCopy];
 		[invocation setTarget:newname];
@@ -283,22 +276,12 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		unsigned int result = 0;
 		[invocation getReturnValue:&result];
 		if (result) {
-			/*
-			newname = [[newname uniqueNameAtLocation:
-										[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
-								   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
-			[dict setObject:[NSColor blackColor] forKey:@"textColor"];
-			 */
 			if (![newname isEqualToString:oldname]) {
 				newname = [[newname uniqueNameAtLocation:
 							[[item filePath] stringByDeletingLastPathComponent]
 											   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
 			}
-			//[dict setObject:[NSColor blackColor] forKey:@"textColor"];
-		//} else {
-			//[dict setObject:[NSColor grayColor] forKey:@"textColor"];
 		}
-		//[dict setObject:newname forKey:@"newName"];
 		[item setNewName:newname];
 	}
 	
@@ -328,11 +311,9 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	}
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	//NSMutableDictionary *dict = nil;
 	RenameItem *item = nil;
 	NSMutableString *new_text = [new_text_orig mutableCopy];
 	while (item = [enumerator nextObject]) {
-		//NSString *oldname = [dict objectForKey:@"oldName"];
 		NSString *oldname = [item oldName];
 		NSString *newname = nil;
 		if (mode == kNumberingMode) {
@@ -361,18 +342,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 			if (![newname isEqualToString:oldname]) {
 				newname = [newname uniqueNameAtLocation:[[item filePath] stringByDeletingLastPathComponent]
 											  excepting:[targetDicts valueForKey:@"newName"]];
-				/*
-				[dict setObject:[NSColor blackColor] forKey:@"textColor"];
-			} else {
-				[dict setObject:[NSColor grayColor] forKey:@"textColor"];
-				 */
 			}
-			//[dict setObject:newname forKey:@"newName"];
-			//[item setNewName:newname];
-		//} else {
-			//[dict setObject:oldname forKey:@"newName"];
-			//[dict setObject:[NSColor grayColor] forKey:@"textColor"];
-			
 		}
 		[item setNewName:newname];
 		n++;
@@ -403,19 +373,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 
 - (BOOL)resolveIcons
 {
-	/*
-	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	//NSMutableDictionary *dict = nil;
-	RenameItem *item = nil;
-	while (dict = [enumerator nextObject]) {
-		NSImage *icon = [[NSWorkspace sharedWorkspace] 
-							iconForFile:[dict setFilePath]];
-		//[dict setObject:icon forKey:@"icon"];
-		[item setIcon:icon];
-	}*/
-	NSLog(@"targetDicts in resolveIcons refcount:%u", [targetDicts retainCount]);
 	[targetDicts makeObjectsPerformSelector:@selector(resolveIcon)];
-	NSLog(@"targetDicts at end of resolveIcons refcount:%u", [targetDicts retainCount]);
 	return YES;
 }
 
@@ -454,7 +412,6 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:nfile];
 	for (unsigned int i=1; i <= nfile; i++) {
 		NSString *path = [[script_result descriptorAtIndex:i] stringValue];
-		//NSMutableDictionary *dict = dictForFile(path);
 		RenameItem *rename_item = [RenameItem renameItemWithPath:path];
 		[target_dicts addObject:rename_item];
 	}
@@ -472,7 +429,6 @@ bail:
 	[finderSelectionController executeHandlerWithName:@"process_rename" 
 			arguments:[NSArray arrayWithObjects:oldnames, newnames, nil]
 												error:&err_info];
-	NSLog([err_info description]);
 	if (err_info) {
 #if useLog
 		NSLog([err_info description]);
@@ -514,11 +470,12 @@ bail:
 
 - (void)setTargetDicts:(NSArray *)array
 {
+#if useLog
 	NSLog(@"array in setTargetDicts retainCount:%u", [array retainCount]);
+#endif
 	[array retain];
 	[targetDicts autorelease];
 	targetDicts = array;
-	NSLog(@"targetDicts in setTargetDicts retainCount:%u", [targetDicts retainCount]);
 }
 
 - (BOOL)hasNewNames

@@ -36,7 +36,6 @@
 - (IBAction)narrowDown:(id)sender;
 
 #pragma mark Accessors
-//- (void)setRenameEngine:(RenameEngine *)engine;
 - (void)setOldText:(NSString *)aText;
 - (void)setNewText:(NSString *)aText;
 - (void)setModeIndex:(unsigned int)index;

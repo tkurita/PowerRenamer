@@ -3,7 +3,7 @@
 #import "FrontAppMonitor.h"
 #import "DNDArrayControllerDataTypesProtocol.h"
 
-#define useLog 1
+#define useLog 0
 
 static NSMutableArray *reservedNumbers = nil;
 
@@ -153,7 +153,6 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 #pragma mark public
 - (void)setUpForFiles:(NSArray *)filenames
 {
-	//[self setRenameEngine:[[RenameEngine new] autorelease]];
 	[renameEngine setTargetFiles:filenames];
 	[renameEngine resolveIcons];
 	isStaticMode = YES;
@@ -223,13 +222,8 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 #pragma mark Actions
 - (IBAction)narrowDown:(id)sender
 {
-	//RenameEngine *rename_engine;
 	NSError *error = nil;
-	//if (isStaticMode) {
-		//rename_engine = renameEngine;
-	//} else {
 	if (!isStaticMode) {
-		//rename_engine = [[RenameEngine new] autorelease];
 		if (![renameEngine resolveTargetItemsWithSorting:NO error:&error]) {
 			goto bail;
 		}
@@ -267,7 +261,6 @@ bail:
 - (IBAction)applyPreset:(id)sender
 {
 	NSDictionary *selected_presets = [[presetsController arrangedObjects] objectAtIndex: [sender indexOfSelectedItem]-1];
-	//NSLog([selected_presets description]);
 	[self setOldText:[selected_presets objectForKey:@"search"]];
 	[self setNewText:[selected_presets objectForKey:@"replace"]];
 	[self setModeIndex:[[selected_presets objectForKey:@"mode"] intValue]];
@@ -308,12 +301,6 @@ bail:
 - (IBAction)okAction:(id)sender
 {
 	NSError *error = nil;
-	/*
-	if (!renameEngine) {
-		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
-		[self setRenameEngine:rename_engine];
-	}
-	 */
 	
 	if (![renameEngine hasNewNames]) {
 		if ([renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
@@ -330,7 +317,6 @@ bail:
 		return;
 	}
 	[previewDrawer close:self];
-	//[self setRenameEngine:nil];
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
 	if ([userdefaults boolForKey:@"AutoQuit"]) {
 		[self close];
@@ -365,7 +351,10 @@ bail:
 	[engine resolveIcons];
 	NSError *error = nil;
 	if ([renameEngine hasNewNames]) {
-		if (![engine resolveNewNames:self error:&error]) return nil;
+		if (![engine resolveNewNames:self error:&error]) {
+			NSLog([error description]);
+			return nil;
+		}
 	}
 	
 	return [engine targetDicts];
@@ -395,15 +384,11 @@ bail:
 
 - (void)drawerDidClose:(NSNotification *)notification
 {
-	NSLog(@"drawerDidClose");
-	//[self setRenameEngine:nil];
 	[renameEngine clearTargets];
 }
 
 - (void)drawerDidOpen:(NSNotification *)notification
 {
-	//unsigned int nrows = [previewTable numberOfRows];
-	//float rowheight = [previewTable rowHeight];
 	NSSize spacing = [previewTable intercellSpacing];
 	NSRect crect = [previewTable rectOfColumn:0];
 	NSSize currentsize = [previewDrawer contentSize];
@@ -424,6 +409,7 @@ bail:
 - (NSSize)drawerWillResizeContents:(NSDrawer *)sender toSize:(NSSize)contentSize
 {
 	return [sender contentSize]; // prohibit resizing drawer.
+	//return contentSize;
 }
 
 #pragma mark Accessors
@@ -435,14 +421,6 @@ bail:
 	newPresetName = name;
 }
 
-/*
-- (void)setRenameEngine:(RenameEngine *)engine
-{
-	[engine retain];
-	[renameEngine autorelease];
-	renameEngine = engine;
-}
-*/
 - (void)setOldText:(NSString *)aText
 {
 	if (![oldText isEqualToString:aText]) {

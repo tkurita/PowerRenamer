@@ -134,7 +134,6 @@
 	[DonationReminder remindDonation];
 	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
 	[a_window showWindow:self];
-	//[self showPreferencesWindow:self];
 }
 
 - (void)awakeFromNib
