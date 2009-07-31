@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>PowerRenamer</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.0 copyright 1999-2009, Tetsuro KURITA</string>
+	<string>3.1 copyright 1999-2009, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>PowerRenamerHelp</string>
 	<key>CFBundleIconFile</key>
@@ -42,11 +42,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>3.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>3.0</string>
+	<string>3.1</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>
