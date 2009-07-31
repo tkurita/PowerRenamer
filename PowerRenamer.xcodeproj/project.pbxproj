@@ -64,6 +64,8 @@
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
 		2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */; };
 		2CEFC69910215E55003C67DB /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC69810215E55003C67DB /* ServicesMenu.strings */; };
+		2CEFC789102174C6003C67DB /* RenameItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFC787102174C6003C67DB /* RenameItem.h */; };
+		2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFC788102174C6003C67DB /* RenameItem.m */; };
 		2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CF52CE70DA26C55004844AD /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +157,8 @@
 		2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CEFC3AE10186201003C67DB /* PowerRenamer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PowerRenamer.icns; sourceTree = "<group>"; };
 		2CEFC69610215E4B003C67DB /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		2CEFC787102174C6003C67DB /* RenameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameItem.h; sourceTree = "<group>"; };
+		2CEFC788102174C6003C67DB /* RenameItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameItem.m; sourceTree = "<group>"; };
 		2CF52CE70DA26C55004844AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -297,6 +301,8 @@
 				2CA9A199101061300060A187 /* ModeIndexTransformer.m */,
 				2CA9A1C910107BEE0060A187 /* ModeIsNotNumberingTransfomer.h */,
 				2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */,
+				2CEFC787102174C6003C67DB /* RenameItem.h */,
+				2CEFC788102174C6003C67DB /* RenameItem.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CEFC789102174C6003C67DB /* RenameItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +480,7 @@
 				2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */,
 				2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */,
 				2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */,
+				2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

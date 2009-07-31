@@ -2,10 +2,11 @@
 #import "RegexKitLite.h"
 #import "PathExtra.h"
 #import "StringExtra.h"
+#import "RenameItem.h"
 
 typedef enum RenameMode RenameMode;
 
-#define useLog 0
+#define useLog 1
 
 static OSAScript *FINDER_SELECTION_CONTROLLER;
 
@@ -41,17 +42,13 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 
 - (void)dealloc
 {
+#if useLog
+	NSLog(@"start dealloc in RenameEngine");
+#endif	
 	[finderSelectionController release];
+	NSLog(@"targetDicts retainCount:%u", [targetDicts retainCount]);
 	[targetDicts release];
 	[super dealloc];
-}
-
-NSMutableDictionary *dictForFile(NSString *path) {
-	path = [path normalizedString:kCFStringNormalizationFormKC];
-	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-								 path, @"path",
-								 [path lastPathComponent], @"oldName", nil];
-	return dict;
 }
 
 #pragma mark method for static mode
@@ -59,10 +56,12 @@ NSMutableDictionary *dictForFile(NSString *path) {
 {
 	if (!targetDicts) return;
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	NSMutableDictionary *dict;
-	while (dict = [enumerator nextObject]) {
-		[dict setObject:@"" forKey:@"newName"];
-		[dict setObject:[NSColor blackColor] forKey:@"textColor"];
+	//NSMutableDictionary *dict;
+	RenameItem *item;
+	while (item = [enumerator nextObject]) {
+		//[dict setObject:@"" forKey:@"newName"];
+		//[dict setObject:[NSColor blackColor] forKey:@"textColor"];
+		[item setNewName:nil];
 	}
 	hasNewNames = NO;
 }
@@ -73,8 +72,9 @@ NSMutableDictionary *dictForFile(NSString *path) {
 	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSString *path;
 	while (path = [enumerator nextObject]) {
-		NSMutableDictionary *dict = dictForFile(path);
-		[target_dicts addObject:dict];
+		//NSMutableDictionary *dict = dictForFile(path);
+		RenameItem *rename_item = [RenameItem renameItemWithPath:path];
+		[target_dicts addObject:rename_item];
 	}
 	[self setTargetDicts:target_dicts];
 }
@@ -131,12 +131,14 @@ NSMutableDictionary *dictForFile(NSString *path) {
 	
 	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	NSMutableDictionary *dict = nil;
-	while (dict = [enumerator nextObject]) {
-		NSString *oldname = [dict objectForKey:@"oldName"];
+	//NSMutableDictionary *dict = nil;
+	RenameItem *item = nil;
+	while (item = [enumerator nextObject]) {
+		//NSString *oldname = [dict objectForKey:@"oldName"];
+		NSString *oldname = [item oldName];
 		if( [oldname isMatchedByRegex:old_text options:RKLNoOptions
 								inRange:NSMakeRange(0, [oldname length]) error:error]) {
-			[matchitems addObject:dict];
+			[matchitems addObject:item];
 		}
 		if (*error) {
 			return NO;
@@ -182,18 +184,20 @@ NSMutableDictionary *dictForFile(NSString *path) {
 	[invocation setArgument:&old_text atIndex:2];
 	[invocation setArgument:&compopt atIndex:3];
 	
-	NSDictionary *dict = nil;
 	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];	
-	while (dict = [enumerator nextObject]) {
-		NSString *oldname = [dict objectForKey:@"oldName"];
+	//NSDictionary *dict = nil;
+	RenameItem *item = nil;
+	while (item = [enumerator nextObject]) {
+		//NSString *oldname = [dict objectForKey:@"oldName"];
+		NSString *oldname = [item oldName];
 		[invocation setTarget:oldname];
 		[invocation invoke];
 		BOOL result = NO;
 		[invocation getReturnValue:&result];
 		if (result) {
 			//[matchitems addObject:[dict objectForKey:@"path"]];
-			[matchitems addObject:dict];
+			[matchitems addObject:item];
 		}
 	}
 	[self setTargetDicts:matchitems];
@@ -238,8 +242,6 @@ NSMutableDictionary *dictForFile(NSString *path) {
 		return NO;
 	}
 	
-	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	NSMutableDictionary *dict = nil;
 	NSUInteger opt = NSCaseInsensitiveSearch;
 	SEL selector = nil;
 	switch (mode) {
@@ -262,22 +264,36 @@ NSMutableDictionary *dictForFile(NSString *path) {
 	[invocation setArgument:&new_text atIndex:3];
 	[invocation setArgument:&opt atIndex:4];
 	
-	while (dict = [enumerator nextObject]) {
-		NSString *oldname = [dict objectForKey:@"oldName"];
+	NSEnumerator *enumerator = [targetDicts objectEnumerator];
+	//NSMutableDictionary *item = nil;
+	RenameItem *item = nil;
+	
+	while (item = [enumerator nextObject]) {
+		//NSString *oldname = [dict objectForKey:@"oldName"];
+		NSString *oldname = [item oldName];
 		NSMutableString *newname = [oldname mutableCopy];
 		[invocation setTarget:newname];
 		[invocation invoke];
 		unsigned int result = 0;
 		[invocation getReturnValue:&result];
 		if (result) {
+			/*
 			newname = [[newname uniqueNameAtLocation:
 										[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
 								   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
-			[dict setObject:[NSColor blackColor] forKey:@"textColor"];			
-		} else {
-			[dict setObject:[NSColor grayColor] forKey:@"textColor"];
+			[dict setObject:[NSColor blackColor] forKey:@"textColor"];
+			 */
+			if (![newname isEqualToString:oldname]) {
+				newname = [[newname uniqueNameAtLocation:
+							[[item filePath] stringByDeletingLastPathComponent]
+											   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
+			}
+			//[dict setObject:[NSColor blackColor] forKey:@"textColor"];
+		//} else {
+			//[dict setObject:[NSColor grayColor] forKey:@"textColor"];
 		}
-		[dict setObject:newname forKey:@"newName"];
+		//[dict setObject:newname forKey:@"newName"];
+		[item setNewName:newname];
 	}
 	
 	return YES;
@@ -306,10 +322,12 @@ NSMutableDictionary *dictForFile(NSString *path) {
 	}
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	NSMutableDictionary *dict = nil;
+	//NSMutableDictionary *dict = nil;
+	RenameItem *item = nil;
 	NSMutableString *new_text = [new_text_orig mutableCopy];
-	while (dict = [enumerator nextObject]) {
-		NSString *oldname = [dict objectForKey:@"oldName"];
+	while (item = [enumerator nextObject]) {
+		//NSString *oldname = [dict objectForKey:@"oldName"];
+		NSString *oldname = [item oldName];
 		NSString *newname = nil;
 		if (mode == kNumberingMode) {
 			[new_text replaceOccurrencesOfString:@"$#" 
@@ -335,17 +353,22 @@ NSMutableDictionary *dictForFile(NSString *path) {
 		
 		if (newname) {
 			if (![newname isEqualToString:oldname]) {
-				newname = [newname uniqueNameAtLocation:[[dict objectForKey:@"path"] stringByDeletingLastPathComponent]
+				newname = [newname uniqueNameAtLocation:[[item filePath] stringByDeletingLastPathComponent]
 											  excepting:[targetDicts valueForKey:@"newName"]];
+				/*
 				[dict setObject:[NSColor blackColor] forKey:@"textColor"];
 			} else {
 				[dict setObject:[NSColor grayColor] forKey:@"textColor"];
+				 */
 			}
-			[dict setObject:newname forKey:@"newName"];
-		} else {
-			[dict setObject:oldname forKey:@"newName"];
-			[dict setObject:[NSColor grayColor] forKey:@"textColor"];
+			//[dict setObject:newname forKey:@"newName"];
+			//[item setNewName:newname];
+		//} else {
+			//[dict setObject:oldname forKey:@"newName"];
+			//[dict setObject:[NSColor grayColor] forKey:@"textColor"];
+			
 		}
+		[item setNewName:newname];
 		n++;
 	}
 	return YES;
@@ -374,13 +397,19 @@ NSMutableDictionary *dictForFile(NSString *path) {
 
 - (BOOL)resolveIcons
 {
+	/*
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	NSMutableDictionary *dict = nil;
+	//NSMutableDictionary *dict = nil;
+	RenameItem *item = nil;
 	while (dict = [enumerator nextObject]) {
 		NSImage *icon = [[NSWorkspace sharedWorkspace] 
-							iconForFile:[dict objectForKey:@"path"]];
-		[dict setObject:icon forKey:@"icon"];
-	}
+							iconForFile:[dict setFilePath]];
+		//[dict setObject:icon forKey:@"icon"];
+		[item setIcon:icon];
+	}*/
+	NSLog(@"targetDicts in resolveIcons refcount:%u", [targetDicts retainCount]);
+	[targetDicts makeObjectsPerformSelector:@selector(resolveIcon)];
+	NSLog(@"targetDicts at end of resolveIcons refcount:%u", [targetDicts retainCount]);
 	return YES;
 }
 
@@ -419,8 +448,9 @@ NSMutableDictionary *dictForFile(NSString *path) {
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:nfile];
 	for (unsigned int i=1; i <= nfile; i++) {
 		NSString *path = [[script_result descriptorAtIndex:i] stringValue];
-		NSMutableDictionary *dict = dictForFile(path);
-		[target_dicts addObject:dict];
+		//NSMutableDictionary *dict = dictForFile(path);
+		RenameItem *rename_item = [RenameItem renameItemWithPath:path];
+		[target_dicts addObject:rename_item];
 	}
 	result = YES;
 	[self setTargetDicts:target_dicts];
@@ -478,9 +508,11 @@ bail:
 
 - (void)setTargetDicts:(NSArray *)array
 {
+	NSLog(@"array in setTargetDicts retainCount:%u", [array retainCount]);
 	[array retain];
 	[targetDicts autorelease];
 	targetDicts = array;
+	NSLog(@"targetDicts in setTargetDicts retainCount:%u", [targetDicts retainCount]);
 }
 
 - (BOOL)hasNewNames

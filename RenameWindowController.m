@@ -332,6 +332,12 @@ bail:
 }
 
 #pragma mark delegate methods
+- (BOOL)windowShouldClose:(id)window
+{
+	[previewDrawer close]; // required to release targetDicts when closing window
+	return YES;
+}
+
 -(void) windowWillClose:(NSNotification *)notification
 {
 	[[FrontAppMonitor notificationCenter] removeObserver:self];
@@ -349,6 +355,7 @@ bail:
 
 - (void)drawerDidClose:(NSNotification *)notification
 {
+	NSLog(@"drawerDidClose");
 	[self setRenameEngine:nil];
 }
 
