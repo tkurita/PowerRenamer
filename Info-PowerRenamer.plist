@@ -55,6 +55,8 @@
 	<string>NSApplication</string>
 	<key>DonationURL</key>
 	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© Tetsuro KURITA, 1999-2009</string>
 	<key>NSServices</key>
 	<array>
 		<dict>
