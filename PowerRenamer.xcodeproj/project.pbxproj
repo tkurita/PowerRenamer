@@ -67,6 +67,8 @@
 		2CEFC789102174C6003C67DB /* RenameItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFC787102174C6003C67DB /* RenameItem.h */; };
 		2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFC788102174C6003C67DB /* RenameItem.m */; };
 		2CEFC9691022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */; };
+		2CEFCA511022F6E0003C67DB /* PreviewTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFCA4F1022F6E0003C67DB /* PreviewTableView.h */; };
+		2CEFCA521022F6E0003C67DB /* PreviewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFCA501022F6E0003C67DB /* PreviewTableView.m */; };
 		2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CF52CE70DA26C55004844AD /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +163,8 @@
 		2CEFC787102174C6003C67DB /* RenameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameItem.h; sourceTree = "<group>"; };
 		2CEFC788102174C6003C67DB /* RenameItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameItem.m; sourceTree = "<group>"; };
 		2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDArrayControllerDataTypesProtocol.h; sourceTree = "<group>"; };
+		2CEFCA4F1022F6E0003C67DB /* PreviewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewTableView.h; sourceTree = "<group>"; };
+		2CEFCA501022F6E0003C67DB /* PreviewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewTableView.m; sourceTree = "<group>"; };
 		2CF52CE70DA26C55004844AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -285,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				2CA9A5E81013154B0060A187 /* DNDArrayController.m */,
+				2CEFCA4F1022F6E0003C67DB /* PreviewTableView.h */,
+				2CEFCA501022F6E0003C67DB /* PreviewTableView.m */,
 				2CA9A5E91013154B0060A187 /* DNDArrayController.h */,
 				2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */,
 				2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */,
@@ -374,6 +380,7 @@
 			files = (
 				2CEFC789102174C6003C67DB /* RenameItem.h in Headers */,
 				2CEFC9691022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h in Headers */,
+				2CEFCA511022F6E0003C67DB /* PreviewTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +492,7 @@
 				2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */,
 				2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */,
 				2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */,
+				2CEFCA521022F6E0003C67DB /* PreviewTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
