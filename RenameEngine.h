@@ -21,5 +21,5 @@
 - (BOOL)hasNewNames;
 - (void)clearNewNames;
 - (BOOL)selectInFinderReturningError:(NSError **)error;
-
+- (void)clearTargets;
 @end

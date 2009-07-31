@@ -43,8 +43,6 @@ static NSString *frameName = @"PreferencesWindow";
 -(void)windowWillClose:(NSNotification *)notification
 {
 	[[self window] saveFrameUsingName:frameName];
-	//NSData *data = [NSArchiver archivedDataWithRootObject:[presetsArrayController selectionIndexes]];
-	//[[NSUserDefaults standardUserDefaults] setObject:data forKey:@"SelectedPresetIndexes"];
 	if (self == sharedPrefWindow) {
 		sharedPrefWindow = nil;
 	}

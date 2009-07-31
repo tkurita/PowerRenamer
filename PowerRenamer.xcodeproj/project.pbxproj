@@ -66,6 +66,7 @@
 		2CEFC69910215E55003C67DB /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC69810215E55003C67DB /* ServicesMenu.strings */; };
 		2CEFC789102174C6003C67DB /* RenameItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFC787102174C6003C67DB /* RenameItem.h */; };
 		2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFC788102174C6003C67DB /* RenameItem.m */; };
+		2CEFC9691022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */; };
 		2CF52D1A0DA26DE9004844AD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 2CF52CE70DA26C55004844AD /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		2CEFC69610215E4B003C67DB /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CEFC787102174C6003C67DB /* RenameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameItem.h; sourceTree = "<group>"; };
 		2CEFC788102174C6003C67DB /* RenameItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameItem.m; sourceTree = "<group>"; };
+		2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDArrayControllerDataTypesProtocol.h; sourceTree = "<group>"; };
 		2CF52CE70DA26C55004844AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
@@ -303,6 +305,7 @@
 				2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */,
 				2CEFC787102174C6003C67DB /* RenameItem.h */,
 				2CEFC788102174C6003C67DB /* RenameItem.m */,
+				2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CEFC789102174C6003C67DB /* RenameItem.h in Headers */,
+				2CEFC9691022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,14 @@
 
 + (void)initialize
 {	
-	NSValueTransformer *transformer = [[AddDummyAtFirstTransformer new] autorelease];
-	[NSValueTransformer setValueTransformer:transformer forName:@"AddDummyAtFirst"];
-	transformer = [[ModeIndexTransformer new] autorelease];
-	[NSValueTransformer setValueTransformer:transformer forName:@"ModeIndexToName"];
-	transformer = [[ModeIsNotNumberingTransfomer new] autorelease];
-	[NSValueTransformer setValueTransformer:transformer forName:@"ModeIsNotNumbering"];
+	if ( self == [AppController class]) {
+		NSValueTransformer *transformer = [[AddDummyAtFirstTransformer new] autorelease];
+		[NSValueTransformer setValueTransformer:transformer forName:@"AddDummyAtFirst"];
+		transformer = [[ModeIndexTransformer new] autorelease];
+		[NSValueTransformer setValueTransformer:transformer forName:@"ModeIndexToName"];
+		transformer = [[ModeIsNotNumberingTransfomer new] autorelease];
+		[NSValueTransformer setValueTransformer:transformer forName:@"ModeIsNotNumbering"];
+	}
 }
 
 - (int)judgeVisibilityForApp:(NSDictionary *)appDict

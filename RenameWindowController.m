@@ -1,8 +1,9 @@
 #import "RenameWindowController.h"
 #import "AltActionButton.h"
 #import "FrontAppMonitor.h"
+#import "DNDArrayControllerDataTypesProtocol.h"
 
-#define useLog 0
+#define useLog 1
 
 static NSMutableArray *reservedNumbers = nil;
 
@@ -142,7 +143,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 
 - (void)didChangedSettings
 {
-	if (isStaticMode && renameEngine) {
+	if (isStaticMode) {
 		[renameEngine clearNewNames];
 	} else {
 		[previewDrawer close];
@@ -152,7 +153,7 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 #pragma mark public
 - (void)setUpForFiles:(NSArray *)filenames
 {
-	[self setRenameEngine:[[RenameEngine new] autorelease]];
+	//[self setRenameEngine:[[RenameEngine new] autorelease]];
 	[renameEngine setTargetFiles:filenames];
 	[renameEngine resolveIcons];
 	isStaticMode = YES;
@@ -222,19 +223,20 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 #pragma mark Actions
 - (IBAction)narrowDown:(id)sender
 {
-	RenameEngine *rename_engine;
+	//RenameEngine *rename_engine;
 	NSError *error = nil;
-	if (isStaticMode) {
-		rename_engine = renameEngine;
-	} else {
-		rename_engine = [[RenameEngine new] autorelease];
-		if (![rename_engine resolveTargetItemsWithSorting:NO error:&error]) {
+	//if (isStaticMode) {
+		//rename_engine = renameEngine;
+	//} else {
+	if (!isStaticMode) {
+		//rename_engine = [[RenameEngine new] autorelease];
+		if (![renameEngine resolveTargetItemsWithSorting:NO error:&error]) {
 			goto bail;
 		}
 	}
-	if (![rename_engine narrowDownTargetItems:self error:&error]) {
+	if (![renameEngine narrowDownTargetItems:self error:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-		if (!isStaticMode) [rename_engine selectInFinderReturningError:&error];
+		if (!isStaticMode) [renameEngine selectInFinderReturningError:&error];
 	}
 
 bail:
@@ -275,14 +277,19 @@ bail:
 
 - (IBAction)preview:(id)sender
 {
+	/*
 	if (!isStaticMode) {
 		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
 		[self setRenameEngine:rename_engine];
 	}
+	 */
 	NSError *error = nil;
-	if (![renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
-		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-		return;
+	if (!isStaticMode) {
+		if (![renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
+			[self presentError:error modalForWindow:[self window] delegate:nil 
+												didPresentSelector:nil contextInfo:nil];
+			return;
+		}
 	}
 	if (![renameEngine resolveNewNames:self error:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
@@ -301,10 +308,12 @@ bail:
 - (IBAction)okAction:(id)sender
 {
 	NSError *error = nil;
+	/*
 	if (!renameEngine) {
 		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
 		[self setRenameEngine:rename_engine];
 	}
+	 */
 	
 	if (![renameEngine hasNewNames]) {
 		if ([renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
@@ -321,7 +330,7 @@ bail:
 		return;
 	}
 	[previewDrawer close:self];
-	[self setRenameEngine:nil];
+	//[self setRenameEngine:nil];
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
 	if ([userdefaults boolForKey:@"AutoQuit"]) {
 		[self close];
@@ -329,6 +338,37 @@ bail:
 		[self saveHistory];
 		isStaticMode = NO;
 	}
+}
+
+
+#pragma mark DNDArrayControlerDataTypesProtocol
+- (NSArray*) additionalDataTypes
+{
+	return [NSArray arrayWithObject:NSFilenamesPboardType];
+}
+
+- (void)writeObjects:(NSArray *)targets toPasteboard:(NSPasteboard *)pboard
+{
+	[pboard setPropertyList:[targets valueForKey:@"filePath"] forType:NSFilenamesPboardType];
+}
+
+- (NSArray *)newObjectsFromPasteboard:(NSPasteboard *)pboard
+{
+	if (![pboard availableTypeFromArray:
+		  [NSArray arrayWithObjects:NSFilenamesPboardType, nil]]) {
+		return nil;
+	}
+	
+	NSArray *pathes = [pboard propertyListForType:NSFilenamesPboardType];
+	RenameEngine *engine = [[RenameEngine new] autorelease];
+	[engine setTargetFiles:pathes];
+	[engine resolveIcons];
+	NSError *error = nil;
+	if ([renameEngine hasNewNames]) {
+		if (![engine resolveNewNames:self error:&error]) return nil;
+	}
+	
+	return [engine targetDicts];
 }
 
 #pragma mark delegate methods
@@ -356,7 +396,8 @@ bail:
 - (void)drawerDidClose:(NSNotification *)notification
 {
 	NSLog(@"drawerDidClose");
-	[self setRenameEngine:nil];
+	//[self setRenameEngine:nil];
+	[renameEngine clearTargets];
 }
 
 - (void)drawerDidOpen:(NSNotification *)notification
@@ -394,13 +435,14 @@ bail:
 	newPresetName = name;
 }
 
+/*
 - (void)setRenameEngine:(RenameEngine *)engine
 {
 	[engine retain];
 	[renameEngine autorelease];
 	renameEngine = engine;
 }
-
+*/
 - (void)setOldText:(NSString *)aText
 {
 	if (![oldText isEqualToString:aText]) {
@@ -491,7 +533,7 @@ bail:
 	NSLog(@"start dealloc of RenameWindowController");
 #endif
 	[toolbarItems release];
-	[renameEngine release];
+	//[renameEngine release];
 	[idNumber release];
 	[super dealloc];
 #if useLog

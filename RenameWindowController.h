@@ -12,8 +12,8 @@
 	IBOutlet id settingsPullDownButton;
 	IBOutlet id presetsController;
 	IBOutlet id newPresetNameWindow;
+	IBOutlet RenameEngine *renameEngine;
 	
-	RenameEngine *renameEngine;
 	unsigned int modeIndex;
 	NSString *oldText;
 	NSString *newText;
@@ -36,7 +36,7 @@
 - (IBAction)narrowDown:(id)sender;
 
 #pragma mark Accessors
-- (void)setRenameEngine:(RenameEngine *)engine;
+//- (void)setRenameEngine:(RenameEngine *)engine;
 - (void)setOldText:(NSString *)aText;
 - (void)setNewText:(NSString *)aText;
 - (void)setModeIndex:(unsigned int)index;

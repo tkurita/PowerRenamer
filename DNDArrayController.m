@@ -61,7 +61,14 @@ static NSString *CopiedRowsType = @"COPIED_ROWS_TYPE";
 
 @implementation DNDArrayController
 
+static NSArray *internalDataTypes = nil;
 
++ (void)initialize
+{
+	if (!internalDataTypes) {
+		internalDataTypes = [[NSArray arrayWithObjects:CopiedRowsType, MovedRowsType, nil] retain];
+	}
+}
 
 - (void)awakeFromNib
 {
@@ -70,9 +77,13 @@ static NSString *CopiedRowsType = @"COPIED_ROWS_TYPE";
 	[tableView setDraggingSourceOperationMask:NSDragOperationLink forLocal:NO];
 	[tableView setDraggingSourceOperationMask:(NSDragOperationCopy | NSDragOperationMove) forLocal:YES];
 	
-	[tableView registerForDraggedTypes:
-	 [NSArray arrayWithObjects:CopiedRowsType, MovedRowsType, NSURLPboardType, nil]];
-    [tableView setAllowsMultipleSelection:YES];
+	NSArray *type_array = internalDataTypes;
+	if (helperObject) {
+		type_array = [type_array arrayByAddingObjectsFromArray:
+							  [helperObject additionalDataTypes]];
+	}
+	[tableView registerForDraggedTypes:type_array];    
+	[tableView setAllowsMultipleSelection:YES];
 	
 	[super awakeFromNib];
 }
@@ -83,8 +94,6 @@ static NSString *CopiedRowsType = @"COPIED_ROWS_TYPE";
 writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	 toPasteboard:(NSPasteboard *)pboard
 {
-	// declare our own pasteboard types
-    NSArray *typesArray = [NSArray arrayWithObjects:CopiedRowsType, MovedRowsType, nil];
 	
 	/*
 	 If the number of rows is not 1, then we only support our own types.
@@ -92,16 +101,18 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	 value in that row.  If that's possible, add NSURLPboardType to the
 	 list of supported types, and add the NSURL to the pasteboard.
 	 */
-	if ([rowIndexes count] != 1)
-	{
-		[pboard declareTypes:typesArray owner:self];
-	}
-	else
-	{
+	[pboard declareTypes:internalDataTypes owner:self];
+	if (helperObject) {
 		// Try to create an URL
 		// If we can, add NSURLPboardType to the declared types and write
 		//the URL to the pasteboard; otherwise declare existing types
-		unsigned int row = [rowIndexes firstIndex];
+		//unsigned int row = [rowIndexes firstIndex];
+		NSArray *targets = [[self arrangedObjects] objectsAtIndexes:rowIndexes];
+		NSArray *custom_types = [helperObject additionalDataTypes];
+		//NSArray *data_array = [helperObject dataArrayForDragedObject:target forTypes:custom_types];
+		[pboard addTypes:custom_types owner:self];
+		[helperObject writeObjects:targets toPasteboard:pboard];
+		/*
 		NSString *urlString = [[[self arrangedObjects] objectAtIndex:row] valueForKey:@"url"];
 		NSURL *url;
 		
@@ -113,8 +124,9 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 		}
 		else
 		{
-			[pboard declareTypes:typesArray owner:self];
+			[pboard declareTypes:internalDataTypes owner:self];
 		}
+		 */
 	}
 	
     // add rows array for local move
@@ -139,11 +151,10 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
     return YES;
 }
 
-
-- (NSDragOperation)tableView:(NSTableView*)tv
-				validateDrop:(id <NSDraggingInfo>)info
-				 proposedRow:(int)row
-	   proposedDropOperation:(NSTableViewDropOperation)op
+- (NSDragOperation)tableView:(NSTableView *)tv
+					validateDrop:(id < NSDraggingInfo >)info 
+					proposedRow:(int)row 
+					proposedDropOperation:(NSTableViewDropOperation)operation
 {
     
     NSDragOperation dragOp = NSDragOperationCopy;
@@ -206,7 +217,19 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 		return YES;
     }
 	
+	if (helperObject) {
+		NSArray *new_objects = [helperObject newObjectsFromPasteboard:[info draggingPasteboard]];
+		if (new_objects) {
+			NSRange range = NSMakeRange(row, [new_objects count]);
+			NSIndexSet *index_set = [NSIndexSet indexSetWithIndexesInRange:range];
+			[self insertObjects:new_objects atArrangedObjectIndexes:index_set];
+			[self setSelectionIndexes:index_set];
+		}
+		return YES;		
+	}
+	
 	// Can we get an URL?  If so, add a new row, configure it, then return.
+	/*
 	NSURL *url = [NSURL URLFromPasteboard:[info draggingPasteboard]];
 	
 	if (url) {
@@ -219,7 +242,7 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 		// set selected rows to those that were just copied
 		[self setSelectionIndex:row];
 		return YES;		
-	}
+	}*/
     return NO;
 }
 

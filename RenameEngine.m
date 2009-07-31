@@ -51,6 +51,12 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	[super dealloc];
 }
 
+- (void)clearTargets
+{
+	[self setTargetDicts:nil];
+	hasNewNames = NO;
+}
+
 #pragma mark method for static mode
 - (void)clearNewNames
 {

@@ -44,11 +44,12 @@
  */
 
 #import <Cocoa/Cocoa.h>
-
+#import "DNDArrayControllerDataTypesProtocol.h"
 
 @interface DNDArrayController : NSArrayController
 {
     IBOutlet NSTableView *tableView;
+	IBOutlet id<DNDArrayControllerDataTypesProtocol> helperObject;
 }
 
 // table view drag and drop support
