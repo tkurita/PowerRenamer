@@ -103,7 +103,8 @@
 #if useLog
 	NSLog(@"start applicationDidBecomeActive");
 #endif
-	if ([[NSApp windows] count] <= 1) {
+	id wc = [RenameWindowController frontmostWindowController];
+	if (!wc) {
 		RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
 		[a_window showWindow:self];
 	}

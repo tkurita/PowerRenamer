@@ -21,7 +21,7 @@
 			2CE800CD0F98216100AD454A /* PowerRenamer.applescript:121 */,
 			2C58049F0FFC752C00DBA275 /* RenameEngine.m:428 */,
 			2C447CE910007B8A009DA83E /* RenameEngine.m:407 */,
-			2C278D0F100F10090092CFDE /* RenameWindowController.m:263 */,
+			2C278D0F100F10090092CFDE /* RenameWindowController.m:279 */,
 			2CEFC32C1017027F003C67DB /* RenameEngine.m:199 */,
 			2CEFC34A10170373003C67DB /* StringExtra.m:83 */,
 			2CEFC36C10170892003C67DB /* StringExtra.m:19 */,
@@ -29,7 +29,7 @@
 			2CEFC6DB10216012003C67DB /* AppController.m:63 */,
 			2CEFC7FD1021E8F4003C67DB /* RenameItem.m:35 */,
 			2CEFC8391021F5EC003C67DB /* RenameEngine.m:52 */,
-			2CEFC84A1021F76B003C67DB /* RenameWindowController.m:513 */,
+			2CEFC84A1021F76B003C67DB /* RenameWindowController.m:529 */,
 			2CEFC87710226BFE003C67DB /* RenameItem.m:27 */,
 			2CEFC97B1022CB26003C67DB /* AppController.m:48 */,
 			2CEFC9921022CB6A003C67DB /* PreferencesWindowController.m:38 */,
@@ -682,6 +682,14 @@
 			2C061F1B102320B7004E7EDC = 2C061F1B102320B7004E7EDC /* PBXTextBookmark */;
 			2C061F1C102320B7004E7EDC = 2C061F1C102320B7004E7EDC /* PBXTextBookmark */;
 			2C061F211023216C004E7EDC = 2C061F211023216C004E7EDC /* PBXTextBookmark */;
+			2C061F491023EC7D004E7EDC /* PBXBookmark */ = 2C061F491023EC7D004E7EDC /* PBXBookmark */;
+			2C061F4C1023EF26004E7EDC /* PBXTextBookmark */ = 2C061F4C1023EF26004E7EDC /* PBXTextBookmark */;
+			2C061F4D1023EF26004E7EDC /* PlistBookmark */ = 2C061F4D1023EF26004E7EDC /* PlistBookmark */;
+			2C061F4E1023EF26004E7EDC /* PBXTextBookmark */ = 2C061F4E1023EF26004E7EDC /* PBXTextBookmark */;
+			2C061F4F1023EF26004E7EDC /* PBXTextBookmark */ = 2C061F4F1023EF26004E7EDC /* PBXTextBookmark */;
+			2C061F501023EF26004E7EDC /* PlistBookmark */ = 2C061F501023EF26004E7EDC /* PlistBookmark */;
+			2C061F511023EF26004E7EDC /* PBXTextBookmark */ = 2C061F511023EF26004E7EDC /* PBXTextBookmark */;
+			2C061F561023EF26004E7EDC /* PBXTextBookmark */ = 2C061F561023EF26004E7EDC /* PBXTextBookmark */;
 			2C3263780D9B390A00631FC8 = 2C3263780D9B390A00631FC8 /* History.rd */;
 			2C5B7E000FF098F700D5ED31 = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 			2C5B7E130FF0A44A00D5ED31 = 2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */;
@@ -737,7 +745,7 @@
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		name = "RenameWindowController.m: 427";
 		rLen = 0;
-		rLoc = 15163;
+		rLoc = 15538;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 15037;
@@ -827,7 +835,7 @@
 		fRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */;
 		name = "AppController.m: 136";
 		rLen = 0;
-		rLoc = 4226;
+		rLoc = 4262;
 		rType = 0;
 		vrLen = 1374;
 		vrLoc = 0;
@@ -887,7 +895,7 @@
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		name = "RenameWindowController.m: 357";
 		rLen = 0;
-		rLoc = 13434;
+		rLoc = 13809;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 12515;
@@ -959,6 +967,84 @@
 		vrLen = 993;
 		vrLoc = 0;
 	};
+	2C061F491023EC7D004E7EDC /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */;
+	};
+	2C061F4C1023EF26004E7EDC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C061F1310231DAD004E7EDC /* Credits.rtf */;
+		name = "it and";
+		rLen = 7;
+		rLoc = 368;
+		rType = 0;
+		vrLen = 993;
+		vrLoc = 0;
+	};
+	2C061F4D1023EF26004E7EDC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/Info-PowerRenamer.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2C061F4E1023EF26004E7EDC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */;
+		name = "AppController.m: 101";
+		rLen = 66;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1090;
+		vrLoc = 2832;
+	};
+	2C061F4F1023EF26004E7EDC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C061F1310231DAD004E7EDC /* Credits.rtf */;
+		name = "it and";
+		rLen = 7;
+		rLoc = 368;
+		rType = 0;
+		vrLen = 993;
+		vrLoc = 0;
+	};
+	2C061F501023EF26004E7EDC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/Info-PowerRenamer.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2C061F511023EF26004E7EDC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */;
+		name = "AppController.m: 108";
+		rLen = 0;
+		rLoc = 3247;
+		rType = 0;
+		vrLen = 1088;
+		vrLoc = 2832;
+	};
+	2C061F561023EF26004E7EDC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */;
+		name = "AppController.m: 78";
+		rLen = 100;
+		rLoc = 2355;
+		rType = 0;
+		vrLen = 1120;
+		vrLoc = 2115;
+	};
 	2C2100251002D65100850A76 /* FrontAppMonitor.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
@@ -989,7 +1075,7 @@
 			sepNavVisRange = "{0, 105}";
 		};
 	};
-	2C278D0F100F10090092CFDE /* RenameWindowController.m:263 */ = {
+	2C278D0F100F10090092CFDE /* RenameWindowController.m:279 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1001,7 +1087,7 @@
 		functionName = "-applyPreset:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 263;
+		lineNumber = 279;
 		location = PowerRenamer;
 		modificationTime = 270715967.319878;
 		state = 1;
@@ -1094,17 +1180,17 @@
 	};
 	2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {705, 700}}";
-			sepNavSelRange = "{1059, 0}";
-			sepNavVisRange = "{288, 1103}";
+			sepNavIntBoundsRect = "{{0, 0}, {516, 714}}";
+			sepNavSelRange = "{1320, 32}";
+			sepNavVisRange = "{429, 995}";
 			sepNavWindowFrame = "{{371, 115}, {845, 763}}";
 		};
 	};
 	2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {966, 7910}}";
-			sepNavSelRange = "{13434, 0}";
-			sepNavVisRange = "{12515, 958}";
+			sepNavIntBoundsRect = "{{0, 0}, {810, 7686}}";
+			sepNavSelRange = "{6581, 31}";
+			sepNavVisRange = "{6224, 819}";
 			sepNavWindowFrame = "{{331, 115}, {845, 763}}";
 		};
 	};
@@ -1216,9 +1302,9 @@
 	};
 	2C85CC2F0B7B3A1100C89869 /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {970, 2114}}";
-			sepNavSelRange = "{4265, 5}";
-			sepNavVisRange = "{3502, 965}";
+			sepNavIntBoundsRect = "{{0, 0}, {756, 2114}}";
+			sepNavSelRange = "{2355, 100}";
+			sepNavVisRange = "{2115, 1120}";
 			sepNavVisRect = "{{0, 0}, {694, 558}}";
 			sepNavWindowFrame = "{{377, 137}, {733, 631}}";
 		};
@@ -1814,7 +1900,7 @@
 		modificationTime = 270715967.320034;
 		state = 1;
 	};
-	2CEFC84A1021F76B003C67DB /* RenameWindowController.m:513 */ = {
+	2CEFC84A1021F76B003C67DB /* RenameWindowController.m:529 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1826,7 +1912,7 @@
 		functionName = "-dealloc";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 513;
+		lineNumber = 529;
 		location = PowerRenamer;
 		modificationTime = 270715967.320043;
 		state = 1;

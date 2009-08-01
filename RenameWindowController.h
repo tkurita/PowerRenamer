@@ -44,6 +44,7 @@
 - (void)setLeadingZeros:(BOOL)flag;
 
 #pragma mark public
++ (id)frontmostWindowController;
 - (void)setUpForFiles:(NSArray *)filenames;
 - (BOOL)isStaticMode;
 @end

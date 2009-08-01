@@ -151,6 +151,22 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 }
 
 #pragma mark public
++ (id)frontmostWindowController
+{
+	NSArray *windows = [NSApp orderedWindows];
+	NSEnumerator *enumerator = [windows objectEnumerator];
+	id wincotroller = nil;
+	NSWindow *a_window = nil;
+	while (a_window = [enumerator nextObject]) {
+		id wc = [a_window windowController];
+		if ([wc isKindOfClass:[self class]]) {
+			wincotroller = wc;
+			break;
+		}
+	}
+	return wincotroller;
+}
+
 - (void)setUpForFiles:(NSArray *)filenames
 {
 	[renameEngine setTargetFiles:filenames];
