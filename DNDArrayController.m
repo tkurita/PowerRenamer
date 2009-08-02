@@ -106,27 +106,10 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 		// Try to create an URL
 		// If we can, add NSURLPboardType to the declared types and write
 		//the URL to the pasteboard; otherwise declare existing types
-		//unsigned int row = [rowIndexes firstIndex];
 		NSArray *targets = [[self arrangedObjects] objectsAtIndexes:rowIndexes];
 		NSArray *custom_types = [helperObject additionalDataTypes];
-		//NSArray *data_array = [helperObject dataArrayForDragedObject:target forTypes:custom_types];
 		[pboard addTypes:custom_types owner:self];
 		[helperObject writeObjects:targets toPasteboard:pboard];
-		/*
-		NSString *urlString = [[[self arrangedObjects] objectAtIndex:row] valueForKey:@"url"];
-		NSURL *url;
-		
-		if (urlString && (url = [NSURL URLWithString:urlString]))
-		{
-			typesArray = [typesArray arrayByAddingObject:NSURLPboardType];	
-			[pboard declareTypes:typesArray owner:self];
-			[url writeToPasteboard:pboard];	
-		}
-		else
-		{
-			[pboard declareTypes:internalDataTypes owner:self];
-		}
-		 */
 	}
 	
     // add rows array for local move
@@ -228,21 +211,6 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 		return YES;		
 	}
 	
-	// Can we get an URL?  If so, add a new row, configure it, then return.
-	/*
-	NSURL *url = [NSURL URLFromPasteboard:[info draggingPasteboard]];
-	
-	if (url) {
-		id newObject = [self newObject];	
-		[self insertObject:newObject atArrangedObjectIndex:row];
-		// "new" -- returned with retain count of 1
-		[newObject release];
-		[newObject takeValue:[url absoluteString] forKey:@"url"];
-		[newObject takeValue:[NSCalendarDate date] forKey:@"date"];
-		// set selected rows to those that were just copied
-		[self setSelectionIndex:row];
-		return YES;		
-	}*/
     return NO;
 }
 
@@ -280,7 +248,6 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 {
 	unsigned int start, end, count;
 	
-	//if ((start == 0) && (range.length == 0))
 	if (range.length == 0)
 	{
 		return 0;	

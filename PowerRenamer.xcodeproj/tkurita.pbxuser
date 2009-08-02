@@ -731,6 +731,8 @@
 			2C061FB71025CB95004E7EDC /* PBXTextBookmark */ = 2C061FB71025CB95004E7EDC /* PBXTextBookmark */;
 			2C061FB81025CB95004E7EDC /* PBXTextBookmark */ = 2C061FB81025CB95004E7EDC /* PBXTextBookmark */;
 			2C061FB91025CB95004E7EDC /* PBXTextBookmark */ = 2C061FB91025CB95004E7EDC /* PBXTextBookmark */;
+			2C061FBD1025CC80004E7EDC /* PBXTextBookmark */ = 2C061FBD1025CC80004E7EDC /* PBXTextBookmark */;
+			2C061FBE1025CC80004E7EDC /* PBXTextBookmark */ = 2C061FBE1025CC80004E7EDC /* PBXTextBookmark */;
 			2C3263780D9B390A00631FC8 = 2C3263780D9B390A00631FC8 /* History.rd */;
 			2C5B7E000FF098F700D5ED31 = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 			2C5B7E130FF0A44A00D5ED31 = 2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */;
@@ -1512,13 +1514,33 @@
 		isa = PBXTextBookmark;
 		fRef = 2CA9A5E81013154B0060A187 /* DNDArrayController.m */;
 		name = "DNDArrayController.m: 109";
-		rLen = 48;
+		rLen = 0;
 		rLoc = 4187;
 		rType = 0;
 		vrLen = 1498;
 		vrLoc = 3670;
 	};
 	2C061FB91025CB95004E7EDC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */;
+		name = "AppController.m: 78";
+		rLen = 100;
+		rLoc = 2355;
+		rType = 0;
+		vrLen = 1250;
+		vrLoc = 1789;
+	};
+	2C061FBD1025CC80004E7EDC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2CA9A5E81013154B0060A187 /* DNDArrayController.m */;
+		name = "DNDArrayController.m: 251";
+		rLen = 0;
+		rLoc = 8821;
+		rType = 0;
+		vrLen = 1481;
+		vrLoc = 4187;
+	};
+	2C061FBE1025CC80004E7EDC /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */;
 		name = "AppController.m: 78";
@@ -1869,9 +1891,9 @@
 	};
 	2CA9A5E81013154B0060A187 /* DNDArrayController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {751, 3990}}";
-			sepNavSelRange = "{4187, 48}";
-			sepNavVisRange = "{3670, 1498}";
+			sepNavIntBoundsRect = "{{0, 0}, {751, 3808}}";
+			sepNavSelRange = "{8821, 0}";
+			sepNavVisRange = "{4187, 1481}";
 		};
 	};
 	2CA9A5E91013154B0060A187 /* DNDArrayController.h */ = {
@@ -2542,7 +2564,7 @@
 		fRef = 2CA9A5E81013154B0060A187 /* DNDArrayController.m */;
 		name = "DNDArrayController.m: 287";
 		rLen = 5;
-		rLoc = 10067;
+		rLoc = 8922;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 0;
