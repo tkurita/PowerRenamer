@@ -286,25 +286,19 @@ bail:
 
 - (IBAction)preview:(id)sender
 {
-	/*
-	if (!isStaticMode) {
-		RenameEngine *rename_engine = [[RenameEngine new] autorelease];
-		[self setRenameEngine:rename_engine];
-	}
-	 */
 	NSError *error = nil;
-	if (!isStaticMode) {
+	if (![renameEngine targetDicts]) {
 		if (![renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
 			[self presentError:error modalForWindow:[self window] delegate:nil 
 												didPresentSelector:nil contextInfo:nil];
 			return;
 		}
+		[renameEngine resolveIcons];
 	}
 	if (![renameEngine resolveNewNames:self error:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 		return;
 	}
-	[renameEngine resolveIcons];
 	[previewDrawer open:self];
 	[self saveHistory];
 }

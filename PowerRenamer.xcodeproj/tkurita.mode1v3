@@ -233,7 +233,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C061F9210259835004E7EDC</string>
+						<string>2C061FB91025CB95004E7EDC</string>
 						<key>history</key>
 						<array>
 							<string>2C061F491023EC7D004E7EDC</string>
@@ -344,13 +344,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 2}, {287, 549}}</string>
+							<string>{{0, 0}, {287, 549}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -389,7 +389,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RenameEngine.m</string>
+								<string>DNDArrayController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -397,11 +397,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RenameEngine.m</string>
+										<string>DNDArrayController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C061F9110259835004E7EDC</string>
+										<string>2C061FB81025CB95004E7EDC</string>
 										<key>history</key>
 										<array>
 											<string>2CEFC3BA10186C2B003C67DB</string>
@@ -422,14 +422,16 @@
 											<string>2C061E98102313F3004E7EDC</string>
 											<string>2C061E99102313F3004E7EDC</string>
 											<string>2C061E9A102313F3004E7EDC</string>
-											<string>2C061E9B102313F3004E7EDC</string>
 											<string>2C061EDD10231C8D004E7EDC</string>
 											<string>2C061F1A102320B7004E7EDC</string>
 											<string>2C061F4C1023EF26004E7EDC</string>
 											<string>2C061F4D1023EF26004E7EDC</string>
-											<string>2C061F621023F161004E7EDC</string>
-											<string>2C061F77102526EF004E7EDC</string>
-											<string>2C061F78102526EF004E7EDC</string>
+											<string>2C061FA01025CAB2004E7EDC</string>
+											<string>2C061FA11025CAB2004E7EDC</string>
+											<string>2C061FA21025CAB2004E7EDC</string>
+											<string>2C061FAD1025CB69004E7EDC</string>
+											<string>2C061FB51025CB95004E7EDC</string>
+											<string>2C061FB61025CB95004E7EDC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -460,6 +462,12 @@
 											<string>2C061F641023F161004E7EDC</string>
 											<string>2C061F731024279C004E7EDC</string>
 											<string>2C061F79102526EF004E7EDC</string>
+											<string>2C061FA41025CAB2004E7EDC</string>
+											<string>2C061FA51025CAB2004E7EDC</string>
+											<string>2C061FA61025CAB2004E7EDC</string>
+											<string>2C061FA71025CAB2004E7EDC</string>
+											<string>2C061FA81025CAB2004E7EDC</string>
+											<string>2C061FB71025CB95004E7EDC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -657,10 +665,10 @@
 		<string>2C061F6E1023F1DF004E7EDC</string>
 		<string>2C061F6F1023F1DF004E7EDC</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2CE800540F98152900AD454A</string>
 		<string>2C061F541023EF26004E7EDC</string>
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 	</array>
 	<key>WindowString</key>
 	<string>199 147 1121 629 0 0 1440 878 </string>
@@ -877,7 +885,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
