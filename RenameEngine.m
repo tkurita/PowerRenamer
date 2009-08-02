@@ -317,6 +317,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		NSString *oldname = [item oldName];
 		NSString *newname = nil;
 		if (mode == kNumberingMode) {
+			new_text = [new_text_orig mutableCopy];
 			[new_text replaceOccurrencesOfString:@"$#" 
 								   withString:[NSString stringWithFormat:numbering_format, n]
 											  options:0 range:NSMakeRange(0, [new_text length])];
