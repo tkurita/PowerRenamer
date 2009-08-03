@@ -418,6 +418,18 @@ bail:
 
 - (NSSize)drawerWillResizeContents:(NSDrawer *)sender toSize:(NSSize)contentSize
 {
+	NSSize current_size = [sender contentSize];
+	NSSize win_content_size = [[[sender parentWindow] contentView] frame].size;
+#if useLog	
+	NSSize win_size = [[sender parentWindow] frame].size;
+	NSLog(@"win_size : width=%f, height=%f", win_size.width, win_size.height);
+	NSLog(@"win_content_size : width=%f, height=%f", win_content_size.width, win_content_size.height);
+	NSLog(@"proposed : width=%f, height=%f", contentSize.width, contentSize.height);
+#endif
+	if (win_content_size.height-35 >= current_size.height) {
+		return contentSize;
+	}
+	
 	return [sender contentSize]; // prohibit resizing drawer.
 	//return contentSize;
 }

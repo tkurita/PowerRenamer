@@ -319,7 +319,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		if (mode == kNumberingMode) {
 			new_text = [new_text_orig mutableCopy];
 			[new_text replaceOccurrencesOfString:@"$#" 
-								   withString:[NSString stringWithFormat:numbering_format, n]
+								   withString:[NSString stringWithFormat:numbering_format, n++]
 											  options:0 range:NSMakeRange(0, [new_text length])];
 					
 		}
@@ -346,7 +346,6 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 			}
 		}
 		[item setNewName:newname];
-		n++;
 	}
 	return YES;
 }
