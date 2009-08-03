@@ -239,15 +239,15 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 - (IBAction)narrowDown:(id)sender
 {
 	NSError *error = nil;
-	if (!isStaticMode) {
+	if (![renameEngine targetDicts]) {
 		if (![renameEngine resolveTargetItemsWithSorting:NO error:&error]) {
 			goto bail;
 		}
 	}
 	if (![renameEngine narrowDownTargetItems:self error:&error]) {
-		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-		if (!isStaticMode) [renameEngine selectInFinderReturningError:&error];
+		goto bail;
 	}
+	if (!isStaticMode) [renameEngine selectInFinderReturningError:&error];
 
 bail:
 	if (error)

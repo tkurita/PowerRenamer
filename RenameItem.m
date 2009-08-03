@@ -19,13 +19,13 @@ static NSMutableDictionary *renameItemsPool = nil;
 	}
 }
 
+#if useLog
 - (oneway void)release
 {
-#if useLog
-	NSLog(@"start release in RenameItem");
-#endif		
+	NSLog(@"start release in RenameItem");	
 	[super release];
 }
+#endif
 
 - (void)dealloc
 {

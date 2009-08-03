@@ -30,12 +30,6 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		NSData *data = [FINDER_SELECTION_CONTROLLER compiledDataForType:@"scpt" usingStorageOptions:OSANull error:&error];
 		finderSelectionController = [[OSAScript alloc] initWithCompiledData:data error:&error];
 		hasNewNames = NO;
-		/* confirm no shared script instance between finderSelectionController and FINDER_SELECTION_CONTROLLER
-		NSAppleEventDescriptor *script_result = [FINDER_SELECTION_CONTROLLER executeHandlerWithName:@"get_finderselection" arguments:nil error:&error];
-		NSLog([script_result description]);
-		script_result = [finderSelectionController executeHandlerWithName:@"selected_items" arguments:nil error:&error];
-		NSLog([script_result description]);
-		*/
     }
     return self;
 }
@@ -69,6 +63,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		[item setNewName:nil];
 	}
 	hasNewNames = NO;
+	[self setRenamedItems:nil];
 }
 
 - (void)setTargetFiles:(NSArray *)filenames
@@ -105,7 +100,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 
 - (BOOL)selectInFinderReturningError:(NSError **)error
 {
-	NSArray *array = [targetDicts valueForKey:@"path"];
+	NSArray *array = [targetDicts valueForKey:@"filePath"];
 	NSDictionary *err_info = nil;
 	[finderSelectionController executeHandlerWithName:@"select_items"
 											arguments:[NSArray arrayWithObject:array] error:&err_info];
@@ -267,7 +262,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	RenameItem *item = nil;
-	
+	NSMutableArray *renamed_items = [NSMutableArray array];
 	while (item = [enumerator nextObject]) {
 		NSString *oldname = [item oldName];
 		NSMutableString *newname = [oldname mutableCopy];
@@ -275,16 +270,17 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		[invocation invoke];
 		unsigned int result = 0;
 		[invocation getReturnValue:&result];
-		if (result) {
-			if (![newname isEqualToString:oldname]) {
-				newname = [[newname uniqueNameAtLocation:
-							[[item filePath] stringByDeletingLastPathComponent]
-											   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
-			}
+		if (result && ![newname isEqualToString:oldname]) {
+			newname = [[newname uniqueNameAtLocation:
+						[[item filePath] stringByDeletingLastPathComponent]
+										   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
+			[item setNewName:newname];
+			[renamed_items addObject:item];
+		} else {
+			[item setNewName:newname];
 		}
-		[item setNewName:newname];
 	}
-	
+	[self setRenamedItems:renamed_items];
 	return YES;
 }
 
@@ -310,6 +306,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		}
 	}
 	
+	NSMutableArray *renamed_items = [NSMutableArray array];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	RenameItem *item = nil;
 	NSMutableString *new_text = [new_text_orig mutableCopy];
@@ -339,14 +336,16 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 			}
 		}
 		
-		if (newname) {
-			if (![newname isEqualToString:oldname]) {
-				newname = [newname uniqueNameAtLocation:[[item filePath] stringByDeletingLastPathComponent]
-											  excepting:[targetDicts valueForKey:@"newName"]];
-			}
+		if (newname && ![newname isEqualToString:oldname])  {
+			newname = [newname uniqueNameAtLocation:[[item filePath] stringByDeletingLastPathComponent]
+										  excepting:[targetDicts valueForKey:@"newName"]];
+			[item setNewName:newname];
+			[renamed_items addObject:item];
+		} else {
+			[item setNewName:newname];
 		}
-		[item setNewName:newname];
 	}
+	[self setRenamedItems:renamed_items];
 	return YES;
 }
 
@@ -423,11 +422,12 @@ bail:
 
 - (BOOL)processRenameAndReturnError:(NSError **)error
 {
-	NSArray *oldnames = [targetDicts valueForKey:@"oldName"];
-	NSArray *newnames = [targetDicts valueForKey:@"newName"];
+	return YES;
+	NSArray *pathes = [renamedItems valueForKey:@"filePath"];
+	NSArray *newnames = [renamedItems valueForKey:@"newName"];
 	NSDictionary *err_info = nil;
 	[finderSelectionController executeHandlerWithName:@"process_rename" 
-			arguments:[NSArray arrayWithObjects:oldnames, newnames, nil]
+			arguments:[NSArray arrayWithObjects:pathes, newnames, nil]
 												error:&err_info];
 	if (err_info) {
 #if useLog
@@ -442,22 +442,7 @@ bail:
 		
 		return NO;
 	}
-	/*
-	NSFileManager *filemanager = [NSFileManager defaultManager];
-	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	NSMutableDictionary *dict = nil;
-	while (dict = [enumerator nextObject]) {
-		NSString *newname = [dict objectForKey:@"newName"];
-		NSString *oldname = [dict objectForKey:@"oldName"];
-		if (![oldname isEqualToString:newname]) {
-			NSString *path = [dict objectForKey:@"path"];
-			NSString *newpath = [[path stringByDeletingLastPathComponent] stringByAppendingPathComponent:newname];
-			[filemanager movePath:path toPath:newpath handler:nil];
-			[workspace selectFile:newpath inFileViewerRootedAtPath:@""];
-		}
-	}
-	 */
+
 	return YES;
 }
 
@@ -481,6 +466,13 @@ bail:
 - (BOOL)hasNewNames
 {
 	return hasNewNames;
+}
+
+- (void)setRenamedItems:(NSArray *)array
+{
+	[array retain];
+	[renamedItems autorelease];
+	renamedItems = array;
 }
 
 @end
