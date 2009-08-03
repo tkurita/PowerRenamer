@@ -143,11 +143,15 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 
 - (void)didChangedSettings
 {
+	if ([renameEngine hasNewNames]) {
+		[renameEngine clearNewNames];
+	}
+	/*
 	if (isStaticMode) {
 		[renameEngine clearNewNames];
 	} else {
 		[previewDrawer close];
-	}
+	}*/
 }
 
 #pragma mark public
@@ -535,7 +539,6 @@ bail:
 	NSLog(@"start dealloc of RenameWindowController");
 #endif
 	[toolbarItems release];
-	//[renameEngine release];
 	[idNumber release];
 	[super dealloc];
 #if useLog
