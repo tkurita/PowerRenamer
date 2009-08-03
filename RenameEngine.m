@@ -417,12 +417,12 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	result = YES;
 	[self setTargetDicts:target_dicts];
 bail:
+	if (result) isSorted = sortFlag;
 	return result;
 }
 
 - (BOOL)processRenameAndReturnError:(NSError **)error
 {
-	return YES;
 	NSArray *pathes = [renamedItems valueForKey:@"filePath"];
 	NSArray *newnames = [renamedItems valueForKey:@"newName"];
 	NSDictionary *err_info = nil;
@@ -473,6 +473,11 @@ bail:
 	[array retain];
 	[renamedItems autorelease];
 	renamedItems = array;
+}
+
+- (BOOL)isSorted
+{
+	return isSorted;
 }
 
 @end

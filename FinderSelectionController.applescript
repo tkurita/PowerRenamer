@@ -65,17 +65,18 @@ on process_rename(pathes, newnames)
 	repeat with n from 1 to length of pathes
 		set an_item to POSIX file (item n of pathes)
 		tell application "Finder"
-			set an_item to an_item as item
-			set name of an_item to (item n of newnames)
+			set name of item (an_item as Unicode text) to (item n of newnames)
 		end tell
 	end repeat
 end process_rename
 
 on select_items(a_list)
 	repeat with an_item in a_list
+		set a_file to POSIX file an_item
 		tell application "Finder"
-			set contents of an_item to (POSIX file an_item) as item
+			set contents of an_item to (item (a_file as Unicode text))
 		end tell
+		-- set contents of an_item to (POSIX file an_item) as alias
 	end repeat
 	tell application "Finder"
 		--select a_list

@@ -7,6 +7,7 @@
 	OSAScript *finderSelectionController;
 	BOOL hasNewNames;
 	NSArray *renamedItems;
+	BOOL isSorted;
 }
 
 #pragma mark public
@@ -26,4 +27,5 @@
 - (void)setTargetDicts:(NSArray *)array;
 - (void)setRenamedItems:(NSArray *)array;
 - (BOOL)hasNewNames;
+- (BOOL)isSorted;
 @end

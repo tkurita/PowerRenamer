@@ -326,13 +326,15 @@ bail:
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 		return;
 	}
-	[previewDrawer close:self];
+	
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
 	if ([userdefaults boolForKey:@"AutoQuit"]) {
 		[self close];
 	} else {
+		[previewDrawer close:self];
 		[self saveHistory];
 		isStaticMode = NO;
+		[renameEngine clearTargets];
 	}
 }
 
