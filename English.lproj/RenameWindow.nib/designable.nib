@@ -206,6 +206,7 @@
 								</object>
 								<string key="NSFrame">{{1, 17}, {453, 251}}</string>
 								<reference key="NSSuperview" ref="304141577"/>
+								<reference key="NSNextKeyView" ref="753353805"/>
 								<reference key="NSDocView" ref="753353805"/>
 								<reference key="NSBGColor" ref="916165065"/>
 								<int key="NScvFlags">4</int>
@@ -238,6 +239,7 @@
 								</object>
 								<string key="NSFrame">{{1, 0}, {453, 17}}</string>
 								<reference key="NSSuperview" ref="304141577"/>
+								<reference key="NSNextKeyView" ref="573826430"/>
 								<reference key="NSDocView" ref="573826430"/>
 								<reference key="NSBGColor" ref="916165065"/>
 								<int key="NScvFlags">4</int>
@@ -246,6 +248,7 @@
 						</object>
 						<string key="NSFrameSize">{455, 269}</string>
 						<reference key="NSSuperview" ref="564830768"/>
+						<reference key="NSNextKeyView" ref="166605686"/>
 						<int key="NSsFlags">562</int>
 						<reference key="NSVScroller" ref="1070683536"/>
 						<reference key="NSHScroller" ref="532301290"/>
@@ -1720,26 +1723,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<int key="connectionID">333</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentArray: renameEngine.targetDicts</string>
-						<reference key="source" ref="465382904"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="465382904"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">contentArray: renameEngine.targetDicts</string>
-							<string key="NSBinding">contentArray</string>
-							<string key="NSKeyPath">renameEngine.targetDicts</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValidatesImmediately</string>
-								<reference key="NS.object.0" ref="5"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">334</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">renameEngine</string>
 						<reference key="source" ref="1001"/>
@@ -1807,6 +1790,22 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						</object>
 					</object>
 					<int key="connectionID">344</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentArray: renameEngine.targetDicts</string>
+						<reference key="source" ref="465382904"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="465382904"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">contentArray: renameEngine.targetDicts</string>
+							<string key="NSBinding">contentArray</string>
+							<string key="NSKeyPath">renameEngine.targetDicts</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">345</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2847,7 +2846,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">344</int>
+			<int key="maxID">345</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -458,6 +458,9 @@ bail:
 #if useLog
 	NSLog(@"array in setTargetDicts retainCount:%u", [array retainCount]);
 #endif
+	if (hasNewNames && isSorted) {
+		[self clearNewNames];
+	}	
 	[array retain];
 	[targetDicts autorelease];
 	targetDicts = array;

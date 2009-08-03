@@ -233,7 +233,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>2C371A2010273FDF004CD50A</string>
+						<string>2C371A3D102744AD004CD50A</string>
 						<key>history</key>
 						<array>
 							<string>2C3719C6102725DA004CD50A</string>
@@ -349,13 +349,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
-									<integer>1</integer>
+									<integer>49</integer>
+									<integer>48</integer>
+									<integer>33</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {287, 549}}</string>
+							<string>{{0, 526}, {287, 549}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -406,7 +407,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>2C371A1F10273FDF004CD50A</string>
+										<string>2C371A3C102744AD004CD50A</string>
 										<key>history</key>
 										<array>
 											<string>2CEFC3BA10186C2B003C67DB</string>
@@ -438,7 +439,7 @@
 											<string>2C3719B810272435004CD50A</string>
 											<string>2C371A1B10273FDF004CD50A</string>
 											<string>2C371A1C10273FDF004CD50A</string>
-											<string>2C3719CE10272640004CD50A</string>
+											<string>2C371A23102740A5004CD50A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -663,7 +664,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>2C371A2110273FDF004CD50A</string>
+		<string>2C371A31102743E4004CD50A</string>
+		<string>2C371A32102743E4004CD50A</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2CE800540F98152900AD454A</string>
@@ -995,6 +997,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
