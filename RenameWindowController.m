@@ -242,6 +242,9 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 #pragma mark Actions
 - (IBAction)narrowDown:(id)sender
 {
+	[progressIndicator setHidden:NO];
+	[progressIndicator startAnimation:self];
+
 	NSError *error = nil;
 	if (![renameEngine targetDicts]) {
 		if (![renameEngine resolveTargetItemsWithSorting:NO error:&error]) {
@@ -254,6 +257,9 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 	if (!isStaticMode) [renameEngine selectInFinderReturningError:&error];
 
 bail:
+	[progressIndicator setHidden:YES];
+	[progressIndicator stopAnimation:self];
+
 	if (error)
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 }
@@ -290,21 +296,29 @@ bail:
 
 - (IBAction)preview:(id)sender
 {
+	[progressIndicator setHidden:NO];
+	[progressIndicator startAnimation:self];
+
 	NSError *error = nil;
 	if (![renameEngine targetDicts]) {
 		if (![renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
 			[self presentError:error modalForWindow:[self window] delegate:nil 
 												didPresentSelector:nil contextInfo:nil];
-			return;
+			goto bail;
 		}
 		[renameEngine resolveIcons];
 	}
 	if (![renameEngine resolveNewNames:self error:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-		return;
+		goto bail;
 	}
 	[previewDrawer open:self];
 	[self saveHistory];
+
+bail:	
+	[progressIndicator setHidden:YES];
+	[progressIndicator stopAnimation:self];
+
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -314,6 +328,8 @@ bail:
 
 - (IBAction)okAction:(id)sender
 {
+	[progressIndicator setHidden:NO];
+	[progressIndicator startAnimation:self];
 	NSError *error = nil;
 	
 	if (![renameEngine hasNewNames]) {
@@ -322,13 +338,13 @@ bail:
 		}
 		if (error) {
 			[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-			return;
+			goto bail;
 		}
 	}
 	
 	if (![renameEngine processRenameAndReturnError:&error]) {
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-		return;
+		goto bail;
 	}
 	
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
@@ -340,6 +356,9 @@ bail:
 		isStaticMode = NO;
 		[renameEngine clearTargets];
 	}
+bail:
+	[progressIndicator setHidden:YES];
+	[progressIndicator stopAnimation:self];
 }
 
 
@@ -580,6 +599,9 @@ bail:
 		n++;
 	}
 	if (n) [[self window] setTitle:[NSString stringWithFormat:@"%@ : %d", [[self window] title],n]];
+	
+	[progressIndicator setHidden:YES];
+
 }
 
 @end

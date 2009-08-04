@@ -5,7 +5,7 @@
 
 @interface RenameWindowController : PaletteWindowController<RenameOptionsProtocol> {
 	IBOutlet id previewDrawer;
-	IBOutlet id previewTable;
+	IBOutlet NSTableView *previewTable;
 	IBOutlet id previewButton;
 	IBOutlet NSView *helpButtonView;
 	IBOutlet NSView *presetPullDownView;
@@ -13,6 +13,7 @@
 	IBOutlet id presetsController;
 	IBOutlet id newPresetNameWindow;
 	IBOutlet RenameEngine *renameEngine;
+	IBOutlet NSProgressIndicator *progressIndicator;
 	
 	unsigned int modeIndex;
 	NSString *oldText;
