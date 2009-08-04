@@ -263,6 +263,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	RenameItem *item = nil;
 	NSMutableArray *renamed_items = [NSMutableArray array];
+	NSMutableDictionary *newnames_dict = [NSMutableDictionary dictionary];
 	while (item = [enumerator nextObject]) {
 		NSString *oldname = [item oldName];
 		NSMutableString *newname = [oldname mutableCopy];
@@ -271,9 +272,14 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		unsigned int result = 0;
 		[invocation getReturnValue:&result];
 		if (result && ![newname isEqualToString:oldname]) {
-			newname = [[newname uniqueNameAtLocation:
-						[[item filePath] stringByDeletingLastPathComponent]
-										   excepting:[targetDicts valueForKey:@"newName"]] mutableCopy];
+			NSString *dirpath = [[item filePath] stringByDeletingLastPathComponent];
+			NSMutableArray *newnames_indir = [newnames_dict objectForKey:dirpath];
+			newname = [[newname uniqueNameAtLocation:dirpath
+									   excepting:newnames_indir] mutableCopy];
+			if (!newnames_indir) {
+				newnames_indir = [NSMutableArray array];
+			}
+			[newnames_indir addObject:newname];
 			[item setNewName:newname];
 			[renamed_items addObject:item];
 		} else {
@@ -307,6 +313,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	}
 	
 	NSMutableArray *renamed_items = [NSMutableArray array];
+	NSMutableDictionary *newnames_dict = [NSMutableDictionary dictionary];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	RenameItem *item = nil;
 	NSMutableString *new_text = [new_text_orig mutableCopy];
@@ -337,8 +344,14 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		}
 		
 		if (newname && ![newname isEqualToString:oldname])  {
-			newname = [newname uniqueNameAtLocation:[[item filePath] stringByDeletingLastPathComponent]
-										  excepting:[targetDicts valueForKey:@"newName"]];
+			NSString *dirpath = [[item filePath] stringByDeletingLastPathComponent];
+			NSMutableArray *newnames_indir = [newnames_dict objectForKey:dirpath];
+			newname = [[newname uniqueNameAtLocation:dirpath
+										   excepting:newnames_indir] mutableCopy];
+			if (!newnames_indir) {
+				newnames_indir = [NSMutableArray array];
+			}
+			[newnames_indir addObject:newname];
 			[item setNewName:newname];
 			[renamed_items addObject:item];
 		} else {
