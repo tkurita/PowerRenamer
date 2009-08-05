@@ -34,7 +34,6 @@ end sub_finderselection
 
 on convert_to_posix_path(a_list)
 	if a_list is missing value then
-		set my _selected_items to {}
 		return {}
 	end if
 	set path_list to {}
@@ -61,13 +60,26 @@ on sorted_finderselection()
 	return convert_to_posix_path(a_list)
 end sorted_finderselection
 
-on process_rename(pathes, newnames)
+on sub_process_rename(pathes, newnames)
 	repeat with n from 1 to length of pathes
 		set an_item to POSIX file (item n of pathes)
 		tell application "Finder"
 			set name of item (an_item as Unicode text) to (item n of newnames)
 		end tell
 	end repeat
+end sub_process_rename
+
+on process_rename(pathes, newnames)
+	tell user defaults
+		set ignoring_flag to contents of default entry "ignoringFinderResponses"
+	end tell
+	if ignoring_flag then
+		ignoring application responses
+			sub_process_rename(pathes, newnames)
+		end ignoring
+	else
+		sub_process_rename(pathes, newnames)
+	end if
 end process_rename
 
 on select_items(a_list)

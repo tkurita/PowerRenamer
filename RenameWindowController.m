@@ -417,6 +417,11 @@ bail:
 	[self autorelease];
 }
 
+- (void)drawerWillClose:(NSNotification *)notification
+{
+	[previewDrawer setContentSize:[previewDrawer minContentSize]];
+}
+
 - (void)drawerDidClose:(NSNotification *)notification
 {
 	[renameEngine clearTargets];

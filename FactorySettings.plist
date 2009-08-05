@@ -16,6 +16,8 @@
 	<false/>
 	<key>HistoryMax</key>
 	<integer>10</integer>
+	<key>ignoringFinderResponses</key>
+	<true/>
 	<key>SelectedTabIndex</key>
 	<integer>0</integer>
 	<key>Presets</key>
