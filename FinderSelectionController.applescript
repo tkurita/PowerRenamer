@@ -4,7 +4,7 @@ property XList : missing value
 
 on __load__(loader)
 	tell loader
-		set FinderSelection to load("FinderSelection")
+		--set FinderSelection to load("FinderSelection")
 		set FileSorter to load("FileSorter")
 		set XList to load("XList")
 	end tell
@@ -14,6 +14,8 @@ end __load__
 property _ : __load__(proxy() of application (get "PowerRenamerLib"))
 
 on sub_finderselection()
+	--log "start sub_finderselection"
+	(*
 	set a_picker to FinderSelection's make_for_item()
 	tell a_picker
 		set_use_insertion_location(false)
@@ -29,6 +31,13 @@ on sub_finderselection()
 			error msg number errno
 		end if
 	end try
+	*)
+	set text item delimiters to {return}
+	tell application "Finder"
+		set pathtable to selection as Unicode text
+	end tell
+	set a_list to every paragraph of pathtable
+	--log "end sub_finderselection"
 	return a_list
 end sub_finderselection
 
@@ -74,10 +83,12 @@ on process_rename(pathes, newnames)
 		set ignoring_flag to contents of default entry "ignoringFinderResponses"
 	end tell
 	if ignoring_flag then
+		--log "ignoring FInder"
 		ignoring application responses
 			sub_process_rename(pathes, newnames)
 		end ignoring
 	else
+		--log "not ignoring FInder"
 		sub_process_rename(pathes, newnames)
 	end if
 end process_rename
