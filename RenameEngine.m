@@ -47,6 +47,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	[super dealloc];
 }
 
+#pragma mark public
 - (void)clearTargets
 {
 	[self setTargetDicts:nil];
@@ -72,35 +73,16 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSString *path;
 	while (path = [enumerator nextObject]) {
-		RenameItem *rename_item = [RenameItem renameItemWithPath:path];
+		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:path];
 		[target_dicts addObject:rename_item];
 	}
 	[self setTargetDicts:target_dicts];
 }
 
 #pragma mark narrow down
-
-- (BOOL)selectInFinder:(NSArray *)array error:(NSError **)error
-{
-	NSDictionary *err_info = nil;
-	[finderSelectionController executeHandlerWithName:@"select_items"
-									arguments:[NSArray arrayWithObject:array] error:&err_info];
-	
-	if (err_info) {
-		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
-						 [err_info objectForKey:OSAScriptErrorMessage],
-						 [err_info objectForKey:OSAScriptErrorNumber]];
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
-														  forKey:NSLocalizedDescriptionKey];
-		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];
-		return NO;
-	}
-	return YES;
-}
-
 - (BOOL)selectInFinderReturningError:(NSError **)error
 {
-	NSArray *array = [targetDicts valueForKey:@"filePath"];
+	NSArray *array = [targetDicts valueForKey:@"hfsPath"];
 	NSDictionary *err_info = nil;
 	[finderSelectionController executeHandlerWithName:@"select_items"
 											arguments:[NSArray arrayWithObject:array] error:&err_info];
@@ -130,10 +112,8 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	
 	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	//NSMutableDictionary *dict = nil;
 	RenameItem *item = nil;
 	while (item = [enumerator nextObject]) {
-		//NSString *oldname = [dict objectForKey:@"oldName"];
 		NSString *oldname = [item oldName];
 		if( [oldname isMatchedByRegex:old_text options:RKLNoOptions
 								inRange:NSMakeRange(0, [oldname length]) error:error]) {
@@ -272,7 +252,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		unsigned int result = 0;
 		[invocation getReturnValue:&result];
 		if (result && ![newname isEqualToString:oldname]) {
-			NSString *dirpath = [[item filePath] stringByDeletingLastPathComponent];
+			NSString *dirpath = [[item posixPath] stringByDeletingLastPathComponent];
 			NSMutableArray *newnames_indir = [newnames_dict objectForKey:dirpath];
 			newname = [[newname uniqueNameAtLocation:dirpath
 									   excepting:newnames_indir] mutableCopy];
@@ -344,7 +324,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		}
 		
 		if (newname && ![newname isEqualToString:oldname])  {
-			NSString *dirpath = [[item filePath] stringByDeletingLastPathComponent];
+			NSString *dirpath = [[item posixPath] stringByDeletingLastPathComponent];
 			NSMutableArray *newnames_indir = [newnames_dict objectForKey:dirpath];
 			newname = [[newname uniqueNameAtLocation:dirpath
 										   excepting:newnames_indir] mutableCopy];
@@ -424,7 +404,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:nfile];
 	for (unsigned int i=1; i <= nfile; i++) {
 		NSString *path = [[script_result descriptorAtIndex:i] stringValue];
-		RenameItem *rename_item = [RenameItem renameItemWithPath:path];
+		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:path];
 		[target_dicts addObject:rename_item];
 	}
 	result = YES;
@@ -436,7 +416,7 @@ bail:
 
 - (BOOL)processRenameAndReturnError:(NSError **)error
 {
-	NSArray *pathes = [renamedItems valueForKey:@"filePath"];
+	NSArray *pathes = [renamedItems valueForKey:@"hfsPath"];
 	NSArray *newnames = [renamedItems valueForKey:@"newName"];
 	NSDictionary *err_info = nil;
 	[finderSelectionController executeHandlerWithName:@"process_rename" 

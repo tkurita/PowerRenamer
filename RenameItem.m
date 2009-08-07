@@ -1,5 +1,6 @@
 #import "RenameItem.h"
 #import "StringExtra.h"
+#import "PathExtra.h"
 
 #define useLog 0
 
@@ -32,8 +33,10 @@ static NSMutableDictionary *renameItemsPool = nil;
 #if useLog
 	NSLog(@"start dealloc in RenameItem");
 #endif			
-	[renameItemsPool removeObjectForKey:filePath];
-	[filePath release];
+	[renameItemsPool removeObjectForKey:hfsPath];
+	[renameItemsPool removeObjectForKey:posixPath];
+	[posixPath release];
+	[hfsPath release];
 	[newName release];
 	[oldName release];
 	[textColor release];
@@ -41,6 +44,24 @@ static NSMutableDictionary *renameItemsPool = nil;
 }
 
 #pragma mark public
++ (id)renameItemWithHFSPath:(NSString *)path
+{
+#if useLog
+	NSLog([renameItemsPool description]);
+#endif
+	id instance = nil;
+	instance = [renameItemsPool objectForKey:path];
+	if (!instance) {
+#if useLog
+		NSLog(@"can't find instance in the pool.");
+#endif		
+		instance = [[self new] autorelease];
+		[instance setHfsPath:path];
+		[renameItemsPool setObject:instance forKey:path];
+	}
+	return instance;
+}
+
 + (id)renameItemWithPath:(NSString *)path
 {
 #if useLog
@@ -54,7 +75,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 		NSLog(@"can't find instance in the pool.");
 #endif		
 		instance = [[self new] autorelease];
-		[instance setFilePath:path];
+		[instance setPosixPath:path];
 		[renameItemsPool setObject:instance forKey:path];
 	}
 	return instance;
@@ -68,23 +89,37 @@ static NSMutableDictionary *renameItemsPool = nil;
 
 - (void)resolveIcon
 {
-	NSImage *image = [[NSWorkspace sharedWorkspace] iconForFile:filePath];
+	NSImage *image = [[NSWorkspace sharedWorkspace] iconForFile:posixPath];
 	[self setIcon:image];
 }
 
 #pragma mark accessors
-- (void)setFilePath:(NSString *)aPath
+- (void)setHfsPath:(NSString *)aPath
 {
 	[aPath retain];
-	[filePath autorelease];
-	filePath = aPath;
-	[self setOldName:[filePath lastPathComponent]];
+	[hfsPath autorelease];
+	hfsPath = aPath;
+	[self setPosixPath:[hfsPath posixPath]];
+}
+
+- (NSString *)hfsPath
+{
+	return hfsPath;
+}
+	
+- (void)setPosixPath:(NSString *)aPath
+{
+	[aPath retain];
+	[posixPath autorelease];
+	posixPath = aPath;
+	[self setOldName:
+		[[posixPath lastPathComponent] normalizedString:kCFStringNormalizationFormKC]];
 	[self setNewName:nil];
 }
 
-- (NSString *)filePath
+- (NSString *)posixPath
 {
-	return filePath;
+	return posixPath;
 }
 
 - (void)setOldName:(NSString *)name

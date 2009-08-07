@@ -2,16 +2,21 @@
 
 
 @interface RenameItem : NSObject {
-	NSString *filePath;
+	NSString *posixPath;
+	NSString *hfsPath;
 	NSString *newName;
 	NSString *oldName;
 	NSColor *textColor;
 	NSImage *icon;
 }
 + (id)renameItemWithPath:(NSString *)path;
++ (id)renameItemWithHFSPath:(NSString *)path;
 
-- (NSString *)filePath;
-- (void)setFilePath:(NSString *)path;
+- (NSString *)posixPath;
+- (void)setPosixPath:(NSString *)path;
+- (NSString *)hfsPath;
+- (void)setHfsPath:(NSString *)path;
+
 - (NSString *)newName;
 - (void)setNewName:(NSString *)name;
 - (NSString *)oldName;

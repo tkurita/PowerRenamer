@@ -370,7 +370,7 @@ bail:
 
 - (void)writeObjects:(NSArray *)targets toPasteboard:(NSPasteboard *)pboard
 {
-	[pboard setPropertyList:[targets valueForKey:@"filePath"] forType:NSFilenamesPboardType];
+	[pboard setPropertyList:[targets valueForKey:@"posixPath"] forType:NSFilenamesPboardType];
 }
 
 - (NSArray *)newObjectsFromPasteboard:(NSPasteboard *)pboard
