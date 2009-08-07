@@ -11,7 +11,17 @@ static NSMutableArray *reservedNumbers = nil;
 
 +(void)initialize
 {
-	reservedNumbers = [NSMutableArray new];
+	if (!reservedNumbers) {
+		reservedNumbers = [NSMutableArray new];
+	}
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector
+{
+	if (aSelector == @selector(closePreview:)) {
+		return ([previewDrawer state] == NSDrawerOpenState);
+	}
+	return [super respondsToSelector:aSelector];
 }
 
 #pragma mark private

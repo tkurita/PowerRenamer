@@ -73,7 +73,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSString *path;
 	while (path = [enumerator nextObject]) {
-		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:path];
+		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:[path hfsPath]];
 		[target_dicts addObject:rename_item];
 	}
 	[self setTargetDicts:target_dicts];
