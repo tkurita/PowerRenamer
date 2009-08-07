@@ -21,18 +21,18 @@
 			2CE800CD0F98216100AD454A /* PowerRenamer.applescript:121 */,
 			2C58049F0FFC752C00DBA275 /* RenameEngine.m:421 */,
 			2C447CE910007B8A009DA83E /* RenameEngine.m:399 */,
-			2C278D0F100F10090092CFDE /* RenameWindowController.m:289 */,
+			2C278D0F100F10090092CFDE /* RenameWindowController.m:288 */,
 			2CEFC34A10170373003C67DB /* StringExtra.m:83 */,
 			2CEFC36C10170892003C67DB /* StringExtra.m:19 */,
 			2CEFC6DB10216012003C67DB /* AppController.m:63 */,
 			2CEFC8391021F5EC003C67DB /* RenameEngine.m:46 */,
-			2CEFC84A1021F76B003C67DB /* RenameWindowController.m:565 */,
+			2CEFC84A1021F76B003C67DB /* RenameWindowController.m:564 */,
 			2CEFC97B1022CB26003C67DB /* AppController.m:48 */,
 			2CEFC9921022CB6A003C67DB /* PreferencesWindowController.m:38 */,
 			2C37190B1027105E004CD50A /* RenameEngine.m:86 */,
-			2C37195610271F3A004CD50A /* RenameWindowController.m:250 */,
-			2C371A91102836C8004CD50A /* RenameWindowController.m:350 */,
-			2C371B4A10290DB6004CD50A /* RenameWindowController.m:432 */,
+			2C37195610271F3A004CD50A /* RenameWindowController.m:249 */,
+			2C371A91102836C8004CD50A /* RenameWindowController.m:349 */,
+			2C371B4A10290DB6004CD50A /* RenameWindowController.m:431 */,
 		);
 		codeSenseManager = 2C45FA5706619CBB001AE79E /* Code sense */;
 		executables = (
@@ -986,7 +986,7 @@
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		name = "RenameWindowController.m: 292";
 		rLen = 0;
-		rLoc = 11849;
+		rLoc = 11817;
 		rType = 0;
 		vrLen = 1266;
 		vrLoc = 10871;
@@ -1021,7 +1021,7 @@
 			sepNavVisRange = "{0, 105}";
 		};
 	};
-	2C278D0F100F10090092CFDE /* RenameWindowController.m:289 */ = {
+	2C278D0F100F10090092CFDE /* RenameWindowController.m:288 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1033,7 +1033,7 @@
 		functionName = "-applyPreset:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 289;
+		lineNumber = 288;
 		location = PowerRenamer;
 		modificationTime = 271125955.412015;
 		state = 1;
@@ -1084,7 +1084,7 @@
 		vrLen = 99;
 		vrLoc = 0;
 	};
-	2C37195610271F3A004CD50A /* RenameWindowController.m:250 */ = {
+	2C37195610271F3A004CD50A /* RenameWindowController.m:249 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1096,7 +1096,7 @@
 		functionName = "-narrowDown:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 250;
+		lineNumber = 249;
 		location = PowerRenamer;
 		modificationTime = 271125955.412567;
 		state = 1;
@@ -1151,7 +1151,7 @@
 		vrLen = 979;
 		vrLoc = 394;
 	};
-	2C371A91102836C8004CD50A /* RenameWindowController.m:350 */ = {
+	2C371A91102836C8004CD50A /* RenameWindowController.m:349 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1163,12 +1163,12 @@
 		functionName = "-okAction:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 350;
+		lineNumber = 349;
 		location = PowerRenamer;
 		modificationTime = 271125955.412799;
 		state = 1;
 	};
-	2C371B4A10290DB6004CD50A /* RenameWindowController.m:432 */ = {
+	2C371B4A10290DB6004CD50A /* RenameWindowController.m:431 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1180,7 +1180,7 @@
 		functionName = "-drawerDidOpen:";
 		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 432;
+		lineNumber = 431;
 		location = PowerRenamer;
 		modificationTime = 271125985.718926;
 		state = 1;
@@ -1210,7 +1210,7 @@
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		name = "RenameWindowController.m: 422";
 		rLen = 0;
-		rLoc = 15136;
+		rLoc = 15104;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 13272;
@@ -1220,7 +1220,7 @@
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		name = "RenameWindowController.m: 422";
 		rLen = 0;
-		rLoc = 15136;
+		rLoc = 15104;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 13272;
@@ -2176,7 +2176,7 @@
 		isa = PBXTextBookmark;
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		rLen = 9;
-		rLoc = 13628;
+		rLoc = 13596;
 		rType = 0;
 	};
 	2CCDAA36102C2F13000F273F /* PBXTextBookmark */ = {
@@ -2194,7 +2194,7 @@
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		name = "RenameWindowController.m: 373";
 		rLen = 0;
-		rLoc = 13633;
+		rLoc = 13601;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 13155;
@@ -2224,7 +2224,7 @@
 		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
 		name = "RenameWindowController.m: 373";
 		rLen = 0;
-		rLoc = 13633;
+		rLoc = 13601;
 		rType = 0;
 		vrLen = 418;
 		vrLoc = 13358;
@@ -2302,9 +2302,9 @@
 	};
 	2CE8008B0F9819FB00AD454A /* PathExtra.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {799, 573}}";
+			sepNavIntBoundsRect = "{{0, 0}, {751, 462}}";
 			sepNavSelRange = "{1034, 0}";
-			sepNavVisRange = "{0, 1040}";
+			sepNavVisRange = "{461, 579}";
 			sepNavWindowFrame = "{{38, 184}, {858, 668}}";
 		};
 	};
@@ -2626,7 +2626,7 @@
 		modificationTime = 271125955.412212;
 		state = 1;
 	};
-	2CEFC84A1021F76B003C67DB /* RenameWindowController.m:565 */ = {
+	2CEFC84A1021F76B003C67DB /* RenameWindowController.m:564 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2638,7 +2638,7 @@
 		functionName = "-dealloc";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 565;
+		lineNumber = 564;
 		location = PowerRenamer;
 		modificationTime = 271125955.412313;
 		state = 1;

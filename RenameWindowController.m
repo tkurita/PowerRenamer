@@ -146,12 +146,6 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 	if ([renameEngine hasNewNames]) {
 		[renameEngine clearNewNames];
 	}
-	/*
-	if (isStaticMode) {
-		[renameEngine clearNewNames];
-	} else {
-		[previewDrawer close];
-	}*/
 }
 
 #pragma mark public
@@ -240,6 +234,11 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 }
 
 #pragma mark Actions
+- (IBAction)closePreview:(id)sender
+{
+	[previewDrawer close];
+}
+
 - (IBAction)narrowDown:(id)sender
 {
 	[progressIndicator setHidden:NO];

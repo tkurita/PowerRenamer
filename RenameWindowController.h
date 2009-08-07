@@ -35,6 +35,7 @@
 - (IBAction)okNewPresetName:(id)sender;
 - (IBAction)cancelNewPresetName:(id)sender;
 - (IBAction)narrowDown:(id)sender;
+- (IBAction)closePreview:(id)sender;
 
 #pragma mark Accessors
 - (void)setOldText:(NSString *)aText;
