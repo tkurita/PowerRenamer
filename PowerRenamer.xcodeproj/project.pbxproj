@@ -12,7 +12,6 @@
 			buildActionMask = 2147483647;
 			contextName = "";
 			files = (
-				2CE800750F9819E200AD454A /* DefaultsManager.applescript in AppleScript */,
 				2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in AppleScript */,
 			);
 			isSharedContext = 0;
@@ -53,7 +52,6 @@
 		2CB0F31A100D65A60006899A /* wizard32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F319100D65A60006899A /* wizard32.png */; };
 		2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */; };
 		2CC6806F0D9B5ACC002301F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6806D0D9B5ACC002301F5 /* Localizable.strings */; };
-		2CE800750F9819E200AD454A /* DefaultsManager.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2CE8006F0F9819E200AD454A /* DefaultsManager.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2CE800A90F981EA300AD454A /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008E0F9819FB00AD454A /* StringExtra.m */; };
 		2CE800FB0F98296000AD454A /* WindowVisibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE800900F9819FB00AD454A /* WindowVisibilityController.m */; };
 		2CE800FC0F98296300AD454A /* PaletteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008A0F9819FB00AD454A /* PaletteWindowController.m */; };
@@ -65,10 +63,7 @@
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
 		2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */; };
 		2CEFC69910215E55003C67DB /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC69810215E55003C67DB /* ServicesMenu.strings */; };
-		2CEFC789102174C6003C67DB /* RenameItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFC787102174C6003C67DB /* RenameItem.h */; };
 		2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFC788102174C6003C67DB /* RenameItem.m */; };
-		2CEFC9691022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */; };
-		2CEFCA511022F6E0003C67DB /* PreviewTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEFCA4F1022F6E0003C67DB /* PreviewTableView.h */; };
 		2CEFCA521022F6E0003C67DB /* PreviewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFCA501022F6E0003C67DB /* PreviewTableView.m */; };
 /* End PBXBuildFile section */
 
@@ -133,12 +128,6 @@
 		2CB0F319100D65A60006899A /* wizard32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard32.png; sourceTree = "<group>"; };
 		2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = pulldown_arrow_small.tiff; sourceTree = "<group>"; };
 		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2CE8006E0F9819E200AD454A /* CommandBuilder.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = CommandBuilder.applescript; sourceTree = "<group>"; };
-		2CE8006F0F9819E200AD454A /* DefaultsManager.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = DefaultsManager.applescript; sourceTree = "<group>"; };
-		2CE800700F9819E200AD454A /* MessageUtility.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MessageUtility.applescript; sourceTree = "<group>"; };
-		2CE800710F9819E200AD454A /* SheetManager.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = SheetManager.applescript; sourceTree = "<group>"; };
-		2CE800720F9819E200AD454A /* TerminalCommander.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = TerminalCommander.applescript; sourceTree = "<group>"; };
-		2CE800730F9819E200AD454A /* UtilityHandlers.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = UtilityHandlers.applescript; sourceTree = "<group>"; };
 		2CE800830F9819FB00AD454A /* DropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropBox.h; sourceTree = "<group>"; };
 		2CE800840F9819FB00AD454A /* DropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropBox.m; sourceTree = "<group>"; };
 		2CE800850F9819FB00AD454A /* NDAlias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDAlias.h; sourceTree = "<group>"; };
@@ -233,7 +222,6 @@
 				080E96DDFE201D6D7F000001 /* Scripts */,
 				2CE801200F982A4100AD454A /* SmartActivateLib */,
 				2CE800820F9819FB00AD454A /* CocoaLib */,
-				2CE8006D0F9819E200AD454A /* ASStudioScriptLib */,
 				2C86A60C0F97900E0092242D /* RegexpKitLite */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -325,19 +313,6 @@
 			path = RegexpKitLite;
 			sourceTree = "<group>";
 		};
-		2CE8006D0F9819E200AD454A /* ASStudioScriptLib */ = {
-			isa = PBXGroup;
-			children = (
-				2CE8006E0F9819E200AD454A /* CommandBuilder.applescript */,
-				2CE8006F0F9819E200AD454A /* DefaultsManager.applescript */,
-				2CE800700F9819E200AD454A /* MessageUtility.applescript */,
-				2CE800710F9819E200AD454A /* SheetManager.applescript */,
-				2CE800720F9819E200AD454A /* TerminalCommander.applescript */,
-				2CE800730F9819E200AD454A /* UtilityHandlers.applescript */,
-			);
-			path = ASStudioScriptLib;
-			sourceTree = "<group>";
-		};
 		2CE800820F9819FB00AD454A /* CocoaLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,9 +353,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CEFC789102174C6003C67DB /* RenameItem.h in Headers */,
-				2CEFC9691022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h in Headers */,
-				2CEFCA511022F6E0003C67DB /* PreviewTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

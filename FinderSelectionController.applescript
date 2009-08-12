@@ -1,10 +1,8 @@
 property FileSorter : missing value
-property XList : missing value
 
 on __load__(loader)
 	tell loader
 		set FileSorter to load("FileSorter")
-		set XList to load("XList")
 	end tell
 end __load__
 
