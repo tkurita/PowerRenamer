@@ -263,7 +263,11 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 	if (![renameEngine narrowDownTargetItems:self error:&error]) {
 		goto bail;
 	}
-	if (!isStaticMode) [renameEngine selectInFinderReturningError:&error];
+	if (!isStaticMode) {
+		[renameEngine selectInFinderReturningError:&error];
+		if([previewDrawer state] == NSDrawerClosedState) 
+			[renameEngine clearTargets];
+	}
 
 bail:
 	[progressIndicator setHidden:YES];

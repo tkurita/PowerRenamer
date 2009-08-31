@@ -217,8 +217,8 @@
 		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				2C5B7DE80FF0985F00D5ED31 /* Classes */,
 				2C3263780D9B390A00631FC8 /* History.rd */,
+				2C5B7DE80FF0985F00D5ED31 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
 				2CE801200F982A4100AD454A /* SmartActivateLib */,
 				2CE800820F9819FB00AD454A /* CocoaLib */,
