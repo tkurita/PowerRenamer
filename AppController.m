@@ -133,8 +133,10 @@
 	NSLog(@"applicationDidFinishLaunching");
 #endif
 	[DonationReminder remindDonation];
+	/*
 	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
 	[a_window showWindow:self];
+	 */
 }
 
 - (void)awakeFromNib
