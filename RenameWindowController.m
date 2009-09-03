@@ -264,9 +264,14 @@ static void addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, N
 		goto bail;
 	}
 	if (!isStaticMode) {
-		[renameEngine selectInFinderReturningError:&error];
-		if([previewDrawer state] == NSDrawerClosedState) 
+		if ([[renameEngine targetDicts] count]) {
+			[renameEngine selectInFinderReturningError:&error];
+			if([previewDrawer state] == NSDrawerClosedState) 
+				[renameEngine clearTargets];
+		} else {
+			[previewDrawer close];
 			[renameEngine clearTargets];
+		}
 	}
 
 bail:
@@ -417,7 +422,7 @@ bail:
 
 -(void) windowWillClose:(NSNotification *)notification
 {
-	[[FrontAppMonitor notificationCenter] removeObserver:self];
+	[super windowWillClose:notification];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[user_defaults setObject:oldText forKey:@"LastOldText"];
 	[user_defaults setObject:newText forKey:@"LastNewText"];
@@ -602,8 +607,10 @@ bail:
 	[self setStartingNumber:[user_defaults objectForKey:@"StartingNumber"]];
 	[self setLeadingZeros:[user_defaults boolForKey:@"LeadingZeros"]];
 	[previewButton setAltButton:YES];
+	/*
 	[[FrontAppMonitor notificationCenter] addObserver:self selector:@selector(frontAppChanged:) 
 												 name:@"FrontAppChangedNotification" object:nil];
+	 */
 	[self setupToolbar];
 	
 	unsigned int n = 0;

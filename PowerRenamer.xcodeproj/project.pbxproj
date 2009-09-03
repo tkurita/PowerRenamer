@@ -130,8 +130,6 @@
 		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CE800830F9819FB00AD454A /* DropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropBox.h; sourceTree = "<group>"; };
 		2CE800840F9819FB00AD454A /* DropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropBox.m; sourceTree = "<group>"; };
-		2CE800850F9819FB00AD454A /* NDAlias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDAlias.h; sourceTree = "<group>"; };
-		2CE800860F9819FB00AD454A /* NDAlias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDAlias.m; sourceTree = "<group>"; };
 		2CE800870F9819FB00AD454A /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
 		2CE800880F9819FB00AD454A /* NSURL+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NDCarbonUtilities.m"; sourceTree = "<group>"; };
 		2CE800890F9819FB00AD454A /* PaletteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteWindowController.h; sourceTree = "<group>"; };
@@ -318,8 +316,6 @@
 			children = (
 				2CE800830F9819FB00AD454A /* DropBox.h */,
 				2CE800840F9819FB00AD454A /* DropBox.m */,
-				2CE800850F9819FB00AD454A /* NDAlias.h */,
-				2CE800860F9819FB00AD454A /* NDAlias.m */,
 				2CE800870F9819FB00AD454A /* NSURL+NDCarbonUtilities.h */,
 				2CE800880F9819FB00AD454A /* NSURL+NDCarbonUtilities.m */,
 				2CE800890F9819FB00AD454A /* PaletteWindowController.h */,
