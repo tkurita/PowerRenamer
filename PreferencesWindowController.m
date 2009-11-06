@@ -24,12 +24,6 @@ static NSString *frameName = @"PreferencesWindow";
 
 - (void)windowDidLoad
 {
-	/*
-	selectedPresetIndexes = [NSUnarchiver unarchiveObjectWithData:
-								[[NSUserDefaults standardUserDefaults] objectForKey:@"SelectedPresetIndexes"]];
-	NSLog([selectedPresetIndexes description]);
-	[presetsArrayController setSelectionIndexes:selectedPresetIndexes];
-	*/
 	[super windowDidLoad];
 }
 

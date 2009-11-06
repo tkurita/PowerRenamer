@@ -62,7 +62,7 @@ static NSMutableArray *reservedNumbers = nil;
 			[newtext_history insertObject:newText atIndex:0];
 			if ([newtext_history count] > hist_max) {
 				[newtext_history removeLastObject];
-			}				
+			}
 			[user_defaults setObject:newtext_history forKey:@"NewTextHistory"];
 		}
 	}

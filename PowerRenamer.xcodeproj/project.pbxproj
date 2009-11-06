@@ -539,14 +539,6 @@
 			};
 			name = Release;
 		};
-		2C85C6DC0B7B114200C89869 /* SDDebug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_C_LANGUAGE_STANDARD = c99;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-			};
-			name = SDDebug;
-		};
 		2C85C6DD0B7B114200C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -559,6 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)",
@@ -582,6 +575,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
 				SECTORDER_FLAGS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -596,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/..",
@@ -612,6 +607,7 @@
 				OTHER_OSAFLAGS = "-x";
 				PRODUCT_NAME = PowerRenamer;
 				SECTORDER_FLAGS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -622,38 +618,10 @@
 			};
 			name = Release;
 		};
-		2C85CB7A0B7B342900C89869 /* SDDebug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/..",
-				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "Info-PowerRenamer_____________.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-licucore";
-				OTHER_OSAFLAGS = "-l \\\"AppleScript Debugger\\\"";
-				PRODUCT_NAME = PowerRenamer;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
-			};
-			name = SDDebug;
-		};
 		2C85CB7B0B7B342900C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/..",
@@ -668,6 +636,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
 				SECTORDER_FLAGS = "";
+				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -685,7 +654,6 @@
 			buildConfigurations = (
 				2C85C6DA0B7B114200C89869 /* Debug */,
 				2C85C6DB0B7B114200C89869 /* Release */,
-				2C85C6DC0B7B114200C89869 /* SDDebug */,
 				2C85C6DD0B7B114200C89869 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -696,7 +664,6 @@
 			buildConfigurations = (
 				2C85CB780B7B342900C89869 /* Debug */,
 				2C85CB790B7B342900C89869 /* Release */,
-				2C85CB7A0B7B342900C89869 /* SDDebug */,
 				2C85CB7B0B7B342900C89869 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
