@@ -607,10 +607,8 @@ bail:
 	[self setStartingNumber:[user_defaults objectForKey:@"StartingNumber"]];
 	[self setLeadingZeros:[user_defaults boolForKey:@"LeadingZeros"]];
 	[previewButton setAltButton:YES];
-	/*
 	[[FrontAppMonitor notificationCenter] addObserver:self selector:@selector(frontAppChanged:) 
 												 name:@"FrontAppChangedNotification" object:nil];
-	 */
 	[self setupToolbar];
 	
 	unsigned int n = 0;
