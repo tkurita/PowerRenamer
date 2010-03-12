@@ -1,13 +1,7 @@
-property FileSorter : missing value
-
-on __load__(loader)
-	tell loader
-		set FileSorter to load("FileSorter")
-	end tell
-end __load__
-
+property FileSorter : module loader
 --property _ : __load__(proxy_with({autocollect:true}) of application (get "PowerRenamerLib"))
-property _ : __load__(proxy() of application (get "PowerRenamerLib"))
+--property _ : __load__(proxy() of application (get "PowerRenamerLib"))
+property _ : boot (module loader of application (get "PowerRenamerLib")) for me
 
 on get_finderselection()
 	--log "start get_finderselection"
