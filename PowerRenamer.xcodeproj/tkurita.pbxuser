@@ -724,6 +724,13 @@
 			2CD1E127114A839F00342740 = 2CD1E127114A839F00342740 /* PBXTextBookmark */;
 			2CD1E129114A839F00342740 = 2CD1E129114A839F00342740 /* PBXTextBookmark */;
 			2CD1E12A114A839F00342740 = 2CD1E12A114A839F00342740 /* PBXTextBookmark */;
+			2CD1E18C114BC08200342740 /* PlistBookmark */ = 2CD1E18C114BC08200342740 /* PlistBookmark */;
+			2CD1E18D114BC08200342740 /* PlistBookmark */ = 2CD1E18D114BC08200342740 /* PlistBookmark */;
+			2CD1E18E114BC08200342740 /* PBXTextBookmark */ = 2CD1E18E114BC08200342740 /* PBXTextBookmark */;
+			2CD1E18F114BC08200342740 /* PlistBookmark */ = 2CD1E18F114BC08200342740 /* PlistBookmark */;
+			2CD1E190114BC08200342740 /* PlistBookmark */ = 2CD1E190114BC08200342740 /* PlistBookmark */;
+			2CD1E191114BC08200342740 /* PlistBookmark */ = 2CD1E191114BC08200342740 /* PlistBookmark */;
+			2CD1E192114BC08200342740 /* PBXTextBookmark */ = 2CD1E192114BC08200342740 /* PBXTextBookmark */;
 			2CE132AE10324F4300578ACF = 2CE132AE10324F4300578ACF /* PBXTextBookmark */;
 			2CE132B110324F4300578ACF = 2CE132B110324F4300578ACF /* PBXTextBookmark */;
 			2CE132B210324F4300578ACF = 2CE132B210324F4300578ACF /* PBXTextBookmark */;
@@ -1078,9 +1085,9 @@
 	};
 	2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {897, 8400}}";
-			sepNavSelRange = "{5194, 29}";
-			sepNavVisRange = "{4727, 1069}";
+			sepNavIntBoundsRect = "{{0, 0}, {897, 8078}}";
+			sepNavSelRange = "{2517, 7}";
+			sepNavVisRange = "{5194, 1620}";
 			sepNavWindowFrame = "{{331, 115}, {845, 763}}";
 		};
 	};
@@ -1867,6 +1874,83 @@
 		name = build_month_index.rb;
 		path = "/Users/tkurita/Factories/Websites/scriptfactory/web-content/history/build_month_index.rb";
 		sourceTree = "<absolute>";
+	};
+	2CD1E18C114BC08200342740 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/HelpSetup.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD1E18D114BC08200342740 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/Info-PowerRenamer.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD1E18E114BC08200342740 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
+		name = "RenameWindowController.m: 125";
+		rLen = 29;
+		rLoc = 5194;
+		rType = 0;
+		vrLen = 944;
+		vrLoc = 4852;
+	};
+	2CD1E18F114BC08200342740 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/Info-PowerRenamer.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD1E190114BC08200342740 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/HelpSetup.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD1E191114BC08200342740 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/Info-PowerRenamer.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	2CD1E192114BC08200342740 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
+		name = "RenameWindowController.m: 76";
+		rLen = 7;
+		rLoc = 2517;
+		rType = 0;
+		vrLen = 1620;
+		vrLoc = 5194;
 	};
 	2CE132AE10324F4300578ACF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
