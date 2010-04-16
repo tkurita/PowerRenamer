@@ -1,6 +1,4 @@
-property FileSorter : module loader
---property _ : __load__(proxy_with({autocollect:true}) of application (get "PowerRenamerLib"))
---property _ : __load__(proxy() of application (get "PowerRenamerLib"))
+property FileSorter : module
 property _ : boot (module loader of application (get "PowerRenamerLib")) for me
 
 on get_finderselection()
