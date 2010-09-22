@@ -120,7 +120,7 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
     // could do deferred provision, but keep it direct for clarity
 	NSMutableArray *rowCopies = [NSMutableArray arrayWithCapacity:[rowIndexes count]];
 	
-    unsigned int currentIndex = [rowIndexes firstIndex];
+    NSUInteger currentIndex = [rowIndexes firstIndex];
     while (currentIndex != NSNotFound)
     {
 		[rowCopies addObject:[[self arrangedObjects] objectAtIndex:currentIndex]];
@@ -244,7 +244,7 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
  */
 @implementation NSIndexSet (CountOfIndexesInRange)
 
--(unsigned int)countOfIndexesInRange:(NSRange)range
+-(NSUInteger)countOfIndexesInRange:(NSRange)range
 {
 	unsigned int start, end, count;
 	
@@ -257,7 +257,7 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	end		= start + range.length;
 	count	= 0;
 	
-	unsigned int currentIndex = [self indexGreaterThanOrEqualToIndex:start];
+	NSUInteger currentIndex = [self indexGreaterThanOrEqualToIndex:start];
 	
 	while ((currentIndex != NSNotFound) && (currentIndex < end))
 	{
