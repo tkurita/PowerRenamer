@@ -306,11 +306,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>38</integer>
+									<integer>27</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {287, 540}}</string>
+							<string>{{0, 377}, {287, 540}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -331,7 +333,7 @@
 							<real>265</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>76 258 1052 620 0 0 1440 878 </string>
+						<string>108 240 1052 620 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -445,7 +447,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {743, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>76 258 1052 620 0 0 1440 878 </string>
+								<string>108 240 1052 620 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -458,7 +460,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DNDArrayController.m</string>
+								<string>Info-PowerRenamer.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -466,7 +468,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DNDArrayController.m</string>
+										<string>Info-PowerRenamer.plist</string>
 										<key>history</key>
 										<array>
 											<string>2CEFC3BB10186C2B003C67DB</string>
@@ -502,7 +504,6 @@
 											<string>2C8A1E9212461940003029C3</string>
 											<string>2C8A1EB012464F86003029C3</string>
 											<string>2C8A1EEA12466473003029C3</string>
-											<string>2C8A1EF812470062003029C3</string>
 											<string>2C8A1EFB12470062003029C3</string>
 											<string>2CB95FC112499A1400F4523E</string>
 										</array>
@@ -556,7 +557,7 @@
 								<key>Frame</key>
 								<string>{{0, 5}, {743, 449}}</string>
 								<key>RubberWindowFrame</key>
-								<string>76 258 1052 620 0 0 1440 878 </string>
+								<string>108 240 1052 620 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -576,7 +577,7 @@
 								<key>Frame</key>
 								<string>{{0, 459}, {743, 99}}</string>
 								<key>RubberWindowFrame</key>
-								<string>76 258 1052 620 0 0 1440 878 </string>
+								<string>108 240 1052 620 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -601,9 +602,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>2CB95FE712499CE700F4523E</string>
+				<string>2C41A6B3124B9F780081400D</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>2CB95FE812499CE700F4523E</string>
+				<string>2C41A6B4124B9F780081400D</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
@@ -738,12 +739,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>2CE800540F98152900AD454A</string>
 		<string>/Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/PowerRenamer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>76 258 1052 620 0 0 1440 878 </string>
+	<string>108 240 1052 620 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -784,7 +784,7 @@
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBuildLogShowsTranscriptDefaultKey</key>
-								<string>{{0, 130}, {965, 251}}</string>
+								<string>{{0, 63}, {965, 318}}</string>
 								<key>PBXProjectModuleGUID</key>
 								<string>XCMainBuildResultsModuleGUID</string>
 								<key>PBXProjectModuleLabel</key>
@@ -822,7 +822,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>2CE800540F98152900AD454A</string>
-				<string>2CB95FE912499CE700F4523E</string>
+				<string>2C41A6B5124B9F780081400D</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -942,13 +942,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>2CB95FEA12499CE700F4523E</string>
+				<string>2C41A68C124B9F310081400D</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>2CB95FEB12499CE700F4523E</string>
-				<string>2CB95FEC12499CE700F4523E</string>
-				<string>2CB95FED12499CE700F4523E</string>
-				<string>2CB95FEE12499CE700F4523E</string>
-				<string>2CB95FEF12499CE700F4523E</string>
+				<string>2C41A68D124B9F310081400D</string>
+				<string>2C41A68E124B9F310081400D</string>
+				<string>2C41A68F124B9F310081400D</string>
+				<string>2C41A690124B9F310081400D</string>
+				<string>2C41A691124B9F310081400D</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
