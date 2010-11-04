@@ -9,6 +9,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="351"/>
+			<integer value="30"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -35,7 +36,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSCustomView" id="564830768">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -71,6 +72,7 @@
 										<object class="NSMutableArray" key="NSTableColumns">
 											<bool key="EncodedWithXMLCoder">YES</bool>
 											<object class="NSTableColumn" id="200795481">
+												<string key="NSIdentifier">icon</string>
 												<double key="NSWidth">3.200000e+01</double>
 												<double key="NSMinWidth">3.200000e+01</double>
 												<double key="NSMaxWidth">3.200000e+01</double>
@@ -109,6 +111,7 @@
 												<reference key="NSTableView" ref="753353805"/>
 											</object>
 											<object class="NSTableColumn" id="685536069">
+												<string key="NSIdentifier">oldName</string>
 												<double key="NSWidth">1.710000e+02</double>
 												<double key="NSMinWidth">4.000000e+01</double>
 												<double key="NSMaxWidth">1.000000e+03</double>
@@ -151,6 +154,7 @@
 												<reference key="NSTableView" ref="753353805"/>
 											</object>
 											<object class="NSTableColumn" id="622880353">
+												<string key="NSIdentifier">newName</string>
 												<double key="NSWidth">2.410000e+02</double>
 												<double key="NSMinWidth">1.000000e+01</double>
 												<double key="NSMaxWidth">3.402823e+38</double>
@@ -259,6 +263,7 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{455, 269}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSWindowTemplate" id="479027621">
