@@ -1,4 +1,3 @@
-
 /* 
  Copyright (c) 2004-7, Apple Computer, Inc., all rights reserved.
  
@@ -42,7 +41,16 @@
  
  Copyright (C) 2004-7 Apple Inc. All Rights Reserved.
  */
-
+#include <AvailabilityMacros.h>
+#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_5
+#if __LP64__ || NS_BUILD_32_LIKE_64
+typedef long NSInteger;
+typedef unsigned long NSUInteger;
+#else
+typedef int NSInteger;
+typedef unsigned int NSUInteger;
+#endif
+#endif
 
 
 #import "DNDArrayController.h"
@@ -233,8 +241,21 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	return destinationIndexes;
 }
 
+#pragma mark data source of dable view
+// required for Mac OS X 10.4
+#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_5
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
+{
+	return [[self arrangedObjects] count];
+}
 
-
+- (id)tableView:(NSTableView *)aTableView 
+		objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+{
+	id identifier = [aTableColumn identifier];
+	return [[[self arrangedObjects] valueForKey:identifier] objectAtIndex:rowIndex];	
+}
+#endif
 @end
 
 

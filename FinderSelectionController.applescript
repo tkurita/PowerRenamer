@@ -1,16 +1,37 @@
 property FileSorter : module
 property _ : boot (module loader of application (get "PowerRenamerLib")) for me
 
-on get_finderselection()
-	--log "start get_finderselection"
+on get_finderselection_tiger()
+	tell application "Finder"
+		set a_list to selection
+	end tell
+	repeat with an_item in a_list
+		set contents of an_item to an_item as Unicode text
+	end repeat
+	return a_list
+end get_finderselection_tiger
+
+on get_finderselection_leopard()
 	set text item delimiters to {return}
 	tell application "Finder"
 		set pathtable to selection as Unicode text
 	end tell
 	set a_list to every paragraph of pathtable
-	--log "end get_finderselection"
 	return a_list
-end get_finderselection
+end get_finderselection_leopard
+
+property get_finderselection : get_finderselection_tiger
+
+on initialize()
+	considering numeric strings
+		set is_leopard to (AppleScript's version as Unicode text) is greater than or equal to "2"
+	end considering
+	if is_leopard then
+		set get_finderselection to get_finderselection_leopard
+	else
+		set get_finderselection to get_finderselection_tiger
+	end if
+end initialize
 
 on sorted_finderselection()
 	script SorterDelegate

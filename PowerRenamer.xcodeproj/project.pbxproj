@@ -274,10 +274,10 @@
 		2C5B7DE80FF0985F00D5ED31 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2CA9A5E81013154B0060A187 /* DNDArrayController.m */,
 				2CEFCA4F1022F6E0003C67DB /* PreviewTableView.h */,
 				2CEFCA501022F6E0003C67DB /* PreviewTableView.m */,
 				2CA9A5E91013154B0060A187 /* DNDArrayController.h */,
+				2CA9A5E81013154B0060A187 /* DNDArrayController.m */,
 				2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */,
 				2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */,
 				2C447DBB1000EE36009DA83E /* AltActionButton.h */,
@@ -551,7 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)",
@@ -591,7 +591,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/..",
@@ -603,14 +603,14 @@
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
-				"MACOSX_DEPLOYMENT_TARGET[arch=i386]" = 10.4;
-				"MACOSX_DEPLOYMENT_TARGET[arch=ppc64]" = 10.5;
-				"MACOSX_DEPLOYMENT_TARGET[arch=ppc]" = 10.4;
-				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.5;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.5]" = 10.5;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				OTHER_OSAFLAGS = "-x";
 				PRODUCT_NAME = PowerRenamer;
+				SDKROOT = macosx10.4;
+				"SDKROOT[arch=ppc64]" = macosx10.5;
+				"SDKROOT[arch=x86_64]" = macosx10.5;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -626,7 +626,7 @@
 		2C85CB7B0B7B342900C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/..",

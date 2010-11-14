@@ -21,6 +21,10 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 																   error:&err_info];
 	if (err_info) {
 		NSLog([err_info description]);
+	}	
+	[FINDER_SELECTION_CONTROLLER executeHandlerWithName:@"initialize" arguments:nil error:&err_info];
+	if (err_info) {
+		NSLog([err_info description]);
 	}
 }
 
