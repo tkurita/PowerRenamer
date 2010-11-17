@@ -113,7 +113,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					509,
+					675,
 					20,
 					52,
 					43,
@@ -182,7 +182,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 311390396;
+			PBXPerProjectTemplateStateSaveDate = 311703419;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -659,7 +659,7 @@
 				PBXModuleWindowStatusBarHidden = YES;
 				RubberWindowFrame = "520 470 703 291 0 0 1280 832 ";
 			};
-			PBXWorkspaceStateSaveDate = 311390396;
+			PBXWorkspaceStateSaveDate = 311703419;
 		};
 		perUserProjectItems = {
 			2C061E95102313F3004E7EDC = 2C061E95102313F3004E7EDC /* PBXTextBookmark */;
@@ -673,14 +673,14 @@
 			2C061F4F1023EF26004E7EDC = 2C061F4F1023EF26004E7EDC /* PBXTextBookmark */;
 			2C19E5681282A8F100C14DF1 = 2C19E5681282A8F100C14DF1 /* PBXTextBookmark */;
 			2C19E5C112831CDE00C14DF1 = 2C19E5C112831CDE00C14DF1 /* PBXTextBookmark */;
-			2C19E5D6128394A000C14DF1 = 2C19E5D6128394A000C14DF1 /* PBXTextBookmark */;
-			2C260504128CB7490033C38D = 2C260504128CB7490033C38D /* PBXTextBookmark */;
 			2C28CBD0124DE71D00FD470A = 2C28CBD0124DE71D00FD470A /* PBXTextBookmark */;
 			2C3263780D9B390A00631FC8 = 2C3263780D9B390A00631FC8 /* History.rd */;
 			2C364F5112857686000F9F7E = 2C364F5112857686000F9F7E /* PBXTextBookmark */;
-			2C364F5612857686000F9F7E = 2C364F5612857686000F9F7E /* PBXTextBookmark */;
 			2C37192C10271E80004CD50A = 2C37192C10271E80004CD50A /* PBXTextBookmark */;
 			2C371A1E10273FDF004CD50A = 2C371A1E10273FDF004CD50A /* PBXTextBookmark */;
+			2C396759129358EC007FC5AA = 2C396759129358EC007FC5AA /* PBXTextBookmark */;
+			2C39679F1293CB66007FC5AA = 2C39679F1293CB66007FC5AA /* PBXTextBookmark */;
+			2C3967A01293CB66007FC5AA = 2C3967A01293CB66007FC5AA /* PBXTextBookmark */;
 			2C559D5D117853DF00D7C910 = 2C559D5D117853DF00D7C910 /* PBXTextBookmark */;
 			2C5B7DFF0FF098F700D5ED31 = 2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */;
 			2C5B7E000FF098F700D5ED31 = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
@@ -894,16 +894,6 @@
 		vrLen = 2599;
 		vrLoc = 0;
 	};
-	2C19E5D6128394A000C14DF1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */;
-		name = "RenameEngine.m: 17";
-		rLen = 25;
-		rLoc = 333;
-		rType = 0;
-		vrLen = 1246;
-		vrLoc = 0;
-	};
 	2C2100251002D65100850A76 /* FrontAppMonitor.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {723, 515}}";
@@ -918,16 +908,6 @@
 			sepNavVisRange = "{905, 495}";
 			sepNavWindowFrame = "{{61, 355}, {551, 476}}";
 		};
-	};
-	2C260504128CB7490033C38D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */;
-		name = "FinderSelectionController.applescript: 13";
-		rLen = 0;
-		rLoc = 345;
-		rType = 0;
-		vrLen = 786;
-		vrLoc = 0;
 	};
 	2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */ = {
 		uiCtxt = {
@@ -989,16 +969,6 @@
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 8072;
-	};
-	2C364F5612857686000F9F7E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */;
-		name = "FinderSelectionController.applescript: 33";
-		rLen = 0;
-		rLoc = 948;
-		rType = 0;
-		vrLen = 786;
-		vrLoc = 0;
 	};
 	2C37190B1027105E004CD50A /* RenameEngine.m:90 */ = {
 		isa = PBXFileBreakpoint;
@@ -1070,6 +1040,36 @@
 		location = PowerRenamer;
 		modificationTime = 306583816.2914339;
 		state = 1;
+	};
+	2C396759129358EC007FC5AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
+		name = "RenameWindowController.m: 188";
+		rLen = 133;
+		rLoc = 7348;
+		rType = 0;
+		vrLen = 1310;
+		vrLoc = 7325;
+	};
+	2C39679F1293CB66007FC5AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
+		name = "RenameWindowController.m: 90";
+		rLen = 0;
+		rLoc = 3484;
+		rType = 0;
+		vrLen = 1816;
+		vrLoc = 2166;
+	};
+	2C3967A01293CB66007FC5AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */;
+		name = "RenameWindowController.m: 188";
+		rLen = 133;
+		rLoc = 7348;
+		rType = 0;
+		vrLen = 517;
+		vrLoc = 7955;
 	};
 	2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */ = {
 		uiCtxt = {
@@ -1168,9 +1168,9 @@
 	};
 	2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {756, 8834}}";
-			sepNavSelRange = "{204, 0}";
-			sepNavVisRange = "{0, 656}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 8022}}";
+			sepNavSelRange = "{7348, 133}";
+			sepNavVisRange = "{7955, 517}";
 			sepNavWindowFrame = "{{331, 115}, {845, 763}}";
 		};
 	};
