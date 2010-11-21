@@ -67,6 +67,10 @@
 	</array>
 	<key>LeadingZeros</key>
 	<true/>
+	<key>QuitAfterClosingLastWindow</key>
+	<true/>
+	<key>IgnoreCases</key>
+	<false/>
 	<key>applicationsFloatingOn</key>
 	<array>
 		<dict>

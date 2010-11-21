@@ -95,7 +95,7 @@
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
-	return ([theApplication isActive]);
+	return ([theApplication isActive] && [[NSUserDefaults standardUserDefaults] boolForKey:@"QuitAfterClosingLastWindow"]);
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
