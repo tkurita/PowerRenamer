@@ -40,13 +40,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleVersion</key>
-	<string>16</string>
+	<string>17</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.1.9b</string>
+	<string>3.1.9</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>copyright Tetsuro KURITA, 1999-2010</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.1.9b copyright 1999-2010, Tetsuro KURITA</string>
+	<string>3.1.9 copyright 1999-2010, Tetsuro KURITA</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>NSAppleScriptEnabled</key>
