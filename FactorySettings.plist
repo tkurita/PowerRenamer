@@ -70,7 +70,7 @@
 	<key>QuitAfterClosingLastWindow</key>
 	<true/>
 	<key>IgnoreCases</key>
-	<false/>
+	<true/>
 	<key>applicationsFloatingOn</key>
 	<array>
 		<dict>

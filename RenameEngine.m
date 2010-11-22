@@ -117,9 +117,13 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	RenameItem *item = nil;
+	RKLRegexOptions opts = RKLNoOptions;
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IgnoreCases"]) {
+		opts = opts | RKLCaseless;
+	}	
 	while (item = [enumerator nextObject]) {
 		NSString *oldname = [item oldName];
-		if( [oldname isMatchedByRegex:old_text options:RKLNoOptions
+		if( [oldname isMatchedByRegex:old_text options:opts
 								inRange:NSMakeRange(0, [oldname length]) error:error]) {
 			[matchitems addObject:item];
 		}
@@ -222,7 +226,10 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		return NO;
 	}
 	
-	NSUInteger opt = NSCaseInsensitiveSearch;
+	NSUInteger opt = 0;
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IgnoreCases"]) {
+		opt = opt | NSCaseInsensitiveSearch;
+	}
 	SEL selector = nil;
 	switch (mode) {
 		case kStartsWithMode:
@@ -301,6 +308,10 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSEnumerator *enumerator = [targetDicts objectEnumerator];
 	RenameItem *item = nil;
 	NSMutableString *new_text = [new_text_orig mutableCopy];
+	RKLRegexOptions opts = RKLNoOptions;
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IgnoreCases"]) {
+		opts = opts|RKLCaseless;
+	}
 	while (item = [enumerator nextObject]) {
 		NSString *oldname = [item oldName];
 		NSString *newname = nil;
@@ -313,7 +324,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 		}
 		newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
 													withString:new_text
-													   options:RKLNoOptions
+													   options:opts
 														 range:NSMakeRange(0, [oldname length])
 														 error:error];
 		
