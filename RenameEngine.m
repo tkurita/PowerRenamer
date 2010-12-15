@@ -322,11 +322,34 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 											  options:0 range:NSMakeRange(0, [new_text length])];
 					
 		}
-		newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
-													withString:new_text
-													   options:opts
-														 range:NSMakeRange(0, [oldname length])
-														 error:error];
+		@try {
+			newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
+														withString:new_text
+														   options:opts
+															 range:NSMakeRange(0, [oldname length])
+															 error:error];
+		}
+		@catch (NSException *exception) {
+			NSMutableDictionary *uinfo;
+			if ([exception userInfo]) {
+				uinfo = [[exception userInfo] mutableCopy];
+			} else {
+				uinfo = [NSMutableDictionary dictionary];
+			}
+			
+			if ([[exception name] isEqualToString:RKLICURegexException]) {
+				*error = [NSError errorWithDomain:RKLICURegexErrorDomain 
+											code:[[uinfo objectForKey:RKLICURegexErrorCodeErrorKey] intValue]
+										 userInfo:[exception userInfo]];
+			} else {
+				*error = [NSError errorWithDomain:@"PowerRenamerErrorDomain" code:0 userInfo:[exception userInfo]];
+				if (![*error localizedDescription]) {
+					[uinfo setObject:@"Unknown Error on -[NSCFString stringByReplacingOccurrencesOfRegex:withString:options:range:error:]"
+							  forKey:NSLocalizedDescriptionKey];
+				}
+			}
+			return NO;
+		}
 		
 		if (*error) {
 			return NO;
