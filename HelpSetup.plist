@@ -8,5 +8,7 @@
 	<string>/Users/tkurita/Factories/Websites/scriptfactory/web-content/software/FinderHelpers/PowerRenamer/manual</string>
 	<key>ManualPage</key>
 	<string>index.html</string>
+	<key>AppleIcon</key>
+	<string>PowerRenamer16.png</string>
 </dict>
 </plist>
