@@ -2,9 +2,11 @@ property FileSorter : module
 property _ : boot (module loader of application (get "PowerRenamerLib")) for me
 
 on get_finderselection_tiger()
-	tell application "Finder"
-		set a_list to selection
-	end tell
+	with timeout of 3600 seconds
+		tell application "Finder"
+			set a_list to selection
+		end tell
+	end timeout
 	repeat with an_item in a_list
 		set contents of an_item to an_item as Unicode text
 	end repeat
@@ -13,9 +15,11 @@ end get_finderselection_tiger
 
 on get_finderselection_leopard()
 	set text item delimiters to {return}
-	tell application "Finder"
-		set pathtable to selection as Unicode text
-	end tell
+	with timeout of 3600 seconds
+		tell application "Finder"
+			set pathtable to selection as Unicode text
+		end tell
+	end timeout
 	set a_list to every paragraph of pathtable
 	return a_list
 end get_finderselection_leopard
@@ -39,7 +43,10 @@ on sorted_finderselection()
 			return get_finderselection()
 		end target_items_at
 	end script
-	return FileSorter's make_with_delegate(SorterDelegate)'s sorted_items()
+	with timeout of 3600 seconds
+		set a_list to FileSorter's make_with_delegate(SorterDelegate)'s sorted_items()
+	end timeout
+	return a_list
 end sorted_finderselection
 
 on sub_process_rename(pathes, newnames)
@@ -72,8 +79,10 @@ on select_items(a_list)
 			set contents of an_item to (item an_item)
 		end tell
 	end repeat
-	tell application "Finder"
-		--select a_list
-		set selection to a_list
-	end tell
+	with timeout of 3600 seconds
+		tell application "Finder"
+			--select a_list
+			set selection to a_list
+		end tell
+	end timeout
 end select_items

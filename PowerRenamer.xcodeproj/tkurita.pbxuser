@@ -181,7 +181,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 318421106;
+			PBXPerProjectTemplateStateSaveDate = 330413011;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -658,7 +658,7 @@
 				PBXModuleWindowStatusBarHidden = YES;
 				RubberWindowFrame = "520 470 703 291 0 0 1280 832 ";
 			};
-			PBXWorkspaceStateSaveDate = 318421106;
+			PBXWorkspaceStateSaveDate = 330413011;
 		};
 		perUserProjectItems = {
 			2C061E95102313F3004E7EDC = 2C061E95102313F3004E7EDC /* PBXTextBookmark */;
@@ -697,9 +697,7 @@
 			2C698A8210A418F1009F0B1D = 2C698A8210A418F1009F0B1D /* PBXTextBookmark */;
 			2C7E647612FA994F006F711F = 2C7E647612FA994F006F711F /* PBXTextBookmark */;
 			2C7E647712FA994F006F711F = 2C7E647712FA994F006F711F /* PBXBookmark */;
-			2C7E647812FA994F006F711F = 2C7E647812FA994F006F711F /* PlistBookmark */;
 			2C7E647912FA994F006F711F = 2C7E647912FA994F006F711F /* PBXTextBookmark */;
-			2C7E647A12FA994F006F711F = 2C7E647A12FA994F006F711F /* PBXBookmark */;
 			2C7E647B12FA994F006F711F = 2C7E647B12FA994F006F711F /* PlistBookmark */;
 			2C82498412B8800600C31DAF = 2C82498412B8800600C31DAF /* PBXTextBookmark */;
 			2C8249D712B8895C00C31DAF = 2C8249D712B8895C00C31DAF /* PBXTextBookmark */;
@@ -1325,17 +1323,6 @@
 		isa = PBXBookmark;
 		fRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */;
 	};
-	2C7E647812FA994F006F711F /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/tkurita/Dev/Projects/PowerRenamer/PowerRenamer/trunk/HelpSetup.plist;
-		rLen = 0;
-		rLoc = 2147483647;
-	};
 	2C7E647912FA994F006F711F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 2C86A60E0F97900E0092242D /* RegexKitLite.m */;
@@ -1345,10 +1332,6 @@
 		rType = 0;
 		vrLen = 1243;
 		vrLoc = 8051;
-	};
-	2C7E647A12FA994F006F711F /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */;
 	};
 	2C7E647B12FA994F006F711F /* PlistBookmark */ = {
 		isa = PlistBookmark;
