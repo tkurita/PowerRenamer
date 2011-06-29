@@ -44,9 +44,9 @@
 	<key>CFBundleShortVersionString</key>
 	<string>3.2.1</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>copyright Tetsuro KURITA, 1999-2010</string>
+	<string>copyright Tetsuro KURITA, 1999-2011</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.2.1 copyright 1999-2010, Tetsuro KURITA</string>
+	<string>3.2.1 copyright 1999-2011, Tetsuro KURITA</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>NSAppleScriptEnabled</key>
