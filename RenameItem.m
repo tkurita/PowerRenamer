@@ -112,8 +112,11 @@ static NSMutableDictionary *renameItemsPool = nil;
 	[aPath retain];
 	[posixPath autorelease];
 	posixPath = aPath;
+//	[self setOldName:
+//		[[posixPath lastPathComponent] normalizedString:kCFStringNormalizationFormKC]];
 	[self setOldName:
-		[[posixPath lastPathComponent] normalizedString:kCFStringNormalizationFormKC]];
+		[[posixPath lastPathComponent] normalizedString:kCFStringNormalizationFormC]];
+
 	[self setNewName:nil];
 }
 
