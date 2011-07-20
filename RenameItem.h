@@ -8,9 +8,12 @@
 	NSString *oldName;
 	NSColor *textColor;
 	NSImage *icon;
+	CFStringNormalizationForm normalizationForm;
 }
 + (id)renameItemWithPath:(NSString *)path;
++ (id)renameItemWithPath:(NSString *)path normalization:(CFStringNormalizationForm)nf;
 + (id)renameItemWithHFSPath:(NSString *)path;
++ (id)renameItemWithHFSPath:(NSString *)path normalization:(CFStringNormalizationForm)nf;
 
 - (NSString *)posixPath;
 - (void)setPosixPath:(NSString *)path;
@@ -25,6 +28,7 @@
 - (void)setTextColor:(NSColor *)color;
 - (NSImage *)icon;
 - (void)setIcon:(NSImage *)image;
+- (void)setNormalizationForm:(CFStringNormalizationForm)nf;
 
 - (void)nameChanged;
 

@@ -8,6 +8,7 @@
 	BOOL hasNewNames;
 	NSArray *renamedItems;
 	BOOL isSorted;
+	CFStringNormalizationForm normalizationForm;
 }
 
 #pragma mark public

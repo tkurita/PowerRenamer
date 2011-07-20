@@ -40,7 +40,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleVersion</key>
-	<string>21</string>
+	<string>22</string>
 	<key>CFBundleShortVersionString</key>
 	<string>3.2.2</string>
 	<key>NSHumanReadableCopyright</key>

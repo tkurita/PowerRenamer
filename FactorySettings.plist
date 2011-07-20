@@ -82,5 +82,7 @@
 			<string>PowerRenamer</string>
 		</dict>
 	</array>
+	<key>UnicodeNormalizationIndex</key>
+	<integer>1</integer>
 </dict>
 </plist>

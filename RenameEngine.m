@@ -28,12 +28,38 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	}
 }
 
+CFStringNormalizationForm UnicodeNormalizationForm()
+{
+	int unf = [[NSUserDefaults standardUserDefaults] integerForKey:@"UnicodeNormalizationIndex"];
+	CFStringNormalizationForm result;
+	switch (unf) {
+		case 0:
+			result = kCFStringNormalizationFormD;
+			break;
+		case 1:
+			result = kCFStringNormalizationFormC;
+			break;
+		case 2:
+			result = kCFStringNormalizationFormKD;
+			break;
+		case 3:
+			result = kCFStringNormalizationFormKC;
+			break;
+		default:
+			result = kCFStringNormalizationFormC;
+			break;
+	}
+	
+	return result;
+}
+
 - (id)init {
     if (self = [super init]) {
 		NSDictionary *error = nil;
 		NSData *data = [FINDER_SELECTION_CONTROLLER compiledDataForType:@"scpt" usingStorageOptions:OSANull error:&error];
 		finderSelectionController = [[OSAScript alloc] initWithCompiledData:data error:&error];
 		hasNewNames = NO;
+		normalizationForm = UnicodeNormalizationForm();
     }
     return self;
 }
@@ -71,13 +97,14 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	[self setRenamedItems:nil];
 }
 
+
 - (void)setTargetFiles:(NSArray *)filenames
 {
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:[filenames count]];
 	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSString *path;
 	while (path = [enumerator nextObject]) {
-		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:[path hfsPath]];
+		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:[path hfsPath] normalization: normalizationForm];
 		[target_dicts addObject:rename_item];
 	}
 	[self setTargetDicts:target_dicts];
@@ -215,7 +242,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 
 - (BOOL)replaceSubstringWithMode:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error
 {
-	NSString *old_text = [optionProvider oldText];
+	NSString *old_text = [[optionProvider oldText] normalizedString:normalizationForm];
 	NSString *new_text = [optionProvider newText];
 	unsigned int mode = [optionProvider modeIndex];
 	if ((mode == kContainMode) && ([old_text isEqualToString:@""])) {
@@ -442,7 +469,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:nfile];
 	for (unsigned int i=1; i <= nfile; i++) {
 		NSString *path = [[script_result descriptorAtIndex:i] stringValue];
-		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:path];
+		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:path normalization:normalizationForm];
 		[target_dicts addObject:rename_item];
 	}
 	result = YES;

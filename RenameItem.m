@@ -46,6 +46,11 @@ static NSMutableDictionary *renameItemsPool = nil;
 #pragma mark public
 + (id)renameItemWithHFSPath:(NSString *)path
 {
+	return [self renameItemWithHFSPath:path normalization:kCFStringNormalizationFormC];
+}
+
++ (id)renameItemWithHFSPath:(NSString *)path normalization:(CFStringNormalizationForm)nf
+{
 #if useLog
 	NSLog([renameItemsPool description]);
 #endif
@@ -56,6 +61,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 		NSLog(@"can't find instance in the pool.");
 #endif		
 		instance = [[self new] autorelease];
+		[instance setNormalizationForm:nf];
 		[instance setHfsPath:path];
 		[renameItemsPool setObject:instance forKey:path];
 	}
@@ -64,10 +70,14 @@ static NSMutableDictionary *renameItemsPool = nil;
 
 + (id)renameItemWithPath:(NSString *)path
 {
+	return [self renameItemWithPath:path normalization:kCFStringNormalizationFormC];
+}
+
++ (id)renameItemWithPath:(NSString *)path normalization:(CFStringNormalizationForm)nf
+{
 #if useLog
 	NSLog([renameItemsPool description]);
 #endif
-	path = [path normalizedString:kCFStringNormalizationFormKC];
 	id instance = nil;
 	instance = [renameItemsPool objectForKey:path];
 	if (!instance) {
@@ -75,6 +85,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 		NSLog(@"can't find instance in the pool.");
 #endif		
 		instance = [[self new] autorelease];
+		[instance setNormalizationForm:nf];
 		[instance setPosixPath:path];
 		[renameItemsPool setObject:instance forKey:path];
 	}
@@ -112,10 +123,8 @@ static NSMutableDictionary *renameItemsPool = nil;
 	[aPath retain];
 	[posixPath autorelease];
 	posixPath = aPath;
-//	[self setOldName:
-//		[[posixPath lastPathComponent] normalizedString:kCFStringNormalizationFormKC]];
 	[self setOldName:
-		[[posixPath lastPathComponent] normalizedString:kCFStringNormalizationFormC]];
+		[[posixPath lastPathComponent] normalizedString:normalizationForm]];
 
 	[self setNewName:nil];
 }
@@ -180,6 +189,11 @@ static NSMutableDictionary *renameItemsPool = nil;
 	[image retain];
 	[icon autorelease];
 	icon = image;
+}
+
+- (void)setNormalizationForm:(CFStringNormalizationForm)nf
+{
+	normalizationForm = nf;
 }
 
 @end
