@@ -2,7 +2,7 @@
 {
 	089C165DFE840E0CC02AAC07 /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {751, 388}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 562}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 41}";
 			sepNavVisRect = "{{0, 0}, {711, 485}}";
@@ -956,7 +956,7 @@
 		fRef = 2CEFC91F1022973F003C67DB /* History.rd */;
 		name = "History.rd: 18";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 0;
@@ -966,7 +966,7 @@
 		fRef = 2CEFC91F1022973F003C67DB /* History.rd */;
 		name = "History.rd: 18";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 0;
@@ -976,7 +976,7 @@
 		fRef = 2CEFC91F1022973F003C67DB /* History.rd */;
 		name = "History.rd: 18";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 0;
@@ -1043,7 +1043,7 @@
 		fRef = 2CC224881282964A0067387C /* History.rd */;
 		name = "History.rd: 18";
 		rLen = 0;
-		rLoc = 853;
+		rLoc = 980;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 0;
@@ -1367,9 +1367,9 @@
 	};
 	2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {904, 9373}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 9360}}";
 			sepNavSelRange = "{17417, 0}";
-			sepNavVisRange = "{17039, 540}";
+			sepNavVisRange = "{16705, 1382}";
 			sepNavWindowFrame = "{{429, 99}, {1011, 762}}";
 		};
 	};
@@ -2037,7 +2037,7 @@
 		fRef = 2C62559613D6712C00178F38 /* History.rd */;
 		name = "History.rd: 18";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 0;
@@ -2057,7 +2057,7 @@
 		fRef = 2C62559613D6712C00178F38 /* History.rd */;
 		name = "History.rd: 18";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 0;
@@ -2424,9 +2424,9 @@
 		path = /Users/tkurita/Dev/Projects/PowerRenamer/History.rd;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1496, 4237}}";
-			sepNavSelRange = "{651, 0}";
-			sepNavVisRange = "{0, 1313}";
+			sepNavIntBoundsRect = "{{0, 0}, {1496, 4453}}";
+			sepNavSelRange = "{79, 0}";
+			sepNavVisRange = "{0, 1148}";
 		};
 	};
 	2CEFC94F1022B543003C67DB /* PBXTextBookmark */ = {
@@ -2434,7 +2434,7 @@
 		fRef = 2CEFC91F1022973F003C67DB /* History.rd */;
 		name = "History.rd: 4";
 		rLen = 0;
-		rLoc = 2081;
+		rLoc = 2213;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 5776;

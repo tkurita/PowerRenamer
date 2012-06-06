@@ -42,11 +42,11 @@
 	<key>CFBundleVersion</key>
 	<string>22</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.2.2</string>
+	<string>3.2.3</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>copyright Tetsuro KURITA, 1999-2011</string>
+	<string>copyright Tetsuro KURITA, 1999-2012</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.2.2 copyright 1999-2011, Tetsuro KURITA</string>
+	<string>3.2.3 copyright 1999-2011, Tetsuro KURITA</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>NSAppleScriptEnabled</key>
@@ -56,7 +56,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>DonationURL</key>
-	<string>http://homepage.mac.com/tkurita/scriptfactory/donationproxy.html</string>
+	<string>http://www.script-factory.net/donationproxy.html</string>
 	<key>NSServices</key>
 	<array>
 		<dict>
@@ -80,6 +80,6 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
-	<string>http://homepage.mac.com/tkurita/scriptfactory/appcast/PowerRenamer.xml</string>
+	<string>http://www.script-factory.net/appcast/PowerRenamer.xml</string>
 </dict>
 </plist>
