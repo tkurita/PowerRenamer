@@ -464,7 +464,7 @@ bail:
 	NSError *error = nil;
 	if ([renameEngine hasNewNames]) {
 		if (![engine resolveNewNames:self error:&error]) {
-			NSLog([error description]);
+			NSLog(@"%@", [error description]);
 			return nil;
 		}
 	}

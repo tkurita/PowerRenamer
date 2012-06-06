@@ -384,7 +384,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 2C85C6D90B7B114200C89869 /* Build configuration list for PBXProject "PowerRenamer" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -531,11 +538,14 @@
 			buildSettings = {
 				ARCHS = (
 					ppc,
-					i386,
+					"$(ARCHS_STANDARD_32_64_BIT)",
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = 4.0;
+				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.4][arch=*]" = 10.4;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
+				"SDKROOT[arch=ppc]" = macosx10.4;
 			};
 			name = Release;
 		};
@@ -589,7 +599,10 @@
 		2C85CB790B7B342900C89869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					ppc,
+					"$(ARCHS_STANDARD_32_64_BIT)",
+				);
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 22;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -599,6 +612,8 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.2;
+				"GCC_VERSION[sdk=macosx10.4][arch=*]" = 4.0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
