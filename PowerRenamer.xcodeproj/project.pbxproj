@@ -33,6 +33,9 @@
 		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
 		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */; };
+		2C618AB2157F339600B999EB /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C618AAC157F339600B999EB /* MainMenu.strings */; };
+		2C618AB3157F339600B999EB /* PreferencesWindow.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C618AAE157F339600B999EB /* PreferencesWindow.strings */; };
+		2C618AB4157F339600B999EB /* RenameWindow.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C618AB0157F339600B999EB /* RenameWindow.strings */; };
 		2C85CB6A0B7B342900C89869 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		2C85CB6B0B7B342900C89869 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		2C85CB6E0B7B342900C89869 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -82,13 +85,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C061F1310231DAD004E7EDC /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		2C11F184157F23C9001D503D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/RenameWindow.nib; sourceTree = "<group>"; };
+		2C11F185157F23D5001D503D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		2C11F186157F23DE001D503D /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C11F187157F23E7001D503D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		2C11F191157F263C001D503D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C2100251002D65100850A76 /* FrontAppMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrontAppMonitor.h; sourceTree = "<group>"; };
 		2C2100261002D65100850A76 /* FrontAppMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontAppMonitor.m; sourceTree = "<group>"; };
 		2C278C8A100ECD230092CFDE /* plus24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus24.png; sourceTree = "<group>"; };
@@ -107,6 +115,10 @@
 		2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = FinderSelectionController.applescript; sourceTree = "<group>"; };
 		2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameEngine.h; sourceTree = "<group>"; };
 		2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameEngine.m; sourceTree = "<group>"; };
+		2C618AAA157F337100B999EB /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/PreferencesWindow.nib; sourceTree = "<group>"; };
+		2C618AAD157F339600B999EB /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		2C618AAF157F339600B999EB /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/PreferencesWindow.strings; sourceTree = "<group>"; };
+		2C618AB1157F339600B999EB /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/RenameWindow.strings; sourceTree = "<group>"; };
 		2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = "Info-PowerRenamer.plist"; sourceTree = "<group>"; };
 		2C85CB7D0B7B342900C89869 /* PowerRenamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerRenamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DonationReminder.framework; path = ../DonationReminder.framework; sourceTree = SOURCE_ROOT; };
@@ -245,6 +257,9 @@
 				2CA9A71410153DA70060A187 /* minus.tiff */,
 				2C278C8A100ECD230092CFDE /* plus24.png */,
 				2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */,
+				2C618AAC157F339600B999EB /* MainMenu.strings */,
+				2C618AAE157F339600B999EB /* PreferencesWindow.strings */,
+				2C618AB0157F339600B999EB /* RenameWindow.strings */,
 				2CB0F319100D65A60006899A /* wizard32.png */,
 				2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */,
 				2C061F1310231DAD004E7EDC /* Credits.rtf */,
@@ -344,22 +359,12 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		2C85CB630B7B342900C89869 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		2C85CB620B7B342900C89869 /* PowerRenamer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C85CB770B7B342900C89869 /* Build configuration list for PBXNativeTarget "PowerRenamer" */;
 			buildPhases = (
-				2C85CB630B7B342900C89869 /* Headers */,
+				2C11F19F157F2698001D503D /* ShellScript */,
 				2C85CB650B7B342900C89869 /* AppleScript */,
 				2C85CB690B7B342900C89869 /* Resources */,
 				2C85CB6D0B7B342900C89869 /* Sources */,
@@ -422,12 +427,37 @@
 				2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */,
 				2CEFC69910215E55003C67DB /* ServicesMenu.strings in Resources */,
 				2C061F1410231DAD004E7EDC /* Credits.rtf in Resources */,
+				2C618AB2157F339600B999EB /* MainMenu.strings in Resources */,
+				2C618AB3157F339600B999EB /* PreferencesWindow.strings in Resources */,
+				2C618AB4157F339600B999EB /* RenameWindow.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2C11F19F157F2698001D503D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/English.lproj/MainMenu.nib",
+				"$(SRCROOT)/English.lproj/PreferencesWindow.nib",
+				"$(SRCROOT)/English.lproj/RenameWindow.nib",
+				"$(SRCROOT)/Japanese.lproj/PreferencesWindow.strings",
+				"$(SRCROOT)/Japanese.lproj/MainMenu.strings",
+				"$(SRCROOT)/Japanese.lproj/RenameWindow.strings",
+			);
+			outputPaths = (
+				"$(SRCROOT)/Japanese.lproj/MainMenu.nib",
+				"$(SRCROOT)/Japanese.lproj/PreferenceWindow.nib",
+				"$(SRCROOT)/Japanese.lproj/RenameWindow.nib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\nnib_basename=`basename ${target_nib} .nib` \n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nrm -rf ${target_lang_nib}/.svn\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese PreferencesWindow.nib\ngenerate_localized_interface English Japanese RenameWindow.nib\n\n";
+		};
 		2C85CB740B7B342900C89869 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -478,6 +508,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				089C165DFE840E0CC02AAC07 /* English */,
+				2C11F186157F23DE001D503D /* Japanese */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -486,6 +517,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				29B97319FDCFA39411CA2CEA /* English */,
+				2C11F185157F23D5001D503D /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -494,6 +526,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C278DBF100FF5A60092CFDE /* English */,
+				2C618AAA157F337100B999EB /* Japanese */,
 			);
 			name = PreferencesWindow.nib;
 			sourceTree = "<group>";
@@ -502,14 +535,40 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C4479600FFCF10A009DA83E /* English */,
+				2C11F184157F23C9001D503D /* Japanese */,
 			);
 			name = RenameWindow.nib;
+			sourceTree = "<group>";
+		};
+		2C618AAC157F339600B999EB /* MainMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C618AAD157F339600B999EB /* Japanese */,
+			);
+			name = MainMenu.strings;
+			sourceTree = "<group>";
+		};
+		2C618AAE157F339600B999EB /* PreferencesWindow.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C618AAF157F339600B999EB /* Japanese */,
+			);
+			name = PreferencesWindow.strings;
+			sourceTree = "<group>";
+		};
+		2C618AB0157F339600B999EB /* RenameWindow.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C618AB1157F339600B999EB /* Japanese */,
+			);
+			name = RenameWindow.strings;
 			sourceTree = "<group>";
 		};
 		2CC6806D0D9B5ACC002301F5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2CC6806E0D9B5ACC002301F5 /* English */,
+				2C11F191157F263C001D503D /* Japanese */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -518,6 +577,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CEFC69610215E4B003C67DB /* English */,
+				2C11F187157F23E7001D503D /* Japanese */,
 			);
 			name = ServicesMenu.strings;
 			sourceTree = "<group>";

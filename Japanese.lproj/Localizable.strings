@@ -1,0 +1,13 @@
+"NoSelection" = "Finder に選択項目がありません。";
+"EnterSearchText" = "検索文字列を入力してください。";
+"Presets" = "プリセット";
+"Load a preset." = "プリセットを読み込む。";
+"Add to Presets" = "プリセットに追加";
+"Save current settings as a preset." = "現在の設定をプリセットに追加。";
+"Help" = "ヘルプ";
+"Show PowerRenamer Help." = "PowerRenamer のヘルプを表示。";
+"Contain" = "〜を含む";
+"Starts with" = "〜で始まる";
+"Ends with" = "〜で終わる";
+"Regular Expression" = "正規表現";
+"Numbering" = "番号付け";
