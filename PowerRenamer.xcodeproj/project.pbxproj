@@ -369,8 +369,8 @@
 				2C85CB690B7B342900C89869 /* Resources */,
 				2C85CB6D0B7B342900C89869 /* Sources */,
 				2C85CB700B7B342900C89869 /* Frameworks */,
-				2C85CB740B7B342900C89869 /* ShellScript */,
 				2C85CB750B7B342900C89869 /* CopyFiles */,
+				2C85CB740B7B342900C89869 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -460,16 +460,16 @@
 		};
 		2C85CB740B7B342900C89869 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$BUILD_STYLE\" = 'Deployment' ] ; then\nhelpdir=\"$OBJROOT/$TARGET_NAME.app/Contents/Resources/$TARGET_NAME Help/\"\nmkdir -p \"$helpdir\"\nmanual_path='/Users/tkurita/Factories/Websites/scriptfactory folder/scriptfactory/ScriptGallery/FinderScripts/PowerRenamer/manual/index.html'\nsitetears_path='/Users/tkurita/Factories/Perl factory/ProjectsX/SiteTears/SiteTears.pl'\nperl \"$sitetears_path\" \"$manual_path\" \"$helpdir/index.html\"\nopen -a '/Developer/Documentation/Apple Help/Apple Help Indexing Tool.app' \"$helpdir\"\nfi";
+			shellScript = "if [ \"$BUILD_STYLE\" = 'Release' ]; then\ncd $BUILT_PRODUCTS_DIR\nSetupHelpBook $FULL_PRODUCT_NAME\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -621,7 +621,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)",
@@ -664,7 +664,7 @@
 					"$(ARCHS_STANDARD_32_64_BIT)",
 				);
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/..",
@@ -701,7 +701,7 @@
 		2C85CB7B0B7B342900C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/..",
