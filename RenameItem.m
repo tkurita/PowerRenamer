@@ -104,6 +104,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 	[self setIcon:image];
 }
 
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1050
 - (BOOL)appyNewNameAndRetunError:(NSError **)error
 {
 	NSFileManager *fm = [NSFileManager new];
@@ -113,6 +114,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 	[fm release];
 	return result;
 }
+#endif
 
 #pragma mark accessors
 - (void)setHfsPath:(NSString *)aPath

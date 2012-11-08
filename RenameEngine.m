@@ -479,6 +479,7 @@ bail:
 	return result;
 }
 
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1050
 - (BOOL)applyNewNamesAndReturnError:(NSError **)error // rename with NSFileManager
 {
 	NSFileManager *fm = [NSFileManager defaultManager];
@@ -493,6 +494,7 @@ bail:
 	
 	return result;
 }
+#endif
 
 - (BOOL)processRenameAndReturnError:(NSError **)error // rename with Finder
 {
