@@ -104,6 +104,16 @@ static NSMutableDictionary *renameItemsPool = nil;
 	[self setIcon:image];
 }
 
+- (BOOL)appyNewNameAndRetunError:(NSError **)error
+{
+	NSFileManager *fm = [NSFileManager new];
+	NSString *new_path = [[posixPath stringByDeletingLastPathComponent] 
+									stringByAppendingPathComponent:newName];
+	BOOL result = [fm moveItemAtPath:posixPath toPath:new_path error:error];
+	[fm release];
+	return result;
+}
+
 #pragma mark accessors
 - (void)setHfsPath:(NSString *)aPath
 {

@@ -17,6 +17,7 @@
 - (BOOL)narrowDownTargetItems:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error;
 - (BOOL)resolveIcons;
 - (BOOL)processRenameAndReturnError:(NSError **)error;
+- (BOOL)applyNewNamesAndReturnError:(NSError **)error;
 
 - (void)setTargetFiles:(NSArray *)filenames;
 - (BOOL)selectInFinderReturningError:(NSError **)error;

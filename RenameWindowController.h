@@ -24,6 +24,8 @@
 	NSString *newPresetName;
 	BOOL isStaticMode;
 	NSNumber *idNumber;
+	
+	BOOL isWorking;
 }
 
 #pragma mark Actions
@@ -49,4 +51,5 @@
 + (id)frontmostWindowController;
 - (void)setUpForFiles:(NSArray *)filenames;
 - (BOOL)isStaticMode;
+- (BOOL)isWorking;
 @end

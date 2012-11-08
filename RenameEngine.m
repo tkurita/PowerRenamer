@@ -479,7 +479,22 @@ bail:
 	return result;
 }
 
-- (BOOL)processRenameAndReturnError:(NSError **)error
+- (BOOL)applyNewNamesAndReturnError:(NSError **)error // rename with NSFileManager
+{
+	NSFileManager *fm = [NSFileManager defaultManager];
+	BOOL result = NO;
+	for (RenameItem *ritem in renamedItems) {
+		NSString *src = [ritem posixPath];
+		NSString *dest = [[src stringByDeletingLastPathComponent]
+						  stringByAppendingPathComponent:[ritem newName]];
+		result = [fm moveItemAtPath:src toPath:dest error:error];
+		if (!result) break;
+	}
+	
+	return result;
+}
+
+- (BOOL)processRenameAndReturnError:(NSError **)error // rename with Finder
 {
 	NSArray *pathes = [renamedItems valueForKey:@"hfsPath"];
 	NSArray *newnames = [renamedItems valueForKey:@"newName"];

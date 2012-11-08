@@ -310,6 +310,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 
 - (IBAction)narrowDown:(id)sender
 {
+	isWorking = YES;
 	[progressIndicator setHidden:NO];
 	[progressIndicator startAnimation:self];
 
@@ -339,6 +340,7 @@ bail:
 
 	if (error)
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
+	isWorking = NO;
 }
 
 - (IBAction)okNewPresetName:(id)sender
@@ -373,6 +375,7 @@ bail:
 
 - (IBAction)preview:(id)sender
 {
+	isWorking = YES;
 	[progressIndicator setHidden:NO];
 	[progressIndicator startAnimation:self];
 
@@ -395,7 +398,7 @@ bail:
 bail:	
 	[progressIndicator setHidden:YES];
 	[progressIndicator stopAnimation:self];
-
+	isWorking = NO;
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -405,6 +408,7 @@ bail:
 
 - (IBAction)okAction:(id)sender
 {
+	isWorking = YES;
 	[progressIndicator setHidden:NO];
 	[progressIndicator startAnimation:self];
 	NSError *error = nil;
@@ -419,7 +423,8 @@ bail:
 		}
 	}
 	
-	if (![renameEngine processRenameAndReturnError:&error]) {
+	if (![renameEngine processRenameAndReturnError:&error]) { // rename with Finder
+	//if (![renameEngine applyNewNamesAndReturnError:&error]) { // rename with NSFileManager
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
 		goto bail;
 	}
@@ -436,6 +441,7 @@ bail:
 bail:
 	[progressIndicator setHidden:YES];
 	[progressIndicator stopAnimation:self];
+	isWorking = NO;
 }
 
 
@@ -632,6 +638,11 @@ bail:
 	return isStaticMode;
 }
 
+- (BOOL)isWorking
+{
+	return isWorking;
+}
+
 #pragma mark init
 
 - (void)dealloc
@@ -684,7 +695,7 @@ bail:
 	if (n) [[self window] setTitle:[NSString stringWithFormat:@"%@ : %d", [[self window] title],n]];
 	
 	[progressIndicator setHidden:YES];
-
+	isWorking = NO;
 }
 
 @end

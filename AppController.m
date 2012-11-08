@@ -6,6 +6,7 @@
 #import "PreferencesWindowController.h"
 #import "ModeIndexTransformer.h"
 #import "ModeIsNotNumberingTransfomer.h"
+#import "RenameWindowController.h"
 
 #define useLog 0
 
@@ -95,7 +96,27 @@
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
-	return ([theApplication isActive] && [[NSUserDefaults standardUserDefaults] boolForKey:@"QuitAfterClosingLastWindow"]);
+	if (!([theApplication isActive] && [[NSUserDefaults standardUserDefaults] boolForKey:@"QuitAfterClosingLastWindow"])) {
+		return NO;
+	}
+	
+	NSArray *windows = [NSApp windows];
+	if (! windows) return YES;
+	
+	BOOL result = YES;
+	NSEnumerator *enumerator = [windows objectEnumerator];
+	NSWindow *a_window;
+	while (a_window = [enumerator nextObject]) {
+		RenameWindowController* wcontroller = [a_window windowController];
+		if (wcontroller) {
+			if ([wcontroller isWorking]) {
+				result = NO;
+				break;
+			}
+		}
+	}
+	
+	return result;
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
