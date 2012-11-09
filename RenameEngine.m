@@ -341,20 +341,20 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	}
 	while (item = [enumerator nextObject]) {
 		NSString *oldname = [item oldName];
-		NSString *newname = nil;
+		NSMutableString *newname = [oldname mutableCopy];
 		if (mode == kNumberingMode) {
 			new_text = [new_text_orig mutableCopy];
 			[new_text replaceOccurrencesOfString:@"$#" 
-								   withString:[NSString stringWithFormat:numbering_format, n++]
+								   withString:[NSString stringWithFormat:numbering_format, n]
 											  options:0 range:NSMakeRange(0, [new_text length])];
-					
 		}
 		@try {
-			newname = [oldname stringByReplacingOccurrencesOfRegex:old_text
-														withString:new_text
-														   options:opts
-															 range:NSMakeRange(0, [oldname length])
-															 error:error];
+			NSUInteger nreplace = [newname replaceOccurrencesOfRegex:old_text
+															withString:new_text
+																options:opts
+																range:NSMakeRange(0, [oldname length])
+																error:error];
+			if (nreplace) n++;
 		}
 		@catch (NSException *exception) {
 			NSMutableDictionary *uinfo;
