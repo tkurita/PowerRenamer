@@ -15,7 +15,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 + (void)initialize
 {
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"FinderSelectionController"
-													 ofType:@"scpt" inDirectory:@"Scripts"];
+													 ofType:@"scpt"];
 	NSDictionary *err_info = nil;
 	FINDER_SELECTION_CONTROLLER = [[OSAScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
 																   error:&err_info];
@@ -501,8 +501,11 @@ bail:
 	NSArray *pathes = [renamedItems valueForKey:@"hfsPath"];
 	NSArray *newnames = [renamedItems valueForKey:@"newName"];
 	NSDictionary *err_info = nil;
+	id ignore_responses = [[NSUserDefaults standardUserDefaults] 
+									objectForKey:@"ignoringFinderResponses"];
 	[finderSelectionController executeHandlerWithName:@"process_rename" 
-			arguments:[NSArray arrayWithObjects:pathes, newnames, nil]
+					arguments:[NSArray arrayWithObjects:pathes, newnames,
+									ignore_responses, nil]
 												error:&err_info];
 	if (err_info) {
 #if useLog

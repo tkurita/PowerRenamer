@@ -6,19 +6,6 @@
 	objectVersion = 45;
 	objects = {
 
-/* Begin PBXAppleScriptBuildPhase section */
-		2C85CB650B7B342900C89869 /* AppleScript */ = {
-			isa = PBXAppleScriptBuildPhase;
-			buildActionMask = 2147483647;
-			contextName = "";
-			files = (
-				2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in AppleScript */,
-			);
-			isSharedContext = 0;
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXAppleScriptBuildPhase section */
-
 /* Begin PBXBuildFile section */
 		2C061F1410231DAD004E7EDC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2C061F1310231DAD004E7EDC /* Credits.rtf */; };
 		2C2100281002D65100850A76 /* FrontAppMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2100261002D65100850A76 /* FrontAppMonitor.m */; };
@@ -31,7 +18,7 @@
 		2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008C0F9819FB00AD454A /* PathExtra.m */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
 		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
-		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */; };
 		2C618AB2157F339600B999EB /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C618AAC157F339600B999EB /* MainMenu.strings */; };
 		2C618AB3157F339600B999EB /* PreferencesWindow.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C618AAE157F339600B999EB /* PreferencesWindow.strings */; };
@@ -40,7 +27,6 @@
 		2C85CB6B0B7B342900C89869 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		2C85CB6E0B7B342900C89869 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		2C85CB720B7B342900C89869 /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */; };
 		2C85CC1D0B7B38D400C89869 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */; };
 		2C85CC1E0B7B38D800C89869 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */; };
 		2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C85CC210B7B398100C89869 /* FactorySettings.plist */; };
@@ -165,8 +151,6 @@
 		2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDArrayControllerDataTypesProtocol.h; sourceTree = "<group>"; };
 		2CEFCA4F1022F6E0003C67DB /* PreviewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewTableView.h; sourceTree = "<group>"; };
 		2CEFCA501022F6E0003C67DB /* PreviewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewTableView.m; sourceTree = "<group>"; };
-		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
-		DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */ = {isa = PBXFileReference; lastKnownFileType = archive.asdictionary; name = AppleScriptKit.asdictionary; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.asdictionary; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */,
-				2C85CB720B7B342900C89869 /* AppleScriptKit.framework in Frameworks */,
 				2C85CC1D0B7B38D400C89869 /* DonationReminder.framework in Frameworks */,
 				2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */,
 				2CED519F0F986B0F007CD3B4 /* Sparkle.framework in Frameworks */,
@@ -202,7 +185,6 @@
 				2CE801690F982B1900AD454A /* Carbon.framework */,
 				2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -270,7 +252,6 @@
 				2C44795F0FFCF10A009DA83E /* RenameWindow.nib */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				DA206CF4015C4E8B03C91932 /* AppleScriptKit.asdictionary */,
 				2C85CC210B7B398100C89869 /* FactorySettings.plist */,
 				2CEFC69810215E55003C67DB /* ServicesMenu.strings */,
 			);
@@ -365,7 +346,6 @@
 			buildConfigurationList = 2C85CB770B7B342900C89869 /* Build configuration list for PBXNativeTarget "PowerRenamer" */;
 			buildPhases = (
 				2C11F19F157F2698001D503D /* ShellScript */,
-				2C85CB650B7B342900C89869 /* AppleScript */,
 				2C85CB690B7B342900C89869 /* Resources */,
 				2C85CB6D0B7B342900C89869 /* Sources */,
 				2C85CB700B7B342900C89869 /* Frameworks */,
@@ -478,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */,
 				2C85CB6E0B7B342900C89869 /* main.m in Sources */,
 				2C85CC310B7B3A1100C89869 /* AppController.m in Sources */,
 				2C86A6100F97900E0092242D /* RegexKitLite.m in Sources */,

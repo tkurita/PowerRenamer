@@ -58,17 +58,14 @@ on sub_process_rename(pathes, newnames)
 	end repeat
 end sub_process_rename
 
-on process_rename(pathes, newnames)
-	tell user defaults
-		set ignoring_flag to contents of default entry "ignoringFinderResponses"
-	end tell
-	if ignoring_flag then
-		--log "ignoring FInder"
+on process_rename(pathes, newnames, ignore_responses)
+	if ignore_responses then
+		-- log "ignoring FInder"
 		ignoring application responses
 			sub_process_rename(pathes, newnames)
 		end ignoring
 	else
-		--log "not ignoring FInder"
+		-- log "not ignoring FInder"
 		sub_process_rename(pathes, newnames)
 	end if
 end process_rename

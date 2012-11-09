@@ -1,11 +1,6 @@
-#import <mach-o/dyld.h>
-
-extern void ASKInitialize();
-extern int NSApplicationMain(int argc, const char *argv[]);
+#import <Cocoa/Cocoa.h>
 
 int main(int argc, const char *argv[])
 {
-	ASKInitialize();
-	
 	return NSApplicationMain(argc, argv);
 }
