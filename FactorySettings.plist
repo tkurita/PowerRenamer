@@ -84,5 +84,7 @@
 	</array>
 	<key>UnicodeNormalizationIndex</key>
 	<integer>1</integer>
+	<key>RenameWithFinder</key>
+	<true/>
 </dict>
 </plist>

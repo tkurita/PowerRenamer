@@ -2,6 +2,7 @@
 #import "AltActionButton.h"
 #import "FrontAppMonitor.h"
 #import "DNDArrayControllerDataTypesProtocol.h"
+#import "PreferencesWindowController.h"
 
 #define useLog 0
 
@@ -74,47 +75,6 @@ static NSMutableArray *reservedNumbers = nil;
 	NSToolbar *toolbar=[[[NSToolbar alloc] initWithIdentifier:@"myToolbar"] autorelease];
 	toolbarItems=[[NSMutableDictionary dictionary] retain];
 	
-	/*
-	NSString *label;
-	NSString *tool_tip;
-	
-	label = NSLocalizedString(@"Presets", @"Toolbar's label for presets");
-	tool_tip = NSLocalizedString(@"Load a preset.", @"Toolbar's tool tip for presets");
-	[[settingsPullDownButton cell] setUsesItemFromMenu:NO];
-	NSMenuItem *item = [[NSMenuItem allocWithZone:[self zone]] initWithTitle:@"" action:NULL keyEquivalent:@""];
-	NSImage *icon_image = [NSImage imageNamed:@"wizard32"];
-	NSImage *arrow_image = [NSImage imageNamed:@"pulldown_arrow_small"];
-	NSSize icon_size = [icon_image size];
-    NSSize arrow_size = [arrow_image size];
-    NSImage *popup_image = [[NSImage alloc] initWithSize: NSMakeSize(icon_size.width + arrow_size.width, icon_size.height)];
-    
-    NSRect icon_rect = NSMakeRect(0, 0, icon_size.width, icon_size.height);
-    NSRect arrow_rect = NSMakeRect(0, 0, arrow_size.width, arrow_size.height);
-    NSRect icon_drawrect = NSMakeRect(0, 0, icon_size.width, icon_size.height);
-    NSRect arrow_drawrect = NSMakeRect(icon_size.width, 0, arrow_size.width, arrow_size.height);
-    
-    [popup_image lockFocus];
-    [icon_image drawInRect: icon_drawrect  fromRect: icon_rect  operation: NSCompositeSourceOver  fraction: 1.0];
-    [arrow_image drawInRect: arrow_drawrect  fromRect: arrow_rect  operation: NSCompositeSourceOver  fraction: 1.0];
-    [popup_image unlockFocus];
-	
-    [item setImage:[popup_image autorelease]];
-    [item setOnStateImage:nil];
-    [item setMixedStateImage:nil];
-    [[settingsPullDownButton cell] setMenuItem:[item autorelease]];
-	addToolbarItem(toolbarItems, @"Presets", label, label, tool_tip,
-	self,@selector(setView:), presetPullDownView, NULL,NULL);
-	
-	label = NSLocalizedString(@"Add to Presets", @"Toolbar's label for AddToPresets");
-	tool_tip = NSLocalizedString(@"Save current settings as a preset.", @"Toolbar's tool tip for AddToPresets");
-	addToolbarItem(toolbarItems, @"AddToPresets", label, label, tool_tip,
-				   self,@selector(setImage:),[NSImage imageNamed:@"plus24.png"],@selector(addToPreset:),NULL);
-	
-	label = NSLocalizedString(@"Help", @"Toolbar's label for Help");
-	tool_tip = NSLocalizedString(@"Show PowerRenamer Help.", @"Toolbar's tool tip for Help");			
-	addToolbarItem(toolbarItems,@"Help", label, label, tool_tip,
-				   self,@selector(setView:), helpButtonView, NULL, NULL);
-	*/
 	[toolbar setDelegate:self];
 	[toolbar setAllowsUserCustomization:YES];
 	[toolbar setAutosavesConfiguration: YES];
@@ -232,7 +192,14 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 		label = NSLocalizedString(@"Add to Presets", @"Toolbar's label for AddToPresets");
 		tool_tip = NSLocalizedString(@"Save current settings as a preset.", @"Toolbar's tool tip for AddToPresets");
 		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
-					   self,@selector(setImage:),[NSImage imageNamed:@"plus24.png"],@selector(addToPreset:),NULL);		
+									  self,@selector(setImage:),[NSImage imageNamed:@"plus24.png"],
+									  @selector(addToPreset:),NULL);		
+	} else if ([identifier isEqualToString:@"Preferences"]) {
+		label = NSLocalizedString(@"Preferences", @"Toolbar's label for Preferences");
+		tool_tip = NSLocalizedString(@"Open a preferences window.", @"Toolbar's tool tip for Preferences");
+		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
+									  self,@selector(setImage:),[NSImage imageNamed:NSImageNamePreferencesGeneral],
+									  @selector(showPreferencesWindow:),NULL);				
 	} else if ([identifier isEqualToString:@"Help"]) {
 		label = NSLocalizedString(@"Help", @"Toolbar's label for Help");
 		tool_tip = NSLocalizedString(@"Show PowerRenamer Help.", @"Toolbar's tool tip for Help");			
@@ -277,15 +244,17 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 // set of toolbar items.  It can also be called by the customization palette to display the default toolbar.    
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
 {
-	return [NSArray arrayWithObjects:@"Presets",@"AddToPresets", NSToolbarFlexibleSpaceItemIdentifier, @"Help",nil];
+	return [NSArray arrayWithObjects:@"Presets",@"AddToPresets", NSToolbarFlexibleSpaceItemIdentifier,
+			@"Preferences", @"Help",nil];
 }
 
 // This method is required of NSToolbar delegates.  It returns an array holding identifiers for all allowed
 // toolbar items in this toolbar.  Any not listed here will not be available in the customization palette.
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
 {
-	return [NSArray arrayWithObjects:@"Presets", @"AddToPresets", @"Help",
-			NSToolbarSeparatorItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier,NSToolbarCustomizeToolbarItemIdentifier, nil];
+	return [NSArray arrayWithObjects:@"Presets", @"AddToPresets", @"Help", @"Preferences",
+			NSToolbarSeparatorItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier,
+			NSToolbarCustomizeToolbarItemIdentifier, nil];
 }
 
 
@@ -300,6 +269,13 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 						  startingNumber, @"startingNumber", [NSNumber numberWithBool:leadingZeros], @"leadingZeros",
 						  newPresetName, @"name", nil];
 	[presetsController addObject:dict];
+}
+
+#pragma mark Actions for toolbar
+- (IBAction)showPreferencesWindow:(id)sender
+{
+	PreferencesWindowController *prefwin = [PreferencesWindowController sharedPreferencesWindow];
+	[prefwin showWindow:self];
 }
 
 #pragma mark Actions
@@ -408,11 +384,16 @@ bail:
 
 - (IBAction)okAction:(id)sender
 {
+#if useLog
+	NSLog(@"start okAction");
+#endif	
 	isWorking = YES;
 	[progressIndicator setHidden:NO];
 	[progressIndicator startAnimation:self];
 	NSError *error = nil;
-	
+#if useLog
+	NSLog(@"Getting Finder's selection");
+#endif	
 	if (![renameEngine hasNewNames]) {
 		if ([renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
 			[renameEngine resolveNewNames:self error:&error];
@@ -422,14 +403,27 @@ bail:
 			goto bail;
 		}
 	}
-	
-	if (![renameEngine processRenameAndReturnError:&error]) { // rename with Finder
-	//if (![renameEngine applyNewNamesAndReturnError:&error]) { // rename with NSFileManager
-		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
+	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+	BOOL result;
+	if ([userdefaults boolForKey:@"RenameWithFinder"]) {
+#if useLog
+		NSLog(@"start renaiming with Finder");
+#endif		
+		result = [renameEngine processRenameAndReturnError:&error]; // rename with Finder
+	} else {
+#if useLog
+		NSLog(@"start renaiming with NSFileManager");
+#endif				
+		result = [renameEngine applyNewNamesAndReturnError:&error]; // rename with NSFileManager
+	}
+	if (!result) {
+		NSLog(@"%@", @"Error occurs during renaming.");
+		if (error) {
+			[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
+		}
 		goto bail;
 	}
 	
-	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
 	if ([userdefaults boolForKey:@"AutoQuit"]) {
 		[self close];
 	} else {
@@ -442,6 +436,9 @@ bail:
 	[progressIndicator setHidden:YES];
 	[progressIndicator stopAnimation:self];
 	isWorking = NO;
+#if useLog	
+	NSLog(@"end ok action");
+#endif	
 }
 
 
