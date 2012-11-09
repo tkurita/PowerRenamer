@@ -18,7 +18,7 @@
 		2C50DCEC0FFC3ECE00AF06C0 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8008C0F9819FB00AD454A /* PathExtra.m */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
 		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
-		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (); }; };
 		2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */; };
 		2C618AB2157F339600B999EB /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C618AAC157F339600B999EB /* MainMenu.strings */; };
 		2C618AB3157F339600B999EB /* PreferencesWindow.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C618AAE157F339600B999EB /* PreferencesWindow.strings */; };
