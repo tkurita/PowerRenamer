@@ -17,8 +17,9 @@
 - (BOOL)narrowDownTargetItems:(id<RenameOptionsProtocol>)optionProvider error:(NSError **)error;
 - (BOOL)resolveIcons;
 - (BOOL)processRenameAndReturnError:(NSError **)error;
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1050
 - (BOOL)applyNewNamesAndReturnError:(NSError **)error;
-
+#endif
 - (void)setTargetFiles:(NSArray *)filenames;
 - (BOOL)selectInFinderReturningError:(NSError **)error;
 - (void)clearTargets;

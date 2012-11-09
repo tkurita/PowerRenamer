@@ -1,12 +1,12 @@
 #import "AppController.h"
 #import "DonationReminder/DonationReminder.h"
-#import "WindowVisibilityController.h"
 #import "RenameWindowController.h"
 #import "AddDummyAtFirstTransformer.h"
 #import "PreferencesWindowController.h"
 #import "ModeIndexTransformer.h"
 #import "ModeIsNotNumberingTransfomer.h"
 #import "RenameWindowController.h"
+#import "WindowVisibilityController.h"
 
 #define useLog 0
 
@@ -109,7 +109,7 @@
 	while (a_window = [enumerator nextObject]) {
 		RenameWindowController* wcontroller = [a_window windowController];
 		if (wcontroller) {
-			if ([wcontroller isWorking]) {
+			if ([wcontroller respondsToSelector:@selector(isWorking)] && [wcontroller isWorking]) {
 				result = NO;
 				break;
 			}
@@ -154,10 +154,6 @@
 	NSLog(@"applicationDidFinishLaunching");
 #endif
 	[DonationReminder remindDonation];
-	/*
-	RenameWindowController *a_window = [[RenameWindowController alloc] initWithWindowNibName:@"RenameWindow"];
-	[a_window showWindow:self];
-	 */
 }
 
 - (void)awakeFromNib
