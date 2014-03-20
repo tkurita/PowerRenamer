@@ -163,7 +163,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 	NSString *tool_tip;
 	if ([identifier isEqualToString:@"Presets"]) {
 		label = NSLocalizedString(@"Presets", @"Toolbar's label for presets");
-		tool_tip = NSLocalizedString(@"Load a preset.", @"Toolbar's tool tip for presets");
+		tool_tip = NSLocalizedString(@"Load a preset", @"Toolbar's tool tip for presets");
 		[[settingsPullDownButton cell] setUsesItemFromMenu:NO];
 		NSMenuItem *item = [[NSMenuItem allocWithZone:[self zone]] initWithTitle:@"" action:NULL keyEquivalent:@""];
 		NSImage *icon_image = [NSImage imageNamed:@"wizard32"];
@@ -190,19 +190,19 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 						self,@selector(setView:), presetPullDownView, NULL,NULL);		
 	} else if ([identifier isEqualToString:@"AddToPresets"]) {
 		label = NSLocalizedString(@"Add to Presets", @"Toolbar's label for AddToPresets");
-		tool_tip = NSLocalizedString(@"Save current settings as a preset.", @"Toolbar's tool tip for AddToPresets");
+		tool_tip = NSLocalizedString(@"Save current settings as a preset", @"Toolbar's tool tip for AddToPresets");
 		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
 									  self,@selector(setImage:),[NSImage imageNamed:@"plus24.png"],
 									  @selector(addToPreset:),NULL);		
 	} else if ([identifier isEqualToString:@"Preferences"]) {
 		label = NSLocalizedString(@"Preferences", @"Toolbar's label for Preferences");
-		tool_tip = NSLocalizedString(@"Open a preferences window.", @"Toolbar's tool tip for Preferences");
+		tool_tip = NSLocalizedString(@"Open a preferences window", @"Toolbar's tool tip for Preferences");
 		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
 									  self,@selector(setImage:),[NSImage imageNamed:NSImageNamePreferencesGeneral],
 									  @selector(showPreferencesWindow:),NULL);				
 	} else if ([identifier isEqualToString:@"Help"]) {
 		label = NSLocalizedString(@"Help", @"Toolbar's label for Help");
-		tool_tip = NSLocalizedString(@"Show PowerRenamer Help.", @"Toolbar's tool tip for Help");			
+		tool_tip = NSLocalizedString(@"Show PowerRenamer Help", @"Toolbar's tool tip for Help");			
 		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
 					   self,@selector(setView:), helpButtonView, NULL, NULL);
 	}

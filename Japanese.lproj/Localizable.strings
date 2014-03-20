@@ -1,15 +1,19 @@
 NoSelection = "Finder に選択項目がありません。";
 EnterSearchText = "検索文字列を入力してください。";
+
+//Toolbar
 Presets = "プリセット";
-"Load a preset." = "プリセットを読み込む。";
+"Load a preset" = "プリセットを読み込む";
 "Add to Presets" = "プリセットに追加";
-"Save current settings as a preset." = "現在の設定をプリセットに追加。";
+"Save current settings as a preset" = "現在の設定をプリセットに追加";
 Help = "ヘルプ";
-"Show PowerRenamer Help." = "PowerRenamer のヘルプを表示。";
+"Show PowerRenamer Help" = "PowerRenamer のヘルプを表示";
+Preferences = "設定";
+"Open a preferences window" = "設定ウインドウを開く";
+
+//mode
 Contain = "〜を含む";
 "Starts with" = "〜で始まる";
 "Ends with" = "〜で終わる";
 "Regular Expression" = "正規表現";
 Numbering = "番号付け";
-Preferences = "設定";
-"Open a preferences window." = "設定ウインドウを開く。";
