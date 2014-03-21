@@ -497,6 +497,13 @@ bail:
 	[self autorelease];
 }
 
+- (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize
+{
+	CGFloat max_height = [[self window] maxSize].height;
+	if (frameSize.height > max_height) frameSize.height = max_height;
+	return frameSize;
+}
+
 - (void)drawerWillClose:(NSNotification *)notification
 {
 	[previewDrawer setContentSize:[previewDrawer minContentSize]];

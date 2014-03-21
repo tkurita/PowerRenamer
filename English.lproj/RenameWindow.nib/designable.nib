@@ -12,7 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="3"/>
+			<integer value="9"/>
+			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -199,10 +200,10 @@
 											</object>
 										</object>
 										<double key="NSRowHeight">17</double>
-										<int key="NSTvFlags">-700448768</int>
+										<int key="NSTvFlags">-700416000</int>
 										<reference key="NSDelegate"/>
 										<reference key="NSDataSource"/>
-										<int key="NSColumnAutoresizingStyle">4</int>
+										<int key="NSColumnAutoresizingStyle">1</int>
 										<int key="NSDraggingSourceMaskForLocal">15</int>
 										<int key="NSDraggingSourceMaskForNonLocal">0</int>
 										<bool key="NSAllowsTypeSelect">YES</bool>
@@ -278,7 +279,7 @@
 				<string key="NSWindowContentMaxSize">{1000, 200}</string>
 				<string key="NSWindowContentMinSize">{465, 200}</string>
 				<object class="NSView" key="NSWindowView" id="444797023">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -347,7 +348,7 @@
 						</object>
 						<object class="NSPopUpButton" id="417876401">
 							<reference key="NSNextResponder" ref="444797023"/>
-							<int key="NSvFlags">256</int>
+							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 156}, {167, 26}}</string>
 							<reference key="NSSuperview" ref="444797023"/>
 							<bool key="NSEnabled">YES</bool>
@@ -446,7 +447,7 @@
 						</object>
 						<object class="NSComboBox" id="361558504">
 							<reference key="NSNextResponder" ref="444797023"/>
-							<int key="NSvFlags">258</int>
+							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{103, 116}, {347, 26}}</string>
 							<reference key="NSSuperview" ref="444797023"/>
 							<bool key="NSEnabled">YES</bool>
@@ -532,7 +533,7 @@
 						</object>
 						<object class="NSComboBox" id="157498449">
 							<reference key="NSNextResponder" ref="444797023"/>
-							<int key="NSvFlags">258</int>
+							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{103, 63}, {347, 26}}</string>
 							<reference key="NSSuperview" ref="444797023"/>
 							<bool key="NSEnabled">YES</bool>
@@ -764,7 +765,7 @@
 						<object class="NSButton" id="800419403">
 							<reference key="NSNextResponder" ref="444797023"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{337, 153}, {121, 32}}</string>
+							<string key="NSFrame">{{336, 154}, {121, 32}}</string>
 							<reference key="NSSuperview" ref="444797023"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="89847067">
@@ -800,6 +801,7 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{467, 200}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{465, 222}</string>
@@ -826,7 +828,7 @@
 				<nil key="NSNextResponder"/>
 				<string key="NSContentSize">{100, 115}</string>
 				<string key="NSMinContentSize">{0, 115}</string>
-				<string key="NSMaxContentSize">{10000, 400}</string>
+				<string key="NSMaxContentSize">{10000, 500}</string>
 				<int key="NSPreferredEdge">1</int>
 				<double key="NSLeadingOffset">0.0</double>
 				<double key="NSTrailingOffset">0.0</double>
@@ -1782,8 +1784,8 @@
 							<reference ref="922592592"/>
 							<reference ref="995121658"/>
 							<reference ref="493307455"/>
-							<reference ref="800419403"/>
 							<reference ref="700269855"/>
+							<reference ref="800419403"/>
 						</object>
 						<reference key="parent" ref="479027621"/>
 					</object>
@@ -2393,6 +2395,7 @@
 					<string>31.IBPluginDependency</string>
 					<string>31.IBShouldRemoveOnLegacySave</string>
 					<string>316.IBPluginDependency</string>
+					<string>316.IBViewBoundsToFrameTransform</string>
 					<string>317.IBPluginDependency</string>
 					<string>32.IBPluginDependency</string>
 					<string>32.IBShouldRemoveOnLegacySave</string>
@@ -2576,6 +2579,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABDqIAAwzcAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
