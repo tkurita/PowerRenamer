@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="9"/>
 			<integer value="29"/>
+			<integer value="9"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2333,12 +2333,14 @@
 					<string>131.IBPluginDependency</string>
 					<string>140.IBEditorWindowLastContentRect</string>
 					<string>140.IBPluginDependency</string>
+					<string>15.CustomClassName</string>
 					<string>15.IBAttributePlaceholdersKey</string>
 					<string>15.IBPluginDependency</string>
 					<string>15.ImportedFromIB2</string>
 					<string>16.IBPluginDependency</string>
 					<string>17.IBPluginDependency</string>
 					<string>18.IBPluginDependency</string>
+					<string>19.CustomClassName</string>
 					<string>19.IBAttributePlaceholdersKey</string>
 					<string>19.IBPluginDependency</string>
 					<string>19.ImportedFromIB2</string>
@@ -2497,6 +2499,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{246, 661}, {45, 28}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>FilenameComboBox</string>
 					<object class="NSMutableDictionary">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference key="dict.sortedKeys" ref="0"/>
@@ -2509,6 +2512,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>FilenameComboBox</string>
 					<object class="NSMutableDictionary">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference key="dict.sortedKeys" ref="0"/>
@@ -2642,7 +2646,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">361</int>
+			<int key="maxID">364</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2693,6 +2697,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">DNDArrayController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">FilenameComboBox</string>
+					<string key="superclassName">NSComboBox</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">FilenameComboBox.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

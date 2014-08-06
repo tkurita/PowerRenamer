@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C061F1410231DAD004E7EDC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2C061F1310231DAD004E7EDC /* Credits.rtf */; };
 		2C2100281002D65100850A76 /* FrontAppMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2100261002D65100850A76 /* FrontAppMonitor.m */; };
+		2C219C1B1991C97D001A2D35 /* FilenameComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */; };
 		2C278C8B100ECD230092CFDE /* plus24.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C278C8A100ECD230092CFDE /* plus24.png */; };
 		2C278CD0100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */; };
 		2C278DC0100FF5A60092CFDE /* PreferencesWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2C278DBE100FF5A60092CFDE /* PreferencesWindow.nib */; };
@@ -85,6 +86,8 @@
 		2C11F191157F263C001D503D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C2100251002D65100850A76 /* FrontAppMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrontAppMonitor.h; sourceTree = "<group>"; };
 		2C2100261002D65100850A76 /* FrontAppMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontAppMonitor.m; sourceTree = "<group>"; };
+		2C219C191991C97D001A2D35 /* FilenameComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilenameComboBox.h; sourceTree = "<group>"; };
+		2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilenameComboBox.m; sourceTree = "<group>"; };
 		2C278C8A100ECD230092CFDE /* plus24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus24.png; sourceTree = "<group>"; };
 		2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDummyAtFirstTransformer.m; sourceTree = "<group>"; };
 		2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDummyAtFirstTransformer.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				2CEFC787102174C6003C67DB /* RenameItem.h */,
 				2CEFC788102174C6003C67DB /* RenameItem.m */,
 				2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */,
+				2C219C191991C97D001A2D35 /* FilenameComboBox.h */,
+				2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 				2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */,
 				2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */,
 				2CEFCA521022F6E0003C67DB /* PreviewTableView.m in Sources */,
+				2C219C1B1991C97D001A2D35 /* FilenameComboBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
