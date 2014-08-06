@@ -78,7 +78,15 @@ static NSArray *supportedTypes = nil;
     } 	
 	
 bail:
-    return didPerformDragOperation;
+	if (didPerformDragOperation) {
+		NSDictionary *binding_info = [self infoForBinding: NSValueBinding];
+		if (binding_info) {
+			NSObject *bound_object = [binding_info valueForKey:NSObservedObjectKey];
+			NSString *key_path = [binding_info valueForKey:NSObservedKeyPathKey];
+			[bound_object setValue:[self stringValue] forKeyPath:key_path];
+		}
+	}
+	return didPerformDragOperation;
 }
 
 @end
