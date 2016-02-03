@@ -259,35 +259,3 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 @end
 
 
-
-/*
- Implementation of NSIndexSet utility category
- */
-@implementation NSIndexSet (CountOfIndexesInRange)
-
--(NSUInteger)countOfIndexesInRange:(NSRange)range
-{
-	unsigned int start, end, count;
-	
-	if (range.length == 0)
-	{
-		return 0;	
-	}
-	
-	start	= range.location;
-	end		= start + range.length;
-	count	= 0;
-	
-	NSUInteger currentIndex = [self indexGreaterThanOrEqualToIndex:start];
-	
-	while ((currentIndex != NSNotFound) && (currentIndex < end))
-	{
-		count++;
-		currentIndex = [self indexGreaterThanIndex:currentIndex];
-	}
-	
-	return count;
-}
-@end
-
-
