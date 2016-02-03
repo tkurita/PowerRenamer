@@ -658,7 +658,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -691,7 +691,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -723,7 +723,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (

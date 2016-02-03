@@ -9,7 +9,7 @@ static NSArray *supportedTypes = nil;
 + (void)initialize
 {
 	if (!supportedTypes) {
-		supportedTypes = [[NSArray alloc] initWithObjects:NSFilenamesPboardType, NSStringPboardType, nil];
+		supportedTypes = @[NSFilenamesPboardType, NSStringPboardType];
 	}
 }
 

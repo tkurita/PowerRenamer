@@ -15,11 +15,11 @@ static NSString *frameName = @"PreferencesWindow";
 - (IBAction)insertNewPreset:(id)sender
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"New Preset", @"name",
-								 @"", @"replace", @"", @"search", [NSNumber numberWithInt:1], @"mode",
-								 [NSNumber numberWithInt:1], @"startingNumber", 
-								 [NSNumber numberWithBool:YES], @"leadingZeros", nil];
+								 @"", @"replace", @"", @"search", @1, @"mode",
+								 @1, @"startingNumber", 
+								 @YES, @"leadingZeros", nil];
 	[presetsArrayController insertObject:dict atArrangedObjectIndex:[presetsArrayController selectionIndex]+1];
-	[presetsArrayController setSelectedObjects:[NSArray arrayWithObject:dict]];
+	[presetsArrayController setSelectedObjects:@[dict]];
 }
 
 - (void)windowDidLoad

@@ -74,7 +74,7 @@ static NSArray *internalDataTypes = nil;
 + (void)initialize
 {
 	if (!internalDataTypes) {
-		internalDataTypes = [NSArray arrayWithObjects:CopiedRowsType, MovedRowsType, nil];
+		internalDataTypes = @[CopiedRowsType, MovedRowsType];
 	}
 }
 
@@ -131,7 +131,7 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
     NSUInteger currentIndex = [rowIndexes firstIndex];
     while (currentIndex != NSNotFound)
     {
-		[rowCopies addObject:[[self arrangedObjects] objectAtIndex:currentIndex]];
+		[rowCopies addObject:[self arrangedObjects][currentIndex]];
         currentIndex = [rowIndexes indexGreaterThanIndex: currentIndex];
     }
 	

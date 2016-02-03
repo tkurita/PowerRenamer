@@ -56,7 +56,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 	NSLog([renameItemsPool description]);
 #endif
 	id instance = nil;
-	instance = [renameItemsPool objectForKey:path];
+	instance = renameItemsPool[path];
 	if (!instance) {
 #if useLog
 		NSLog(@"can't find instance in the pool.");
@@ -64,7 +64,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 		instance = [self new];
 		[instance setNormalizationForm:nf];
 		[instance setHfsPath:path];
-		[renameItemsPool setObject:instance forKey:path];
+		renameItemsPool[path] = instance;
 	}
 	return instance;
 }
@@ -80,7 +80,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 	NSLog([renameItemsPool description]);
 #endif
 	id instance = nil;
-	instance = [renameItemsPool objectForKey:path];
+	instance = renameItemsPool[path];
 	if (!instance) {
 #if useLog
 		NSLog(@"can't find instance in the pool.");
@@ -88,7 +88,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 		instance = [self new];
 		[instance setNormalizationForm:nf];
 		[instance setPosixPath:path];
-		[renameItemsPool setObject:instance forKey:path];
+		renameItemsPool[path] = instance;
 	}
 	return instance;
 }

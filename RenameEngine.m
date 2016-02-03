@@ -105,14 +105,13 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	NSArray *array = [_targetDicts valueForKey:@"hfsPath"];
 	NSDictionary *err_info = nil;
 	[_finderSelectionController executeHandlerWithName:@"select_items"
-											arguments:[NSArray arrayWithObject:array] error:&err_info];
+											arguments:@[array] error:&err_info];
 	
 	if (err_info) {
 		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
-						 [err_info objectForKey:OSAScriptErrorMessage],
-						 [err_info objectForKey:OSAScriptErrorNumber]];
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
-														  forKey:NSLocalizedDescriptionKey];
+						 err_info[OSAScriptErrorMessage],
+						 err_info[OSAScriptErrorNumber]];
+		NSDictionary *udict = @{NSLocalizedDescriptionKey: msg};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];
 		return NO;
 	}
@@ -124,8 +123,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	NSString *old_text = [optionProvider oldText];
 	if ([old_text isEqualToString:@""]) {
 		NSString *msg = NSLocalizedString(@"EnterSearchText", @"");
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
-														  forKey:NSLocalizedDescriptionKey];
+		NSDictionary *udict = @{NSLocalizedDescriptionKey: msg};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:3 userInfo:udict];
 		return NO;
 	}
@@ -157,8 +155,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	NSString *old_text = [optionProvider oldText];
 	if ([old_text isEqualToString:@""]) {
 		NSString *msg = NSLocalizedString(@"EnterSearchText", @"");
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
-														  forKey:NSLocalizedDescriptionKey];
+		NSDictionary *udict = @{NSLocalizedDescriptionKey: msg};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:3 userInfo:udict];
 		return NO;
 	}
@@ -234,8 +231,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	unsigned int mode = [optionProvider modeIndex];
 	if ((mode == kContainMode) && ([old_text isEqualToString:@""])) {
 		NSString *msg = NSLocalizedString(@"EnterSearchText", @"");
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
-												  forKey:NSLocalizedDescriptionKey];
+		NSDictionary *udict = @{NSLocalizedDescriptionKey: msg};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:3 userInfo:udict];
 		return NO;
 	}
@@ -277,7 +273,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 		[invocation getReturnValue:&result];
 		if (result && ![newname isEqualToString:oldname]) {
 			NSString *dirpath = [[item posixPath] stringByDeletingLastPathComponent];
-			NSMutableArray *newnames_indir = [newnames_dict objectForKey:dirpath];
+			NSMutableArray *newnames_indir = newnames_dict[dirpath];
 			newname = [[newname uniqueNameAtLocation:dirpath
 									   excepting:newnames_indir] mutableCopy];
 			if (!newnames_indir) {
@@ -347,7 +343,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 		
 		if (newname && ![newname isEqualToString:oldname])  {
 			NSString *dirpath = [[item posixPath] stringByDeletingLastPathComponent];
-			NSMutableArray *newnames_indir = [newnames_dict objectForKey:dirpath];
+			NSMutableArray *newnames_indir = newnames_dict[dirpath];
 			newname = [[newname uniqueNameAtLocation:dirpath
 										   excepting:newnames_indir] mutableCopy];
 			if (!newnames_indir) {
@@ -408,18 +404,16 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 		NSLog([err_info description]);
 #endif
 		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
-										[err_info objectForKey:OSAScriptErrorMessage],
-										 [err_info objectForKey:OSAScriptErrorNumber]];
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
-										  forKey:NSLocalizedDescriptionKey];
+										err_info[OSAScriptErrorMessage],
+										 err_info[OSAScriptErrorNumber]];
+		NSDictionary *udict = @{NSLocalizedDescriptionKey: msg};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:1 userInfo:udict];
 
 		return result;
 	}
 	unsigned int nfile = [script_result numberOfItems];
 	if (!nfile) {
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:NSLocalizedString(@"NoSelection", @"")
-														  forKey:NSLocalizedDescriptionKey];
+		NSDictionary *udict = @{NSLocalizedDescriptionKey: NSLocalizedString(@"NoSelection", @"")};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:2 userInfo:udict];
 		return result;
 	}
@@ -460,18 +454,17 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	id ignore_responses = [[NSUserDefaults standardUserDefaults] 
 									objectForKey:@"ignoringFinderResponses"];
 	[_finderSelectionController executeHandlerWithName:@"process_rename"
-					arguments:[NSArray arrayWithObjects:pathes, newnames,
-									ignore_responses, nil]
+					arguments:@[pathes, newnames,
+									ignore_responses]
 												error:&err_info];
 	if (err_info) {
 #if useLog
 		NSLog([err_info description]);
 #endif
 		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
-						 [err_info objectForKey:OSAScriptErrorMessage],
-						 [err_info objectForKey:OSAScriptErrorNumber]];
-		NSDictionary *udict = [NSDictionary dictionaryWithObject:msg
-														  forKey:NSLocalizedDescriptionKey];
+						 err_info[OSAScriptErrorMessage],
+						 err_info[OSAScriptErrorNumber]];
+		NSDictionary *udict = @{NSLocalizedDescriptionKey: msg};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:2 userInfo:udict];		
 		
 		return NO;

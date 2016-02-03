@@ -150,7 +150,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
     // Now that we've setup all the settings for this new toolbar item, we add it to the dictionary.
     // The dictionary retains the toolbar item for us, which is why we could autorelease it when we created
     // it (above).
-    [theDict setObject:item forKey:identifier];
+    theDict[identifier] = item;
 	return item;
 }
 
@@ -159,7 +159,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 #if useLog
 	NSLog(@"start resolveToolBar for %@", identifier);
 #endif
-	NSToolbarItem *toolbar_item = [toolbarItems objectForKey:identifier];
+	NSToolbarItem *toolbar_item = toolbarItems[identifier];
 	if (toolbar_item) {
 		return toolbar_item;
 	}
@@ -249,17 +249,17 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 // set of toolbar items.  It can also be called by the customization palette to display the default toolbar.    
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
 {
-	return [NSArray arrayWithObjects:@"Presets",@"AddToPresets", NSToolbarFlexibleSpaceItemIdentifier,
-			@"Preferences", @"Help",nil];
+	return @[@"Presets",@"AddToPresets", NSToolbarFlexibleSpaceItemIdentifier,
+			@"Preferences", @"Help"];
 }
 
 // This method is required of NSToolbar delegates.  It returns an array holding identifiers for all allowed
 // toolbar items in this toolbar.  Any not listed here will not be available in the customization palette.
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
 {
-	return [NSArray arrayWithObjects:@"Presets", @"AddToPresets", @"Help", @"Preferences",
+	return @[@"Presets", @"AddToPresets", @"Help", @"Preferences",
 			NSToolbarSeparatorItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier,
-			NSToolbarCustomizeToolbarItemIdentifier, nil];
+			NSToolbarCustomizeToolbarItemIdentifier];
 }
 
 
@@ -269,10 +269,10 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
     
 	if (returnCode != NSOKButton) return;
 	
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:_oldText, @"search",
-						  _newText, @"replace", [NSNumber numberWithInt:_modeIndex], @"mode",
-						  _startingNumber, @"startingNumber", [NSNumber numberWithBool:_leadingZeros], @"leadingZeros",
-						  _nuPresetName, @"name", nil];
+	NSDictionary *dict = @{@"search": _oldText,
+						  @"replace": _newText, @"mode": [NSNumber numberWithInt:_modeIndex],
+						  @"startingNumber": _startingNumber, @"leadingZeros": @(_leadingZeros),
+						  @"name": _nuPresetName};
 	[presetsController addObject:dict];
 }
 
@@ -346,12 +346,12 @@ bail:
 
 - (IBAction)applyPreset:(id)sender
 {
-	NSDictionary *selected_presets = [[presetsController arrangedObjects] objectAtIndex: [sender indexOfSelectedItem]-1];
-	[self setOldText:[selected_presets objectForKey:@"search"]];
-	[self setNewText:[selected_presets objectForKey:@"replace"]];
-	[self setModeIndex:[[selected_presets objectForKey:@"mode"] intValue]];
-	[self setStartingNumber:[selected_presets objectForKey:@"startingNumber"]];
-	[self setLeadingZeros:[[selected_presets objectForKey:@"leadingZeros"] boolValue]];
+	NSDictionary *selected_presets = [presetsController arrangedObjects][[sender indexOfSelectedItem]-1];
+	[self setOldText:selected_presets[@"search"]];
+	[self setNewText:selected_presets[@"replace"]];
+	[self setModeIndex:[selected_presets[@"mode"] intValue]];
+	[self setStartingNumber:selected_presets[@"startingNumber"]];
+	[self setLeadingZeros:[selected_presets[@"leadingZeros"] boolValue]];
 }
 
 - (IBAction)preview:(id)sender
@@ -451,7 +451,7 @@ bail:
 #pragma mark DNDArrayControlerDataTypesProtocol
 - (NSArray*) additionalDataTypes
 {
-	return [NSArray arrayWithObject:NSFilenamesPboardType];
+	return @[NSFilenamesPboardType];
 }
 
 - (void)writeObjects:(NSArray *)targets toPasteboard:(NSPasteboard *)pboard
@@ -462,7 +462,7 @@ bail:
 - (NSArray *)newObjectsFromPasteboard:(NSPasteboard *)pboard
 {
 	if (![pboard availableTypeFromArray:
-		  [NSArray arrayWithObjects:NSFilenamesPboardType, nil]]) {
+		  @[NSFilenamesPboardType]]) {
 		return nil;
 	}
 	
