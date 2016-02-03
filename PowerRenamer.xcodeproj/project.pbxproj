@@ -122,8 +122,6 @@
 		2C85CC210B7B398100C89869 /* FactorySettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FactorySettings.plist; sourceTree = "<group>"; };
 		2C85CC2E0B7B3A1100C89869 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C85CC2F0B7B3A1100C89869 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		2C86A60D0F97900E0092242D /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		2C86A60E0F97900E0092242D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		2CA9A131101054380060A187 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		2CA9A132101054380060A187 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		2CA9A198101061300060A187 /* ModeIndexTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeIndexTransformer.h; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				2C1B2CCE1C61CEB900C62B86 /* PaletteWindowController */,
 				2C1B2CD51C61CEB900C62B86 /* PathExtra */,
 				2C1B2CE01C61CF2900C62B86 /* StringExtra */,
-				2C86A60C0F97900E0092242D /* RegexpKitLite */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -327,15 +324,6 @@
 				2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		2C86A60C0F97900E0092242D /* RegexpKitLite */ = {
-			isa = PBXGroup;
-			children = (
-				2C86A60D0F97900E0092242D /* RegexKitLite.h */,
-				2C86A60E0F97900E0092242D /* RegexKitLite.m */,
-			);
-			path = RegexpKitLite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 30;
@@ -630,6 +619,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -645,6 +635,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 30;
@@ -662,6 +653,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				OTHER_OSAFLAGS = "-x";
 				PRODUCT_NAME = PowerRenamer;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -677,6 +669,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 30;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -692,6 +685,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (

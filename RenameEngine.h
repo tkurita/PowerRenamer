@@ -3,11 +3,11 @@
 #import "RenameOptionsProtocol.h"
 
 @interface RenameEngine : NSObject {
-	NSArray *targetDicts;
-	OSAScript *finderSelectionController;
-	BOOL hasNewNames;
-	NSArray *renamedItems;
-	BOOL isSorted;
+	//NSArray *targetDicts;
+	//OSAScript *finderSelectionController;
+	//BOOL hasNewNames;
+	//NSArray *renamedItems;
+	//BOOL isSorted;
 	CFStringNormalizationForm normalizationForm;
 }
 
@@ -26,9 +26,16 @@
 - (void)clearNewNames;
 
 #pragma mark accessors
+/*
 - (NSArray *)targetDicts;
 - (void)setTargetDicts:(NSArray *)array;
 - (void)setRenamedItems:(NSArray *)array;
-- (BOOL)hasNewNames;
-- (BOOL)isSorted;
+ - (BOOL)hasNewNames;
+ - (BOOL)isSorted;
+ */
+@property (strong) NSArray *renamedItems;
+@property (nonatomic, strong) NSArray *targetDicts;
+@property BOOL hasNewNames;
+@property BOOL isSorted;
+@property (strong) OSAScript *finderSelectionController;
 @end

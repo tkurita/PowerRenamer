@@ -9,6 +9,11 @@
 static NSMutableArray *reservedNumbers = nil;
 
 @implementation RenameWindowController
+@synthesize oldText = _oldText;
+@synthesize newText = _newText;
+@synthesize modeIndex = _modeIndex;
+@synthesize startingNumber = _startingNumber;
+@synthesize leadingZeros = _leadingZeros;
 
 +(void)initialize
 {
@@ -28,7 +33,7 @@ static NSMutableArray *reservedNumbers = nil;
 #pragma mark private
 - (void)frontAppChanged:(NSNotification *)notification
 {
-	if (!isStaticMode) [previewDrawer close];
+	if (!_isStaticMode) [previewDrawer close];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -46,10 +51,10 @@ static NSMutableArray *reservedNumbers = nil;
 	NSMutableArray *newtext_history = [user_defaults objectForKey:@"NewTextHistory"];
 	
 	unsigned int hist_max = [user_defaults integerForKey:@"HistoryMax"];
-	if ((oldText != nil) && (![oldText isEqualToString:@""])) {
-		if (![oldtext_history containsObject:oldText]) {
+	if (_oldText && (![_oldText isEqualToString:@""])) {
+		if (![oldtext_history containsObject:_oldText]) {
 			oldtext_history = [oldtext_history mutableCopy];
-			[oldtext_history insertObject:oldText atIndex:0];
+			[oldtext_history insertObject:_oldText atIndex:0];
 			if ([oldtext_history count] > hist_max) {
 				[oldtext_history removeLastObject];
 			}
@@ -57,10 +62,10 @@ static NSMutableArray *reservedNumbers = nil;
 		}
 	}
 	
-	if ((newText != nil)  && (![newText isEqualToString:@""])) {
-		if (![newtext_history containsObject:newText]) {
+	if ( _newText && (![_newText isEqualToString:@""])) {
+		if (![newtext_history containsObject:_newText]) {
 			newtext_history = [newtext_history mutableCopy];
-			[newtext_history insertObject:newText atIndex:0];
+			[newtext_history insertObject:_newText atIndex:0];
 			if ([newtext_history count] > hist_max) {
 				[newtext_history removeLastObject];
 			}
@@ -72,8 +77,8 @@ static NSMutableArray *reservedNumbers = nil;
 
 - (void)setupToolbar
 {
-	NSToolbar *toolbar=[[[NSToolbar alloc] initWithIdentifier:@"myToolbar"] autorelease];
-	toolbarItems=[[NSMutableDictionary dictionary] retain];
+	NSToolbar *toolbar=[[NSToolbar alloc] initWithIdentifier:@"myToolbar"];
+	toolbarItems=[NSMutableDictionary dictionary];
 	
 	[toolbar setDelegate:self];
 	[toolbar setAllowsUserCustomization:YES];
@@ -110,7 +115,7 @@ static NSMutableArray *reservedNumbers = nil;
 {
 	[renameEngine setTargetFiles:filenames];
 	[renameEngine resolveIcons];
-	isStaticMode = YES;
+	self.isStaticMode = YES;
 	[previewDrawer open:self];
 }
 
@@ -121,7 +126,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 {
     NSMenuItem *mItem;
     // here we create the NSToolbarItem and setup its attributes in line with the parameters
-    NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:identifier] autorelease];
+    NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:identifier];
     [item setLabel:label];
     [item setPaletteLabel:paletteLabel];
     [item setToolTip:toolTip];
@@ -137,7 +142,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
     if (menu!=NULL)
     {
 		// we actually need an NSMenuItem here, so we construct one
-		mItem=[[[NSMenuItem alloc] init] autorelease];
+		mItem=[[NSMenuItem alloc] init];
 		[mItem setSubmenu: menu];
 		[mItem setTitle: [menu title]];
 		[item setMenuFormRepresentation:mItem];
@@ -165,7 +170,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 		label = NSLocalizedString(@"Presets", @"Toolbar's label for presets");
 		tool_tip = NSLocalizedString(@"Load a preset", @"Toolbar's tool tip for presets");
 		[[settingsPullDownButton cell] setUsesItemFromMenu:NO];
-		NSMenuItem *item = [[NSMenuItem allocWithZone:[self zone]] initWithTitle:@"" action:NULL keyEquivalent:@""];
+		NSMenuItem *item = [[NSMenuItem allocWithZone:nil] initWithTitle:@"" action:NULL keyEquivalent:@""];
 		NSImage *icon_image = [NSImage imageNamed:@"wizard32"];
 		NSImage *arrow_image = [NSImage imageNamed:@"pulldown_arrow_small"];
 		NSSize icon_size = [icon_image size];
@@ -182,10 +187,10 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 		[arrow_image drawInRect: arrow_drawrect  fromRect: arrow_rect  operation: NSCompositeSourceOver  fraction: 1.0];
 		[popup_image unlockFocus];
 		
-		[item setImage:[popup_image autorelease]];
+		[item setImage:popup_image];
 		[item setOnStateImage:nil];
 		[item setMixedStateImage:nil];
-		[[settingsPullDownButton cell] setMenuItem:[item autorelease]];
+		[[settingsPullDownButton cell] setMenuItem:item];
 		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
 						self,@selector(setView:), presetPullDownView, NULL,NULL);		
 	} else if ([identifier isEqualToString:@"AddToPresets"]) {
@@ -214,7 +219,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 {
     // We create and autorelease a new NSToolbarItem, and then go through the process of setting up its
     // attributes from the master toolbar item matching that identifier in our dictionary of items.
-    NSToolbarItem *newItem = [[[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier] autorelease];
+    NSToolbarItem *newItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
     //NSToolbarItem *item=[toolbarItems objectForKey:itemIdentifier];
     NSToolbarItem *item = [self resolveToolbarItem:itemIdentifier];
 	
@@ -264,10 +269,10 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
     
 	if (returnCode != NSOKButton) return;
 	
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:oldText, @"search",
-						  newText, @"replace", [NSNumber numberWithInt:modeIndex], @"mode", 
-						  startingNumber, @"startingNumber", [NSNumber numberWithBool:leadingZeros], @"leadingZeros",
-						  newPresetName, @"name", nil];
+	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:_oldText, @"search",
+						  _newText, @"replace", [NSNumber numberWithInt:_modeIndex], @"mode",
+						  _startingNumber, @"startingNumber", [NSNumber numberWithBool:_leadingZeros], @"leadingZeros",
+						  _nuPresetName, @"name", nil];
 	[presetsController addObject:dict];
 }
 
@@ -286,7 +291,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 
 - (IBAction)narrowDown:(id)sender
 {
-	isWorking = YES;
+	self.isWorking = YES;
 	[progressIndicator setHidden:NO];
 	[progressIndicator startAnimation:self];
 
@@ -299,7 +304,7 @@ NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier
 	if (![renameEngine narrowDownTargetItems:self error:&error]) {
 		goto bail;
 	}
-	if (!isStaticMode) {
+	if (!_isStaticMode) {
 		if ([[renameEngine targetDicts] count]) {
 			[renameEngine selectInFinderReturningError:&error];
 			if([previewDrawer state] == NSDrawerClosedState) 
@@ -316,7 +321,7 @@ bail:
 
 	if (error)
 		[self presentError:error modalForWindow:[self window] delegate:nil didPresentSelector:nil contextInfo:nil];
-	isWorking = NO;
+	self.isWorking = NO;
 }
 
 - (IBAction)okNewPresetName:(id)sender
@@ -351,13 +356,13 @@ bail:
 
 - (IBAction)preview:(id)sender
 {
-	isWorking = YES;
+	self.isWorking = YES;
 	[progressIndicator setHidden:NO];
 	[progressIndicator startAnimation:self];
 
 	NSError *error = nil;
 	if (![renameEngine targetDicts]) {
-		if (![renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
+		if (![renameEngine resolveTargetItemsWithSorting:(_modeIndex == kNumberingMode) error:&error]) {
 			[self presentError:error modalForWindow:[self window] delegate:nil 
 												didPresentSelector:nil contextInfo:nil];
 			goto bail;
@@ -374,7 +379,7 @@ bail:
 bail:	
 	[progressIndicator setHidden:YES];
 	[progressIndicator stopAnimation:self];
-	isWorking = NO;
+	self.isWorking = NO;
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -387,7 +392,7 @@ bail:
 #if useLog
 	NSLog(@"start okAction");
 #endif	
-	isWorking = YES;
+	self.isWorking = YES;
 	[progressIndicator setHidden:NO];
 	[progressIndicator startAnimation:self];
 	NSError *error = nil;
@@ -395,7 +400,7 @@ bail:
 	NSLog(@"Getting Finder's selection");
 #endif	
 	if (![renameEngine hasNewNames]) {
-		if ([renameEngine resolveTargetItemsWithSorting:(modeIndex == kNumberingMode) error:&error]) {
+		if ([renameEngine resolveTargetItemsWithSorting:(self.modeIndex == kNumberingMode) error:&error]) {
 			[renameEngine resolveNewNames:self error:&error];
 		}
 		if (error) {
@@ -403,6 +408,7 @@ bail:
 			goto bail;
 		}
 	}
+    {
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
 	BOOL result;
 	if ([userdefaults boolForKey:@"RenameWithFinder"]) {
@@ -429,13 +435,13 @@ bail:
 	} else {
 		[previewDrawer close:self];
 		[self saveHistory];
-		isStaticMode = NO;
+		self.isStaticMode = NO;
 		[renameEngine clearTargets];
-	}
+	}}
 bail:
 	[progressIndicator setHidden:YES];
 	[progressIndicator stopAnimation:self];
-	isWorking = NO;
+	self.isWorking = NO;
 #if useLog	
 	NSLog(@"end ok action");
 #endif	
@@ -461,7 +467,7 @@ bail:
 	}
 	
 	NSArray *pathes = [pboard propertyListForType:NSFilenamesPboardType];
-	RenameEngine *engine = [[RenameEngine new] autorelease];
+	RenameEngine *engine = [RenameEngine new];
 	[engine setTargetFiles:pathes];
 	[engine resolveIcons];
 	NSError *error = nil;
@@ -486,15 +492,14 @@ bail:
 {
 	[super windowWillClose:notification];
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
-	[user_defaults setObject:oldText forKey:@"LastOldText"];
-	[user_defaults setObject:newText forKey:@"LastNewText"];
-	[user_defaults setInteger:modeIndex	forKey:@"ModeIndex"];
-	[user_defaults setObject:startingNumber forKey:@"StartingNumber"];
-	[user_defaults setBool:leadingZeros	forKey:@"LeadingZeros"];
+	[user_defaults setObject:_oldText forKey:@"LastOldText"];
+	[user_defaults setObject:_newText forKey:@"LastNewText"];
+	[user_defaults setInteger:_modeIndex	forKey:@"ModeIndex"];
+	[user_defaults setObject:_startingNumber forKey:@"StartingNumber"];
+	[user_defaults setBool:_leadingZeros	forKey:@"LeadingZeros"];
 	[self saveHistory];
 	[user_defaults synchronize];
 	[reservedNumbers removeObject:idNumber];
-	[self autorelease];
 }
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize
@@ -553,98 +558,70 @@ bail:
 
 #pragma mark Accessors
 
-- (void)setNewPresetName:(NSString *)name
-{
-	[name retain];
-	[newPresetName autorelease];
-	newPresetName = name;
-}
 
 - (void)setOldText:(NSString *)aText
 {
-	if (![oldText isEqualToString:aText]) {
+	if (![_oldText isEqualToString:aText]) {
 		[self didChangedSettings];
 	}
-	[aText retain];
-	[oldText autorelease];
-	oldText = aText;
+    if (_oldText != aText) {
+        _oldText = nil;
+        _oldText = aText;
+    }
 }
 
 - (NSString *)oldText
 {
-	if (oldText)
-		return oldText;
+	if (_oldText)
+		return _oldText;
 	else
 		return @"";
 }
 
-- (void)setNewText:(NSString *)aText
+- (void)setNuText:(NSString *)aText
 {
-	if (![newText isEqualToString:aText]) {
+	if (![_newText isEqualToString:aText]) {
 		[self didChangedSettings];
 	}
-	[aText retain];
-	[newText autorelease];
-	newText = aText;
+    if (_newText != aText) {
+        _newText = nil;
+        _newText = aText;
+    }
 }
 
 - (NSString *)newText
 {
-	if (newText)
-		return newText;
+	if (_newText)
+		return _newText;
 	else
 		return @"";
 }
 
 - (void)setModeIndex:(unsigned int)index
 {
-	if (modeIndex != index) {
+	if (_modeIndex != index) {
 		[self didChangedSettings];
 	}	
-	modeIndex = index;
-}
-
-- (unsigned int)modeIndex
-{
-	return modeIndex;
+	_modeIndex = index;
 }
 
 - (void)setStartingNumber:(NSNumber *)num
 {
-	if (![startingNumber isEqual:num]) {
+	if (![_startingNumber isEqual:num]) {
 		[self didChangedSettings];
 	}
-	[num retain];
-	[startingNumber autorelease];
-	startingNumber = num;
-}
-
-- (NSNumber *)startingNumber
-{
-	return startingNumber;
+    if (_startingNumber != num) {
+        _startingNumber = nil;
+        _startingNumber = num;
+    }
 }
 
 - (void)setLeadingZeros:(BOOL)flag
 {
-	if (leadingZeros != flag) {
+	if (_leadingZeros != flag) {
 		[self didChangedSettings];
 	}
-	leadingZeros = flag;
-}
-
-- (BOOL)leadingZeros
-{
-	return leadingZeros;
-}
-
-- (BOOL)isStaticMode
-{
-	return isStaticMode;
-}
-
-- (BOOL)isWorking
-{
-	return isWorking;
+	_leadingZeros = flag;
 }
 
 #pragma mark init
@@ -655,9 +632,6 @@ bail:
 	NSLog(@"start dealloc of RenameWindowController");
 #endif
 	[[NSUserDefaultsController sharedUserDefaultsController] removeObserver:self forKeyPath:@"values.UseFloatingWindow"];
-	[toolbarItems release];
-	[idNumber release];
-	[super dealloc];
 #if useLog
 	NSLog(@"end dealloc of RenameWindowController");
 #endif		
@@ -665,7 +639,7 @@ bail:
 
 - (void)awakeFromNib
 {
-	[self setNewPresetName:@"New Preset"];
+	self.nuPresetName = @"New Preset";
 	
 	NSUserDefaultsController *defaults_controller = [NSUserDefaultsController sharedUserDefaultsController];
 	[self setUseFloating:[[defaults_controller valueForKeyPath:@"values.UseFloatingWindow"] boolValue]];
@@ -699,7 +673,7 @@ bail:
 	if (n) [[self window] setTitle:[NSString stringWithFormat:@"%@ : %d", [[self window] title],n]];
 	
 	[progressIndicator setHidden:YES];
-	isWorking = NO;
+	self.isWorking = NO;
 }
 
 @end

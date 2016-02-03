@@ -6,7 +6,6 @@
 
 @implementation RenameItem
 
-
 static NSMutableDictionary *renameItemsPool = nil;
 
 + (void)initialize
@@ -15,8 +14,8 @@ static NSMutableDictionary *renameItemsPool = nil;
 		CFDictionaryValueCallBacks dictvalue_callbacks = kCFTypeDictionaryValueCallBacks;
 		dictvalue_callbacks.retain = NULL;
 		dictvalue_callbacks.release = NULL;
-		renameItemsPool = (NSMutableDictionary *)CFDictionaryCreateMutable(kCFAllocatorDefault, 0, 
-											   &kCFTypeDictionaryKeyCallBacks, &dictvalue_callbacks);
+		renameItemsPool = (NSMutableDictionary *)CFBridgingRelease(CFDictionaryCreateMutable(kCFAllocatorDefault, 0, 
+											   &kCFTypeDictionaryKeyCallBacks, &dictvalue_callbacks));
 	}
 }
 
@@ -33,14 +32,16 @@ static NSMutableDictionary *renameItemsPool = nil;
 #if useLog
 	NSLog(@"start dealloc in RenameItem");
 #endif			
-	[renameItemsPool removeObjectForKey:hfsPath];
-	[renameItemsPool removeObjectForKey:posixPath];
+	[renameItemsPool removeObjectForKey:_hfsPath];
+	[renameItemsPool removeObjectForKey:_posixPath];
+    /*
 	[posixPath release];
 	[hfsPath release];
 	[newName release];
 	[oldName release];
 	[textColor release];
 	[super dealloc];
+     */
 }
 
 #pragma mark public
@@ -60,7 +61,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 #if useLog
 		NSLog(@"can't find instance in the pool.");
 #endif		
-		instance = [[self new] autorelease];
+		instance = [self new];
 		[instance setNormalizationForm:nf];
 		[instance setHfsPath:path];
 		[renameItemsPool setObject:instance forKey:path];
@@ -84,7 +85,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 #if useLog
 		NSLog(@"can't find instance in the pool.");
 #endif		
-		instance = [[self new] autorelease];
+		instance = [self new];
 		[instance setNormalizationForm:nf];
 		[instance setPosixPath:path];
 		[renameItemsPool setObject:instance forKey:path];
@@ -94,13 +95,13 @@ static NSMutableDictionary *renameItemsPool = nil;
 
 - (void)nameChanged
 {
-	[self setOldName:newName];
-	[self setNewName:nil];
+	[self setOldName:_nuName];
+	self.nuName = nil;
 }
 
 - (void)resolveIcon
 {
-	NSImage *image = [[NSWorkspace sharedWorkspace] iconForFile:posixPath];
+	NSImage *image = [[NSWorkspace sharedWorkspace] iconForFile:_posixPath];
 	[self setIcon:image];
 }
 
@@ -108,10 +109,9 @@ static NSMutableDictionary *renameItemsPool = nil;
 - (BOOL)appyNewNameAndRetunError:(NSError **)error
 {
 	NSFileManager *fm = [NSFileManager new];
-	NSString *new_path = [[posixPath stringByDeletingLastPathComponent] 
-									stringByAppendingPathComponent:newName];
-	BOOL result = [fm moveItemAtPath:posixPath toPath:new_path error:error];
-	[fm release];
+	NSString *new_path = [[_posixPath stringByDeletingLastPathComponent]
+									stringByAppendingPathComponent:_nuName];
+	BOOL result = [fm moveItemAtPath:_posixPath toPath:new_path error:error];
 	return result;
 }
 #endif
@@ -119,88 +119,40 @@ static NSMutableDictionary *renameItemsPool = nil;
 #pragma mark accessors
 - (void)setHfsPath:(NSString *)aPath
 {
-	[aPath retain];
-	[hfsPath autorelease];
-	hfsPath = aPath;
-	[self setPosixPath:[hfsPath posixPath]];
+	if (_hfsPath != aPath) {
+        _hfsPath = nil;
+        _hfsPath = aPath;
+        [self setPosixPath:[_hfsPath posixPath]];
+    }
 }
 
-- (NSString *)hfsPath
-{
-	return hfsPath;
-}
-	
 - (void)setPosixPath:(NSString *)aPath
 {
-	[aPath retain];
-	[posixPath autorelease];
-	posixPath = aPath;
-	[self setOldName:
-		[[posixPath lastPathComponent] normalizedString:normalizationForm]];
-
-	[self setNewName:nil];
+	if (_posixPath != aPath) {
+        _posixPath = nil;
+        _posixPath = aPath;
+        [self setOldName:
+         [[_posixPath lastPathComponent] normalizedString:normalizationForm]];
+        
+        self.nuName = nil;
+    }
 }
 
-- (NSString *)posixPath
+- (void)setNuName:(NSString *)name
 {
-	return posixPath;
-}
-
-- (void)setOldName:(NSString *)name
-{
-	[name retain];
-	[oldName autorelease];
-	oldName = name;
-}
-
-- (NSString *)oldName
-{
-	return oldName;
-}
-
-- (void)setNewName:(NSString *)name
-{
-	[name retain];
-	[newName autorelease];
-	newName = name;
-	if (newName) {
-		if ([newName isEqualToString:oldName]) {
-			[self setTextColor:[NSColor grayColor]];
-		} else {
-			[self setTextColor:[NSColor blackColor]];
-		}
-	} else {
-		[self setTextColor:[NSColor blackColor]];
-	}
-}
-
-- (NSString *)newName
-{
-	return newName;
-}
-
-- (void)setTextColor:(NSColor *)color
-{
-	[color retain];
-	[textColor autorelease];
-	textColor = color;	
-}
-
-- (NSColor *)textColor
-{
-	return textColor;
-}
-
-- (NSImage *)icon
-{
-	return icon;
-}
-
-- (void)setIcon:(NSImage *)image
-{
-	[image retain];
-	[icon autorelease];
-	icon = image;
+	if (_nuName != name) {
+        _nuName = nil;
+        _nuName = name;
+        if (_nuName) {
+            if ([_nuName isEqualToString:_oldName]) {
+                [self setTextColor:[NSColor grayColor]];
+            } else {
+                [self setTextColor:[NSColor blackColor]];
+            }
+        } else {
+            [self setTextColor:[NSColor blackColor]];
+        }
+    }
 }
 
 - (void)setNormalizationForm:(CFStringNormalizationForm)nf

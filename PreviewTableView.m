@@ -10,7 +10,7 @@
 	NSLog([anEvent description]);
 #endif	
 	if (([anEvent type] == NSKeyDown) && ([anEvent keyCode] == 51)) {
-		[[self delegate] remove:self];
+		[(NSArrayController *)[self delegate] remove:self];
 		return YES;
 	}
 	return NO;

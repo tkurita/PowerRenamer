@@ -70,13 +70,13 @@ static NSArray *supportedTypes = nil;
 		didPerformDragOperation = YES;
 		goto bail;
     } 
-	
+	{
 	NSString *string = [pboard propertyListForType:NSStringPboardType];
 	if (string) {
 		[self setStringValue:string];
 		didPerformDragOperation = YES;
     } 	
-	
+	}
 bail:
 	if (didPerformDragOperation) {
 		NSDictionary *binding_info = [self infoForBinding: NSValueBinding];

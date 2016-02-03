@@ -40,7 +40,6 @@ static NSString *frameName = @"PreferencesWindow";
 	if (self == sharedPrefWindow) {
 		sharedPrefWindow = nil;
 	}
-	[self autorelease];
 }
 
 @end

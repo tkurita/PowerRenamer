@@ -74,7 +74,7 @@ static NSArray *internalDataTypes = nil;
 + (void)initialize
 {
 	if (!internalDataTypes) {
-		internalDataTypes = [[NSArray arrayWithObjects:CopiedRowsType, MovedRowsType, nil] retain];
+		internalDataTypes = [NSArray arrayWithObjects:CopiedRowsType, MovedRowsType, nil];
 	}
 }
 

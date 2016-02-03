@@ -15,11 +15,11 @@
 + (void)initialize
 {	
 	if ( self == [AppController class]) {
-		NSValueTransformer *transformer = [[AddDummyAtFirstTransformer new] autorelease];
+		NSValueTransformer *transformer = [AddDummyAtFirstTransformer new];
 		[NSValueTransformer setValueTransformer:transformer forName:@"AddDummyAtFirst"];
-		transformer = [[ModeIndexTransformer new] autorelease];
+		transformer = [ModeIndexTransformer new];
 		[NSValueTransformer setValueTransformer:transformer forName:@"ModeIndexToName"];
-		transformer = [[ModeIsNotNumberingTransfomer new] autorelease];
+		transformer = [ModeIsNotNumberingTransfomer new];
 		[NSValueTransformer setValueTransformer:transformer forName:@"ModeIsNotNumbering"];
 	}
 }
@@ -161,7 +161,7 @@
 #if useLog
 	NSLog(@"awakeFromNib");
 #endif	
-	 WindowVisibilityController *wv = [[[WindowVisibilityController alloc] init] autorelease];
+	 WindowVisibilityController *wv = [[WindowVisibilityController alloc] init];
 	[wv setDelegate:self];
 	[wv setVisibilityForCurrentApplication:kShouldShow];
 	[PaletteWindowController setVisibilityController:wv];
