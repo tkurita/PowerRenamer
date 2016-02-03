@@ -1,5 +1,5 @@
 #import "RenameEngine.h"
-#import "RegexKitLite.h"
+//#import "RegexKitLite.h"
 #import "PathExtra.h"
 #import "StringExtra.h"
 #import "RenameItem.h"
@@ -55,9 +55,13 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 
 - (id)init {
     if (self = [super init]) {
-		NSDictionary *error = nil;
-		NSData *data = [FINDER_SELECTION_CONTROLLER compiledDataForType:@"scpt" usingStorageOptions:OSANull error:&error];
-		finderSelectionController = [[OSAScript alloc] initWithCompiledData:data error:&error];
+		NSError *error = nil;
+        NSDictionary *err_dict = nil;
+		NSData *data = [FINDER_SELECTION_CONTROLLER compiledDataForType:@"scpt" usingStorageOptions:OSANull error:&err_dict];
+        finderSelectionController = [[OSAScript alloc] initWithCompiledData:data
+                                                        fromURL:nil
+                                    usingStorageOptions:OSADontSetScriptLocation
+                                                                      error:&error];
 		hasNewNames = NO;
 		normalizationForm = UnicodeNormalizationForm();
     }
@@ -142,20 +146,19 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	}
 	
 	NSMutableArray *matchitems = [NSMutableArray arrayWithCapacity:[targetDicts count]];
-	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	RenameItem *item = nil;
-	RKLRegexOptions opts = RKLNoOptions;
+	NSRegularExpressionOptions opts = 0;
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IgnoreCases"]) {
-		opts = opts | RKLCaseless;
-	}	
-	while (item = [enumerator nextObject]) {
+		opts = opts | NSRegularExpressionCaseInsensitive;
+	}
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:old_text
+                                                                           options:opts
+                                                                             error:error];
+    if (*error) return NO;
+	for (RenameItem *item in targetDicts) {
 		NSString *oldname = [item oldName];
-		if( [oldname isMatchedByRegex:old_text options:opts
-								inRange:NSMakeRange(0, [oldname length]) error:error]) {
+        if ([regex numberOfMatchesInString:oldname
+                                   options:0 range:NSMakeRange(0, [oldname length])] > 0) {
 			[matchitems addObject:item];
-		}
-		if (*error) {
-			return NO;
 		}
 	}
 	
@@ -332,14 +335,16 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	
 	NSMutableArray *renamed_items = [NSMutableArray array];
 	NSMutableDictionary *newnames_dict = [NSMutableDictionary dictionary];
-	NSEnumerator *enumerator = [targetDicts objectEnumerator];
-	RenameItem *item = nil;
 	NSMutableString *new_text = [new_text_orig mutableCopy];
-	RKLRegexOptions opts = RKLNoOptions;
+	NSRegularExpressionOptions opts = 0;
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IgnoreCases"]) {
-		opts = opts|RKLCaseless;
+		opts = opts | NSRegularExpressionCaseInsensitive;
 	}
-	while (item = [enumerator nextObject]) {
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:old_text
+                                                                           options:opts
+                                                                             error:error];
+    if (*error) return NO;
+	for (RenameItem *item in targetDicts) {
 		NSString *oldname = [item oldName];
 		NSMutableString *newname = [oldname mutableCopy];
 		if (mode == kNumberingMode) {
@@ -348,44 +353,13 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 								   withString:[NSString stringWithFormat:numbering_format, n]
 											  options:0 range:NSMakeRange(0, [new_text length])];
 		}
-		@try {
-			NSUInteger nreplace = [newname replaceOccurrencesOfRegex:old_text
-															withString:new_text
-																options:opts
-																range:NSMakeRange(0, [oldname length])
-																error:error];
-			if (nreplace) n++;
-		}
-		@catch (NSException *exception) {
-			NSMutableDictionary *uinfo;
-			if ([exception userInfo]) {
-				uinfo = [[exception userInfo] mutableCopy];
-			} else {
-				uinfo = [NSMutableDictionary dictionary];
-			}
-			
-			if ([[exception name] isEqualToString:RKLICURegexException]) {
-				*error = [NSError errorWithDomain:RKLICURegexErrorDomain 
-											code:[[uinfo objectForKey:RKLICURegexErrorCodeErrorKey] intValue]
-										 userInfo:[exception userInfo]];
-			} else {
-				*error = [NSError errorWithDomain:@"PowerRenamerErrorDomain" code:0 userInfo:[exception userInfo]];
-				if (![*error localizedDescription]) {
-					[uinfo setObject:@"Unknown Error on -[NSCFString stringByReplacingOccurrencesOfRegex:withString:options:range:error:]"
-							  forKey:NSLocalizedDescriptionKey];
-				}
-			}
-			return NO;
-		}
-		
-		if (*error) {
-			return NO;
-		}
-		
-		if (newname) {
-			if (![newname length]) {
-				newname = nil;
-			}
+         NSUInteger nreplace = [regex replaceMatchesInString:newname
+                                                     options:0
+                                                       range:NSMakeRange(0, [oldname length])
+                                                withTemplate:new_text];            
+        if (nreplace) n++;
+		if (newname && ![newname length]) {
+            newname = nil;
 		}
 		
 		if (newname && ![newname isEqualToString:oldname])  {

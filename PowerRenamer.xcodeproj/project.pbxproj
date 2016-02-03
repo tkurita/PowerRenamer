@@ -32,7 +32,6 @@
 		2C85CC1E0B7B38D800C89869 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C85CC1C0B7B38D400C89869 /* DonationReminder.framework */; };
 		2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C85CC210B7B398100C89869 /* FactorySettings.plist */; };
 		2C85CC310B7B3A1100C89869 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */; };
-		2C86A6100F97900E0092242D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86A60E0F97900E0092242D /* RegexKitLite.m */; };
 		2CA9A134101054380060A187 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A132101054380060A187 /* PreferencesWindowController.m */; };
 		2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A199101061300060A187 /* ModeIndexTransformer.m */; };
 		2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */; };
@@ -72,7 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
@@ -129,10 +128,10 @@
 		2CB0F319100D65A60006899A /* wizard32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard32.png; sourceTree = "<group>"; };
 		2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = pulldown_arrow_small.tiff; sourceTree = "<group>"; };
 		2CC6806E0D9B5ACC002301F5 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2CE800830F9819FB00AD454A /* DropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropBox.h; sourceTree = "<group>"; };
-		2CE800840F9819FB00AD454A /* DropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropBox.m; sourceTree = "<group>"; };
-		2CE800870F9819FB00AD454A /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
-		2CE800880F9819FB00AD454A /* NSURL+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NDCarbonUtilities.m"; sourceTree = "<group>"; };
+		2CE800830F9819FB00AD454A /* DropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropBox.h; path = CocoaLib/DropBox.h; sourceTree = "<group>"; };
+		2CE800840F9819FB00AD454A /* DropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropBox.m; path = CocoaLib/DropBox.m; sourceTree = "<group>"; };
+		2CE800870F9819FB00AD454A /* NSURL+NDCarbonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+NDCarbonUtilities.h"; path = "CocoaLib/NSURL+NDCarbonUtilities.h"; sourceTree = "<group>"; };
+		2CE800880F9819FB00AD454A /* NSURL+NDCarbonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+NDCarbonUtilities.m"; path = "CocoaLib/NSURL+NDCarbonUtilities.m"; sourceTree = "<group>"; };
 		2CE800890F9819FB00AD454A /* PaletteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteWindowController.h; sourceTree = "<group>"; };
 		2CE8008A0F9819FB00AD454A /* PaletteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteWindowController.m; sourceTree = "<group>"; };
 		2CE8008B0F9819FB00AD454A /* PathExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathExtra.h; sourceTree = "<group>"; };
@@ -312,13 +311,22 @@
 			path = RegexpKitLite;
 			sourceTree = "<group>";
 		};
-		2CE800820F9819FB00AD454A /* CocoaLib */ = {
+		2CC754F71C61A88400B646EC /* unused */ = {
 			isa = PBXGroup;
 			children = (
 				2CE800830F9819FB00AD454A /* DropBox.h */,
 				2CE800840F9819FB00AD454A /* DropBox.m */,
 				2CE800870F9819FB00AD454A /* NSURL+NDCarbonUtilities.h */,
 				2CE800880F9819FB00AD454A /* NSURL+NDCarbonUtilities.m */,
+			);
+			name = unused;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		2CE800820F9819FB00AD454A /* CocoaLib */ = {
+			isa = PBXGroup;
+			children = (
+				2CC754F71C61A88400B646EC /* unused */,
 				2CE800890F9819FB00AD454A /* PaletteWindowController.h */,
 				2CE8008A0F9819FB00AD454A /* PaletteWindowController.m */,
 				2CE8008B0F9819FB00AD454A /* PathExtra.h */,
@@ -430,18 +438,18 @@
 				"$(SRCROOT)/English.lproj/MainMenu.nib",
 				"$(SRCROOT)/English.lproj/PreferencesWindow.nib",
 				"$(SRCROOT)/English.lproj/RenameWindow.nib",
-				"$(SRCROOT)/Japanese.lproj/PreferencesWindow.strings",
 				"$(SRCROOT)/Japanese.lproj/MainMenu.strings",
+				"$(SRCROOT)/Japanese.lproj/PreferencesWindow.strings",
 				"$(SRCROOT)/Japanese.lproj/RenameWindow.strings",
 			);
 			outputPaths = (
 				"$(SRCROOT)/Japanese.lproj/MainMenu.nib",
-				"$(SRCROOT)/Japanese.lproj/PreferenceWindow.nib",
+				"$(SRCROOT)/Japanese.lproj/PreferencesWindow.nib",
 				"$(SRCROOT)/Japanese.lproj/RenameWindow.nib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\nnib_basename=`basename ${target_nib} .nib` \n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nrm -rf ${target_lang_nib}/.svn\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese PreferencesWindow.nib\ngenerate_localized_interface English Japanese RenameWindow.nib\n\n";
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\nbase_lang=$1\ntarget_lang=$2\ntarget_nib=$3\nnib_basename=`basename ${target_nib} .nib` \n\ntarget_lang_strings=${target_lang}.lproj/${nib_basename}.strings\ntarget_lang_nib=${target_lang}.lproj/${target_nib}\n\nif ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\nelse\n\techo \"${target_lang_strings} exist\"\U0013\nfi\n\nibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\nrm -rf ${target_lang_nib}/.svn\n}\n\ngenerate_localized_interface English Japanese MainMenu.nib\ngenerate_localized_interface English Japanese PreferencesWindow.nib\ngenerate_localized_interface English Japanese RenameWindow.nib\n\n\n";
 		};
 		2C85CB740B7B342900C89869 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -466,7 +474,6 @@
 				2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */,
 				2C85CB6E0B7B342900C89869 /* main.m in Sources */,
 				2C85CC310B7B3A1100C89869 /* AppController.m in Sources */,
-				2C86A6100F97900E0092242D /* RegexKitLite.m in Sources */,
 				2CE800A90F981EA300AD454A /* StringExtra.m in Sources */,
 				2CE800FB0F98296000AD454A /* WindowVisibilityController.m in Sources */,
 				2CE800FC0F98296300AD454A /* PaletteWindowController.m in Sources */,
@@ -575,39 +582,29 @@
 		2C85C6DA0B7B114200C89869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
 		2C85C6DB0B7B114200C89869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					"$(ARCHS_STANDARD_32_64_BIT)",
-				);
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = 4.0;
-				"MACOSX_DEPLOYMENT_TARGET[sdk=macosx10.4][arch=*]" = 10.4;
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
-				"SDKROOT[arch=ppc]" = macosx10.5;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
 		2C85C6DD0B7B114200C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_C_LANGUAGE_STANDARD = c99;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.8;
 			};
 			name = Default;
 		};
 		2C85CB780B7B342900C89869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 30;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -629,10 +626,10 @@
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = PowerRenamer;
-				SDKROOT = macosx10.5;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -641,17 +638,13 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
 		2C85CB790B7B342900C89869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					"$(ARCHS_STANDARD_32_64_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 30;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -661,19 +654,14 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
 				OTHER_OSAFLAGS = "-x";
 				PRODUCT_NAME = PowerRenamer;
-				SDKROOT = macosx10.5;
-				"SDKROOT[arch=ppc64]" = macosx10.5;
-				"SDKROOT[arch=x86_64]" = macosx10.5;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -682,13 +670,13 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
 		2C85CB7B0B7B342900C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CURRENT_PROJECT_VERSION = 30;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
