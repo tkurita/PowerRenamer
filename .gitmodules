@@ -1,0 +1,9 @@
+[submodule "PaletteWindowController"]
+	path = PaletteWindowController
+	url = https://github.com/tkurita/PaletteWindowController.git
+[submodule "PathExtra"]
+	path = PathExtra
+	url = https://github.com/tkurita/PathExtra.git
+[submodule "StringExtra"]
+	path = StringExtra
+	url = https://github.com/tkurita/StringExtra.git
