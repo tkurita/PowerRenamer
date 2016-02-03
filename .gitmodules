@@ -7,3 +7,9 @@
 [submodule "StringExtra"]
 	path = StringExtra
 	url = https://github.com/tkurita/StringExtra.git
+[submodule "LocalizeTools"]
+	path = LocalizeTools
+	url = https://github.com/tkurita/LocalizeTools.git
+[submodule "DonationReminder"]
+	path = DonationReminder
+	url = https://github.com/tkurita/DonationReminder.git
