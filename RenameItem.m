@@ -34,14 +34,6 @@ static NSMutableDictionary *renameItemsPool = nil;
 #endif			
 	[renameItemsPool removeObjectForKey:_hfsPath];
 	[renameItemsPool removeObjectForKey:_posixPath];
-    /*
-	[posixPath release];
-	[hfsPath release];
-	[newName release];
-	[oldName release];
-	[textColor release];
-	[super dealloc];
-     */
 }
 
 #pragma mark public
@@ -105,7 +97,6 @@ static NSMutableDictionary *renameItemsPool = nil;
 	[self setIcon:image];
 }
 
-#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1050
 - (BOOL)appyNewNameAndRetunError:(NSError **)error
 {
 	NSFileManager *fm = [NSFileManager new];
@@ -114,7 +105,6 @@ static NSMutableDictionary *renameItemsPool = nil;
 	BOOL result = [fm moveItemAtPath:_posixPath toPath:new_path error:error];
 	return result;
 }
-#endif
 
 #pragma mark accessors
 - (void)setHfsPath:(NSString *)aPath

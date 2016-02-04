@@ -11,9 +11,6 @@
 	IBOutlet id newPresetNameWindow;
 	IBOutlet RenameEngine *renameEngine;
 	IBOutlet NSProgressIndicator *progressIndicator;
-
-	NSMutableDictionary *toolbarItems;
-	NSNumber *idNumber;
 }
 
 #pragma mark Actions
@@ -36,6 +33,7 @@
 @property (nonatomic) BOOL leadingZeros;
 @property (nonatomic) BOOL isStaticMode;
 @property (nonatomic) BOOL isWorking;
+@property (nonatomic) NSNumber *idNumber;
 
 //- (void)setOldText:(NSString *)aText;
 //- (void)setNewText:(NSString *)aText;

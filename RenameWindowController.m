@@ -344,7 +344,7 @@ bail:
 	[user_defaults setBool:_leadingZeros	forKey:@"LeadingZeros"];
 	[self saveHistory];
 	[user_defaults synchronize];
-	[reservedNumbers removeObject:idNumber];
+	[reservedNumbers removeObject:_idNumber];
 }
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize
@@ -510,7 +510,7 @@ bail:
 		NSNumber *num = [NSNumber numberWithInt:n];
 		if (![reservedNumbers containsObject:num]) {
 			[reservedNumbers addObject:num];
-			idNumber = num;
+			self.idNumber = num;
 			break;
 		}
 		n++;

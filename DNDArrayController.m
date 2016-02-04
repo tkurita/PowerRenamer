@@ -241,21 +241,6 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	return destinationIndexes;
 }
 
-#pragma mark data source of dable view
-// required for Mac OS X 10.4
-#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_5
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
-{
-	return [[self arrangedObjects] count];
-}
-
-- (id)tableView:(NSTableView *)aTableView 
-		objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
-{
-	id identifier = [aTableColumn identifier];
-	return [[[self arrangedObjects] valueForKey:identifier] objectAtIndex:rowIndex];	
-}
-#endif
 @end
 
 
