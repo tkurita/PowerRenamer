@@ -73,7 +73,7 @@
 								<object class="NSTabViewItem" id="435806580">
 									<string key="NSIdentifier">1</string>
 									<object class="NSView" key="NSView" id="855598167">
-										<nil key="NSNextResponder"/>
+										<reference key="NSNextResponder" ref="306610144"/>
 										<int key="NSvFlags">256</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSButton" id="967384014">
@@ -138,6 +138,7 @@
 												<int key="NSvFlags">-2147483380</int>
 												<string key="NSFrame">{{13, 71}, {280, 18}}</string>
 												<reference key="NSSuperview" ref="855598167"/>
+												<reference key="NSNextKeyView" ref="306610144"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="82900281">
 													<int key="NSCellFlags">-2080374784</int>
@@ -335,7 +336,7 @@
 													<reference key="NSSupport" ref="556922230"/>
 													<reference key="NSControlView" ref="794839342"/>
 													<int key="NSButtonFlags">1211912448</int>
-													<int key="NSButtonFlags2">130</int>
+													<int key="NSButtonFlags2">2</int>
 													<reference key="NSNormalImage" ref="610346193"/>
 													<reference key="NSAlternateImage" ref="977194786"/>
 													<string key="NSAlternateContents"/>
@@ -365,6 +366,7 @@
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 33}, {455, 328}}</string>
+										<reference key="NSSuperview" ref="306610144"/>
 										<reference key="NSNextKeyView" ref="967384014"/>
 									</object>
 									<string key="NSLabel">一般</string>
@@ -374,7 +376,7 @@
 								<object class="NSTabViewItem" id="344520680">
 									<string key="NSIdentifier">2</string>
 									<object class="NSView" key="NSView" id="275539638">
-										<reference key="NSNextResponder" ref="306610144"/>
+										<nil key="NSNextResponder"/>
 										<int key="NSvFlags">268</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSScrollView" id="185164199">
@@ -984,7 +986,6 @@
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 33}, {455, 328}}</string>
-										<reference key="NSSuperview" ref="306610144"/>
 										<reference key="NSNextKeyView" ref="185164199"/>
 									</object>
 									<string key="NSLabel">プリセット</string>
@@ -992,13 +993,13 @@
 									<reference key="NSTabView" ref="306610144"/>
 								</object>
 							</array>
-							<reference key="NSSelectedTabViewItem" ref="344520680"/>
+							<reference key="NSSelectedTabViewItem" ref="435806580"/>
 							<reference key="NSFont" ref="556922230"/>
 							<int key="NSTvFlags">0</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
 							<bool key="NSDrawsBackground">YES</bool>
 							<array class="NSMutableArray" key="NSSubviews">
-								<reference ref="275539638"/>
+								<reference ref="855598167"/>
 							</array>
 						</object>
 					</array>
@@ -2238,10 +2239,6 @@
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
-			<real value="1080" key="NS.object.0"/>
-		</object>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<real value="1080" key="NS.object.0"/>
 		</object>

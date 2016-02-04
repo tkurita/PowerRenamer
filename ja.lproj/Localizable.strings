@@ -4,10 +4,12 @@ EnterSearchText = "検索文字列を入力してください。";
 //Toolbar
 Presets = "プリセット";
 "Load a preset" = "プリセットを読み込む";
-"Add to Presets" = "プリセットに追加";
-"Save current settings as a preset" = "現在の設定をプリセットに追加";
 Help = "ヘルプ";
 "Show PowerRenamer Help" = "PowerRenamer のヘルプを表示";
+
+//deprecated localized resources for toolbar items
+"Add to Presets" = "プリセットに追加";
+"Save current settings as a preset" = "現在の設定をプリセットに追加";
 Preferences = "設定";
 "Open a preferences window" = "設定ウインドウを開く";
 
