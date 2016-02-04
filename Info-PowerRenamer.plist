@@ -6,14 +6,16 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>PowerRenamer</string>
-	<key>CFBundleHelpBookFolder</key>
-	<string>PowerRenamerHelp</string>
 	<key>CFBundleIconFile</key>
 	<string>PowerRenamer.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>PowerRenamer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>PowerRenamerHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Scriptfactory.PowerRenamer.help</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -40,13 +42,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleVersion</key>
-	<string>30</string>
+	<string>31</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.3</string>
+	<string>3.4</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>copyright Tetsuro KURITA, 1999-2014</string>
+	<string>copyright Tetsuro KURITA, 1999-2016</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.3 copyright 1999-2014, Tetsuro KURITA</string>
+	<string>3.4 copyright 1999-2016, Tetsuro KURITA</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>NSAppleScriptEnabled</key>
