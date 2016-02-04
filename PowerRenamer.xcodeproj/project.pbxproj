@@ -33,6 +33,7 @@
 		2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C85CC210B7B398100C89869 /* FactorySettings.plist */; };
 		2C85CC310B7B3A1100C89869 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CC2F0B7B3A1100C89869 /* AppController.m */; };
+		2C9E41441C62CFE90053B4D5 /* ToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E41431C62CFE90053B4D5 /* ToolbarController.m */; };
 		2CA9A134101054380060A187 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A132101054380060A187 /* PreferencesWindowController.m */; };
 		2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A199101061300060A187 /* ModeIndexTransformer.m */; };
 		2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */; };
@@ -132,6 +133,8 @@
 		2C85CC210B7B398100C89869 /* FactorySettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FactorySettings.plist; sourceTree = "<group>"; };
 		2C85CC2E0B7B3A1100C89869 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		2C85CC2F0B7B3A1100C89869 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		2C9E41421C62CFE80053B4D5 /* ToolbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarController.h; sourceTree = "<group>"; };
+		2C9E41431C62CFE90053B4D5 /* ToolbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarController.m; sourceTree = "<group>"; };
 		2CA9A131101054380060A187 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		2CA9A132101054380060A187 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		2CA9A198101061300060A187 /* ModeIndexTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeIndexTransformer.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */,
 				2C219C191991C97D001A2D35 /* FilenameComboBox.h */,
 				2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */,
+				2C9E41421C62CFE80053B4D5 /* ToolbarController.h */,
+				2C9E41431C62CFE90053B4D5 /* ToolbarController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				2C1B2CDD1C61CEB900C62B86 /* WindowVisibilityController.m in Sources */,
 				2C1B2CDF1C61CEB900C62B86 /* PathExtra.m in Sources */,
 				2C1B2CE31C61CF2900C62B86 /* StringExtra.m in Sources */,
+				2C9E41441C62CFE90053B4D5 /* ToolbarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

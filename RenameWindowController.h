@@ -14,7 +14,9 @@
 	IBOutlet id newPresetNameWindow;
 	IBOutlet RenameEngine *renameEngine;
 	IBOutlet NSProgressIndicator *progressIndicator;
-	
+    IBOutlet id presetToolbarItem;
+	IBOutlet id helpToolbarItem;
+
 	//unsigned int modeIndex;
 	//NSString *oldText;
 	//NSString *newText;
