@@ -74,19 +74,6 @@ static NSMutableArray *reservedNumbers = nil;
 	}
 }
 
-
-- (void)setupToolbar
-{
-	NSToolbar *toolbar=[[NSToolbar alloc] initWithIdentifier:@"myToolbar"];
-	toolbarItems=[NSMutableDictionary dictionary];
-	
-	[toolbar setDelegate:self];
-	[toolbar setAllowsUserCustomization:YES];
-	[toolbar setAutosavesConfiguration: YES];
-	[toolbar setDisplayMode: NSToolbarDisplayModeIconOnly];
-	[[self window] setToolbar:toolbar];
-}
-
 - (void)didChangedSettings
 {
 	if ([renameEngine hasNewNames]) {
@@ -120,148 +107,6 @@ static NSMutableArray *reservedNumbers = nil;
 }
 
 #pragma mark toolbar
-
-NSToolbarItem *addToolbarItem(NSMutableDictionary *theDict, NSString *identifier, NSString *label, NSString *paletteLabel, NSString *toolTip,
-							  id target,SEL settingSelector, id itemContent,SEL action, NSMenu * menu)
-{
-    NSMenuItem *mItem;
-    // here we create the NSToolbarItem and setup its attributes in line with the parameters
-    NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:identifier];
-    [item setLabel:label];
-    [item setPaletteLabel:paletteLabel];
-    [item setToolTip:toolTip];
-    [item setTarget:target];
-    // the settingSelector parameter can either be @selector(setView:) or @selector(setImage:).  Pass in the right
-    // one depending upon whether your NSToolbarItem will have a custom view or an image, respectively
-    // (in the itemContent parameter).  Then this next line will do the right thing automatically.
-    [item performSelector:settingSelector withObject:itemContent];
-    [item setAction:action];
-    // If this NSToolbarItem is supposed to have a menu "form representation" associated with it (for text-only mode),
-    // we set it up here.  Actually, you have to hand an NSMenuItem (not a complete NSMenu) to the toolbar item,
-    // so we create a dummy NSMenuItem that has our real menu as a submenu.
-    if (menu!=NULL)
-    {
-		// we actually need an NSMenuItem here, so we construct one
-		mItem=[[NSMenuItem alloc] init];
-		[mItem setSubmenu: menu];
-		[mItem setTitle: [menu title]];
-		[item setMenuFormRepresentation:mItem];
-    }
-    // Now that we've setup all the settings for this new toolbar item, we add it to the dictionary.
-    // The dictionary retains the toolbar item for us, which is why we could autorelease it when we created
-    // it (above).
-    theDict[identifier] = item;
-	return item;
-}
-
-- (NSToolbarItem *)resolveToolbarItem:(NSString *)identifier
-{
-#if useLog
-	NSLog(@"start resolveToolBar for %@", identifier);
-#endif
-	NSToolbarItem *toolbar_item = toolbarItems[identifier];
-	if (toolbar_item) {
-		return toolbar_item;
-	}
-	
-	NSString *label;
-	NSString *tool_tip;
-	if ([identifier isEqualToString:@"Presets"]) {
-		label = NSLocalizedString(@"Presets", @"Toolbar's label for presets");
-		tool_tip = NSLocalizedString(@"Load a preset", @"Toolbar's tool tip for presets");
-		[[settingsPullDownButton cell] setUsesItemFromMenu:NO];
-		NSMenuItem *item = [[NSMenuItem allocWithZone:nil] initWithTitle:@"" action:NULL keyEquivalent:@""];
-		NSImage *icon_image = [NSImage imageNamed:@"wizard32"];
-		NSImage *arrow_image = [NSImage imageNamed:@"pulldown_arrow_small"];
-		NSSize icon_size = [icon_image size];
-		NSSize arrow_size = [arrow_image size];
-		NSImage *popup_image = [[NSImage alloc] initWithSize: NSMakeSize(icon_size.width + arrow_size.width, icon_size.height)];
-		
-		NSRect icon_rect = NSMakeRect(0, 0, icon_size.width, icon_size.height);
-		NSRect arrow_rect = NSMakeRect(0, 0, arrow_size.width, arrow_size.height);
-		NSRect icon_drawrect = NSMakeRect(0, 0, icon_size.width, icon_size.height);
-		NSRect arrow_drawrect = NSMakeRect(icon_size.width, 0, arrow_size.width, arrow_size.height);
-		
-		[popup_image lockFocus];
-		[icon_image drawInRect: icon_drawrect  fromRect: icon_rect  operation: NSCompositeSourceOver  fraction: 1.0];
-		[arrow_image drawInRect: arrow_drawrect  fromRect: arrow_rect  operation: NSCompositeSourceOver  fraction: 1.0];
-		[popup_image unlockFocus];
-		
-		[item setImage:popup_image];
-		[item setOnStateImage:nil];
-		[item setMixedStateImage:nil];
-		[[settingsPullDownButton cell] setMenuItem:item];
-		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
-						self,@selector(setView:), presetPullDownView, NULL,NULL);		
-	} else if ([identifier isEqualToString:@"AddToPresets"]) {
-		label = NSLocalizedString(@"Add to Presets", @"Toolbar's label for AddToPresets");
-		tool_tip = NSLocalizedString(@"Save current settings as a preset", @"Toolbar's tool tip for AddToPresets");
-		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
-									  self,@selector(setImage:),[NSImage imageNamed:@"plus24.png"],
-									  @selector(addToPreset:),NULL);		
-	} else if ([identifier isEqualToString:@"Preferences"]) {
-		label = NSLocalizedString(@"Preferences", @"Toolbar's label for Preferences");
-		tool_tip = NSLocalizedString(@"Open a preferences window", @"Toolbar's tool tip for Preferences");
-		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
-									  self,@selector(setImage:),[NSImage imageNamed:NSImageNamePreferencesGeneral],
-									  @selector(showPreferencesWindow:),NULL);				
-	} else if ([identifier isEqualToString:@"Help"]) {
-		label = NSLocalizedString(@"Help", @"Toolbar's label for Help");
-		tool_tip = NSLocalizedString(@"Show PowerRenamer Help", @"Toolbar's tool tip for Help");			
-		toolbar_item = addToolbarItem(toolbarItems, identifier, label, label, tool_tip,
-					   self,@selector(setView:), helpButtonView, NULL, NULL);
-	}
-	
-	return toolbar_item;
-}
-
-- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag
-{
-    // We create and autorelease a new NSToolbarItem, and then go through the process of setting up its
-    // attributes from the master toolbar item matching that identifier in our dictionary of items.
-    NSToolbarItem *newItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
-    //NSToolbarItem *item=[toolbarItems objectForKey:itemIdentifier];
-    NSToolbarItem *item = [self resolveToolbarItem:itemIdentifier];
-	
-    [newItem setLabel:[item label]];
-    [newItem setPaletteLabel:[item paletteLabel]];
-    if ([item view]!=NULL) {
-		[newItem setView:[item view]];
-    }
-    else {
-		[newItem setImage:[item image]];
-    }
-    [newItem setToolTip:[item toolTip]];
-    [newItem setTarget:[item target]];
-    [newItem setAction:[item action]];
-    [newItem setMenuFormRepresentation:[item menuFormRepresentation]];
-    // If we have a custom view, we *have* to set the min/max size - otherwise, it'll default to 0,0 and the custom
-    // view won't show up at all!  This doesn't affect toolbar items with images, however.
-    if ([newItem view]!=NULL) {
-		[newItem setMinSize:[[item view] bounds].size];
-		[newItem setMaxSize:[[item view] bounds].size];
-    }
-	
-    return newItem;
-}
-
-// This method is required of NSToolbar delegates.  It returns an array holding identifiers for the default
-// set of toolbar items.  It can also be called by the customization palette to display the default toolbar.    
-- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
-{
-	return @[@"Presets",@"AddToPresets", NSToolbarFlexibleSpaceItemIdentifier,
-			@"Preferences", @"Help"];
-}
-
-// This method is required of NSToolbar delegates.  It returns an array holding identifiers for all allowed
-// toolbar items in this toolbar.  Any not listed here will not be available in the customization palette.
-- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
-{
-	return @[@"Presets", @"AddToPresets", @"Help", @"Preferences",
-			NSToolbarSeparatorItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier,
-			NSToolbarCustomizeToolbarItemIdentifier];
-}
-
 
 - (void)sheetDidEnd:(NSWindow*)sheet returnCode:(int)returnCode contextInfo:(void*)contextInfo
 {
@@ -637,36 +482,6 @@ bail:
 #endif		
 }
 
-- (void)setupPresetPullDownView
-{
-    [[settingsPullDownButton cell] setUsesItemFromMenu:NO];
-    NSMenuItem *menu_item = [[NSMenuItem allocWithZone:nil] initWithTitle:@"" action:NULL keyEquivalent:@""];
-    NSImage *icon_image = [NSImage imageNamed:@"wizard32"];
-    NSImage *arrow_image = [NSImage imageNamed:@"pulldown_arrow_small"];
-    NSSize icon_size = [icon_image size];
-    NSSize arrow_size = [arrow_image size];
-    NSImage *popup_image = [[NSImage alloc] initWithSize: NSMakeSize(icon_size.width + arrow_size.width, icon_size.height)];
-    
-    NSRect icon_rect = NSMakeRect(0, 0, icon_size.width, icon_size.height);
-    NSRect arrow_rect = NSMakeRect(0, 0, arrow_size.width, arrow_size.height);
-    NSRect icon_drawrect = NSMakeRect(0, 0, icon_size.width, icon_size.height);
-    NSRect arrow_drawrect = NSMakeRect(icon_size.width, 0, arrow_size.width, arrow_size.height);
-    
-    [popup_image lockFocus];
-    [icon_image drawInRect: icon_drawrect  fromRect: icon_rect  operation: NSCompositeSourceOver  fraction: 1.0];
-    [arrow_image drawInRect: arrow_drawrect  fromRect: arrow_rect  operation: NSCompositeSourceOver  fraction: 1.0];
-    [popup_image unlockFocus];
-    
-    [menu_item setImage:popup_image];
-    [menu_item setOnStateImage:nil];
-    [menu_item setMixedStateImage:nil];
-    [[settingsPullDownButton cell] setMenuItem:menu_item];
-    
-    [presetToolbarItem setMinSize:[presetPullDownView bounds].size];
-    [presetToolbarItem setMaxSize:[presetPullDownView bounds].size];
-    [presetToolbarItem setView:presetPullDownView];
-}
-
 - (void)awakeFromNib
 {
 	self.nuPresetName = @"New Preset";
@@ -688,11 +503,7 @@ bail:
 	[previewButton setAltButton:YES];
 	[[FrontAppMonitor notificationCenter] addObserver:self selector:@selector(frontAppChanged:) 
 												 name:@"FrontAppChangedNotification" object:nil];
-	//[self setupToolbar];
-    //[self setupPresetPullDownView];
-	//[helpToolbarItem setView:helpButtonView];
-    
-    
+
     
 	unsigned int n = 0;
 	while (1) {

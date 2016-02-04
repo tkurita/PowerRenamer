@@ -7,27 +7,13 @@
 	IBOutlet id previewDrawer;
 	IBOutlet NSTableView *previewTable;
 	IBOutlet id previewButton;
-	IBOutlet NSView *helpButtonView;
-	IBOutlet NSView *presetPullDownView;
-	IBOutlet id settingsPullDownButton;
 	IBOutlet id presetsController;
 	IBOutlet id newPresetNameWindow;
 	IBOutlet RenameEngine *renameEngine;
 	IBOutlet NSProgressIndicator *progressIndicator;
-    IBOutlet id presetToolbarItem;
-	IBOutlet id helpToolbarItem;
 
-	//unsigned int modeIndex;
-	//NSString *oldText;
-	//NSString *newText;
 	NSMutableDictionary *toolbarItems;
-	//NSNumber *startingNumber;
-	//BOOL leadingZeros;
-	//NSString *newPresetName;
-	//BOOL isStaticMode;
 	NSNumber *idNumber;
-	
-	//BOOL isWorking;
 }
 
 #pragma mark Actions
