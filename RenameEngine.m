@@ -477,7 +477,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	if (_hasNewNames && _isSorted) {
 		[self clearNewNames];
 	}
-    if (_targetDicts != _targetDicts) {
+    if (_targetDicts != array) {
         _targetDicts = nil;
         _targetDicts = array;
     }

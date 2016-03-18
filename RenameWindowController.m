@@ -11,9 +11,6 @@ static NSMutableArray *reservedNumbers = nil;
 @implementation RenameWindowController
 @synthesize oldText = _oldText;
 @synthesize newText = _newText;
-//@synthesize modeIndex = _modeIndex;
-//@synthesize startingNumber = _startingNumber;
-//@synthesize leadingZeros = _leadingZeros;
 
 +(void)initialize
 {
