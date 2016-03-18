@@ -447,7 +447,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 - (BOOL)processRenameAndReturnError:(NSError **)error // rename with Finder
 {
 	NSArray *pathes = [_renamedItems valueForKey:@"hfsPath"];
-	NSArray *newnames = [_renamedItems valueForKey:@"newName"];
+	NSArray *newnames = [_renamedItems valueForKey:@"nuName"];
 	NSDictionary *err_info = nil;
 	id ignore_responses = [[NSUserDefaults standardUserDefaults] 
 									objectForKey:@"ignoringFinderResponses"];
