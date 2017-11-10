@@ -4,18 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>PowerRenamer</string>
-	<key>CFBundleIconFile</key>
-	<string>PowerRenamer.icns</string>
-	<key>CFBundleIdentifier</key>
-	<string>Scriptfactory.PowerRenamer</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleHelpBookFolder</key>
-	<string>PowerRenamerHelp</string>
-	<key>CFBundleHelpBookName</key>
-	<string>Scriptfactory.PowerRenamer.help</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -37,28 +25,40 @@
 			<false/>
 		</dict>
 	</array>
+	<key>CFBundleExecutable</key>
+	<string>PowerRenamer</string>
+	<key>CFBundleGetInfoString</key>
+	<string>${PRODUCT_VERSION} ${COPYRIGHT}</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>PowerRenamerHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>net-script-factory.PowerRenamer.help</string>
+	<key>CFBundleIconFile</key>
+	<string>PowerRenamer.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>PowerRenamer</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleVersion</key>
-	<string>33</string>
 	<key>CFBundleShortVersionString</key>
 	<string>${PRODUCT_VERSION}</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>${COPYRIGHT}</string>
-	<key>CFBundleGetInfoString</key>
-	<string>${PRODUCT_VERSION} ${COPYRIGHT}</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>34</string>
+	<key>DonationURL</key>
+	<string>http://www.script-factory.net/donationproxy.html</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>${COPYRIGHT}</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>DonationURL</key>
-	<string>http://www.script-factory.net/donationproxy.html</string>
 	<key>NSServices</key>
 	<array>
 		<dict>
@@ -79,9 +79,9 @@
 	</array>
 	<key>SUCheckAtStartup</key>
 	<true/>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
 	<string>http://www.script-factory.net/appcast/PowerRenamer.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>

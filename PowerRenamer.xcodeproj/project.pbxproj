@@ -397,6 +397,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					2C85CB620B7B342900C89869 = {
+						DevelopmentTeam = N3YK2F43T4;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 2C85C6D90B7B114200C89869 /* Build configuration list for PBXProject "PowerRenamer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -589,8 +595,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2016";
-				SDKROOT = macosx10.8;
+				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				SDKROOT = macosx10.12;
 			};
 			name = Debug;
 		};
@@ -599,8 +605,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
-				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2016";
-				SDKROOT = macosx10.8;
+				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				SDKROOT = macosx10.12;
 			};
 			name = Release;
 		};
@@ -608,8 +614,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2016";
-				SDKROOT = macosx10.8;
+				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				SDKROOT = macosx10.12;
 			};
 			name = Default;
 		};
@@ -618,9 +624,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -637,8 +645,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
-				PRODUCT_VERSION = 3.4.1;
+				PRODUCT_VERSION = 3.4.2;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -656,9 +665,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -671,8 +682,9 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
-				PRODUCT_VERSION = 3.4.1;
+				PRODUCT_VERSION = 3.4.2;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -690,8 +702,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
+				DEVELOPMENT_TEAM = N3YK2F43T4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -704,8 +718,9 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-licucore";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
-				PRODUCT_VERSION = 3.4.1;
+				PRODUCT_VERSION = 3.4.2;
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
