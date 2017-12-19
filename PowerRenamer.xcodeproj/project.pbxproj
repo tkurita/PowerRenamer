@@ -44,8 +44,8 @@
 		2CB0F31A100D65A60006899A /* wizard32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F319100D65A60006899A /* wizard32.png */; };
 		2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */; };
 		2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE801690F982B1900AD454A /* Carbon.framework */; };
-		2CEC259B1C6214B400A64079 /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
-		2CEC259C1C6214BE00A64079 /* ReferenceProxy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
+		2CEC259B1C6214B400A64079 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
+		2CEC259C1C6214BE00A64079 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
 		2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */; };
 		2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFC788102174C6003C67DB /* RenameItem.m */; };
@@ -77,7 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2CEC259C1C6214BE00A64079 /* ReferenceProxy in CopyFiles */,
+				2CEC259C1C6214BE00A64079 /* DonationReminder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CEC259B1C6214B400A64079 /* ReferenceProxy in Frameworks */,
+				2CEC259B1C6214B400A64079 /* DonationReminder.framework in Frameworks */,
 				2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */,
 				2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */,
 				2C447C400FFFABE1009DA83E /* OSAKit.framework in Frameworks */,
@@ -219,7 +219,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				2C02DFDF1C9A996F00B97137 /* History.rd */,
@@ -411,7 +411,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0820;
 				TargetAttributes = {
 					2C85CB620B7B342900C89869 = {
 						DevelopmentTeam = N3YK2F43T4;
@@ -432,7 +432,7 @@
 				ja,
 				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -655,31 +655,86 @@
 		2C85C6DA0B7B114200C89869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx10.12;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		2C85C6DB0B7B114200C89869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		2C85C6DD0B7B114200C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx;
 			};
 			name = Default;
 		};
@@ -687,7 +742,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2267459931ED55927996FB01 /* Pods-PowerRenamer.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -729,7 +783,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E0176A249BD11355BC080114 /* Pods-PowerRenamer.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -767,7 +820,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C60E48CDE2E9C6FB6EB212F /* Pods-PowerRenamer.default.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
