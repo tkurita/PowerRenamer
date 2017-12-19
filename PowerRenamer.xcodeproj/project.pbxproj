@@ -44,14 +44,13 @@
 		2CB0F31A100D65A60006899A /* wizard32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F319100D65A60006899A /* wizard32.png */; };
 		2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */; };
 		2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE801690F982B1900AD454A /* Carbon.framework */; };
-		2CEC259B1C6214B400A64079 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
-		2CEC259C1C6214BE00A64079 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
-		2CEC25A11C62160E00A64079 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEC25A01C62160E00A64079 /* Sparkle.framework */; };
-		2CEC25A21C62161200A64079 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CEC25A01C62160E00A64079 /* Sparkle.framework */; };
+		2CEC259B1C6214B400A64079 /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
+		2CEC259C1C6214BE00A64079 /* ReferenceProxy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
 		2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEFC3AE10186201003C67DB /* PowerRenamer.icns */; };
 		2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFC788102174C6003C67DB /* RenameItem.m */; };
 		2CEFCA521022F6E0003C67DB /* PreviewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFCA501022F6E0003C67DB /* PreviewTableView.m */; };
+		692EC1052F825F18EFA3F726 /* libPods-PowerRenamer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD646BA35B239D2B2557C7A /* libPods-PowerRenamer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2CEC259C1C6214BE00A64079 /* DonationReminder.framework in CopyFiles */,
-				2CEC25A21C62161200A64079 /* Sparkle.framework in CopyFiles */,
+				2CEC259C1C6214BE00A64079 /* ReferenceProxy in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2267459931ED55927996FB01 /* Pods-PowerRenamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerRenamer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer.debug.xcconfig"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -157,7 +156,6 @@
 		2CEC25911C62115A00A64079 /* localize_ib.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = localize_ib.sh; sourceTree = "<group>"; };
 		2CEC25921C62115A00A64079 /* require_strings_file.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = require_strings_file.sh; sourceTree = "<group>"; };
 		2CEC25931C62146D00A64079 /* DonationReminder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DonationReminder.xcodeproj; path = DonationReminder/DonationReminder.xcodeproj; sourceTree = "<group>"; };
-		2CEC25A01C62160E00A64079 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CEFC3AE10186201003C67DB /* PowerRenamer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PowerRenamer.icns; sourceTree = "<group>"; };
 		2CEFC787102174C6003C67DB /* RenameItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameItem.h; sourceTree = "<group>"; };
@@ -165,6 +163,9 @@
 		2CEFC9681022C9D8003C67DB /* DNDArrayControllerDataTypesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDArrayControllerDataTypesProtocol.h; sourceTree = "<group>"; };
 		2CEFCA4F1022F6E0003C67DB /* PreviewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewTableView.h; sourceTree = "<group>"; };
 		2CEFCA501022F6E0003C67DB /* PreviewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewTableView.m; sourceTree = "<group>"; };
+		6C60E48CDE2E9C6FB6EB212F /* Pods-PowerRenamer.default.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerRenamer.default.xcconfig"; path = "Pods/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer.default.xcconfig"; sourceTree = "<group>"; };
+		9FD646BA35B239D2B2557C7A /* libPods-PowerRenamer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PowerRenamer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0176A249BD11355BC080114 /* Pods-PowerRenamer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerRenamer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,11 +173,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CEC259B1C6214B400A64079 /* DonationReminder.framework in Frameworks */,
+				2CEC259B1C6214B400A64079 /* ReferenceProxy in Frameworks */,
 				2C85CB710B7B342900C89869 /* Cocoa.framework in Frameworks */,
 				2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */,
 				2C447C400FFFABE1009DA83E /* OSAKit.framework in Frameworks */,
-				2CEC25A11C62160E00A64079 /* Sparkle.framework in Frameworks */,
+				692EC1052F825F18EFA3F726 /* libPods-PowerRenamer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +195,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CEC25A01C62160E00A64079 /* Sparkle.framework */,
 				2C447C3F0FFFABE1009DA83E /* OSAKit.framework */,
 				2CE801690F982B1900AD454A /* Carbon.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -219,7 +219,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* Application */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				2C02DFDF1C9A996F00B97137 /* History.rd */,
@@ -234,6 +234,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				2CEC25931C62146D00A64079 /* DonationReminder.xcodeproj */,
+				9B9782D3BC4D852AEF727C6F /* Pods */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -276,6 +277,7 @@
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				9FD646BA35B239D2B2557C7A /* libPods-PowerRenamer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,6 +368,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9B9782D3BC4D852AEF727C6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2267459931ED55927996FB01 /* Pods-PowerRenamer.debug.xcconfig */,
+				E0176A249BD11355BC080114 /* Pods-PowerRenamer.release.xcconfig */,
+				6C60E48CDE2E9C6FB6EB212F /* Pods-PowerRenamer.default.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,11 +385,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C85CB770B7B342900C89869 /* Build configuration list for PBXNativeTarget "PowerRenamer" */;
 			buildPhases = (
+				8CB212C72875807E230060AA /* [CP] Check Pods Manifest.lock */,
 				2C85CB690B7B342900C89869 /* Resources */,
 				2C85CB6D0B7B342900C89869 /* Sources */,
 				2C85CB700B7B342900C89869 /* Frameworks */,
 				2C85CB750B7B342900C89869 /* CopyFiles */,
 				2C85CB740B7B342900C89869 /* ShellScript */,
+				740E1FA621D66155953EAB76 /* [CP] Embed Pods Frameworks */,
+				2731DF4C0B4DBA7B90D4AEBA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -417,7 +432,8 @@
 				ja,
 				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -471,6 +487,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2731DF4C0B4DBA7B90D4AEBA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2C85CB740B7B342900C89869 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -483,6 +514,36 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\n\ncd \"$BUILT_PRODUCTS_DIR\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
+		};
+		740E1FA621D66155953EAB76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CB212C72875807E230060AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -596,6 +657,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx10.12;
 			};
 			name = Debug;
@@ -606,6 +668,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx10.12;
 			};
 			name = Release;
@@ -615,12 +678,14 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COPYRIGHT = "Copyright Tetsuro KURITA, 1999-2017";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx10.12;
 			};
 			name = Default;
 		};
 		2C85CB780B7B342900C89869 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2267459931ED55927996FB01 /* Pods-PowerRenamer.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -662,6 +727,7 @@
 		};
 		2C85CB790B7B342900C89869 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0176A249BD11355BC080114 /* Pods-PowerRenamer.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -699,6 +765,7 @@
 		};
 		2C85CB7B0B7B342900C89869 /* Default */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C60E48CDE2E9C6FB6EB212F /* Pods-PowerRenamer.default.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
