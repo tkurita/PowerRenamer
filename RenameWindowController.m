@@ -47,7 +47,7 @@ static NSMutableArray *reservedNumbers = nil;
 	NSMutableArray *oldtext_history = [user_defaults objectForKey:@"OldTextHistory"];
 	NSMutableArray *newtext_history = [user_defaults objectForKey:@"NewTextHistory"];
 	
-	unsigned int hist_max = [user_defaults integerForKey:@"HistoryMax"];
+	NSInteger hist_max = [user_defaults integerForKey:@"HistoryMax"];
 	if (_oldText && (![_oldText isEqualToString:@""])) {
 		if (![oldtext_history containsObject:_oldText]) {
 			oldtext_history = [oldtext_history mutableCopy];
@@ -494,7 +494,7 @@ bail:
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	[self setOldText:[user_defaults stringForKey:@"LastOldText"]];
 	[self setNewText:[user_defaults stringForKey:@"LastNewText"]];
-	[self setModeIndex:[user_defaults integerForKey:@"ModeIndex"]];
+	[self setModeIndex:(unsigned int)[user_defaults integerForKey:@"ModeIndex"]];
 	[self setStartingNumber:[user_defaults objectForKey:@"StartingNumber"]];
 	[self setLeadingZeros:[user_defaults boolForKey:@"LeadingZeros"]];
 	[previewButton setAltButton:YES];

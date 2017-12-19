@@ -11,6 +11,7 @@
 
 - (void)setNormalizationForm:(CFStringNormalizationForm)nf;
 - (void)nameChanged;
+- (void)resolveIcon;
 
 @property (nonatomic, strong) NSString *hfsPath;
 @property (nonatomic, strong) NSString *posixPath;

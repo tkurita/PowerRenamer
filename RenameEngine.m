@@ -22,7 +22,8 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 	if (err_info) {
 		NSLog(@"%@", [err_info description]);
 	}	
-	[FINDER_SELECTION_CONTROLLER executeHandlerWithName:@"initialize" arguments:nil error:&err_info];
+	[FINDER_SELECTION_CONTROLLER executeHandlerWithName:@"initialize"
+                                              arguments:@[] error:&err_info];
 	if (err_info) {
 		NSLog(@"%@", [err_info description]);
 	}
@@ -30,7 +31,7 @@ static OSAScript *FINDER_SELECTION_CONTROLLER;
 
 CFStringNormalizationForm UnicodeNormalizationForm()
 {
-	int unf = [[NSUserDefaults standardUserDefaults] integerForKey:@"UnicodeNormalizationIndex"];
+	NSInteger unf = [[NSUserDefaults standardUserDefaults] integerForKey:@"UnicodeNormalizationIndex"];
 	CFStringNormalizationForm result;
 	switch (unf) {
 		case 0:
@@ -300,7 +301,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	
 	if (mode == kNumberingMode) {
 		if ([optionProvider leadingZeros]) {
-			int len = [_targetDicts count] + (n-1);
+			unsigned long len = [_targetDicts count] + (n-1);
 			int totalfigure = 1;
 			while(len >= 10) {
 				totalfigure++;
@@ -393,10 +394,10 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	NSAppleEventDescriptor *script_result = nil;
 	if (sortFlag) {
 		script_result = [_finderSelectionController executeHandlerWithName:@"sorted_finderselection"
-																arguments:nil error:&err_info];
+																arguments:@[] error:&err_info];
 	} else {
 		script_result = [_finderSelectionController executeHandlerWithName:@"get_finderselection"
-																arguments:nil error:&err_info];
+																arguments:@[] error:&err_info];
 	}
 	BOOL result = NO;
 	if (err_info) {
@@ -411,7 +412,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 
 		return result;
 	}
-	unsigned int nfile = [script_result numberOfItems];
+	NSInteger nfile = [script_result numberOfItems];
 	if (!nfile) {
 		NSDictionary *udict = @{NSLocalizedDescriptionKey: NSLocalizedString(@"NoSelection", @"")};
 		*error = [NSError errorWithDomain:@"PowerRenamerError" code:2 userInfo:udict];

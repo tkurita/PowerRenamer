@@ -229,8 +229,8 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 {	
 	// If any of the removed objects come before the insertion index,
 	// we need to decrement the index appropriately
-	unsigned int adjustedInsertIndex =
-	insertIndex - [fromIndexSet countOfIndexesInRange:(NSRange){0, insertIndex}];
+	unsigned long adjustedInsertIndex =
+            insertIndex - [fromIndexSet countOfIndexesInRange:(NSRange){0, insertIndex}];
 	NSRange destinationRange = NSMakeRange(adjustedInsertIndex, [fromIndexSet count]);
 	NSIndexSet *destinationIndexes = [NSIndexSet indexSetWithIndexesInRange:destinationRange];
 	
