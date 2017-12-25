@@ -55,6 +55,11 @@
 	<string>YES</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>${COPYRIGHT}</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

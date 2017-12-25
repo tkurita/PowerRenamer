@@ -18,7 +18,6 @@
 		2C1B2CDF1C61CEB900C62B86 /* PathExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B2CDA1C61CEB900C62B86 /* PathExtra.m */; };
 		2C1B2CE31C61CF2900C62B86 /* StringExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B2CE21C61CF2900C62B86 /* StringExtra.m */; };
 		2C219C1B1991C97D001A2D35 /* FilenameComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */; };
-		2C278C8B100ECD230092CFDE /* plus24.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C278C8A100ECD230092CFDE /* plus24.png */; };
 		2C278CD0100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */; };
 		2C447C400FFFABE1009DA83E /* OSAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C447C3F0FFFABE1009DA83E /* OSAKit.framework */; };
 		2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C447DBC1000EE36009DA83E /* AltActionButton.m */; };
@@ -36,11 +35,14 @@
 		2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A199101061300060A187 /* ModeIndexTransformer.m */; };
 		2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */; };
 		2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A5E81013154B0060A187 /* DNDArrayController.m */; };
-		2CA9A71510153DA70060A187 /* plus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9A71310153DA70060A187 /* plus.tiff */; };
-		2CA9A71610153DA70060A187 /* minus.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CA9A71410153DA70060A187 /* minus.tiff */; };
 		2CB0F31A100D65A60006899A /* wizard32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F319100D65A60006899A /* wizard32.png */; };
-		2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */; };
 		2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE801690F982B1900AD454A /* Carbon.framework */; };
+		2CEB2DE01FF098F800DD7D6A /* plus.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DDF1FF098F800DD7D6A /* plus.icns */; };
+		2CEB2DE21FF0992400DD7D6A /* minus.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DE11FF0992400DD7D6A /* minus.icns */; };
+		2CEB2DE41FF099F800DD7D6A /* plus-small.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DE31FF099F800DD7D6A /* plus-small.icns */; };
+		2CEB2DEF1FF0CE9300DD7D6A /* wizard32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DEE1FF0CE9300DD7D6A /* wizard32@2x.png */; };
+		2CEB2DF11FF0D2AA00DD7D6A /* pulldown_arrow_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DF01FF0D2AA00DD7D6A /* pulldown_arrow_small.png */; };
+		2CEB2DF31FF0D33900DD7D6A /* pulldown_arrow_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DF21FF0D33900DD7D6A /* pulldown_arrow_small@2x.png */; };
 		2CEC259B1C6214B400A64079 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
 		2CEC259C1C6214BE00A64079 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
@@ -106,7 +108,6 @@
 		2C1B2CE21C61CF2900C62B86 /* StringExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringExtra.m; sourceTree = "<group>"; };
 		2C219C191991C97D001A2D35 /* FilenameComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilenameComboBox.h; sourceTree = "<group>"; };
 		2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilenameComboBox.m; sourceTree = "<group>"; };
-		2C278C8A100ECD230092CFDE /* plus24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus24.png; sourceTree = "<group>"; };
 		2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDummyAtFirstTransformer.m; sourceTree = "<group>"; };
 		2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDummyAtFirstTransformer.h; sourceTree = "<group>"; };
 		2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameOptionsProtocol.h; sourceTree = "<group>"; };
@@ -135,11 +136,14 @@
 		2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeIsNotNumberingTransfomer.m; sourceTree = "<group>"; };
 		2CA9A5E81013154B0060A187 /* DNDArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNDArrayController.m; sourceTree = "<group>"; };
 		2CA9A5E91013154B0060A187 /* DNDArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNDArrayController.h; sourceTree = "<group>"; };
-		2CA9A71310153DA70060A187 /* plus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plus.tiff; sourceTree = "<group>"; };
-		2CA9A71410153DA70060A187 /* minus.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minus.tiff; sourceTree = "<group>"; };
 		2CB0F319100D65A60006899A /* wizard32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard32.png; sourceTree = "<group>"; };
-		2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = pulldown_arrow_small.tiff; sourceTree = "<group>"; };
 		2CE801690F982B1900AD454A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		2CEB2DDF1FF098F800DD7D6A /* plus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = plus.icns; sourceTree = "<group>"; };
+		2CEB2DE11FF0992400DD7D6A /* minus.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = minus.icns; sourceTree = "<group>"; };
+		2CEB2DE31FF099F800DD7D6A /* plus-small.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "plus-small.icns"; sourceTree = "<group>"; };
+		2CEB2DEE1FF0CE9300DD7D6A /* wizard32@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wizard32@2x.png"; sourceTree = "<group>"; };
+		2CEB2DF01FF0D2AA00DD7D6A /* pulldown_arrow_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulldown_arrow_small.png; sourceTree = "<group>"; };
+		2CEB2DF21FF0D33900DD7D6A /* pulldown_arrow_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pulldown_arrow_small@2x.png"; sourceTree = "<group>"; };
 		2CEC25931C62146D00A64079 /* DonationReminder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DonationReminder.xcodeproj; path = DonationReminder/DonationReminder.xcodeproj; sourceTree = "<group>"; };
 		2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2CEFC3AE10186201003C67DB /* PowerRenamer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PowerRenamer.icns; sourceTree = "<group>"; };
@@ -248,12 +252,14 @@
 				2C02DFE61C9AA64900B97137 /* MainMenu.xib */,
 				2C02DFE81C9AA64900B97137 /* PreferencesWindow.xib */,
 				2C02DFEA1C9AA64900B97137 /* RenameWindow.xib */,
+				2CEB2DF01FF0D2AA00DD7D6A /* pulldown_arrow_small.png */,
+				2CEB2DF21FF0D33900DD7D6A /* pulldown_arrow_small@2x.png */,
 				2CEFC3AE10186201003C67DB /* PowerRenamer.icns */,
-				2CA9A71310153DA70060A187 /* plus.tiff */,
-				2CA9A71410153DA70060A187 /* minus.tiff */,
-				2C278C8A100ECD230092CFDE /* plus24.png */,
-				2CB0F409100E496A0006899A /* pulldown_arrow_small.tiff */,
+				2CEB2DE11FF0992400DD7D6A /* minus.icns */,
+				2CEB2DDF1FF098F800DD7D6A /* plus.icns */,
+				2CEB2DE31FF099F800DD7D6A /* plus-small.icns */,
 				2CB0F319100D65A60006899A /* wizard32.png */,
+				2CEB2DEE1FF0CE9300DD7D6A /* wizard32@2x.png */,
 				2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */,
 				2C061F1310231DAD004E7EDC /* Credits.rtf */,
 				2C54277B0B7C05B900820867 /* HelpSetup.plist */,
@@ -449,14 +455,16 @@
 				2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */,
 				2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */,
 				2CB0F31A100D65A60006899A /* wizard32.png in Resources */,
-				2CB0F40A100E496A0006899A /* pulldown_arrow_small.tiff in Resources */,
-				2C278C8B100ECD230092CFDE /* plus24.png in Resources */,
-				2CA9A71510153DA70060A187 /* plus.tiff in Resources */,
-				2CA9A71610153DA70060A187 /* minus.tiff in Resources */,
 				2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */,
+				2CEB2DF31FF0D33900DD7D6A /* pulldown_arrow_small@2x.png in Resources */,
+				2CEB2DF11FF0D2AA00DD7D6A /* pulldown_arrow_small.png in Resources */,
+				2CEB2DE41FF099F800DD7D6A /* plus-small.icns in Resources */,
 				2CF96B451FEB2DB0000ACAA8 /* ServicesMenu.strings in Resources */,
+				2CEB2DEF1FF0CE9300DD7D6A /* wizard32@2x.png in Resources */,
 				2C061F1410231DAD004E7EDC /* Credits.rtf in Resources */,
 				2C1B2CDE1C61CEB900C62B86 /* PathExtra_Localizable.strings in Resources */,
+				2CEB2DE01FF098F800DD7D6A /* plus.icns in Resources */,
+				2CEB2DE21FF0992400DD7D6A /* minus.icns in Resources */,
 				2C79A0891C630A0700D8C63C /* PowerRenamerHelp in Resources */,
 				2C02DFEC1C9AA64900B97137 /* MainMenu.xib in Resources */,
 				2C02DFED1C9AA64900B97137 /* PreferencesWindow.xib in Resources */,
@@ -725,22 +733,15 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
 				PRODUCT_VERSION = 3.4.2;
@@ -766,18 +767,11 @@
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
 				PRODUCT_VERSION = 3.4.2;
@@ -802,18 +796,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_TEAM = N3YK2F43T4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
 				PRODUCT_VERSION = 3.4.2;
