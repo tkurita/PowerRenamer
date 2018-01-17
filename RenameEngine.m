@@ -270,7 +270,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 		NSMutableString *newname = [oldname mutableCopy];
 		[invocation setTarget:newname];
 		[invocation invoke];
-		unsigned int result = 0;
+		NSUInteger result = 0;
 		[invocation getReturnValue:&result];
 		if (result && ![newname isEqualToString:oldname]) {
 			NSString *dirpath = [[item posixPath] stringByDeletingLastPathComponent];
