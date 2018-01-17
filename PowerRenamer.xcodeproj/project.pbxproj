@@ -110,6 +110,7 @@
 		2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilenameComboBox.m; sourceTree = "<group>"; };
 		2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDummyAtFirstTransformer.m; sourceTree = "<group>"; };
 		2C278CCF100ECE8C0092CFDE /* AddDummyAtFirstTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDummyAtFirstTransformer.h; sourceTree = "<group>"; };
+		2C3EC42C200F23EC00AB9246 /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; lineEnding = 0; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		2C447B640FFE2E73009DA83E /* RenameOptionsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameOptionsProtocol.h; sourceTree = "<group>"; };
 		2C447C3F0FFFABE1009DA83E /* OSAKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSAKit.framework; path = /System/Library/Frameworks/OSAKit.framework; sourceTree = "<absolute>"; };
 		2C447DBB1000EE36009DA83E /* AltActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltActionButton.h; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2C3EC42C200F23EC00AB9246 /* Makefile */,
 				2C02DFDF1C9A996F00B97137 /* History.rd */,
 				2C5B7DE80FF0985F00D5ED31 /* Classes */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
