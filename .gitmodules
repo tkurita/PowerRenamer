@@ -10,3 +10,15 @@
 [submodule "DonationReminder"]
 	path = DonationReminder
 	url = https://github.com/tkurita/DonationReminder.git
+[submodule "LigraryScripts/XText.scptd"]
+	path = LibraryScripts/XText.scptd
+	url = https://github.com/tkurita/XText.scptd
+[submodule "LibraryScripts/XList.scptd"]
+	path = LibraryScripts/XList.scptd
+	url = https://github.com/tkurita/XList.scptd
+[submodule "LibraryScripts/FileSorter.scptd"]
+	path = LibraryScripts/FileSorter.scptd
+	url = https://github.com/tkurita/FileSorter.scptd
+[submodule "LibraryScripts/SortEngine.scptd"]
+	path = LibraryScripts/SortEngine.scptd
+	url = https://github.com/tkurita/SortEngine.scptd

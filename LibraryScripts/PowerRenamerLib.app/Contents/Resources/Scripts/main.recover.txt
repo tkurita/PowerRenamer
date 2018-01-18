@@ -1,0 +1,1 @@
+property parent : clone() of application (get "ModuleLoader")
