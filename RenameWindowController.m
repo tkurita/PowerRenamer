@@ -46,11 +46,16 @@ static NSMutableArray *reservedNumbers = nil;
 	NSUserDefaults *user_defaults = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *oldtext_history = [user_defaults objectForKey:@"OldTextHistory"];
 	NSMutableArray *newtext_history = [user_defaults objectForKey:@"NewTextHistory"];
-	
+    
 	NSInteger hist_max = [user_defaults integerForKey:@"HistoryMax"];
 	if (_oldText && (![_oldText isEqualToString:@""])) {
 		if (![oldtext_history containsObject:_oldText]) {
-			oldtext_history = [oldtext_history mutableCopy];
+            if (oldtext_history) {
+                oldtext_history = [oldtext_history mutableCopy];
+            } else {
+                oldtext_history = [NSMutableArray array];
+            }
+                
 			[oldtext_history insertObject:_oldText atIndex:0];
 			if ([oldtext_history count] > hist_max) {
 				[oldtext_history removeLastObject];
@@ -61,7 +66,11 @@ static NSMutableArray *reservedNumbers = nil;
 	
 	if ( _newText && (![_newText isEqualToString:@""])) {
 		if (![newtext_history containsObject:_newText]) {
-			newtext_history = [newtext_history mutableCopy];
+            if (newtext_history) {
+                newtext_history = [newtext_history mutableCopy];
+            } else {
+                newtext_history = [NSMutableArray array];
+            }
 			[newtext_history insertObject:_newText atIndex:0];
 			if ([newtext_history count] > hist_max) {
 				[newtext_history removeLastObject];
