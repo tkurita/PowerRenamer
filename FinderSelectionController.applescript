@@ -1,5 +1,6 @@
-property FileSorter : module
-property _ : boot (module loader of application (get "PowerRenamerLib")) for me
+property FileSorter : "@module"
+property _only_local_ : true
+property _ : script "ModuleLoader"'s setup(me)
 
 on get_finderselection_tiger()
 	with timeout of 3600 seconds

@@ -1,6 +1,6 @@
 #import "RenameItem.h"
-#import "StringExtra.h"
-#import "PathExtra.h"
+#import "StringExtra/StringExtra.h"
+#import "PathExtra/PathExtra.h"
 
 #define useLog 0
 

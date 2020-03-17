@@ -1,6 +1,6 @@
 #import "RenameEngine.h"
-#import "PathExtra.h"
-#import "StringExtra.h"
+#import "PathExtra/PathExtra.h"
+#import "StringExtra/StringExtra.h"
 #import "RenameItem.h"
 
 typedef enum RenameMode RenameMode;
