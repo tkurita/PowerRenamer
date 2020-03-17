@@ -28,11 +28,11 @@
 	<key>CFBundleExecutable</key>
 	<string>PowerRenamer</string>
 	<key>CFBundleGetInfoString</key>
-	<string>${PRODUCT_VERSION} ${COPYRIGHT}</string>
+	<string>$(MARKETING_VERSION) ${COPYRIGHT}</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>PowerRenamerHelp</string>
 	<key>CFBundleHelpBookName</key>
-	<string>net-script-factory.PowerRenamer.help</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER).help</string>
 	<key>CFBundleIconFile</key>
 	<string>PowerRenamer.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -44,22 +44,22 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>${PRODUCT_VERSION}</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>36</string>
+	<string>37</string>
 	<key>DonationURL</key>
 	<string>http://www.script-factory.net/donationproxy.html</string>
-	<key>NSAppleScriptEnabled</key>
-	<string>YES</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>${COPYRIGHT}</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSAppleScriptEnabled</key>
+	<string>YES</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>${COPYRIGHT}</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
