@@ -399,6 +399,7 @@
 				2C85CB750B7B342900C89869 /* CopyFiles */,
 				2C85CB740B7B342900C89869 /* ShellScript */,
 				740E1FA621D66155953EAB76 /* [CP] Embed Pods Frameworks */,
+				2CAF8326242374C600310E7A /* ShellScript */,
 			);
 			buildRules = (
 				2C84219A241FC9E100195EEE /* PBXBuildRule */,
@@ -504,8 +505,27 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
+			shellPath = "/bin/zsh -l";
 			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\n\ncd \"$BUILT_PRODUCTS_DIR\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CAF8326242374C600310E7A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "codesign --verbose --force --deep -o runtime \\\n--sign \"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\" \\\n\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Frameworks/Sparkle.framework/Versions/A/Resources/AutoUpdate.app\"\n";
+			showEnvVarsInLog = 0;
 		};
 		740E1FA621D66155953EAB76 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -771,7 +791,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -810,7 +830,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -844,7 +864,7 @@
 				CODE_SIGN_ENTITLEMENTS = PowerRenamer.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;

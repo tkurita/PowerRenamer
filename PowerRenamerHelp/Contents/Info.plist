@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en_US</string>
 	<key>CFBundleIdentifier</key>
-	<string>net-script-factory.PowerRenamer.help</string>
+	<string>net.script-factory.PowerRenamer.help</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -9,5 +9,5 @@ install: trash clean
 	xcodebuild -workspace PowerRenamer.xcworkspace -scheme PowerRenamer install DSTROOT=${HOME}
 
 clean:
-	xcodebuild -workspace PowerRenamer.xcworkspace -scheme PowerRenamer clean DSTROOT=${HOME}
+	xcodebuild -workspace PowerRenamer.xcworkspace -scheme PowerRenamer clean
 
