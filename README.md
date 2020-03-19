@@ -4,18 +4,21 @@ Change names of selected items in Finder with searching and replacing strings.
 
 ## Usage
 English :
-* http://www.script-factory.net/software/FinderHelpers/PowerRenamer/en/index.html
+* https://www.script-factory.net/software/FinderHelpers/PowerRenamer/en/index.html
 Japanese :
-* http://www.script-factory.net/software/FinderHelpers/PowerRenamer/index.html
+* https://www.script-factory.net/software/FinderHelpers/PowerRenamer/index.html
 
 ## Building
 Reqirements :
-* Mac OS X 10.8 or later.
-* Xcode 4.6.2 or later.
+* OS X 10.9 or later.
+* Xcode
+* [ModuleLoader]
+
+[ModuleLoader]: https://www.script-factory.net/XModules/ModuleLoader/en/index.html
 
 ## Licence
 
-Copyright &copy; 2007-2016 Tetsuro Kurita
+Copyright &copy; 2007-2020 Kurita Tetsuro
 Licensed under the [GPL license][GPL].
  
 [GPL]: http://www.gnu.org/licenses/gpl.html
