@@ -11,7 +11,7 @@
 	<key>ModeIndex</key>
 	<integer>0</integer>
 	<key>AutoQuit</key>
-	<true/>
+	<false/>
 	<key>UseFloatingWindow</key>
 	<false/>
 	<key>HistoryMax</key>
