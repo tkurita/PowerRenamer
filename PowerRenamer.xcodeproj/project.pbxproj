@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,6 +67,7 @@
 			outputFiles = (
 				$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt,
 			);
+			runOncePerArchitecture = 0;
 			script = "# Type a script or drag a script file from your workspace to insert its path.\n#printenv\ncd \"$INPUT_FILE_DIR\"\n/usr/bin/osacompile -l AppleScript -d -o \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt\" \"$INPUT_FILE_NAME\"\n";
 		};
 /* End PBXBuildRule section */
@@ -420,11 +421,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
-				TargetAttributes = {
-					2C85CB620B7B342900C89869 = {
-						ProvisioningStyle = Automatic;
-					};
-				};
 			};
 			buildConfigurationList = 2C85C6D90B7B114200C89869 /* Build configuration list for PBXProject "PowerRenamer" */;
 			compatibilityVersion = "Xcode 8.0";
@@ -788,10 +784,11 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = PowerRenamer.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -801,7 +798,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.4.3;
+				MARKETING_VERSION = 3.4.4b;
 				ONLY_ACTIVE_ARCH = YES;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
@@ -814,6 +811,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -827,17 +825,18 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = PowerRenamer.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.4.3;
+				MARKETING_VERSION = 3.4.4b;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -849,6 +848,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -862,16 +862,17 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = PowerRenamer.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.4.3;
+				MARKETING_VERSION = 3.4.4b;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -883,6 +884,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PowerRenamer";
 				PRODUCT_NAME = PowerRenamer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				VERSIONING_SYSTEM = "apple-generic";

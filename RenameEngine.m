@@ -430,15 +430,28 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	return result;
 }
 
+// sort to rename from subitems
+- (NSArray *)sortedRenameItems
+{
+    NSSortDescriptor *sort_desc = [NSSortDescriptor
+                                   sortDescriptorWithKey:@"self.posixPath" ascending:NO];
+    return [_renamedItems sortedArrayUsingDescriptors:@[sort_desc]];
+}
+
 - (BOOL)applyNewNamesAndReturnError:(NSError **)error // rename with NSFileManager
 {
 	NSFileManager *fm = [NSFileManager defaultManager];
 	BOOL result = NO;
-	for (RenameItem *ritem in _renamedItems) {
+    for (RenameItem *ritem in [self sortedRenameItems]) {
 		NSString *src = [ritem posixPath];
 		NSString *dest = [[src stringByDeletingLastPathComponent]
 						  stringByAppendingPathComponent:ritem.nuName];
 		result = [fm moveItemAtPath:src toPath:dest error:error];
+#if useLog
+        NSLog(@"source path: %@", src);
+        NSLog(@"dest path: %@", dest);
+        if (!result) NSLog(@"error: %@", *error);
+#endif
 		if (!result) break;
 	}
 	
@@ -447,8 +460,9 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 
 - (BOOL)processRenameAndReturnError:(NSError **)error // rename with Finder
 {
-	NSArray *pathes = [_renamedItems valueForKey:@"hfsPath"];
-	NSArray *newnames = [_renamedItems valueForKey:@"nuName"];
+    NSArray *sorted_array = [self sortedRenameItems];
+    NSArray *pathes = [sorted_array valueForKey:@"hfsPath"];
+	NSArray *newnames = [sorted_array valueForKey:@"nuName"];
 	NSDictionary *err_info = nil;
 	id ignore_responses = [[NSUserDefaults standardUserDefaults] 
 									objectForKey:@"ignoringFinderResponses"];
@@ -458,7 +472,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 												error:&err_info];
 	if (err_info) {
 #if useLog
-		NSLog([err_info description]);
+		NSLog(@"error: %@", [err_info description]);
 #endif
 		NSString *msg = [NSString stringWithFormat:@"AppleScript Error : %@ (%@)",
 						 err_info[OSAScriptErrorMessage],

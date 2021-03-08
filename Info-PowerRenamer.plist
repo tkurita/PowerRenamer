@@ -48,11 +48,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>38</string>
+	<string>39</string>
 	<key>DonationURL</key>
 	<string>https://www.script-factory.net/donationproxy.html</string>
-	<key>NSSystemAdministrationUsageDescription</key>
-	<string>This application needs access to administer this system to run.</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>NSAppTransportSecurity</key>
@@ -60,6 +58,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>This application needs to control other applications to run.</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSHumanReadableCopyright</key>
@@ -86,13 +86,13 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSSystemAdministrationUsageDescription</key>
+	<string>This application needs access to administer this system to run.</string>
 	<key>SUCheckAtStartup</key>
 	<true/>
 	<key>SUFeedURL</key>
 	<string>https://www.script-factory.net/appcast/PowerRenamer.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
-	<key>NSAppleEventsUsageDescription</key>
-	<string>This application needs to control other applications to run.</string>
 </dict>
 </plist>
