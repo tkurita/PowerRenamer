@@ -21,6 +21,7 @@
 		2C278CD0100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C278CCE100ECE8C0092CFDE /* AddDummyAtFirstTransformer.m */; };
 		2C447C400FFFABE1009DA83E /* OSAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C447C3F0FFFABE1009DA83E /* OSAKit.framework */; };
 		2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C447DBC1000EE36009DA83E /* AltActionButton.m */; };
+		2C52396F25F73D8400D8CCA6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C52396E25F73D8400D8CCA6 /* Media.xcassets */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
 		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
 		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (); }; };
@@ -35,14 +36,7 @@
 		2CA9A19B101061300060A187 /* ModeIndexTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A199101061300060A187 /* ModeIndexTransformer.m */; };
 		2CA9A1CC10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A1CA10107BEE0060A187 /* ModeIsNotNumberingTransfomer.m */; };
 		2CA9A5EA1013154B0060A187 /* DNDArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9A5E81013154B0060A187 /* DNDArrayController.m */; };
-		2CB0F31A100D65A60006899A /* wizard32.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB0F319100D65A60006899A /* wizard32.png */; };
 		2CE8016A0F982B1900AD454A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE801690F982B1900AD454A /* Carbon.framework */; };
-		2CEB2DE01FF098F800DD7D6A /* plus.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DDF1FF098F800DD7D6A /* plus.icns */; };
-		2CEB2DE21FF0992400DD7D6A /* minus.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DE11FF0992400DD7D6A /* minus.icns */; };
-		2CEB2DE41FF099F800DD7D6A /* plus-small.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DE31FF099F800DD7D6A /* plus-small.icns */; };
-		2CEB2DEF1FF0CE9300DD7D6A /* wizard32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DEE1FF0CE9300DD7D6A /* wizard32@2x.png */; };
-		2CEB2DF11FF0D2AA00DD7D6A /* pulldown_arrow_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DF01FF0D2AA00DD7D6A /* pulldown_arrow_small.png */; };
-		2CEB2DF31FF0D33900DD7D6A /* pulldown_arrow_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB2DF21FF0D33900DD7D6A /* pulldown_arrow_small@2x.png */; };
 		2CEC259B1C6214B400A64079 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; };
 		2CEC259C1C6214BE00A64079 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CEC25981C62146D00A64079 /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2CED51C50F986DDC007CD3B4 /* dsa_pub.pem */; };
@@ -132,6 +126,7 @@
 		2C447C3F0FFFABE1009DA83E /* OSAKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSAKit.framework; path = /System/Library/Frameworks/OSAKit.framework; sourceTree = "<absolute>"; };
 		2C447DBB1000EE36009DA83E /* AltActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AltActionButton.h; sourceTree = "<group>"; };
 		2C447DBC1000EE36009DA83E /* AltActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltActionButton.m; sourceTree = "<group>"; };
+		2C52396E25F73D8400D8CCA6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 0; path = HelpSetup.plist; sourceTree = "<group>"; };
 		2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameWindowController.h; sourceTree = "<group>"; };
 		2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameWindowController.m; sourceTree = "<group>"; };
@@ -287,6 +282,7 @@
 				2C85CB7C0B7B342900C89869 /* Info-PowerRenamer.plist */,
 				2C85CC210B7B398100C89869 /* FactorySettings.plist */,
 				2C79A0881C630A0700D8C63C /* PowerRenamerHelp */,
+				2C52396E25F73D8400D8CCA6 /* Media.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -423,7 +419,7 @@
 				LastUpgradeCheck = 1130;
 			};
 			buildConfigurationList = 2C85C6D90B7B114200C89869 /* Build configuration list for PBXProject "PowerRenamer" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -470,17 +466,11 @@
 				2CF96B3F1FEB2D9D000ACAA8 /* InfoPlist.strings in Resources */,
 				2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */,
 				2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */,
-				2CB0F31A100D65A60006899A /* wizard32.png in Resources */,
 				2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */,
-				2CEB2DF31FF0D33900DD7D6A /* pulldown_arrow_small@2x.png in Resources */,
-				2CEB2DF11FF0D2AA00DD7D6A /* pulldown_arrow_small.png in Resources */,
-				2CEB2DE41FF099F800DD7D6A /* plus-small.icns in Resources */,
 				2CF96B451FEB2DB0000ACAA8 /* ServicesMenu.strings in Resources */,
-				2CEB2DEF1FF0CE9300DD7D6A /* wizard32@2x.png in Resources */,
 				2C061F1410231DAD004E7EDC /* Credits.rtf in Resources */,
 				2C1B2CDE1C61CEB900C62B86 /* PathExtra_Localizable.strings in Resources */,
-				2CEB2DE01FF098F800DD7D6A /* plus.icns in Resources */,
-				2CEB2DE21FF0992400DD7D6A /* minus.icns in Resources */,
+				2C52396F25F73D8400D8CCA6 /* Media.xcassets in Resources */,
 				2C79A0891C630A0700D8C63C /* PowerRenamerHelp in Resources */,
 				2C02DFEC1C9AA64900B97137 /* MainMenu.xib in Resources */,
 				2C02DFED1C9AA64900B97137 /* PreferencesWindow.xib in Resources */,
@@ -698,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -736,7 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -773,7 +763,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Default;
@@ -788,7 +778,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -829,7 +819,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -865,7 +855,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
