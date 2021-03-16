@@ -9,10 +9,10 @@
 "5.label" = "プリセット";
 
 /* Class = "NSButtonCell"; title = "フローティングウインドウを使う。"; ObjectID = "10"; */
-"10.title" = "フローティングウインドウを使う。";
+"10.title" = "フローティングウインドウを使う";
 
 /* Class = "NSButtonCell"; title = "処理を実行したら自動的に終了。"; ObjectID = "11"; */
-"11.title" = "処理を実行したら自動的に終了。";
+"11.title" = "処理を実行したら自動的に終了";
 
 /* Class = "NSTableColumn"; headerCell.title = "名前"; ObjectID = "17"; */
 "17.headerCell.title" = "名前";
@@ -84,10 +84,10 @@
 "168.title" = "Finder からの応答を無視して高速化";
 
 /* Class = "NSButtonCell"; title = "最後のウインドウを閉じたら終了。"; ObjectID = "172"; */
-"172.title" = "最後のウインドウを閉じたら終了。";
+"172.title" = "最後のウインドウを閉じたら終了";
 
 /* Class = "NSButtonCell"; title = "大文字小文字を無視する。"; ObjectID = "174"; */
-"174.title" = "大文字小文字を無視する。";
+"174.title" = "大文字小文字を無視する";
 
 /* Class = "NSMenu"; title = "Unicode 正規化"; ObjectID = "187"; */
 "187.title" = "Unicode 正規化";
@@ -107,8 +107,8 @@
 /* Class = "NSMenuItem"; title = "NFKC"; ObjectID = "193"; */
 "193.title" = "NFKC";
 
-/* Class = "NSButtonCell"; title = "Finder を使ってリネーム。"; ObjectID = "199"; */
-"199.title" = "Finder を使ってリネーム。";
+/* Class = "NSButtonCell"; title = "Finder を使ってリネーム"; ObjectID = "199"; */
+"199.title" = "Finder を使ってリネーム";
 
 /* Class = "NSTextFieldCell"; title = "オフにすると、いくらか処理速度が向上しますが、リネームを実行すると Finder での選択がキャンセルされます。"; ObjectID = "202"; */
-"202.title" = "オフにすると、いくらか処理速度が向上しますが、リネームを実行すると Finder での選択がキャンセルされます。";
+"202.title" = "オフにすると、いくらか処理速度が向上しますが、OS X 10.8 以前のシステムでは、リネームを実行すると Finder での選択がキャンセルされます。";

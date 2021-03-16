@@ -85,6 +85,6 @@
 	<key>UnicodeNormalizationIndex</key>
 	<integer>1</integer>
 	<key>RenameWithFinder</key>
-	<true/>
+	<false/>
 </dict>
 </plist>
