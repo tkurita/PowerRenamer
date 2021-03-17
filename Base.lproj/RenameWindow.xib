@@ -520,7 +520,6 @@ DQ
                 <outlet property="actionTarget" destination="-2" id="387"/>
                 <outlet property="helpButtonView" destination="124" id="384"/>
                 <outlet property="presetPullDownView" destination="140" id="385"/>
-                <outlet property="settingsPullDownButton" destination="283" id="386"/>
             </connections>
         </customObject>
     </objects>

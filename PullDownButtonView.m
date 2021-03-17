@@ -15,7 +15,6 @@
     [[settingsPullDownButton cell] setUsesItemFromMenu:NO];
     NSMenuItem *item = [[NSMenuItem allocWithZone:nil] initWithTitle:@"" action:NULL keyEquivalent:@""];
     NSImage *icon_image = [NSImage imageNamed:@"wizard32"];
-    NSLog(@"icon_image : %@", [icon_image description]);
     NSImage *arrow_image = [NSImage imageNamed:@"pulldown_arrow_small"];
     NSSize icon_size = [icon_image size];
     NSSize arrow_size = [arrow_image size];

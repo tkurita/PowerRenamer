@@ -396,7 +396,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 		script_result = [_finderSelectionController executeHandlerWithName:@"sorted_finderselection"
 																arguments:@[] error:&err_info];
 	} else {
-		script_result = [_finderSelectionController executeHandlerWithName:@"get_finderselection"
+		script_result = [_finderSelectionController executeHandlerWithName:@"get_finderselection_as_posix_path"
 																arguments:@[] error:&err_info];
 	}
 	BOOL result = NO;
@@ -421,7 +421,7 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:nfile];
 	for (unsigned int i=1; i <= nfile; i++) {
 		NSString *path = [[script_result descriptorAtIndex:i] stringValue];
-		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:path normalization:normalizationForm];
+		RenameItem *rename_item = [RenameItem renameItemWithPath:path normalization:normalizationForm];
 		[target_dicts addObject:rename_item];
 	}
 	result = YES;
@@ -461,15 +461,16 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 - (BOOL)processRenameAndReturnError:(NSError **)error // rename with Finder
 {
     NSArray *sorted_array = [self sortedRenameItems];
-    NSArray *pathes = [sorted_array valueForKey:@"hfsPath"];
+    NSArray *pathes = [sorted_array valueForKey:@"posixPath"];
 	NSArray *newnames = [sorted_array valueForKey:@"nuName"];
 	NSDictionary *err_info = nil;
 	id ignore_responses = [[NSUserDefaults standardUserDefaults] 
 									objectForKey:@"ignoringFinderResponses"];
-	[_finderSelectionController executeHandlerWithName:@"process_rename"
-					arguments:@[pathes, newnames,
-									ignore_responses]
-												error:&err_info];
+    
+    [_finderSelectionController executeHandlerWithName:@"process_rename_posix_pathes"
+                    arguments:@[pathes, newnames]
+                                                error:&err_info];
+    
 	if (err_info) {
 #if useLog
 		NSLog(@"error: %@", [err_info description]);
