@@ -23,6 +23,7 @@
 		2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C447DBC1000EE36009DA83E /* AltActionButton.m */; };
 		2C52396F25F73D8400D8CCA6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C52396E25F73D8400D8CCA6 /* Media.xcassets */; };
 		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
+		2C59C4132601A35500774B51 /* PullDownButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59C4122601A35500774B51 /* PullDownButtonView.m */; };
 		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
 		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (); }; };
 		2C5B7E160FF0A44A00D5ED31 /* RenameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */; };
@@ -128,8 +129,10 @@
 		2C447DBC1000EE36009DA83E /* AltActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltActionButton.m; sourceTree = "<group>"; };
 		2C52396E25F73D8400D8CCA6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		2C54277B0B7C05B900820867 /* HelpSetup.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 0; path = HelpSetup.plist; sourceTree = "<group>"; };
+		2C59C4112601A35500774B51 /* PullDownButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullDownButtonView.h; sourceTree = "<group>"; };
+		2C59C4122601A35500774B51 /* PullDownButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullDownButtonView.m; sourceTree = "<group>"; };
 		2C5B7DFF0FF098F700D5ED31 /* RenameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameWindowController.h; sourceTree = "<group>"; };
-		2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameWindowController.m; sourceTree = "<group>"; };
+		2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RenameWindowController.m; sourceTree = "<group>"; };
 		2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = FinderSelectionController.applescript; sourceTree = "<group>"; };
 		2C5B7E130FF0A44A00D5ED31 /* RenameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenameEngine.h; sourceTree = "<group>"; };
 		2C5B7E140FF0A44A00D5ED31 /* RenameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenameEngine.m; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				2C219C1A1991C97D001A2D35 /* FilenameComboBox.m */,
 				2C9E41421C62CFE80053B4D5 /* ToolbarController.h */,
 				2C9E41431C62CFE90053B4D5 /* ToolbarController.m */,
+				2C59C4112601A35500774B51 /* PullDownButtonView.h */,
+				2C59C4122601A35500774B51 /* PullDownButtonView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -424,9 +429,6 @@
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
-				Japanese,
-				French,
-				German,
 				Base,
 				ja,
 			);
@@ -572,6 +574,7 @@
 				2CEFC78A102174C6003C67DB /* RenameItem.m in Sources */,
 				2CEFCA521022F6E0003C67DB /* PreviewTableView.m in Sources */,
 				2C219C1B1991C97D001A2D35 /* FilenameComboBox.m in Sources */,
+				2C59C4132601A35500774B51 /* PullDownButtonView.m in Sources */,
 				2C1B2CDB1C61CEB900C62B86 /* FrontAppMonitor.m in Sources */,
 				2C1B2CDC1C61CEB900C62B86 /* PaletteWindowController.m in Sources */,
 				2C1B2CDD1C61CEB900C62B86 /* WindowVisibilityController.m in Sources */,
@@ -778,7 +781,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -788,7 +791,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5;
+				MARKETING_VERSION = 3.5.1b;
 				ONLY_ACTIVE_ARCH = YES;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
@@ -819,14 +822,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5;
+				MARKETING_VERSION = 3.5.1b;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -855,14 +858,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5;
+				MARKETING_VERSION = 3.5.1b;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",

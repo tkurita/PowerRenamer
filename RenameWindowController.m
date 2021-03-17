@@ -1,6 +1,6 @@
 #import "RenameWindowController.h"
 #import "AltActionButton.h"
-#import "FrontAppMonitor.h"
+#import "PaletteWindowController/FrontAppMonitor.h"
 #import "DNDArrayControllerDataTypesProtocol.h"
 #import "PreferencesWindowController.h"
 

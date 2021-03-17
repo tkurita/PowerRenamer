@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "PaletteWindowController.h"
+#import "PaletteWindowController/PaletteWindowController.h"
 #import "RenameEngine.h"
 #import "RenameOptionsProtocol.h"
 
