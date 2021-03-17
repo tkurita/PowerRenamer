@@ -32,8 +32,8 @@ static NSMutableDictionary *renameItemsPool = nil;
 #if useLog
 	NSLog(@"start dealloc in RenameItem");
 #endif			
-	[renameItemsPool removeObjectForKey:_hfsPath];
-	[renameItemsPool removeObjectForKey:_posixPath];
+	if (_hfsPath) [renameItemsPool removeObjectForKey:_hfsPath];
+	if (_posixPath) [renameItemsPool removeObjectForKey:_posixPath];
 }
 
 #pragma mark public
