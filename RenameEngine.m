@@ -461,14 +461,14 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 - (BOOL)processRenameAndReturnError:(NSError **)error // rename with Finder
 {
     NSArray *sorted_array = [self sortedRenameItems];
-    NSArray *pathes = [sorted_array valueForKey:@"posixPath"];
+    NSArray *paths = [sorted_array valueForKey:@"posixPath"];
 	NSArray *newnames = [sorted_array valueForKey:@"nuName"];
 	NSDictionary *err_info = nil;
 	id ignore_responses = [[NSUserDefaults standardUserDefaults] 
 									objectForKey:@"ignoringFinderResponses"];
     
-    [_finderSelectionController executeHandlerWithName:@"process_rename_posix_pathes"
-                    arguments:@[pathes, newnames]
+    [_finderSelectionController executeHandlerWithName:@"process_rename_posix_paths"
+                    arguments:@[paths, newnames]
                                                 error:&err_info];
     
 	if (err_info) {

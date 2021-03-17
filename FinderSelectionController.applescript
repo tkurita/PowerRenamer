@@ -3,7 +3,12 @@ property XList : "@module"
 property _only_local_ : true
 property _ : script "ModuleLoader"'s setup(me)
 
-on get_finderselection() -- has problem on external drives, deprecated
+on do_log(msg)
+    -- do shell script "logger -p user.warning  -t PoserRenamer -s " & quoted form of msg
+    display alert "PowerRenamer: "&msg
+end do_log
+
+on get_finderselection() -- return HFS paths
 	set text item delimiters to {return}
 	with timeout of 3600 seconds
 		tell application "Finder"
@@ -34,42 +39,45 @@ end get_finderselection_as_posix_path
 on sorted_finderselection()
 	script SorterDelegate
 		on target_items_at(a_location)
-			--return get_finderselection()
-            return get_finderselection_as_posix_path()
+			return get_finderselection() -- FileSorter rquires HFS paths
 		end target_items_at
 	end script
 	with timeout of 3600 seconds
 		set a_list to FileSorter's make_with_delegate(SorterDelegate)'s sorted_items()
 	end timeout
-	return a_list
+    script ToPosixPath
+        on do(x)
+        -- Conversion of HFS paths obtained with Finder must be processed with Finder.
+            tell application "Finder"
+                return POSIX path of ((item x) as «class furl»)
+            end tell
+        end do
+    end script
+    return XList's make_with(a_list)'s map_as_list(ToPosixPath)
 end sorted_finderselection
 
-on sub_process_rename(pathes, newnames) --deprecated
-	repeat with n from 1 to length of pathes
-		set an_item to item n of pathes
+on sub_process_rename(paths, newnames) --deprecated
+	repeat with n from 1 to length of paths
+		set an_item to item n of paths
 		tell application "Finder"
 			set name of item an_item to (item n of newnames)
 		end tell
 	end repeat
 end sub_process_rename
 
-on process_rename(pathes, newnames, ignore_responses) --deprecated
+on process_rename(paths, newnames, ignore_responses) --deprecated
 	if ignore_responses then
 		-- log "ignoring Finder"
 		ignoring application responses
-			sub_process_rename(pathes, newnames)
+			sub_process_rename(paths, newnames)
 		end ignoring
 	else
 		-- log "not ignoring FInder"
-		sub_process_rename(pathes, newnames)
+		sub_process_rename(paths, newnames)
 	end if
 end process_rename
 
-on do_log(msg)
-    do shell script "logger -p user.warning  -t PoserRenamer -s " & quoted form of msg
-end do_log
-
-on process_rename_posix_pathes(pathes, newnames)
+on process_rename_posix_paths(paths, newnames)
     set x_newnames to XList's make_with(newnames)
     
     script DoRename
@@ -83,7 +91,7 @@ on process_rename_posix_pathes(pathes, newnames)
 
     ignoring application responses
         -- log "ignoring FInder"
-        XList's make_with(pathes)'s each_rush(DoRename)
+        XList's make_with(paths)'s each_rush(DoRename)
     end ignoring
 end process_rename
 

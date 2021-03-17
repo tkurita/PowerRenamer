@@ -317,9 +317,9 @@ bail:
 		return nil;
 	}
 	
-	NSArray *pathes = [pboard propertyListForType:NSFilenamesPboardType];
+	NSArray *paths = [pboard propertyListForType:NSFilenamesPboardType];
 	RenameEngine *engine = [RenameEngine new];
-	[engine setTargetFiles:pathes];
+	[engine setTargetFiles:paths];
 	[engine resolveIcons];
 	NSError *error = nil;
 	if ([renameEngine hasNewNames]) {
