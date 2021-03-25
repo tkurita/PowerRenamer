@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!-- InstanceBegin template="../../../../../../_Templates/helpbook-page.dwt" -->
+
+    <head>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      
+      <title>番号付け</title>
+      <meta name="description" content="Finder でファイルが並んでいる順番でファイル名に連番を挿入できます。" />
+      
+      <meta name="keywords" content="PowerRenamer, Numbering, 番号付け, Leading Zeros, Start from, 開始番号" />
+      <!-- #BeginHeadLocked "" -->
+        <link href="../01_what/assets/helpbook-default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="../01_what/assets/helpbook-navibar_2016.css" type="text/css" rel="stylesheet" media="all" />
+        <script type="text/javascript" src="../01_what/assets/navibar-jump.js"></script>
+      <!-- #EndHeadLocked -->
+      <script type="text/javascript" src="../01_what/assets/shrink-popup-image.js"></script>
+      <link href="../01_what/assets/expand-icon.png" id="expand-icon-image" />
+    </head>
+
+    <body>
+      <!-- InstanceBeginEditable name="navi-bar" --><div id="navi-bar"><span class="navibar-item"><a href="../index.html">PowerRenamer ヘルプ</a></span><span class="navibar-item">番号付け</span><select onchange="navibarJump(this)"><option value="">§</option>
+    <option value="#numbering-order">番号付けの順番</option>
+    <option value="#utilize_preview_drawer">プレビュードローワの利用
+        	</option></select></div>
+<div class="prev-next-item"><a href="../08_regexp/index.html"><span class="navibar-prev">正規表現による検索置換</span></a>|<a href="../10_regexp_reference/index.html"><span class="navibar-next">正規表現</span></a></div><!-- InstanceEndEditable -->
+      <div id="contents">
+        <!-- InstanceBeginEditable name="Body" -->
+          <h1>番号付け</h1>
+          
+          <p>番号付けモードを選択すると、ファイル名に連番を挿入することができます。番号の順番は Finder でファイルが並んでいる順番で決定されます。非常に直感的に連番の順番をコントロールできます。詳細は後述します。</p>
+          <p>番号付けモードは正規表現モードの特殊なモードです。「検索文字列」でファイル名のどこに連番を挿入するかを正規表現で設定し、置換文字列で番号のフォーマット設定します。置換文字列では、「$#」を含める必要があります。「$#」が番号に置き換えられます。$# が番号に置き換えられる以外は、正規表現モードと同じです。</p>
+          <p class="figure">
+          	<img class="shrink-popup" src="../../images/numbering_ja@2x.png" alt="" border="0" height="508" width="756" />
+          </p>
+          
+          <h2><a id="numbering-order" name="numbering-order"></a>番号付けの順番</h2>
+          
+          <p>番号付けの順番は、選択されている場所の Finder での表示形式で決まります。要するに Finder で見えている順番で番号が振られます。</p>
+          <h3>アイコン表示</h3>
+          <p>ファイルの並び順で番号を振る順番が決定されます。「常に＊＊＊で並び替える。」と設定されている場合は「＊＊＊」（名前や修正日）の順番で番号がけってします。</p>
+          <p>「グリッドに沿う」もしくは並び替えが行われない場合、ファイルの位置で番号が決定します。この場合、ラベルの位置で、縦方向を基準として順番を決定するか、横方向を基準として順番を決定するかを判断します。</p>
+          
+          <div class="figure">
+            <table border="0" cellspacing="0" cellpadding="0" style="display:inline-table;">
+              <tr>
+                <td><img src="../../images/rowdirection@2x.png" alt="" border="0" height="335" width="428" /></td>
+              </tr>
+              <tr>
+                <td align="center">横方向</td>
+              </tr>
+            </table>
+            <table border="0" cellspacing="0" cellpadding="0" style="display:inline-table;">
+              <tr>
+                <td><img src="../../images/columndirection@2x.png" alt="" border="0" height="335" width="553" /></td>
+              </tr>
+              <tr>
+                <td align="center">縦方向</td>
+              </tr>
+            </table>
+          </div>
+          
+          <h3>リスト表示/Cover Flow 表示</h3>
+          <p>ソートされている順番で番号を振ります。</p>
+          <h3>カラム表示</h3>
+          <p>名前の昇順で番号を振ります。</p>
+          
+          <h2><a id="utilize_preview_drawer" name="utilize_preview_drawer"></a>プレビュードローワの利用
+        	</h2>
+          
+          <p>プレビュードローワに表示されている項目はドラッグ&amp;ドロップで、項目の並べ替えができます。ターゲット項目を取得した後でも、番号付けの順番の微調整を行えます。</p>
+          <p>サービスメニューやドラッグ&amp;ドロップで、ターゲットとなるファイルを指定した場合は、プレビュードローワで表示されている順番だけで決定されます。Finder での並び順は関係なくなります。</p>
+          <!-- InstanceEndEditable --></div>
+      <!-- InstanceBeginEditable name="prev-next-item" --><div class="prev-next-item"><a href="../08_regexp/index.html"><span class="navibar-prev">正規表現による検索置換</span></a>|<a href="../10_regexp_reference/index.html"><span class="navibar-next">正規表現</span></a></div><!-- InstanceEndEditable -->
+      <div class="footer">
+        <p>This page was last built on <csobj format="MedDate" h="10" region="0" t="DateTime" w="73">Thu, Mar 19, 2020</csobj> ; <csobj format="LongTime" h="10" region="0" t="DateTime" w="46">9:19:37 AM</csobj> . Thanks for checking it out!</p>
+      </div>
+    </body>
+
+  <!-- InstanceEnd -->
+
+</html>

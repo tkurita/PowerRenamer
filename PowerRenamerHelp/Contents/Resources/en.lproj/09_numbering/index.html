@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!-- InstanceBegin template="../../../../../../_Templates/helpbook-page.dwt" -->
+
+    <head>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      
+      <title>Numbering</title>
+      <meta name="description" content="PowerRenamer can insert sequential numbers into file names. The order of numbers are determined by sorting order in Finder" />
+      
+      <meta name="keywords" content="PowerRenamer, Numbering, 番号付け, Leading Zeros, Start from, 開始番号" />
+      <!-- #BeginHeadLocked "" -->
+        <link href="../../ja.lproj/01_what/assets/helpbook-default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="../../ja.lproj/01_what/assets/helpbook-navibar_2016.css" type="text/css" rel="stylesheet" media="all" />
+        <script type="text/javascript" src="../../ja.lproj/01_what/assets/navibar-jump.js"></script>
+      <!-- #EndHeadLocked -->
+      <script type="text/javascript" src="../../ja.lproj/01_what/assets/shrink-popup-image.js"></script>
+      <link href="../../ja.lproj/01_what/assets/expand-icon.png" id="expand-icon-image" />
+    </head>
+
+    <body>
+      <!-- InstanceBeginEditable name="navi-bar" --><div id="navi-bar"><span class="navibar-item"><a href="../index.html">PowerRenamer Help</a></span><span class="navibar-item">Numbering</span><select onchange="navibarJump(this)"><option value="">§</option>
+    <option value="#numbering-order">The Order of Numbering</option>
+    <option value="#utilize_preview_drawer">Utilizing the Preview Drawer for Numbering files.</option></select></div>
+<div class="prev-next-item"><a href="../08_regexp/index.html"><span class="navibar-prev">Using Regular Expressions</span></a>|<a href="../10_regexp_reference/index.html"><span class="navibar-next">Regular Expression</span></a></div><!-- InstanceEndEditable -->
+      <div id="contents">
+        <!-- InstanceBeginEditable name="Body" -->
+          <h1>Numbering</h1>
+          
+          <p>&quot;Numbering&quot; mode of PowerRenamer can insert sequential numbers into file names. The order of numbers are determined by sorting order in Finder (details are described in following section). You can number files as you see.</p>
+          <p>&quot;Numbering&quot; mode is a special mode of &quot;Regular Expression&quot; mode. The position to be replaced with numbers is specified with &quot;Search for&quot; field using regular expressions. The format of numbers are specified with &quot;Replace with&quot; field. &quot;Replace with&quot; field should contain a special string &quot;$#&quot;. &quot;$#&quot; will be replaces with a number. If there is not &quot;$#&quot; in &quot;Replace with&quot; field, &quot;Numbering&quot; mode has no difference from &quot;Regular Expression&quot; mode.</p>
+          <p class="figure">
+          	<img class="shrink-popup" src="../../images/numbering_en@2x.png" alt="" border="0" height="508" width="768" />
+          </p>
+          
+          <h2><a id="numbering-order" name="numbering-order"></a>The Order of Numbering</h2>
+          
+          <p>The order of numbers to be inserted to file names is depend on Finder window's view style of selected location. In short, the order of numbering is the same to the order of files in Finder as you see.</p>
+          <h3>Icon view</h3>
+          <p>When items in a Finder window are arranged by item's attribute, the numbering order follows the attribute order.</p>
+          <p>When items in a Finder window are not arranged or snapped to grid, the numbering order is determined by item's positions. The direction of numbering order is determined labels position as follows.</p>
+          
+          <div class="figure">
+            <table border="0" cellspacing="0" cellpadding="0" style="display:inline-table;">
+              <tr>
+                <td><img src="../../images/rowdirection@2x.png" alt="" border="0" height="335" width="428" /></td>
+              </tr>
+              <tr>
+                <td align="center">Row Direction</td>
+              </tr>
+            </table>
+            <table border="0" cellspacing="0" cellpadding="0" style="display:inline-table;">
+              <tr>
+                <td><img src="../../images/columndirection@2x.png" alt="" border="0" height="335" width="553" /></td>
+              </tr>
+              <tr>
+                <td align="center">Column Direction</td>
+              </tr>
+            </table>
+          </div>
+          
+          <h3>List View/Cover Flow View</h3>
+          <p>The numbering order follows the sorting order in the list view. If sorted by modification date, the numbering order is determined by the modification date.</p>
+          <h3>Column View</h3>
+          <p>The numbering order follows the name order as you see in the window.</p>
+          
+          <h2><a id="utilize_preview_drawer" name="utilize_preview_drawer"></a>Utilizing the Preview Drawer for Numbering files.</h2>
+          
+          <p>The order of items listed the preview drawer can be changed by drag &amp; drop. After obtaining Finder's selection, you can modify numbering order.</p>
+          <p>If you specify files to be renamed by using the service menu or dropping files on the application icon, numbering order is determined by the list order in the preview drawer.</p>
+          <!-- InstanceEndEditable --></div>
+      <!-- InstanceBeginEditable name="prev-next-item" --><div class="prev-next-item"><a href="../08_regexp/index.html"><span class="navibar-prev">Using Regular Expressions</span></a>|<a href="../10_regexp_reference/index.html"><span class="navibar-next">Regular Expression</span></a></div><!-- InstanceEndEditable -->
+      <div class="footer">
+        <p>This page was last built on <csobj format="MedDate" h="10" region="0" t="DateTime" w="73">Thu, Mar 19, 2020</csobj> ; <csobj format="LongTime" h="10" region="0" t="DateTime" w="46">9:19:37 AM</csobj> . Thanks for checking it out!</p>
+      </div>
+    </body>
+
+  <!-- InstanceEnd -->
+
+</html>

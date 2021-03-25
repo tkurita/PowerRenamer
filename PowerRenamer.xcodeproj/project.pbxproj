@@ -22,7 +22,6 @@
 		2C447C400FFFABE1009DA83E /* OSAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C447C3F0FFFABE1009DA83E /* OSAKit.framework */; };
 		2C447DBE1000EE36009DA83E /* AltActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C447DBC1000EE36009DA83E /* AltActionButton.m */; };
 		2C52396F25F73D8400D8CCA6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C52396E25F73D8400D8CCA6 /* Media.xcassets */; };
-		2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C54277B0B7C05B900820867 /* HelpSetup.plist */; };
 		2C59C4132601A35500774B51 /* PullDownButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C59C4122601A35500774B51 /* PullDownButtonView.m */; };
 		2C5B7E020FF098F700D5ED31 /* RenameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E000FF098F700D5ED31 /* RenameWindowController.m */; };
 		2C5B7E120FF0A39C00D5ED31 /* FinderSelectionController.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B7E110FF0A39C00D5ED31 /* FinderSelectionController.applescript */; settings = {ATTRIBUTES = (); }; };
@@ -466,7 +465,6 @@
 				2CF96B421FEB2DAA000ACAA8 /* Localizable.strings in Resources */,
 				2C85CC220B7B398100C89869 /* FactorySettings.plist in Resources */,
 				2CF96B3F1FEB2D9D000ACAA8 /* InfoPlist.strings in Resources */,
-				2C54277C0B7C05B900820867 /* HelpSetup.plist in Resources */,
 				2CED51C60F986DDC007CD3B4 /* dsa_pub.pem in Resources */,
 				2CEFC3AF10186201003C67DB /* PowerRenamer.icns in Resources */,
 				2CF96B451FEB2DB0000ACAA8 /* ServicesMenu.strings in Resources */,
@@ -494,7 +492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = "/bin/zsh -l";
-			shellScript = "if [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\n\ncd \"$BUILT_PRODUCTS_DIR\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
+			shellScript = "exit 0 # deprecated\nif [ ! \"$CONFIGURATION\" = 'Release' ]; then\necho \"HelpBook setup script will run only with Release configuration\";\nexit 0\nfi\n\ncd \"$BUILT_PRODUCTS_DIR\"\nSetupHelpBook \"$FULL_PRODUCT_NAME\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2CAF8326242374C600310E7A /* ShellScript */ = {
@@ -791,7 +789,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5.1;
+				MARKETING_VERSION = 3.5.2b;
 				ONLY_ACTIVE_ARCH = YES;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
@@ -829,7 +827,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5.1;
+				MARKETING_VERSION = 3.5.2b;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -865,7 +863,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5.1;
+				MARKETING_VERSION = 3.5.2b;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",

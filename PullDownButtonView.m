@@ -7,6 +7,8 @@
 
 #import "PullDownButtonView.h"
 
+#define useLog 0
+
 @implementation PullDownButtonView
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -34,6 +36,9 @@
     [item setOnStateImage:nil];
     [item setMixedStateImage:nil];
     [[settingsPullDownButton cell] setMenuItem:item];
+#if useLog
+    NSLog(@"drawRect in PullDownButtonView : %@", NSStringFromRect(dirtyRect));
+#endif
 }
 
 @end

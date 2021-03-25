@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!-- InstanceBegin template="../../../../../../_Templates/helpbook-page.dwt" -->
+
+    <head>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      
+      <title>Regular Expression</title>
+      <meta name="description" content="Introduction about the regular expressions available with PowerRenamer" />
+      
+      <meta name="keywords" content="PowerRenamer, Regular Expression, 正規表現" />
+      <!-- #BeginHeadLocked "" -->
+        <link href="../../ja.lproj/01_what/assets/helpbook-default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="../../ja.lproj/01_what/assets/helpbook-navibar_2016.css" type="text/css" rel="stylesheet" media="all" />
+        <script type="text/javascript" src="../../ja.lproj/01_what/assets/navibar-jump.js"></script>
+      <!-- #EndHeadLocked -->
+      <style type="text/css" media="all"><!--
+.regextable{ background-color: #778899; width: 95%; margin-right: 1.5em; margin-bottom: 1em; margin-left: 1.5em; padding: 0; border-style: none; border-spacing:2px }
+.regextable th{ background-color:white; background-position:left top; padding:0.3em 1em; text-align:center; border-style: none; }
+.regextable td{ background-color: white; padding:0.5em 1em; border-style: none; }--></style>
+    </head>
+
+    <body>
+      <!-- InstanceBeginEditable name="navi-bar" --><div id="navi-bar"><span class="navibar-item"><a href="../index.html">PowerRenamer Help</a></span><span class="navibar-item">Regular Expression</span></div>
+<div class="prev-next-item"><a href="../09_numbering/index.html"><span class="navibar-prev">Numbering</span></a>|<a href="../11_presets/index.html"><span class="navibar-next">Presets</span></a></div><!-- InstanceEndEditable -->
+      <div id="contents">
+        <!-- InstanceBeginEditable name="Body" -->
+          <h1>Regular Expression</h1>
+          
+          <p>PowerRenamer utilizes <a href="https://developer.apple.com/library/mac/documentation/Foundation/Reference/NSRegularExpression_Class/" target="_top">NSRegularExpression</a> as a Regular Expression Engine. NSRegularExpression is a Cocoa framework using a regular expression engine in <a href="http://www.icu-project.org/" target="_top">ICU</a> that is shipped with OS X.</p>
+          
+          <p>The basic regular expressions are listed as follows. See <a href="http://userguide.icu-project.org/strings/regexp">the document of ICU</a> for other advanced regular expressions.</p>
+          
+          <table class="regextable">
+            <tr>
+              <th>^</th>
+              <td>Match at the beginning of the text.</td>
+            </tr>
+            <tr>
+              <th>$</th>
+              <td>Match at the endding of text.</td>
+            </tr>
+            <tr>
+              <th>[ ]</th>
+              <td>Match an arbitrary character enclosed in [ ].</td>
+            </tr>
+            <tr>
+              <th>[^ ]</th>
+              <td>Match a character which is not enclosed in [^ ].</td>
+            </tr>
+            <tr>
+              <th>|</th>
+              <td>OR condition.</td>
+            </tr>
+            <tr>
+              <th>( )</th>
+              <td>Grouping regular expresion. Matched strings for the groups of regular expressions can be refered with back refereneces \1-\9.</td>
+            </tr>
+            <tr>
+              <th>*</th>
+              <td>Match 0 or more times of right before.</td>
+            </tr>
+            <tr>
+              <th>+</th>
+              <td>Match 1 or more times of right before.</td>
+            </tr>
+            <tr>
+              <th>?</th>
+              <td>Match 0 or 1 time of right before.</td>
+            </tr>
+            <tr>
+              <th>{n}</th>
+              <td>Match n times of right before.</td>
+            </tr>
+            <tr>
+              <th>{min,max}</th>
+              <td>Match at least n but not more than m times of right before.</td>
+            </tr>
+            <tr>
+              <th>\A</th>
+              <td>Match the begging of the text. Differs from ^ in that \A will not match after a new-line within the input.</td>
+            </tr>
+            <tr>
+              <th>\Z</th>
+              <td>Match the endding of the text、 but before the final line terminator, if one exists.</td>
+            </tr>
+            <tr>
+              <th>\1〜\9</th>
+              <td>Refer the matched string for the grouped regular expression with ( ). The number n indicates an index of ( ).</td>
+            </tr>
+            <tr>
+              <th>\0</th>
+              <td>Refere all text matched for the pattern. Use as a part of replaceing text.</td>
+            </tr>
+            <tr>
+              <th>\t</th>
+              <td>TAB(0x09)</td>
+            </tr>
+            <tr>
+              <th>\n</th>
+              <td>LF(0x0a)</td>
+            </tr>
+            <tr>
+              <th>\f</th>
+              <td>FORMFEED(0x0c)</td>
+            </tr>
+            <tr>
+              <th>\r</th>
+              <td>CR(0x0d)</td>
+            </tr>
+            <tr>
+              <th>.</th>
+              <td>A arbitrary character.</td>
+            </tr>
+            <tr>
+              <th>\d</th>
+              <td>A decimal digit character. Same to [0-9].</td>
+            </tr>
+            <tr>
+              <th>\D</th>
+              <td>A non decimal degit character. Same to [^0-9]</td>
+            </tr>
+            <tr>
+              <th>\s</th>
+              <td>A whitespace character. Same to [\r\t\n\f ].</td>
+            </tr>
+            <tr>
+              <th>\S</th>
+              <td>A non whitespace character. Same to [^\r\t\n\f ].</td>
+            </tr>
+            <tr>
+              <th>\w</th>
+              <td>A word character. Same to [0-9A-Za-z_].</td>
+            </tr>
+            <tr>
+              <th>\W</th>
+              <td>A non word character. Same to [^0-9A-Za-z_].</td>
+            </tr>
+          </table>
+        <!-- InstanceEndEditable --></div>
+      <!-- InstanceBeginEditable name="prev-next-item" --><div class="prev-next-item"><a href="../09_numbering/index.html"><span class="navibar-prev">Numbering</span></a>|<a href="../11_presets/index.html"><span class="navibar-next">Presets</span></a></div><!-- InstanceEndEditable -->
+      <div class="footer">
+        <p>This page was last built on <csobj format="MedDate" h="10" region="0" t="DateTime" w="73">Thu, Mar 19, 2020</csobj> ; <csobj format="LongTime" h="10" region="0" t="DateTime" w="46">9:20:15 AM</csobj> . Thanks for checking it out!</p>
+      </div>
+    </body>
+
+  <!-- InstanceEnd -->
+
+</html>

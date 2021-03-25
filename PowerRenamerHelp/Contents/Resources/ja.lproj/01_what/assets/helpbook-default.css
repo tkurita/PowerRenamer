@@ -1,0 +1,72 @@
+a:link {
+	color: #6666ff  }
+a:visited {
+	color: #999966  }
+a:active {
+	color: #f66  }
+body, td { font-size: 11px; font-family: "Lucida Grande", Arial, sans-serif;}
+body { color: black; background-color: #dcdcdc  ; max-width: 1250px; margin: 28px auto 0; padding: 0; }h1 { font-weight: bold; font-size: 150%; margin-top: 0; margin-bottom: 1.5ex; padding-top: 0; padding-bottom: 0.5ex; border-bottom: thick solid gray      }
+h2 {
+	font-weight: bold;
+	font-size: 130%;
+	background-color: #f5f5f5;
+	margin-right: 0;
+	margin-left: 0;
+	padding-top: 1ex;
+	padding-bottom: 1ex;
+	padding-left: 1ex;
+	border-style: none none none solid;
+	border-width: medium medium medium 8pt;
+	border-color: gray  }
+h3 { font-weight: bold; font-size: 110%  ; }
+h4   {	margin-left: 1em }
+
+
+p     {	line-height: 160%;
+	margin-right: 1.5em;
+	margin-left: 1.5em }
+dl { line-height: 140%  ; margin-right: 1.5em; margin-left: 3em; }
+dt { font-weight: bold; }
+ul {
+    line-height: 150%  }
+li  {
+	line-height: inherit ;
+	margin-top: 0.5em;
+	margin-right: 1.5em;
+	margin-bottom: 0.5em; }
+pre  {	margin-right: 4ex;
+	margin-left: 4ex }
+.bigstrong {
+	font-weight: bold;
+	font-size: large  }
+.tablecaption {
+	text-align: center;
+	margin-top: 1ex  }
+.centertable {
+	text-align: center;
+	margin: 5mm 4%  }
+.figure {
+	text-align: center  }
+.nomargine {
+	margin: 0  }
+.listBlock  {	margin-right: 3ex;
+	margin-left: 2ex }
+
+.tableContent {
+	margin-right: 0;
+	margin-left: 0  }
+.widespace {
+	margin-bottom: 1ex  }
+.terminalCommand     {	color: white;
+	font-family: Osaka, Courier, Monaco, "Courier New", monospace;
+	background-color: black;
+	margin: 1ex 2em;
+	padding: 8px 10px;
+	border: solid 2px silver }
+.tightList { line-height: 120%; margin: 0; padding: 0 0 0 2em; list-style-type: disc; }
+.footer { width: 100%; clear: both; margin: 0; padding: 0 0 0; border-top: 1pt solid gray; }
+.backforth-navi { position: relative; float: right; }
+.icon-img { vertical-align: middle; }
+.level-header { margin: 0.5ex 1em 1ex; padding: 0.5ex 1em; border-bottom: 1px solid gray; }
+#contents { background-color: white; position: relative; margin: 0; padding: 5px 10px 10px; min-width: 450px; }
+#smartheader     { background-color: #f2f2f2; margin-top: 0; margin-right: 0; margin-left: 0; padding-left: 10px; border-bottom: 1px solid #bfbfbf; position: fixed; top: 0; left: 0; width: 100% ; z-index: 1; }
