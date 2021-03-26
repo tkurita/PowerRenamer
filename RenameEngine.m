@@ -464,13 +464,15 @@ CFStringNormalizationForm UnicodeNormalizationForm()
     NSArray *paths = [sorted_array valueForKey:@"posixPath"];
 	NSArray *newnames = [sorted_array valueForKey:@"nuName"];
 	NSDictionary *err_info = nil;
-	id ignore_responses = [[NSUserDefaults standardUserDefaults] 
-									objectForKey:@"ignoringFinderResponses"];
-    
+#if useLog
+    NSLog(@"%@", @"start rename");
+#endif
     [_finderSelectionController executeHandlerWithName:@"process_rename_posix_paths"
                     arguments:@[paths, newnames]
                                                 error:&err_info];
-    
+#if useLog
+    NSLog(@"%@", @"end rename");
+#endif
 	if (err_info) {
 #if useLog
 		NSLog(@"error: %@", [err_info description]);

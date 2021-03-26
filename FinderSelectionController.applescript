@@ -90,7 +90,6 @@ on process_rename_posix_paths(paths, newnames)
     end script
 
     ignoring application responses
-        -- log "ignoring FInder"
         XList's make_with(paths)'s each_rush(DoRename)
     end ignoring
 end process_rename
