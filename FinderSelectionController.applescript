@@ -11,7 +11,7 @@ end do_log
 on get_finderselection() -- return HFS paths
 	set text item delimiters to {return}
 	with timeout of 3600 seconds
-		tell application "Finder"
+		tell application id "com.apple.finder"
 			set pathtable to selection as Unicode text
 		end tell
 	end timeout
@@ -24,7 +24,7 @@ end initialize
 
 on get_finderselection_as_posix_path()
     with timeout of 3600 seconds
-        tell application "Finder"
+        tell application id "com.apple.finder"
             set a_list to selection
         end tell
     end timeout
@@ -48,7 +48,7 @@ on sorted_finderselection()
     script ToPosixPath
         on do(x)
         -- Conversion of HFS paths obtained with Finder must be processed with Finder.
-            tell application "Finder"
+            tell application id "com.apple.finder"
                 return POSIX path of ((item x) as «class furl»)
             end tell
         end do
@@ -59,7 +59,7 @@ end sorted_finderselection
 on sub_process_rename(paths, newnames) --deprecated
 	repeat with n from 1 to length of paths
 		set an_item to item n of paths
-		tell application "Finder"
+		tell application id "com.apple.finder"
 			set name of item an_item to (item n of newnames)
 		end tell
 	end repeat
@@ -83,7 +83,7 @@ on process_rename_posix_paths(paths, newnames)
     script DoRename
         on do(x)
             -- do_log(x)
-            tell application "Finder"
+            tell application id "com.apple.finder"
                 set name of item ((x as POSIX file) as text) to (x_newnames's next())
             end tell
         end do
@@ -94,15 +94,28 @@ on process_rename_posix_paths(paths, newnames)
     end ignoring
 end process_rename
 
+on select_posix_paths(a_list)
+    script ToItem
+        on do(x)
+            return x as POSIX file
+        end do
+    end script
+    set item_list to XList's make_with(a_list)'s map_as_list(ToItem)
+    with timeout of 3600 seconds
+        tell application id "com.apple.finder"
+            select item_list
+        end tell
+    end timeout
+end select_posix_paths
 
-on select_items(a_list)
+on select_items(a_list) -- deprecated
 	repeat with an_item in a_list
-		tell application "Finder"
+		tell application id "com.apple.finder"
 			set contents of an_item to (item an_item)
 		end tell
 	end repeat
 	with timeout of 3600 seconds
-		tell application "Finder"
+		tell application id "com.apple.finder"
 			--select a_list
 			set selection to a_list
 		end tell

@@ -87,14 +87,14 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 	[self setRenamedItems:nil];
 }
 
-
 - (void)setTargetFiles:(NSArray *)filenames
 {
 	NSMutableArray *target_dicts = [NSMutableArray arrayWithCapacity:[filenames count]];
 	NSEnumerator *enumerator = [filenames objectEnumerator];
 	NSString *path;
 	while (path = [enumerator nextObject]) {
-		RenameItem *rename_item = [RenameItem renameItemWithHFSPath:[path hfsPath] normalization: normalizationForm];
+		//RenameItem *rename_item = [RenameItem renameItemWithHFSPath:[path hfsPath] normalization: normalizationForm];
+        RenameItem *rename_item = [RenameItem renameItemWithPath:path normalization: normalizationForm];
 		[target_dicts addObject:rename_item];
 	}
 	[self setTargetDicts:target_dicts];
@@ -103,9 +103,9 @@ CFStringNormalizationForm UnicodeNormalizationForm()
 #pragma mark narrow down
 - (BOOL)selectInFinderReturningError:(NSError **)error
 {
-	NSArray *array = [_targetDicts valueForKey:@"hfsPath"];
+	NSArray *array = [_targetDicts valueForKey:@"posixPath"];
 	NSDictionary *err_info = nil;
-	[_finderSelectionController executeHandlerWithName:@"select_items"
+	[_finderSelectionController executeHandlerWithName:@"select_posix_paths"
 											arguments:@[array] error:&err_info];
 	
 	if (err_info) {

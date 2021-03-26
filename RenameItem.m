@@ -31,12 +31,15 @@ static NSMutableDictionary *renameItemsPool = nil;
 {
 #if useLog
 	NSLog(@"start dealloc in RenameItem");
-#endif			
+#endif
+#if useDeprecated
 	if (_hfsPath) [renameItemsPool removeObjectForKey:_hfsPath];
+#endif
 	if (_posixPath) [renameItemsPool removeObjectForKey:_posixPath];
 }
 
 #pragma mark public
+#if useDeprecated
 + (id)renameItemWithHFSPath:(NSString *)path
 {
 	return [self renameItemWithHFSPath:path normalization:kCFStringNormalizationFormC];
@@ -60,6 +63,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 	}
 	return instance;
 }
+#endif
 
 + (id)renameItemWithPath:(NSString *)path
 {
@@ -107,6 +111,7 @@ static NSMutableDictionary *renameItemsPool = nil;
 }
 
 #pragma mark accessors
+#if useDeprecated
 - (void)setHfsPath:(NSString *)aPath
 {
 	if (_hfsPath != aPath) {
@@ -115,6 +120,7 @@ static NSMutableDictionary *renameItemsPool = nil;
         [self setPosixPath:[_hfsPath posixPath]];
     }
 }
+#endif
 
 - (void)setPosixPath:(NSString *)aPath
 {
