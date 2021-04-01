@@ -59,7 +59,7 @@
 			);
 			isEditable = 1;
 			outputFiles = (
-				"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt",
+				$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt,
 			);
 			runOncePerArchitecture = 0;
 			script = "# Type a script or drag a script file from your workspace to insert its path.\n#printenv\ncd \"$INPUT_FILE_DIR\"\n/usr/bin/osacompile -l AppleScript -d -o \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt\" \"$INPUT_FILE_NAME\"\n";
@@ -232,7 +232,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				2C84219C242048CB00195EEE /* PowerRenamer.entitlements */,
@@ -431,7 +431,7 @@
 				Base,
 				ja,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -776,7 +776,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -786,7 +786,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.3;
 				ONLY_ACTIVE_ARCH = YES;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
@@ -817,14 +817,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.3;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -853,14 +853,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 45;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = 5VBC6385DN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Info-PowerRenamer.plist";
 				INSTALL_PATH = /Applications;
-				MARKETING_VERSION = 3.5.2;
+				MARKETING_VERSION = 3.5.3;
 				OSA_LIBRARY_PATH = "${SRCROOT}/LibraryScripts";
 				OTHER_CFLAGS = (
 					"$(inherited)",
