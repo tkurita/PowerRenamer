@@ -59,7 +59,7 @@
 			);
 			isEditable = 1;
 			outputFiles = (
-				$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt,
+				"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt",
 			);
 			runOncePerArchitecture = 0;
 			script = "# Type a script or drag a script file from your workspace to insert its path.\n#printenv\ncd \"$INPUT_FILE_DIR\"\n/usr/bin/osacompile -l AppleScript -d -o \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/$INPUT_FILE_BASE.scpt\" \"$INPUT_FILE_NAME\"\n";
@@ -232,7 +232,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* Application */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				2C84219C242048CB00195EEE /* PowerRenamer.entitlements */,
@@ -431,7 +431,7 @@
 				Base,
 				ja,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* Application */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -518,19 +518,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer-frameworks.sh",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PowerRenamer/Pods-PowerRenamer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8CB212C72875807E230060AA /* [CP] Check Pods Manifest.lock */ = {
