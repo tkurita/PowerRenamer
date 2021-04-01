@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,20 +27,19 @@
                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29">
                     <rect key="frame" x="0.0" y="0.0" width="455" height="255"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <clipView key="contentView" ambiguous="YES" id="exT-MZ-mqU">
-                        <rect key="frame" x="1" y="0.0" width="453" height="254"/>
+                    <clipView key="contentView" id="exT-MZ-mqU">
+                        <rect key="frame" x="1" y="1" width="453" height="253"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="30" id="33" customClass="PreviewTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="453" height="231"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <rect key="frame" x="0.0" y="0.0" width="453" height="230"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn identifier="icon" editable="NO" width="32" minWidth="32" maxWidth="32" id="36">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -49,9 +48,8 @@
                                             <binding destination="7" name="value" keyPath="arrangedObjects.icon" id="57"/>
                                         </connections>
                                     </tableColumn>
-                                    <tableColumn identifier="oldName" editable="NO" width="171" minWidth="40" maxWidth="1000" id="35">
+                                    <tableColumn identifier="oldName" editable="NO" width="166.5" minWidth="40" maxWidth="1000" id="35">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Before">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -66,9 +64,8 @@
                                             <binding destination="7" name="textColor" keyPath="arrangedObjects.textColor" id="98"/>
                                         </connections>
                                     </tableColumn>
-                                    <tableColumn identifier="newName" editable="NO" width="241" minWidth="10" maxWidth="3.4028230607370965e+38" id="34">
+                                    <tableColumn identifier="newName" editable="NO" width="236.5" minWidth="10" maxWidth="3.4028230607370965e+38" id="34">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="After">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
@@ -103,7 +100,7 @@
                         <rect key="frame" x="439" y="17" width="15" height="236"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="30">
+                    <tableHeaderView key="headerView" wantsLayer="YES" id="30">
                         <rect key="frame" x="0.0" y="0.0" width="453" height="23"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
@@ -111,11 +108,11 @@
             </subviews>
             <point key="canvasLocation" x="140" y="155"/>
         </customView>
-        <window title="PowerRenamer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="MainWindow">
+        <window title="PowerRenamer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" toolbarStyle="expanded" id="5" userLabel="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="230" y="382" width="467" height="200"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1330" height="743"/>
             <value key="minSize" type="size" width="465" height="200"/>
             <value key="maxSize" type="size" width="1000" height="200"/>
             <view key="contentView" id="9">
@@ -318,11 +315,15 @@ Gw
             <toolbar key="toolbar" implicitIdentifier="09C2EB76-54F9-404C-82CE-F0BB8D4EA8A8" displayMode="iconAndLabel" sizeMode="regular" id="370">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="8FD7B90B-4572-491F-8760-1CE04EE35176" explicitItemIdentifier="AddToPresets" label="Add to Presets" paletteLabel="Add to Presets" toolTip="Save current settings as a preset" tag="-1" image="plus-small" id="377">
+                        <size key="minSize" width="22" height="22"/>
+                        <size key="maxSize" width="22" height="22"/>
                         <connections>
                             <action selector="addToPreset:" target="-2" id="388"/>
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="E4021FA7-C4E9-45C5-A4BE-83B26B8F41F0" explicitItemIdentifier="Preferences" label="Preferences" paletteLabel="Preferences" toolTip="Open a preferences window" tag="-1" image="NSPreferencesGeneral" id="378">
+                        <size key="minSize" width="22" height="22"/>
+                        <size key="maxSize" width="22" height="22"/>
                         <connections>
                             <action selector="showPreferencesWindow:" target="-2" id="389"/>
                         </connections>
@@ -453,7 +454,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="431" width="448" height="79"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1330" height="743"/>
             <view key="contentView" id="301">
                 <rect key="frame" x="0.0" y="0.0" width="448" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
